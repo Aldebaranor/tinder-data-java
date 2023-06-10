@@ -17,6 +17,8 @@
         <module>tinder-v3-common</module>
         <module>tinder-v3-situation-api</module>
         <module>tinder-v3-scenario-api</module>
+        <module>tinder-v3-equipment-api</module>
+        <module>tinder-v3-equipment-server</module>
     </modules>
 
     <properties>

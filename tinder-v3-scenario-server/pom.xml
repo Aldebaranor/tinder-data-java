@@ -24,42 +24,10 @@
             <artifactId>tinder-v3-scenario-api</artifactId>
             <version>${project.version}</version>
         </dependency>
-
-
-
-<!--        <dependency>-->
-<!--            <groupId>org.projectlombok</groupId>-->
-<!--            <artifactId>lombok</artifactId>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba</groupId>-->
-<!--            <artifactId>fastjson</artifactId>-->
-<!--            <version>${fastjson.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>cn.hutool</groupId>-->
-<!--            <artifactId>hutool-all</artifactId>-->
-<!--            <version>${hutool.version}</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-test</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.locationtech.spatial4j</groupId>-->
-<!--            <artifactId>spatial4j</artifactId>-->
-<!--            <version>${spatial4j.version}</version>-->
-<!--        </dependency>-->
-
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.1.91.Final</version>
+            <groupId>com.juntai</groupId>
+            <artifactId>tinder-v3-equipment-api</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
     </dependencies>

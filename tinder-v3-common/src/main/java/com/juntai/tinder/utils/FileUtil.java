@@ -90,7 +90,7 @@ public class FileUtil {
         try {
             file.createNewFile();
         } catch (IOException e) {
-            throw new SoulBootException(TinderErrorCode.FILE_CREATE_ERROR,e);
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR,e);
         }
     }
 
@@ -103,7 +103,7 @@ public class FileUtil {
     public static File multipartFileToFile(MultipartFile file) {
         File toFile = null;
         if (file == null) {
-            throw new SoulBootException(TinderErrorCode.FILE_EMPTY_ERROR);
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR);
         } else {
             try (InputStream ins = file.getInputStream()) {
                 String originalFilename = file.getOriginalFilename();
@@ -113,7 +113,7 @@ public class FileUtil {
                 toFile = new File(Objects.requireNonNull(originalFilename));
                 inputStreamToFile(ins, toFile);
             } catch (IOException e) {
-                throw new SoulBootException(TinderErrorCode.FILE_WRITE_ERROR,e);
+                throw new SoulBootException(TinderErrorCode.FILE_ERROR,e);
             }
         }
         return toFile;
@@ -133,7 +133,7 @@ public class FileUtil {
                 os.write(buffer, 0, bytesRead);
             }
         } catch (Exception e) {
-            throw new SoulBootException(TinderErrorCode.FILE_WRITE_ERROR,e);
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR,e);
         }
     }
 
@@ -336,7 +336,7 @@ public class FileUtil {
     public static Map<String, Object> upload(MultipartFile multipartFile) {
 
         if (multipartFile.isEmpty()) {
-            throw new SoulBootException(TinderErrorCode.FILE_EMPTY_ERROR);
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR);
         }
         String originalFilename = multipartFile.getOriginalFilename();
         String type = "";
@@ -357,7 +357,7 @@ public class FileUtil {
         } catch (IOException e) {
             log.error("文件存储失败", e);
             // 抛出自己的异常
-            throw new SoulBootException(TinderErrorCode.FILE_WRITE_ERROR,e);
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR,e);
         }
     }
 

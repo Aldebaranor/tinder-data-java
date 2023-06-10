@@ -1,24 +1,18 @@
 package com.juntai;
 
-import com.baomidou.mybatisplus.core.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.engine.VelocityTemplateEngine;
-import com.juntai.tinder.entity.Artillery;
-import com.juntai.tinder.entity.User;
-import com.juntai.tinder.entity.enums.GenderType;
-import com.juntai.tinder.entity.enums.UserType;
-import com.juntai.soulboot.util.JsonUtils;
+import com.juntai.tinder.Application;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Collections;
-import java.util.ResourceBundle;
 
 
 /**
@@ -31,37 +25,12 @@ import java.util.ResourceBundle;
 public class TestApplication {
 
     @Autowired
-    public RedisTemplate redisTemplate;
-    @Test
-    public void redisTest(){
+    public StringRedisTemplate StringRedisTemplate;
 
-        User user = new User();
-        user.setId(1L);
-        user.setName("cww");
-        user.setPassword("123456");
-        user.setType(UserType.ADMIN);
-        redisTemplate.opsForHash().put("test:cww:hash","001", JsonUtils.write(user));
-        String o = (String)redisTemplate.opsForHash().get("test:cww:hash", "001");
-        System.out.println(o);
-        User user1 = JsonUtils.read(o,User.class);
-        System.out.println(user1);
-
-        Artillery artillery = new Artillery();
-        artillery.setId("1");
-        artillery.setName("cww");
-        artillery.setCode("111");
-        redisTemplate.opsForHash().put("test:cww:hash","002", JsonUtils.write(artillery));
-        o = (String)redisTemplate.opsForHash().get("test:cww:hash", "002");
-        System.out.println(o);
-        Artillery artillery1 = JsonUtils.read(o,Artillery.class);
-        System.out.println(artillery1);
-
-        //redisTemplate.boundValueOps("test:cww").append("hello");
-    }
     @Test
     public void initMyBatis() {
         //创建一个代码生成器
-        FastAutoGenerator.create("jdbc:mysql://127.0.0.1:3306/rocket?serverTimezone=Asia/Shanghai&allowMultiQueries=true&autoReconnect=true&failOverReadOnly=false&useUnicode=true&characterEncoding=utf8",
+        FastAutoGenerator.create("jdbc:mysql://127.0.0.1:3306/tinder2?serverTimezone=Asia/Shanghai&allowMultiQueries=true&autoReconnect=true&failOverReadOnly=false&useUnicode=true&characterEncoding=utf8",
                         "root", "123456")
                 //全局配置(GlobalConfig)
                 .globalConfig(builder -> {
@@ -70,17 +39,17 @@ public class TestApplication {
                             .fileOverride() // 覆盖已生成文件
                             .dateType(DateType.TIME_PACK) //时间策略
                             .commentDate("yyyy-MM-dd") //注释日期
-                            .outputDir("/Users/nemo/work/project/tinder/tinder-rocket/tinder-rocket-starter/src/main/java"); // 指定输出目录，一般指定到java目录
+                            .outputDir("/Users/nemo/work/project/tinder/tinder-plus/tinder-v3-starter/src/main/java"); // 指定输出目录，一般指定到java目录
                 })
                 //包配置(PackageConfig)
                 .packageConfig(builder -> {
                     builder.parent("com.juntai") // 设置父包名
                             .moduleName("") // 设置父包模块名，这里一般不设置
-                            .pathInfo(Collections.singletonMap(OutputFile.xml, "/Users/nemo/work/project/tinder/tinder-rocket/tinder-rocket-starter/src/main/java/mapper")); // 设置mapperXml生成路径，这里是Mapper配置文件的路径，建议使用绝对路径
+                            .pathInfo(Collections.singletonMap(OutputFile.xml, "/Users/nemo/work/project/tinder/tinder-plus/tinder-v3-starter/src/main/java/mapper")); // 设置mapperXml生成路径，这里是Mapper配置文件的路径，建议使用绝对路径
                 })
                 //策略配置(StrategyConfig)
                 .strategyConfig(builder -> {
-                    builder.addInclude("t_notice") ; // 设置过滤表前缀
+                    builder.addFieldPrefix("meta_") ; // 设置过滤表前缀
                     builder.entityBuilder()
                             .enableLombok();
 

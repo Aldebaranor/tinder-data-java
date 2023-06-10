@@ -18,9 +18,20 @@ public enum TinderErrorCode implements ErrorCode {
     /**
      * org_code不合法
      */
-    FILE_EMPTY_ERROR(50001, "tinder.file_empty_error"),
-    FILE_WRITE_ERROR(50002, "tinder.file_write_error"),
-    FILE_CREATE_ERROR(50003, "tinder.file_create_error");
+    TINDER_COMMON_ERROR(10000, "tinder.common_error"),
+    FILE_ERROR(10001, "file_error"),
+
+    ETCD_ERROR(10101,"etcd_error"),
+    CACHE_ERROR(10102,"cache_error"),
+
+    SCENARIO_MONITOR_ERROR(10201,"scenario_monitor_error"),
+    SCENARIO_RUNTIME_ERROR(10202,"scenario_runtime_error"),
+    TINDER_EQUIPMENT_ERROR(10301,"tinder_equipment_error"),
+    TINDER_EQUIPMENT_TYPE_ERROR(10302,"tinder_equipmentType_error"),
+    TINDER_TASK_TYPE_ERROR(10303,"tinder_taskType_error"),
+
+
+    ;
 
 
 

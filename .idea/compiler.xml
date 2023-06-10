@@ -9,8 +9,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="tinder-v3-starter" />
         <module name="tinder-v3-common" />
+        <module name="tinder-v3-equipment-api" />
         <module name="tinder-v3-scenario-server" />
         <module name="tinder-v3-situation-server" />
+        <module name="tinder-v3-equipment-server" />
         <module name="tinder-v3-situation-api" />
         <module name="tinder-v3-scenario-api" />
         <module name="tinder-v3-message" />
