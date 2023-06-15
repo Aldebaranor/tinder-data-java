@@ -3,19 +3,17 @@ package com.juntai.tinder.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Map;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.juntai.tinder.entity.enums.CategoryType;
 import com.juntai.tinder.entity.enums.Country;
 import com.juntai.tinder.entity.enums.EquipmentKind;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -146,7 +144,6 @@ public class Equipment implements Serializable {
 
     @TableField(exist = false)
     private String equipmentTypeName;
-
 
 
 }

@@ -37,12 +37,11 @@ public class EventTempJob {
     @Autowired
     public EquipmentCache equipmentCache;
     @Autowired
+    public StringRedisTemplate redisTemplate;
+    @Autowired
     private SituationRedisManagement situationRedisManagement;
     @Autowired
     private ScenarioEventService scenarioEventService;
-
-    @Autowired
-    public StringRedisTemplate redisTemplate;
 
     @Scheduled(fixedDelayString = "200")
     public void eventTempTasks() throws InterruptedException {
@@ -55,11 +54,11 @@ public class EventTempJob {
                 String instId = tmp.getValue().getInstId();
                 Integer type = tmp.getValue().getType();
                 //非新增兵力的处理
-                if (!EventType.ARMY_ADD.getValue().equals(type) ) {
+                if (!EventType.ARMY_ADD.getValue().equals(type)) {
                     scenarioEventService.scenarioEvent(tmp.getValue());
                     continue;
                 }
-                String s = (String)redisTemplate.boundHashOps(String.format(Constants.SCENARIO_FORCES, simId)).get(instId);
+                String s = (String) redisTemplate.boundHashOps(String.format(Constants.SCENARIO_FORCES, simId)).get(instId);
 
                 if (StringUtils.isBlank(s)) {
                     tmp.getValue().setConsumptionTimes(tmp.getValue().getConsumptionTimes() + 1);
@@ -86,7 +85,7 @@ public class EventTempJob {
         List<SituationArmyData> sendList = new ArrayList<>();
         for (SituationTemEvent situationTemEvent : list) {
             String key = String.format(Constants.SCENARIO_FORCES, order);
-            String s = (String)redisTemplate.opsForHash().get(key, situationTemEvent.getInstId());
+            String s = (String) redisTemplate.opsForHash().get(key, situationTemEvent.getInstId());
             if (StringUtils.isBlank(s)) {
                 return;
             }

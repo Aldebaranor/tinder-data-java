@@ -1,5 +1,6 @@
 package com.juntai.tinder.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.juntai.tinder.entity.EquipmentDetail;
 import com.juntai.tinder.mapper.EquipmentDetailMapper;
 import com.juntai.tinder.service.EquipmentDetailService;
@@ -22,6 +23,7 @@ import java.util.UUID;
 public class EquipmentDetailServiceImpl implements EquipmentDetailService {
     @Autowired
     private EquipmentDetailMapper mapper;
+
     @Override
     @Transactional(readOnly = true)
     public EquipmentDetail getById(String id) {
@@ -55,5 +57,8 @@ public class EquipmentDetailServiceImpl implements EquipmentDetailService {
     @Override
     public void updateAttributeInfo(String id, String attributeInfo) {
 
+        LambdaUpdateWrapper<EquipmentDetail> wrapper = new LambdaUpdateWrapper<EquipmentDetail>().eq(EquipmentDetail::getId, id)
+                .set(EquipmentDetail::getAttributeInfo, attributeInfo);
+        mapper.update(null, wrapper);
     }
 }

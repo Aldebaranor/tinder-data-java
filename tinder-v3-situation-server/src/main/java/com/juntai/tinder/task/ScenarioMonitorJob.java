@@ -5,7 +5,7 @@ import com.juntai.soulboot.util.JsonUtils;
 import com.juntai.tinder.config.Constants;
 import com.juntai.tinder.config.MetaConfig;
 import com.juntai.tinder.exception.TinderErrorCode;
-import com.juntai.tinder.scenario.ScenarioResult;
+import com.juntai.tinder.model.ScenarioResult;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -29,13 +29,11 @@ import org.springframework.web.client.RestTemplate;
 public class ScenarioMonitorJob {
 
     @Autowired
+    public StringRedisTemplate StringRedisTemplate;
+    @Autowired
     private RestTemplate restTemplate;
-
     @Autowired
     private MetaConfig metaConfig;
-
-    @Autowired
-    public StringRedisTemplate StringRedisTemplate;
 
     @Scheduled(fixedDelayString = "5000")
     public void scenarioStatusTasks() throws InterruptedException {
@@ -43,18 +41,18 @@ public class ScenarioMonitorJob {
             String url = Constants.SCENARIO_MONITOR;
             ResponseEntity<ScenarioResult> response = restTemplate.getForEntity(metaConfig.getSimulationUrlHead() + url, ScenarioResult.class);
             if (response.getStatusCode() != HttpStatus.OK) {
-                throw new SoulBootException(TinderErrorCode.SCENARIO_MONITOR_ERROR,"请求想定监控失败,错误信息:" + response.getStatusCode());
+                throw new SoulBootException(TinderErrorCode.SCENARIO_MONITOR_ERROR, "请求想定监控失败,错误信息:" + response.getStatusCode());
             }
             ScenarioResult<String> result = response.getBody();
             if (result.getHasError()) {
-                throw new SoulBootException(TinderErrorCode.SCENARIO_MONITOR_ERROR,"请求想定监控失败,错误信息:" + result.getMessage());
+                throw new SoulBootException(TinderErrorCode.SCENARIO_MONITOR_ERROR, "请求想定监控失败,错误信息:" + result.getMessage());
             }
             String serialize = JsonUtils.write(result.getResult());
             if (!StringUtils.isBlank(serialize)) {
                 StringRedisTemplate.opsForValue().set(Constants.SITUATION_SCENARIO, serialize);
             }
         } catch (Exception ex) {
-            throw new SoulBootException(TinderErrorCode.SCENARIO_MONITOR_ERROR,"请求想定监控失败,错误信息:" + ex.getMessage());
+            throw new SoulBootException(TinderErrorCode.SCENARIO_MONITOR_ERROR, "请求想定监控失败,错误信息:" + ex.getMessage());
         }
 
     }

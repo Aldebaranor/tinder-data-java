@@ -22,4 +22,6 @@ public interface UserService {
     User insert(User user);
 
     User update(User user);
+
+    User getById(String id);
 }

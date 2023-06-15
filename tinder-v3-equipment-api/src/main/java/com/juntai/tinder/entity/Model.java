@@ -1,13 +1,13 @@
 package com.juntai.tinder.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
-
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import java.util.List;
 
 /**
  * <p>
@@ -84,4 +84,10 @@ public class Model implements Serializable {
      * 描述
      */
     private String description;
+
+    @TableField(exist = false)
+    private List<ModelRelation> relations;
+
+    @TableField(exist = false)
+    private String departmentName;
 }

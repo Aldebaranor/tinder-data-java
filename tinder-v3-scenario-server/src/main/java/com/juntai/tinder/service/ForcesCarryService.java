@@ -2,7 +2,6 @@ package com.juntai.tinder.service;
 
 import com.juntai.tinder.condition.ForcesCarryCondition;
 import com.juntai.tinder.entity.ForcesCarry;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.juntai.tinder.facade.ForcesCarryFacade;
 import com.juntai.tinder.model.ForcesLibraryUpdateModel;
 
@@ -10,7 +9,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author nemo
@@ -47,7 +46,7 @@ public interface ForcesCarryService extends ForcesCarryFacade {
      *
      * @param experimentId 试验ID
      * @param parentId     父兵力
-     * @param equipmentId    搭载兵力的装备信息
+     * @param equipmentId  搭载兵力的装备信息
      * @param modelId      模型ID
      * @param num          搭载数量
      * @return

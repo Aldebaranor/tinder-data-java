@@ -1,9 +1,11 @@
 package com.juntai.tinder.condition;
-;
+
 import com.juntai.soulboot.data.annotation.Eq;
 import lombok.Data;
 
 import java.io.Serializable;
+
+;
 
 /**
  * @Description:

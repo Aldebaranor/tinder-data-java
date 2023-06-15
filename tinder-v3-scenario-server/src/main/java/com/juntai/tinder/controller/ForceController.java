@@ -1,21 +1,22 @@
 package com.juntai.tinder.controller;
 
-import com.egova.exception.ExceptionUtils;
-import com.egova.web.annotation.Api;
-import com.soul.tinder.condition.ForcesCarryCondition;
-import com.soul.tinder.condition.ForcesCondition;
-import com.soul.tinder.entity.Forces;
-import com.soul.tinder.entity.ForcesCarry;
-import com.soul.tinder.entity.ForcesLibrary;
-import com.soul.tinder.facade.EquipmentTaskFacade;
-import com.soul.tinder.model.ForcesEntity;
-import com.soul.tinder.model.ForcesLibraryUpdateModel;
-import com.soul.tinder.model.ForcesUpdateModel;
-import com.soul.tinder.model.Point;
-import com.soul.tinder.service.ForcesCarryService;
-import com.soul.tinder.service.ForcesService;
+
+import com.juntai.soulboot.common.exception.SoulBootException;
+import com.juntai.soulboot.web.api.ApiResultWrap;
+import com.juntai.tinder.condition.ForcesCarryCondition;
+import com.juntai.tinder.condition.ForcesCondition;
+import com.juntai.tinder.entity.Forces;
+import com.juntai.tinder.entity.ForcesCarry;
+import com.juntai.tinder.entity.ForcesLibrary;
+import com.juntai.tinder.exception.TinderErrorCode;
+import com.juntai.tinder.facade.EquipmentTaskFacade;
+import com.juntai.tinder.model.ForcesEntity;
+import com.juntai.tinder.model.ForcesLibraryUpdateModel;
+import com.juntai.tinder.model.ForcesUpdateModel;
+import com.juntai.tinder.model.Point;
+import com.juntai.tinder.service.ForcesCarryService;
+import com.juntai.tinder.service.ForcesService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
@@ -29,9 +30,9 @@ import java.util.stream.Collectors;
  * @Author: nemo
  * @Date: 2022/3/22
  */
-@Slf4j
+@ApiResultWrap
 @RestController
-@RequestMapping("/unity/forces")
+@RequestMapping("/tinder/v3/forces")
 @RequiredArgsConstructor
 public class ForceController {
 
@@ -42,15 +43,13 @@ public class ForceController {
     private final EquipmentTaskFacade equipmentTaskService;
 
 
-
-
     /**
      * 主键获取
      *
      * @param id 主键
      * @return MapSetting
      */
-    @Api
+
     @GetMapping(value = "/{id}")
     public Forces getById(@PathVariable String id) {
         return forcesService.getById(id);
@@ -58,27 +57,27 @@ public class ForceController {
 
     /**
      * 根据Id查询搭载详细信息
+     *
      * @param id
      * @return
      */
-    @Api
+
     @GetMapping(value = "/{id}/carry")
     public ForcesCarry getCarryById(@PathVariable String id) {
         return forcesCarryService.getById(id);
     }
 
-    @Api
+
     @PostMapping(value = "/{id}/copy")
     public String copyById(@PathVariable String id, @RequestBody Point point) {
-        return forcesService.copyForces(id,null,point);
+        return forcesService.copyForces(id, null, point);
     }
 
-    @Api
+
     @GetMapping(value = "/{id}/copy")
     public String copyById(@PathVariable String id) {
-        return forcesService.copyForces(id,null,null);
+        return forcesService.copyForces(id, null, null);
     }
-
 
 
     /**
@@ -88,7 +87,7 @@ public class ForceController {
      * @param team         阵营
      * @return 格式与仿真输出的一致
      */
-    @Api
+
     @GetMapping(value = "/list")
     public List<String> list(@RequestParam(name = "experimentId") String experimentId,
                              @RequestParam(name = "team", required = false) String team) {
@@ -102,7 +101,7 @@ public class ForceController {
      * @param team
      * @return
      */
-    @Api
+
     @GetMapping(value = "/all")
     public List<Forces> getAll(@RequestParam(name = "experimentId") String experimentId,
                                @RequestParam(name = "team", required = false) String team) {
@@ -116,7 +115,7 @@ public class ForceController {
         return forcesService.list(condition);
     }
 
-    @Api
+
     @GetMapping(value = "/incapacity/list")
     public List<Forces> getIncapacity(@RequestParam(name = "experimentId") String experimentId) {
         ForcesCondition condition = new ForcesCondition();
@@ -124,12 +123,12 @@ public class ForceController {
 
         List<Forces> list = forcesService.list(condition);
         List<String> equipments = equipmentTaskService.containTask("0100");
-        if(CollectionUtils.isEmpty(equipments)){
+        if (CollectionUtils.isEmpty(equipments)) {
             return null;
         }
         return list.stream().filter(q -> equipments.contains(q.getEquipmentId())).collect(Collectors.toList());
     }
-    @Api
+
     @GetMapping(value = "/reconnection/list")
     public List<Forces> getReconnection(@RequestParam(name = "experimentId") String experimentId) {
         ForcesCondition condition = new ForcesCondition();
@@ -137,7 +136,7 @@ public class ForceController {
 
         List<Forces> list = forcesService.list(condition);
         List<String> equipments = equipmentTaskService.containTask("0101");
-        if(CollectionUtils.isEmpty(equipments)){
+        if (CollectionUtils.isEmpty(equipments)) {
             return null;
         }
         return list.stream().filter(q -> equipments.contains(q.getEquipmentId())).collect(Collectors.toList());
@@ -149,7 +148,7 @@ public class ForceController {
      * @param entity
      * @return
      */
-    @Api
+
     @PostMapping("/add")
     public String insertFromLibrary(@RequestBody ForcesLibrary entity) {
         return forcesService.addForcesFromLibrary(entity.getExperimentId(), entity.getTeam(), entity);
@@ -161,7 +160,7 @@ public class ForceController {
      *
      * @param entity
      */
-    @Api
+
     @PostMapping("add/carry/{belongId}")
     public void insertRelation(@PathVariable String belongId, @RequestBody ForcesEntity entity) {
         forcesCarryService.addForcesCarry(entity.getExperimentId(), belongId, entity.getEquipmentId(), entity.getModelId(), entity.getNum());
@@ -172,7 +171,7 @@ public class ForceController {
      *
      * @param model
      */
-    @Api
+
     @PostMapping(value = "/modify")
     public void update(@RequestBody ForcesUpdateModel model) {
         forcesService.update(model);
@@ -180,9 +179,10 @@ public class ForceController {
 
     /**
      * 刷新inputInfo
+     *
      * @param forceId
      */
-    @Api
+
     @GetMapping(value = "/flash/inputInfo/{forceId}")
     public void flashInput(@PathVariable String forceId) {
         forcesService.flashInput(forceId);
@@ -191,9 +191,10 @@ public class ForceController {
 
     /**
      * 修改兵力 只更新经纬度高度航向
+     *
      * @param model
      */
-    @Api
+
     @PostMapping(value = "/modify/parentId")
     public void updateIgnore(@RequestBody ForcesUpdateModel model) {
         forcesService.updateParentId(model);
@@ -204,19 +205,19 @@ public class ForceController {
      *
      * @param entity
      */
-    @Api
+
     @PostMapping("/modify/carry/{belongId}")
     public void updateRelation(@PathVariable String belongId, @RequestBody ForcesLibraryUpdateModel entity) {
         forcesCarryService.update(belongId, entity);
     }
 
-    @Api
+
     @PostMapping("modify/carry-list/{belongId}")
     public void updateRelation(@PathVariable String belongId, @RequestBody List<ForcesLibraryUpdateModel> list) {
         forcesCarryService.modifyList(belongId, list);
     }
 
-    @Api
+
     @PostMapping("save/carry-list")
     public void saveRelation(@RequestBody List<ForcesCarry> list) {
         forcesCarryService.save(list);
@@ -229,7 +230,7 @@ public class ForceController {
      * @param id
      * @return
      */
-    @Api
+
     @DeleteMapping(value = "/{id}")
     public int deleteById(@PathVariable String id) {
         return forcesService.deleteById(id);
@@ -241,14 +242,14 @@ public class ForceController {
      * @param id
      * @return
      */
-    @Api
+
     @DeleteMapping("{id}/carry/{belongId}")
     public int deleteRelationById(@PathVariable String belongId, @PathVariable String id) {
         if (StringUtils.isBlank(id)) {
-            throw ExceptionUtils.api("id 不能为空");
+            throw new SoulBootException(TinderErrorCode.TINDER_FORCES_ERROR, "id 不能为空");
         }
         if (StringUtils.isBlank(belongId)) {
-            throw ExceptionUtils.api("belongId 不能为空");
+            throw new SoulBootException(TinderErrorCode.TINDER_FORCES_ERROR, "belongId 不能为空");
         }
 
         ForcesCarryCondition condition = new ForcesCarryCondition();
@@ -256,7 +257,7 @@ public class ForceController {
         condition.setBelongId(belongId);
         boolean exists = forcesCarryService.exists(condition);
         if (!exists) {
-            throw ExceptionUtils.api("不存在该兵力");
+            throw new SoulBootException(TinderErrorCode.TINDER_FORCES_ERROR, "不存在该兵力");
         }
         return forcesCarryService.deleteById(id);
     }
@@ -268,7 +269,7 @@ public class ForceController {
      * @param experimentId
      * @return
      */
-    @Api
+
     @GetMapping(value = "/experimentId/{experimentId}")
     public List<Forces> seek(@PathVariable(name = "experimentId") String experimentId) {
         return forcesService.seekByExperiment(experimentId);
@@ -282,7 +283,7 @@ public class ForceController {
      * @param forcesId
      * @return
      */
-    @Api
+
     @GetMapping(value = "/list/carry")
     public List<ForcesCarry> getRelation(@RequestParam String experimentId, @RequestParam String forcesId) {
         return forcesCarryService.getByForcesId(forcesId, experimentId);

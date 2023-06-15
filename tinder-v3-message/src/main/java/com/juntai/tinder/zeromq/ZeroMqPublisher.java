@@ -57,7 +57,7 @@ public class ZeroMqPublisher {
 //        zmqSocket.setCurveSecretKey(zCert.getSecretKey());
 //        zmqSocket.setCurveServerKey(Z85.decode(serverKey));
         zmqSocket.bind(address);
-        log.info("ZeroMqPublisher start success："+address);
+        log.info("ZeroMqPublisher start success：" + address);
     }
 
     @PreDestroy

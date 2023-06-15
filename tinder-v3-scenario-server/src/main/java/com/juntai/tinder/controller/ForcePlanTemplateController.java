@@ -1,10 +1,9 @@
 package com.juntai.tinder.controller;
 
-import com.egova.web.annotation.Api;
-import com.soul.tinder.entity.ForcesPlanTemplate;
-import com.soul.tinder.service.ForcesPlanTemplateService;
+import com.juntai.soulboot.web.api.ApiResultWrap;
+import com.juntai.tinder.entity.ForcesPlanTemplate;
+import com.juntai.tinder.service.ForcesPlanTemplateService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,9 +14,9 @@ import java.util.List;
  * @Author: nemo
  * @Date: 2022/3/22
  */
-@Slf4j
+@ApiResultWrap
 @RestController
-@RequestMapping("/unity/forces-plan/template")
+@RequestMapping("/tinder/v3/forces-plan/template")
 @RequiredArgsConstructor
 public class ForcePlanTemplateController {
 
@@ -29,22 +28,22 @@ public class ForcePlanTemplateController {
      * @param id 主键
      * @return MapSetting
      */
-    @Api
+
     @GetMapping(value = "/{id}")
     public ForcesPlanTemplate getById(@PathVariable String id) {
         return forcesPlanService.getById(id);
     }
 
-    @Api
+
     @DeleteMapping(value = "/{id}")
     public int deleteById(@PathVariable String id) {
         return forcesPlanService.deleteById(id);
     }
 
-    @Api
+
     @GetMapping(value = "/forces")
     public List<ForcesPlanTemplate> queryByForcesId(@RequestParam(name = "experimentId") String experimentId,
-                                            @RequestParam(name = "team", required = false) String team
+                                                    @RequestParam(name = "team", required = false) String team
     ) {
         return forcesPlanService.queryByExperiment(experimentId, team);
     }
@@ -55,7 +54,7 @@ public class ForcePlanTemplateController {
      * @param forcesPlan 试验计划
      * @return 主键
      */
-    @Api
+
     @PostMapping
     public String insert(@RequestBody ForcesPlanTemplate forcesPlan) {
         return forcesPlanService.insert(forcesPlan);
@@ -66,7 +65,7 @@ public class ForcePlanTemplateController {
      *
      * @param forcesPlan 试验计划
      */
-    @Api
+
     @PutMapping
     public void update(@RequestBody ForcesPlanTemplate forcesPlan) {
         forcesPlanService.update(forcesPlan);

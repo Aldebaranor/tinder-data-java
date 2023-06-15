@@ -1,10 +1,7 @@
 package com.juntai.tinder.service;
 
 import com.juntai.tinder.entity.MapPoint;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.juntai.tinder.facade.MapPointFacade;
-
-import java.util.List;
 
 /**
  * <p>
@@ -15,13 +12,6 @@ import java.util.List;
  * @since 2023-06-07
  */
 public interface MapPointService extends MapPointFacade {
-    /**
-     * 根据pageCode查询
-     *
-     * @param pageCode 页面编码
-     * @return 模型中心点
-     */
-    List<MapPoint> getByPageCode(String pageCode);
 
     /**
      * 根据pageCode查询
@@ -29,7 +19,7 @@ public interface MapPointService extends MapPointFacade {
      * @param id
      * @return 模型中心点
      */
-    Boolean setDisabledById(String id);
+    int setDisabledById(String id);
 
 
     /**

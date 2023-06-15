@@ -2,8 +2,6 @@ package com.juntai.tinder.facade;
 
 import com.juntai.tinder.entity.EquipmentCarry;
 
-import java.util.List;
-
 /**
  * @Description:
  * @Author: nemo
@@ -19,7 +17,6 @@ public interface EquipmentCarryFacade {
      */
 
     EquipmentCarry getById(String id);
-
 
 
 }

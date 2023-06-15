@@ -13,19 +13,18 @@ import org.springframework.stereotype.Component;
 import java.time.Duration;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.ExecutionException;
 
 
 /**
-* @Description:
-* @Author: nemo
-* @Date: 2023/2/9
-*/
+ * @Description:
+ * @Author: nemo
+ * @Date: 2023/2/9
+ */
 @Component
 @Slf4j
 @RequiredArgsConstructor
 public class TaskTypeCache {
-    protected Cache<String, TaskType> cache =  Caffeine.newBuilder()
+    protected Cache<String, TaskType> cache = Caffeine.newBuilder()
             .maximumSize(10_000)
             .expireAfterWrite(Duration.ofMinutes(10))
             .build();

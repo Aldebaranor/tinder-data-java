@@ -4,10687 +4,11469 @@
 package com.juntai.tinder.protobuf.proto;
 
 public final class TinderProto {
-  private TinderProto() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_soul_tinder_protobuf_proto_InitSync_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_soul_tinder_protobuf_proto_InitSync_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_soul_tinder_protobuf_proto_NextStep_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_soul_tinder_protobuf_proto_NextStep_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_soul_tinder_protobuf_proto_NextStepSync_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_soul_tinder_protobuf_proto_NextStepSync_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_soul_tinder_protobuf_proto_SimEvent_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_soul_tinder_protobuf_proto_SimEvent_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_soul_tinder_protobuf_proto_ForceSummary_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_soul_tinder_protobuf_proto_ForceSummary_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_soul_tinder_protobuf_proto_ForceProperty_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_soul_tinder_protobuf_proto_ForceProperty_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_fieldAccessorTable;
+    private static com.google.protobuf.Descriptors.FileDescriptor
+            descriptor;
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface InitSyncOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.InitSync)
-      com.google.protobuf.MessageOrBuilder {
+    static {
+        String[] descriptorData = {
+                "\n\014tinder.proto\022\036com.soul.tinder.protobuf" +
+                        ".proto\"Y\n\010InitSync\022\016\n\006sim_id\030\001 \001(\r\022=\n\006fo" +
+                        "rces\030\002 \003(\0132-.com.soul.tinder.protobuf.pr" +
+                        "oto.ForceProperty\"/\n\010NextStep\022\020\n\010sim_tim" +
+                        "e\030\001 \001(\003\022\021\n\tstep_time\030\002 \001(\003\"o\n\014NextStepSy" +
+                        "nc\022\016\n\006sim_id\030\001 \001(\r\022\020\n\010sim_time\030\002 \001(\003\022=\n\006" +
+                        "forces\030\003 \003(\0132-.com.soul.tinder.protobuf." +
+                        "proto.ForceProperty\"0\n\016SimForceJoined\022\016\n" +
+                        "\006sim_id\030\001 \001(\r\022\016\n\006forces\030\002 \003(\r\"2\n\020SimForc" +
+                        "eResigned\022\016\n\006sim_id\030\001 \001(\r\022\016\n\006forces\030\002 \003(" +
+                        "\r\")\n\010SimEvent\022\016\n\006sim_id\030\001 \001(\r\022\r\n\005event\030\002" +
+                        " \001(\t\"\\\n\rScenarioEvent\022\r\n\005simId\030\001 \001(\t\022\014\n\004" +
+                        "time\030\002 \001(\003\022\016\n\006instId\030\003 \001(\t\022\020\n\010effectId\030\004" +
+                        " \001(\t\022\014\n\004type\030\005 \001(\005\"F\n\013ScenarioLog\022\r\n\005sim" +
+                        "Id\030\001 \001(\t\022\014\n\004team\030\002 \001(\t\022\014\n\004time\030\003 \001(\003\022\014\n\004" +
+                        "info\030\004 \001(\t\"(\n\014ForceSummary\022\n\n\002id\030\001 \001(\r\022\014" +
+                        "\n\004name\030\002 \001(\t\"\335\001\n\rForceProperty\022\020\n\010force_" +
+                        "id\030\001 \001(\r\022\025\n\rplatform_code\030\002 \001(\r\022\025\n\rplatf" +
+                        "orm_type\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\014\n\004team\030\005 \001" +
+                        "(\t\022\014\n\004life\030\006 \001(\001\022\013\n\003lon\030\007 \001(\001\022\013\n\003lat\030\010 \001" +
+                        "(\001\022\013\n\003alt\030\t \001(\001\022\017\n\007heading\030\n \001(\001\022\r\n\005pitc" +
+                        "h\030\013 \001(\001\022\014\n\004roll\030\014 \001(\001\022\r\n\005speed\030\r \001(\001\":\n\014" +
+                        "ScenarioTime\022\r\n\005simId\030\001 \001(\t\022\014\n\004time\030\002 \001(" +
+                        "\003\022\r\n\005ratio\030\003 \001(\001B-\n\036com.soul.tinder.prot" +
+                        "obuf.protoB\013TinderProtob\006proto3"
+        };
+        descriptor = com.google.protobuf.Descriptors.FileDescriptor
+                .internalBuildGeneratedFileFrom(descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[]{
+                        });
+        internal_static_com_soul_tinder_protobuf_proto_InitSync_descriptor =
+                getDescriptor().getMessageTypes().get(0);
+        internal_static_com_soul_tinder_protobuf_proto_InitSync_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_soul_tinder_protobuf_proto_InitSync_descriptor,
+                new String[]{"SimId", "Forces",});
+        internal_static_com_soul_tinder_protobuf_proto_NextStep_descriptor =
+                getDescriptor().getMessageTypes().get(1);
+        internal_static_com_soul_tinder_protobuf_proto_NextStep_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_soul_tinder_protobuf_proto_NextStep_descriptor,
+                new String[]{"SimTime", "StepTime",});
+        internal_static_com_soul_tinder_protobuf_proto_NextStepSync_descriptor =
+                getDescriptor().getMessageTypes().get(2);
+        internal_static_com_soul_tinder_protobuf_proto_NextStepSync_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_soul_tinder_protobuf_proto_NextStepSync_descriptor,
+                new String[]{"SimId", "SimTime", "Forces",});
+        internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_descriptor =
+                getDescriptor().getMessageTypes().get(3);
+        internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_descriptor,
+                new String[]{"SimId", "Forces",});
+        internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_descriptor =
+                getDescriptor().getMessageTypes().get(4);
+        internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_descriptor,
+                new String[]{"SimId", "Forces",});
+        internal_static_com_soul_tinder_protobuf_proto_SimEvent_descriptor =
+                getDescriptor().getMessageTypes().get(5);
+        internal_static_com_soul_tinder_protobuf_proto_SimEvent_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_soul_tinder_protobuf_proto_SimEvent_descriptor,
+                new String[]{"SimId", "Event",});
+        internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_descriptor =
+                getDescriptor().getMessageTypes().get(6);
+        internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_descriptor,
+                new String[]{"SimId", "Time", "InstId", "EffectId", "Type",});
+        internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_descriptor =
+                getDescriptor().getMessageTypes().get(7);
+        internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_descriptor,
+                new String[]{"SimId", "Team", "Time", "Info",});
+        internal_static_com_soul_tinder_protobuf_proto_ForceSummary_descriptor =
+                getDescriptor().getMessageTypes().get(8);
+        internal_static_com_soul_tinder_protobuf_proto_ForceSummary_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_soul_tinder_protobuf_proto_ForceSummary_descriptor,
+                new String[]{"Id", "Name",});
+        internal_static_com_soul_tinder_protobuf_proto_ForceProperty_descriptor =
+                getDescriptor().getMessageTypes().get(9);
+        internal_static_com_soul_tinder_protobuf_proto_ForceProperty_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_soul_tinder_protobuf_proto_ForceProperty_descriptor,
+                new String[]{"ForceId", "PlatformCode", "PlatformType", "Name", "Team", "Life", "Lon", "Lat", "Alt", "Heading", "Pitch", "Roll", "Speed",});
+        internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_descriptor =
+                getDescriptor().getMessageTypes().get(10);
+        internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_descriptor,
+                new String[]{"SimId", "Time", "Ratio",});
+    }
 
-    /**
-     * <pre>
-     * 推演任务id
-     * </pre>
-     *
-     * <code>uint32 sim_id = 1;</code>
-     * @return The simId.
-     */
-    int getSimId();
+    private TinderProto() {
+    }
 
-    /**
-     * <pre>
-     * 初始完成后场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-     */
-    java.util.List<ForceProperty>
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistryLite registry) {
+    }
+
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions(
+                (com.google.protobuf.ExtensionRegistryLite) registry);
+    }
+
+    public static com.google.protobuf.Descriptors.FileDescriptor
+    getDescriptor() {
+        return descriptor;
+    }
+    public interface InitSyncOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.InitSync)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         * 推演任务id
+         * </pre>
+         *
+         * <code>uint32 sim_id = 1;</code>
+         *
+         * @return The simId.
+         */
+        int getSimId();
+
+        /**
+         * <pre>
+         * 初始完成后场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+         */
+        java.util.List<ForceProperty>
         getForcesList();
-    /**
-     * <pre>
-     * 初始完成后场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-     */
-    ForceProperty getForces(int index);
-    /**
-     * <pre>
-     * 初始完成后场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-     */
-    int getForcesCount();
-    /**
-     * <pre>
-     * 初始完成后场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-     */
-    java.util.List<? extends ForcePropertyOrBuilder>
+
+        /**
+         * <pre>
+         * 初始完成后场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+         */
+        ForceProperty getForces(int index);
+
+        /**
+         * <pre>
+         * 初始完成后场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+         */
+        int getForcesCount();
+
+        /**
+         * <pre>
+         * 初始完成后场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+         */
+        java.util.List<? extends ForcePropertyOrBuilder>
         getForcesOrBuilderList();
-    /**
-     * <pre>
-     * 初始完成后场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-     */
-    ForcePropertyOrBuilder getForcesOrBuilder(
-        int index);
-  }
-  /**
-   * <pre>
-   * 初始同步
-   * </pre>
-   *
-   * Protobuf type {@code com.soul.tinder.protobuf.proto.InitSync}
-   */
-  public static final class InitSync extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.InitSync)
-      InitSyncOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use InitSync.newBuilder() to construct.
-    private InitSync(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
+
+        /**
+         * <pre>
+         * 初始完成后场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+         */
+        ForcePropertyOrBuilder getForcesOrBuilder(
+                int index);
     }
-    private InitSync() {
-      forces_ = java.util.Collections.emptyList();
+    public interface NextStepOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.NextStep)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         * 当前仿真时间：ms
+         * </pre>
+         *
+         * <code>int64 sim_time = 1;</code>
+         *
+         * @return The simTime.
+         */
+        long getSimTime();
+
+        /**
+         * <pre>
+         * 仿真步长时间: ms
+         * </pre>
+         *
+         * <code>int64 step_time = 2;</code>
+         *
+         * @return The stepTime.
+         */
+        long getStepTime();
+    }
+    public interface NextStepSyncOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.NextStepSync)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         * 推演任务id
+         * </pre>
+         *
+         * <code>uint32 sim_id = 1;</code>
+         *
+         * @return The simId.
+         */
+        int getSimId();
+
+        /**
+         * <pre>
+         * 同步时的仿真时间
+         * </pre>
+         *
+         * <code>int64 sim_time = 2;</code>
+         *
+         * @return The simTime.
+         */
+        long getSimTime();
+
+        /**
+         * <pre>
+         * 场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+         */
+        java.util.List<ForceProperty>
+        getForcesList();
+
+        /**
+         * <pre>
+         * 场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+         */
+        ForceProperty getForces(int index);
+
+        /**
+         * <pre>
+         * 场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+         */
+        int getForcesCount();
+
+        /**
+         * <pre>
+         * 场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+         */
+        java.util.List<? extends ForcePropertyOrBuilder>
+        getForcesOrBuilderList();
+
+        /**
+         * <pre>
+         * 场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+         */
+        ForcePropertyOrBuilder getForcesOrBuilder(
+                int index);
+    }
+    public interface SimForceJoinedOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.SimForceJoined)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         * 推演任务id
+         * </pre>
+         *
+         * <code>uint32 sim_id = 1;</code>
+         *
+         * @return The simId.
+         */
+        int getSimId();
+
+        /**
+         * <pre>
+         * 兵力id列表
+         * </pre>
+         *
+         * <code>repeated uint32 forces = 2;</code>
+         *
+         * @return A list containing the forces.
+         */
+        java.util.List<Integer> getForcesList();
+
+        /**
+         * <pre>
+         * 兵力id列表
+         * </pre>
+         *
+         * <code>repeated uint32 forces = 2;</code>
+         *
+         * @return The count of forces.
+         */
+        int getForcesCount();
+
+        /**
+         * <pre>
+         * 兵力id列表
+         * </pre>
+         *
+         * <code>repeated uint32 forces = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The forces at the given index.
+         */
+        int getForces(int index);
+    }
+    public interface SimForceResignedOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.SimForceResigned)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         * 推演任务id
+         * </pre>
+         *
+         * <code>uint32 sim_id = 1;</code>
+         *
+         * @return The simId.
+         */
+        int getSimId();
+
+        /**
+         * <pre>
+         * 兵力id列表
+         * </pre>
+         *
+         * <code>repeated uint32 forces = 2;</code>
+         *
+         * @return A list containing the forces.
+         */
+        java.util.List<Integer> getForcesList();
+
+        /**
+         * <pre>
+         * 兵力id列表
+         * </pre>
+         *
+         * <code>repeated uint32 forces = 2;</code>
+         *
+         * @return The count of forces.
+         */
+        int getForcesCount();
+
+        /**
+         * <pre>
+         * 兵力id列表
+         * </pre>
+         *
+         * <code>repeated uint32 forces = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The forces at the given index.
+         */
+        int getForces(int index);
+    }
+    public interface SimEventOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.SimEvent)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         * 推演任务id
+         * </pre>
+         *
+         * <code>uint32 sim_id = 1;</code>
+         *
+         * @return The simId.
+         */
+        int getSimId();
+
+        /**
+         * <pre>
+         * 事件内容
+         * </pre>
+         *
+         * <code>string event = 2;</code>
+         *
+         * @return The event.
+         */
+        String getEvent();
+
+        /**
+         * <pre>
+         * 事件内容
+         * </pre>
+         *
+         * <code>string event = 2;</code>
+         *
+         * @return The bytes for event.
+         */
+        com.google.protobuf.ByteString
+        getEventBytes();
+    }
+    public interface ScenarioEventOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.ScenarioEvent)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         * 订单号
+         * </pre>
+         *
+         * <code>string simId = 1;</code>
+         *
+         * @return The simId.
+         */
+        String getSimId();
+
+        /**
+         * <pre>
+         * 订单号
+         * </pre>
+         *
+         * <code>string simId = 1;</code>
+         *
+         * @return The bytes for simId.
+         */
+        com.google.protobuf.ByteString
+        getSimIdBytes();
+
+        /**
+         * <pre>
+         * 仿真时间
+         * </pre>
+         *
+         * <code>int64 time = 2;</code>
+         *
+         * @return The time.
+         */
+        long getTime();
+
+        /**
+         * <pre>
+         * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
+         * </pre>
+         *
+         * <code>string instId = 3;</code>
+         *
+         * @return The instId.
+         */
+        String getInstId();
+
+        /**
+         * <pre>
+         * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
+         * </pre>
+         *
+         * <code>string instId = 3;</code>
+         *
+         * @return The bytes for instId.
+         */
+        com.google.protobuf.ByteString
+        getInstIdBytes();
+
+        /**
+         * <pre>
+         * 特效id
+         * </pre>
+         *
+         * <code>string effectId = 4;</code>
+         *
+         * @return The effectId.
+         */
+        String getEffectId();
+
+        /**
+         * <pre>
+         * 特效id
+         * </pre>
+         *
+         * <code>string effectId = 4;</code>
+         *
+         * @return The bytes for effectId.
+         */
+        com.google.protobuf.ByteString
+        getEffectIdBytes();
+
+        /**
+         * <pre>
+         * 事件类型，详见协议
+         * </pre>
+         *
+         * <code>int32 type = 5;</code>
+         *
+         * @return The type.
+         */
+        int getType();
+    }
+    public interface ScenarioLogOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.ScenarioLog)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         * 仿真任务id
+         * </pre>
+         *
+         * <code>string simId = 1;</code>
+         *
+         * @return The simId.
+         */
+        String getSimId();
+
+        /**
+         * <pre>
+         * 仿真任务id
+         * </pre>
+         *
+         * <code>string simId = 1;</code>
+         *
+         * @return The bytes for simId.
+         */
+        com.google.protobuf.ByteString
+        getSimIdBytes();
+
+        /**
+         * <pre>
+         * 阵营
+         * </pre>
+         *
+         * <code>string team = 2;</code>
+         *
+         * @return The team.
+         */
+        String getTeam();
+
+        /**
+         * <pre>
+         * 阵营
+         * </pre>
+         *
+         * <code>string team = 2;</code>
+         *
+         * @return The bytes for team.
+         */
+        com.google.protobuf.ByteString
+        getTeamBytes();
+
+        /**
+         * <pre>
+         * 仿真时间（格式化后）
+         * </pre>
+         *
+         * <code>int64 time = 3;</code>
+         *
+         * @return The time.
+         */
+        long getTime();
+
+        /**
+         * <pre>
+         * 日志信息
+         * </pre>
+         *
+         * <code>string info = 4;</code>
+         *
+         * @return The info.
+         */
+        String getInfo();
+
+        /**
+         * <pre>
+         * 日志信息
+         * </pre>
+         *
+         * <code>string info = 4;</code>
+         *
+         * @return The bytes for info.
+         */
+        com.google.protobuf.ByteString
+        getInfoBytes();
+    }
+    public interface ForceSummaryOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.ForceSummary)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>uint32 id = 1;</code>
+         *
+         * @return The id.
+         */
+        int getId();
+
+        /**
+         * <code>string name = 2;</code>
+         *
+         * @return The name.
+         */
+        String getName();
+
+        /**
+         * <code>string name = 2;</code>
+         *
+         * @return The bytes for name.
+         */
+        com.google.protobuf.ByteString
+        getNameBytes();
+    }
+    public interface ForcePropertyOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.ForceProperty)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         * 兵力id
+         * </pre>
+         *
+         * <code>uint32 force_id = 1;</code>
+         *
+         * @return The forceId.
+         */
+        int getForceId();
+
+        /**
+         * <pre>
+         * 平台编号
+         * </pre>
+         *
+         * <code>uint32 platform_code = 2;</code>
+         *
+         * @return The platformCode.
+         */
+        int getPlatformCode();
+
+        /**
+         * <pre>
+         * 平台类型
+         * </pre>
+         *
+         * <code>string platform_type = 3;</code>
+         *
+         * @return The platformType.
+         */
+        String getPlatformType();
+
+        /**
+         * <pre>
+         * 平台类型
+         * </pre>
+         *
+         * <code>string platform_type = 3;</code>
+         *
+         * @return The bytes for platformType.
+         */
+        com.google.protobuf.ByteString
+        getPlatformTypeBytes();
+
+        /**
+         * <pre>
+         * 名称
+         * </pre>
+         *
+         * <code>string name = 4;</code>
+         *
+         * @return The name.
+         */
+        String getName();
+
+        /**
+         * <pre>
+         * 名称
+         * </pre>
+         *
+         * <code>string name = 4;</code>
+         *
+         * @return The bytes for name.
+         */
+        com.google.protobuf.ByteString
+        getNameBytes();
+
+        /**
+         * <pre>
+         * 阵营
+         * </pre>
+         *
+         * <code>string team = 5;</code>
+         *
+         * @return The team.
+         */
+        String getTeam();
+
+        /**
+         * <pre>
+         * 阵营
+         * </pre>
+         *
+         * <code>string team = 5;</code>
+         *
+         * @return The bytes for team.
+         */
+        com.google.protobuf.ByteString
+        getTeamBytes();
+
+        /**
+         * <pre>
+         * 生命值
+         * </pre>
+         *
+         * <code>double life = 6;</code>
+         *
+         * @return The life.
+         */
+        double getLife();
+
+        /**
+         * <pre>
+         * 经度
+         * </pre>
+         *
+         * <code>double lon = 7;</code>
+         *
+         * @return The lon.
+         */
+        double getLon();
+
+        /**
+         * <pre>
+         * 纬度
+         * </pre>
+         *
+         * <code>double lat = 8;</code>
+         *
+         * @return The lat.
+         */
+        double getLat();
+
+        /**
+         * <pre>
+         * 高度
+         * </pre>
+         *
+         * <code>double alt = 9;</code>
+         *
+         * @return The alt.
+         */
+        double getAlt();
+
+        /**
+         * <pre>
+         * 偏航角(北向东)
+         * </pre>
+         *
+         * <code>double heading = 10;</code>
+         *
+         * @return The heading.
+         */
+        double getHeading();
+
+        /**
+         * <pre>
+         * 俯仰角
+         * </pre>
+         *
+         * <code>double pitch = 11;</code>
+         *
+         * @return The pitch.
+         */
+        double getPitch();
+
+        /**
+         * <pre>
+         * 滚转角
+         * </pre>
+         *
+         * <code>double roll = 12;</code>
+         *
+         * @return The roll.
+         */
+        double getRoll();
+
+        /**
+         * <pre>
+         * 速度
+         * </pre>
+         *
+         * <code>double speed = 13;</code>
+         *
+         * @return The speed.
+         */
+        double getSpeed();
+    }
+    public interface ScenarioTimeOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.ScenarioTime)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <pre>
+         * 订单号
+         * </pre>
+         *
+         * <code>string simId = 1;</code>
+         *
+         * @return The simId.
+         */
+        String getSimId();
+
+        /**
+         * <pre>
+         * 订单号
+         * </pre>
+         *
+         * <code>string simId = 1;</code>
+         *
+         * @return The bytes for simId.
+         */
+        com.google.protobuf.ByteString
+        getSimIdBytes();
+
+        /**
+         * <pre>
+         * 推演时间
+         * </pre>
+         *
+         * <code>int64 time = 2;</code>
+         *
+         * @return The time.
+         */
+        long getTime();
+
+        /**
+         * <pre>
+         * 推演速度
+         * </pre>
+         *
+         * <code>double ratio = 3;</code>
+         *
+         * @return The ratio.
+         */
+        double getRatio();
     }
 
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new InitSync();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private InitSync(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              simId_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                forces_ = new java.util.ArrayList<ForceProperty>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              forces_.add(
-                  input.readMessage(ForceProperty.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          forces_ = java.util.Collections.unmodifiableList(forces_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_InitSync_descriptor;
-    }
-
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_InitSync_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              InitSync.class, Builder.class);
-    }
-
-    public static final int SIM_ID_FIELD_NUMBER = 1;
-    private int simId_;
-    /**
-     * <pre>
-     * 推演任务id
-     * </pre>
-     *
-     * <code>uint32 sim_id = 1;</code>
-     * @return The simId.
-     */
-    @Override
-    public int getSimId() {
-      return simId_;
-    }
-
-    public static final int FORCES_FIELD_NUMBER = 2;
-    private java.util.List<ForceProperty> forces_;
-    /**
-     * <pre>
-     * 初始完成后场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-     */
-    @Override
-    public java.util.List<ForceProperty> getForcesList() {
-      return forces_;
-    }
-    /**
-     * <pre>
-     * 初始完成后场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-     */
-    @Override
-    public java.util.List<? extends ForcePropertyOrBuilder>
-        getForcesOrBuilderList() {
-      return forces_;
-    }
-    /**
-     * <pre>
-     * 初始完成后场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-     */
-    @Override
-    public int getForcesCount() {
-      return forces_.size();
-    }
-    /**
-     * <pre>
-     * 初始完成后场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-     */
-    @Override
-    public ForceProperty getForces(int index) {
-      return forces_.get(index);
-    }
-    /**
-     * <pre>
-     * 初始完成后场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-     */
-    @Override
-    public ForcePropertyOrBuilder getForcesOrBuilder(
-        int index) {
-      return forces_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (simId_ != 0) {
-        output.writeUInt32(1, simId_);
-      }
-      for (int i = 0; i < forces_.size(); i++) {
-        output.writeMessage(2, forces_.get(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (simId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, simId_);
-      }
-      for (int i = 0; i < forces_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, forces_.get(i));
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof InitSync)) {
-        return super.equals(obj);
-      }
-      InitSync other = (InitSync) obj;
-
-      if (getSimId()
-          != other.getSimId()) return false;
-      if (!getForcesList()
-          .equals(other.getForcesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SIM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSimId();
-      if (getForcesCount() > 0) {
-        hash = (37 * hash) + FORCES_FIELD_NUMBER;
-        hash = (53 * hash) + getForcesList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static InitSync parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static InitSync parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static InitSync parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static InitSync parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static InitSync parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static InitSync parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static InitSync parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static InitSync parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static InitSync parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static InitSync parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static InitSync parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static InitSync parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(InitSync prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      * 初始同步
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.soul.tinder.protobuf.proto.InitSync}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.InitSync)
-        InitSyncOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_InitSync_descriptor;
-      }
-
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_InitSync_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                InitSync.class, Builder.class);
-      }
-
-      // Construct using com.soul.tinder.protobuf.proto.TinderProto.InitSync.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getForcesFieldBuilder();
-        }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        simId_ = 0;
-
-        if (forcesBuilder_ == null) {
-          forces_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          forcesBuilder_.clear();
-        }
-        return this;
-      }
-
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_InitSync_descriptor;
-      }
-
-      @Override
-      public InitSync getDefaultInstanceForType() {
-        return InitSync.getDefaultInstance();
-      }
-
-      @Override
-      public InitSync build() {
-        InitSync result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @Override
-      public InitSync buildPartial() {
-        InitSync result = new InitSync(this);
-        int from_bitField0_ = bitField0_;
-        result.simId_ = simId_;
-        if (forcesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            forces_ = java.util.Collections.unmodifiableList(forces_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.forces_ = forces_;
-        } else {
-          result.forces_ = forcesBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof InitSync) {
-          return mergeFrom((InitSync)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(InitSync other) {
-        if (other == InitSync.getDefaultInstance()) return this;
-        if (other.getSimId() != 0) {
-          setSimId(other.getSimId());
-        }
-        if (forcesBuilder_ == null) {
-          if (!other.forces_.isEmpty()) {
-            if (forces_.isEmpty()) {
-              forces_ = other.forces_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureForcesIsMutable();
-              forces_.addAll(other.forces_);
+    public static final class InitSync extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.InitSync)
+            InitSyncOrBuilder {
+        public static final int SIM_ID_FIELD_NUMBER = 1;
+        public static final int FORCES_FIELD_NUMBER = 2;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.InitSync)
+        private static final InitSync DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<InitSync>
+                PARSER = new com.google.protobuf.AbstractParser<InitSync>() {
+            @Override
+            public InitSync parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new InitSync(input, extensionRegistry);
             }
-            onChanged();
-          }
-        } else {
-          if (!other.forces_.isEmpty()) {
-            if (forcesBuilder_.isEmpty()) {
-              forcesBuilder_.dispose();
-              forcesBuilder_ = null;
-              forces_ = other.forces_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              forcesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getForcesFieldBuilder() : null;
-            } else {
-              forcesBuilder_.addAllMessages(other.forces_);
+        };
+
+        static {
+            DEFAULT_INSTANCE = new InitSync();
+        }
+
+        private int simId_;
+        private java.util.List<ForceProperty> forces_;
+        private byte memoizedIsInitialized = -1;
+        // Use InitSync.newBuilder() to construct.
+        private InitSync(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private InitSync() {
+            forces_ = java.util.Collections.emptyList();
+        }
+
+        private InitSync(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
             }
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
 
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        InitSync parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (InitSync) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private int simId_ ;
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @return The simId.
-       */
-      @Override
-      public int getSimId() {
-        return simId_;
-      }
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @param value The simId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSimId(int value) {
-        
-        simId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSimId() {
-        
-        simId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<ForceProperty> forces_ =
-        java.util.Collections.emptyList();
-      private void ensureForcesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          forces_ = new java.util.ArrayList<ForceProperty>(forces_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          ForceProperty, ForceProperty.Builder, ForcePropertyOrBuilder> forcesBuilder_;
-
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public java.util.List<ForceProperty> getForcesList() {
-        if (forcesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(forces_);
-        } else {
-          return forcesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public int getForcesCount() {
-        if (forcesBuilder_ == null) {
-          return forces_.size();
-        } else {
-          return forcesBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public ForceProperty getForces(int index) {
-        if (forcesBuilder_ == null) {
-          return forces_.get(index);
-        } else {
-          return forcesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public Builder setForces(
-          int index, ForceProperty value) {
-        if (forcesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureForcesIsMutable();
-          forces_.set(index, value);
-          onChanged();
-        } else {
-          forcesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public Builder setForces(
-          int index, ForceProperty.Builder builderForValue) {
-        if (forcesBuilder_ == null) {
-          ensureForcesIsMutable();
-          forces_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          forcesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public Builder addForces(ForceProperty value) {
-        if (forcesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureForcesIsMutable();
-          forces_.add(value);
-          onChanged();
-        } else {
-          forcesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public Builder addForces(
-          int index, ForceProperty value) {
-        if (forcesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureForcesIsMutable();
-          forces_.add(index, value);
-          onChanged();
-        } else {
-          forcesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public Builder addForces(
-          ForceProperty.Builder builderForValue) {
-        if (forcesBuilder_ == null) {
-          ensureForcesIsMutable();
-          forces_.add(builderForValue.build());
-          onChanged();
-        } else {
-          forcesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public Builder addForces(
-          int index, ForceProperty.Builder builderForValue) {
-        if (forcesBuilder_ == null) {
-          ensureForcesIsMutable();
-          forces_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          forcesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public Builder addAllForces(
-          Iterable<? extends ForceProperty> values) {
-        if (forcesBuilder_ == null) {
-          ensureForcesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, forces_);
-          onChanged();
-        } else {
-          forcesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public Builder clearForces() {
-        if (forcesBuilder_ == null) {
-          forces_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          forcesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public Builder removeForces(int index) {
-        if (forcesBuilder_ == null) {
-          ensureForcesIsMutable();
-          forces_.remove(index);
-          onChanged();
-        } else {
-          forcesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public ForceProperty.Builder getForcesBuilder(
-          int index) {
-        return getForcesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public ForcePropertyOrBuilder getForcesOrBuilder(
-          int index) {
-        if (forcesBuilder_ == null) {
-          return forces_.get(index);  } else {
-          return forcesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public java.util.List<? extends ForcePropertyOrBuilder>
-           getForcesOrBuilderList() {
-        if (forcesBuilder_ != null) {
-          return forcesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(forces_);
-        }
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public ForceProperty.Builder addForcesBuilder() {
-        return getForcesFieldBuilder().addBuilder(
-            ForceProperty.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public ForceProperty.Builder addForcesBuilder(
-          int index) {
-        return getForcesFieldBuilder().addBuilder(
-            index, ForceProperty.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * 初始完成后场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
-       */
-      public java.util.List<ForceProperty.Builder>
-           getForcesBuilderList() {
-        return getForcesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          ForceProperty, ForceProperty.Builder, ForcePropertyOrBuilder>
-          getForcesFieldBuilder() {
-        if (forcesBuilder_ == null) {
-          forcesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              ForceProperty, ForceProperty.Builder, ForcePropertyOrBuilder>(
-                  forces_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          forces_ = null;
-        }
-        return forcesBuilder_;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.InitSync)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.InitSync)
-    private static final InitSync DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new InitSync();
-    }
-
-    public static InitSync getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<InitSync>
-        PARSER = new com.google.protobuf.AbstractParser<InitSync>() {
-      @Override
-      public InitSync parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InitSync(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<InitSync> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<InitSync> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public InitSync getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface NextStepOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.NextStep)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * 当前仿真时间：ms
-     * </pre>
-     *
-     * <code>int64 sim_time = 1;</code>
-     * @return The simTime.
-     */
-    long getSimTime();
-
-    /**
-     * <pre>
-     * 仿真步长时间: ms
-     * </pre>
-     *
-     * <code>int64 step_time = 2;</code>
-     * @return The stepTime.
-     */
-    long getStepTime();
-  }
-  /**
-   * <pre>
-   * 推动任务节点计算
-   * </pre>
-   *
-   * Protobuf type {@code com.soul.tinder.protobuf.proto.NextStep}
-   */
-  public static final class NextStep extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.NextStep)
-      NextStepOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use NextStep.newBuilder() to construct.
-    private NextStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private NextStep() {
-    }
-
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new NextStep();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private NextStep(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              simTime_ = input.readInt64();
-              break;
+                            simId_ = input.readUInt32();
+                            break;
+                        }
+                        case 18: {
+                            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                forces_ = new java.util.ArrayList<ForceProperty>();
+                                mutable_bitField0_ |= 0x00000001;
+                            }
+                            forces_.add(
+                                    input.readMessage(ForceProperty.parser(), extensionRegistry));
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                    forces_ = java.util.Collections.unmodifiableList(forces_);
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
             }
-            case 16: {
-
-              stepTime_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStep_descriptor;
-    }
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_InitSync_descriptor;
+        }
 
-    @Override
-    protected FieldAccessorTable
+        public static InitSync parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static InitSync parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static InitSync parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static InitSync parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static InitSync parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static InitSync parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static InitSync parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static InitSync parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static InitSync parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static InitSync parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static InitSync parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static InitSync parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(InitSync prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static InitSync getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<InitSync> parser() {
+            return PARSER;
+        }
+
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new InitSync();
+        }
+
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @Override
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStep_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              NextStep.class, Builder.class);
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_InitSync_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            InitSync.class, Builder.class);
+        }
+
+        /**
+         * <pre>
+         * 推演任务id
+         * </pre>
+         *
+         * <code>uint32 sim_id = 1;</code>
+         *
+         * @return The simId.
+         */
+        @Override
+        public int getSimId() {
+            return simId_;
+        }
+
+        /**
+         * <pre>
+         * 初始完成后场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+         */
+        @Override
+        public java.util.List<ForceProperty> getForcesList() {
+            return forces_;
+        }
+
+        /**
+         * <pre>
+         * 初始完成后场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+         */
+        @Override
+        public java.util.List<? extends ForcePropertyOrBuilder>
+        getForcesOrBuilderList() {
+            return forces_;
+        }
+
+        /**
+         * <pre>
+         * 初始完成后场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+         */
+        @Override
+        public int getForcesCount() {
+            return forces_.size();
+        }
+
+        /**
+         * <pre>
+         * 初始完成后场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+         */
+        @Override
+        public ForceProperty getForces(int index) {
+            return forces_.get(index);
+        }
+
+        /**
+         * <pre>
+         * 初始完成后场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+         */
+        @Override
+        public ForcePropertyOrBuilder getForcesOrBuilder(
+                int index) {
+            return forces_.get(index);
+        }
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (simId_ != 0) {
+                output.writeUInt32(1, simId_);
+            }
+            for (int i = 0; i < forces_.size(); i++) {
+                output.writeMessage(2, forces_.get(i));
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (simId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeUInt32Size(1, simId_);
+            }
+            for (int i = 0; i < forces_.size(); i++) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(2, forces_.get(i));
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof InitSync)) {
+                return super.equals(obj);
+            }
+            InitSync other = (InitSync) obj;
+
+            if (getSimId()
+                    != other.getSimId()) return false;
+            if (!getForcesList()
+                    .equals(other.getForcesList())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + SIM_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getSimId();
+            if (getForcesCount() > 0) {
+                hash = (37 * hash) + FORCES_FIELD_NUMBER;
+                hash = (53 * hash) + getForcesList().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<InitSync> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public InitSync getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * <pre>
+         * 初始同步
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.soul.tinder.protobuf.proto.InitSync}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.InitSync)
+                InitSyncOrBuilder {
+            private int bitField0_;
+            private int simId_;
+            private java.util.List<ForceProperty> forces_ =
+                    java.util.Collections.emptyList();
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    ForceProperty, ForceProperty.Builder, ForcePropertyOrBuilder> forcesBuilder_;
+
+            // Construct using com.soul.tinder.protobuf.proto.TinderProto.InitSync.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_InitSync_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_InitSync_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                InitSync.class, Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                    getForcesFieldBuilder();
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                simId_ = 0;
+
+                if (forcesBuilder_ == null) {
+                    forces_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                    forcesBuilder_.clear();
+                }
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_InitSync_descriptor;
+            }
+
+            @Override
+            public InitSync getDefaultInstanceForType() {
+                return InitSync.getDefaultInstance();
+            }
+
+            @Override
+            public InitSync build() {
+                InitSync result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public InitSync buildPartial() {
+                InitSync result = new InitSync(this);
+                int from_bitField0_ = bitField0_;
+                result.simId_ = simId_;
+                if (forcesBuilder_ == null) {
+                    if (((bitField0_ & 0x00000001) != 0)) {
+                        forces_ = java.util.Collections.unmodifiableList(forces_);
+                        bitField0_ = (bitField0_ & ~0x00000001);
+                    }
+                    result.forces_ = forces_;
+                } else {
+                    result.forces_ = forcesBuilder_.build();
+                }
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof InitSync) {
+                    return mergeFrom((InitSync) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(InitSync other) {
+                if (other == InitSync.getDefaultInstance()) return this;
+                if (other.getSimId() != 0) {
+                    setSimId(other.getSimId());
+                }
+                if (forcesBuilder_ == null) {
+                    if (!other.forces_.isEmpty()) {
+                        if (forces_.isEmpty()) {
+                            forces_ = other.forces_;
+                            bitField0_ = (bitField0_ & ~0x00000001);
+                        } else {
+                            ensureForcesIsMutable();
+                            forces_.addAll(other.forces_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.forces_.isEmpty()) {
+                        if (forcesBuilder_.isEmpty()) {
+                            forcesBuilder_.dispose();
+                            forcesBuilder_ = null;
+                            forces_ = other.forces_;
+                            bitField0_ = (bitField0_ & ~0x00000001);
+                            forcesBuilder_ =
+                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                                            getForcesFieldBuilder() : null;
+                        } else {
+                            forcesBuilder_.addAllMessages(other.forces_);
+                        }
+                    }
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                InitSync parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (InitSync) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @return The simId.
+             */
+            @Override
+            public int getSimId() {
+                return simId_;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @param value The simId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSimId(int value) {
+
+                simId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSimId() {
+
+                simId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private void ensureForcesIsMutable() {
+                if (!((bitField0_ & 0x00000001) != 0)) {
+                    forces_ = new java.util.ArrayList<ForceProperty>(forces_);
+                    bitField0_ |= 0x00000001;
+                }
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public java.util.List<ForceProperty> getForcesList() {
+                if (forcesBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(forces_);
+                } else {
+                    return forcesBuilder_.getMessageList();
+                }
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public int getForcesCount() {
+                if (forcesBuilder_ == null) {
+                    return forces_.size();
+                } else {
+                    return forcesBuilder_.getCount();
+                }
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public ForceProperty getForces(int index) {
+                if (forcesBuilder_ == null) {
+                    return forces_.get(index);
+                } else {
+                    return forcesBuilder_.getMessage(index);
+                }
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public Builder setForces(
+                    int index, ForceProperty value) {
+                if (forcesBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureForcesIsMutable();
+                    forces_.set(index, value);
+                    onChanged();
+                } else {
+                    forcesBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public Builder setForces(
+                    int index, ForceProperty.Builder builderForValue) {
+                if (forcesBuilder_ == null) {
+                    ensureForcesIsMutable();
+                    forces_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    forcesBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public Builder addForces(ForceProperty value) {
+                if (forcesBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureForcesIsMutable();
+                    forces_.add(value);
+                    onChanged();
+                } else {
+                    forcesBuilder_.addMessage(value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public Builder addForces(
+                    int index, ForceProperty value) {
+                if (forcesBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureForcesIsMutable();
+                    forces_.add(index, value);
+                    onChanged();
+                } else {
+                    forcesBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public Builder addForces(
+                    ForceProperty.Builder builderForValue) {
+                if (forcesBuilder_ == null) {
+                    ensureForcesIsMutable();
+                    forces_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    forcesBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public Builder addForces(
+                    int index, ForceProperty.Builder builderForValue) {
+                if (forcesBuilder_ == null) {
+                    ensureForcesIsMutable();
+                    forces_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    forcesBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public Builder addAllForces(
+                    Iterable<? extends ForceProperty> values) {
+                if (forcesBuilder_ == null) {
+                    ensureForcesIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                            values, forces_);
+                    onChanged();
+                } else {
+                    forcesBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public Builder clearForces() {
+                if (forcesBuilder_ == null) {
+                    forces_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                    onChanged();
+                } else {
+                    forcesBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public Builder removeForces(int index) {
+                if (forcesBuilder_ == null) {
+                    ensureForcesIsMutable();
+                    forces_.remove(index);
+                    onChanged();
+                } else {
+                    forcesBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public ForceProperty.Builder getForcesBuilder(
+                    int index) {
+                return getForcesFieldBuilder().getBuilder(index);
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public ForcePropertyOrBuilder getForcesOrBuilder(
+                    int index) {
+                if (forcesBuilder_ == null) {
+                    return forces_.get(index);
+                } else {
+                    return forcesBuilder_.getMessageOrBuilder(index);
+                }
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public java.util.List<? extends ForcePropertyOrBuilder>
+            getForcesOrBuilderList() {
+                if (forcesBuilder_ != null) {
+                    return forcesBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(forces_);
+                }
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public ForceProperty.Builder addForcesBuilder() {
+                return getForcesFieldBuilder().addBuilder(
+                        ForceProperty.getDefaultInstance());
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public ForceProperty.Builder addForcesBuilder(
+                    int index) {
+                return getForcesFieldBuilder().addBuilder(
+                        index, ForceProperty.getDefaultInstance());
+            }
+
+            /**
+             * <pre>
+             * 初始完成后场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 2;</code>
+             */
+            public java.util.List<ForceProperty.Builder>
+            getForcesBuilderList() {
+                return getForcesFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    ForceProperty, ForceProperty.Builder, ForcePropertyOrBuilder>
+            getForcesFieldBuilder() {
+                if (forcesBuilder_ == null) {
+                    forcesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                            ForceProperty, ForceProperty.Builder, ForcePropertyOrBuilder>(
+                            forces_,
+                            ((bitField0_ & 0x00000001) != 0),
+                            getParentForChildren(),
+                            isClean());
+                    forces_ = null;
+                }
+                return forcesBuilder_;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.InitSync)
+        }
+
     }
 
-    public static final int SIM_TIME_FIELD_NUMBER = 1;
-    private long simTime_;
-    /**
-     * <pre>
-     * 当前仿真时间：ms
-     * </pre>
-     *
-     * <code>int64 sim_time = 1;</code>
-     * @return The simTime.
-     */
-    @Override
-    public long getSimTime() {
-      return simTime_;
-    }
-
-    public static final int STEP_TIME_FIELD_NUMBER = 2;
-    private long stepTime_;
-    /**
-     * <pre>
-     * 仿真步长时间: ms
-     * </pre>
-     *
-     * <code>int64 step_time = 2;</code>
-     * @return The stepTime.
-     */
-    @Override
-    public long getStepTime() {
-      return stepTime_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (simTime_ != 0L) {
-        output.writeInt64(1, simTime_);
-      }
-      if (stepTime_ != 0L) {
-        output.writeInt64(2, stepTime_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (simTime_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, simTime_);
-      }
-      if (stepTime_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, stepTime_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof NextStep)) {
-        return super.equals(obj);
-      }
-      NextStep other = (NextStep) obj;
-
-      if (getSimTime()
-          != other.getSimTime()) return false;
-      if (getStepTime()
-          != other.getStepTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SIM_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getSimTime());
-      hash = (37 * hash) + STEP_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getStepTime());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static NextStep parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static NextStep parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static NextStep parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static NextStep parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static NextStep parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static NextStep parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static NextStep parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static NextStep parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static NextStep parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static NextStep parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static NextStep parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static NextStep parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(NextStep prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      * 推动任务节点计算
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.soul.tinder.protobuf.proto.NextStep}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.NextStep)
-        NextStepOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStep_descriptor;
-      }
-
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStep_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                NextStep.class, Builder.class);
-      }
-
-      // Construct using com.soul.tinder.protobuf.proto.TinderProto.NextStep.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        simTime_ = 0L;
-
-        stepTime_ = 0L;
-
-        return this;
-      }
-
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStep_descriptor;
-      }
-
-      @Override
-      public NextStep getDefaultInstanceForType() {
-        return NextStep.getDefaultInstance();
-      }
-
-      @Override
-      public NextStep build() {
-        NextStep result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @Override
-      public NextStep buildPartial() {
-        NextStep result = new NextStep(this);
-        result.simTime_ = simTime_;
-        result.stepTime_ = stepTime_;
-        onBuilt();
-        return result;
-      }
-
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof NextStep) {
-          return mergeFrom((NextStep)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(NextStep other) {
-        if (other == NextStep.getDefaultInstance()) return this;
-        if (other.getSimTime() != 0L) {
-          setSimTime(other.getSimTime());
-        }
-        if (other.getStepTime() != 0L) {
-          setStepTime(other.getStepTime());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        NextStep parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (NextStep) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long simTime_ ;
-      /**
-       * <pre>
-       * 当前仿真时间：ms
-       * </pre>
-       *
-       * <code>int64 sim_time = 1;</code>
-       * @return The simTime.
-       */
-      @Override
-      public long getSimTime() {
-        return simTime_;
-      }
-      /**
-       * <pre>
-       * 当前仿真时间：ms
-       * </pre>
-       *
-       * <code>int64 sim_time = 1;</code>
-       * @param value The simTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSimTime(long value) {
-        
-        simTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 当前仿真时间：ms
-       * </pre>
-       *
-       * <code>int64 sim_time = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSimTime() {
-        
-        simTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long stepTime_ ;
-      /**
-       * <pre>
-       * 仿真步长时间: ms
-       * </pre>
-       *
-       * <code>int64 step_time = 2;</code>
-       * @return The stepTime.
-       */
-      @Override
-      public long getStepTime() {
-        return stepTime_;
-      }
-      /**
-       * <pre>
-       * 仿真步长时间: ms
-       * </pre>
-       *
-       * <code>int64 step_time = 2;</code>
-       * @param value The stepTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStepTime(long value) {
-        
-        stepTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 仿真步长时间: ms
-       * </pre>
-       *
-       * <code>int64 step_time = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStepTime() {
-        
-        stepTime_ = 0L;
-        onChanged();
-        return this;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.NextStep)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.NextStep)
-    private static final NextStep DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new NextStep();
-    }
-
-    public static NextStep getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<NextStep>
-        PARSER = new com.google.protobuf.AbstractParser<NextStep>() {
-      @Override
-      public NextStep parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new NextStep(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<NextStep> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<NextStep> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public NextStep getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface NextStepSyncOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.NextStepSync)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * 推演任务id
-     * </pre>
-     *
-     * <code>uint32 sim_id = 1;</code>
-     * @return The simId.
-     */
-    int getSimId();
-
-    /**
-     * <pre>
-     * 同步时的仿真时间
-     * </pre>
-     *
-     * <code>int64 sim_time = 2;</code>
-     * @return The simTime.
-     */
-    long getSimTime();
-
-    /**
-     * <pre>
-     * 场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-     */
-    java.util.List<ForceProperty>
-        getForcesList();
-    /**
-     * <pre>
-     * 场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-     */
-    ForceProperty getForces(int index);
-    /**
-     * <pre>
-     * 场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-     */
-    int getForcesCount();
-    /**
-     * <pre>
-     * 场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-     */
-    java.util.List<? extends ForcePropertyOrBuilder>
-        getForcesOrBuilderList();
-    /**
-     * <pre>
-     * 场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-     */
-    ForcePropertyOrBuilder getForcesOrBuilder(
-        int index);
-  }
-  /**
-   * <pre>
-   * 单步计算完成后同步
-   * </pre>
-   *
-   * Protobuf type {@code com.soul.tinder.protobuf.proto.NextStepSync}
-   */
-  public static final class NextStepSync extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.NextStepSync)
-      NextStepSyncOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use NextStepSync.newBuilder() to construct.
-    private NextStepSync(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private NextStepSync() {
-      forces_ = java.util.Collections.emptyList();
-    }
-
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new NextStepSync();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private NextStepSync(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              simId_ = input.readUInt32();
-              break;
+    public static final class NextStep extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.NextStep)
+            NextStepOrBuilder {
+        public static final int SIM_TIME_FIELD_NUMBER = 1;
+        public static final int STEP_TIME_FIELD_NUMBER = 2;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.NextStep)
+        private static final NextStep DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<NextStep>
+                PARSER = new com.google.protobuf.AbstractParser<NextStep>() {
+            @Override
+            public NextStep parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new NextStep(input, extensionRegistry);
             }
-            case 16: {
+        };
 
-              simTime_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                forces_ = new java.util.ArrayList<ForceProperty>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              forces_.add(
-                  input.readMessage(ForceProperty.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
+        static {
+            DEFAULT_INSTANCE = new NextStep();
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          forces_ = java.util.Collections.unmodifiableList(forces_);
+
+        private long simTime_;
+        private long stepTime_;
+        private byte memoizedIsInitialized = -1;
+        // Use NextStep.newBuilder() to construct.
+        private NextStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        private NextStep() {
+        }
+
+        private NextStep(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
+
+                            simTime_ = input.readInt64();
+                            break;
+                        }
+                        case 16: {
+
+                            stepTime_ = input.readInt64();
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStepSync_descriptor;
-    }
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStep_descriptor;
+        }
 
-    @Override
-    protected FieldAccessorTable
+        public static NextStep parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static NextStep parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static NextStep parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static NextStep parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static NextStep parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static NextStep parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static NextStep parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static NextStep parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static NextStep parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static NextStep parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static NextStep parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static NextStep parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(NextStep prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static NextStep getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<NextStep> parser() {
+            return PARSER;
+        }
+
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new NextStep();
+        }
+
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @Override
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStepSync_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              NextStepSync.class, Builder.class);
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStep_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            NextStep.class, Builder.class);
+        }
+
+        /**
+         * <pre>
+         * 当前仿真时间：ms
+         * </pre>
+         *
+         * <code>int64 sim_time = 1;</code>
+         *
+         * @return The simTime.
+         */
+        @Override
+        public long getSimTime() {
+            return simTime_;
+        }
+
+        /**
+         * <pre>
+         * 仿真步长时间: ms
+         * </pre>
+         *
+         * <code>int64 step_time = 2;</code>
+         *
+         * @return The stepTime.
+         */
+        @Override
+        public long getStepTime() {
+            return stepTime_;
+        }
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (simTime_ != 0L) {
+                output.writeInt64(1, simTime_);
+            }
+            if (stepTime_ != 0L) {
+                output.writeInt64(2, stepTime_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (simTime_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(1, simTime_);
+            }
+            if (stepTime_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(2, stepTime_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof NextStep)) {
+                return super.equals(obj);
+            }
+            NextStep other = (NextStep) obj;
+
+            if (getSimTime()
+                    != other.getSimTime()) return false;
+            if (getStepTime()
+                    != other.getStepTime()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + SIM_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    getSimTime());
+            hash = (37 * hash) + STEP_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    getStepTime());
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<NextStep> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public NextStep getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * <pre>
+         * 推动任务节点计算
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.soul.tinder.protobuf.proto.NextStep}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.NextStep)
+                NextStepOrBuilder {
+            private long simTime_;
+            private long stepTime_;
+
+            // Construct using com.soul.tinder.protobuf.proto.TinderProto.NextStep.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStep_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStep_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                NextStep.class, Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                simTime_ = 0L;
+
+                stepTime_ = 0L;
+
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStep_descriptor;
+            }
+
+            @Override
+            public NextStep getDefaultInstanceForType() {
+                return NextStep.getDefaultInstance();
+            }
+
+            @Override
+            public NextStep build() {
+                NextStep result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public NextStep buildPartial() {
+                NextStep result = new NextStep(this);
+                result.simTime_ = simTime_;
+                result.stepTime_ = stepTime_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof NextStep) {
+                    return mergeFrom((NextStep) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(NextStep other) {
+                if (other == NextStep.getDefaultInstance()) return this;
+                if (other.getSimTime() != 0L) {
+                    setSimTime(other.getSimTime());
+                }
+                if (other.getStepTime() != 0L) {
+                    setStepTime(other.getStepTime());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                NextStep parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (NextStep) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 当前仿真时间：ms
+             * </pre>
+             *
+             * <code>int64 sim_time = 1;</code>
+             *
+             * @return The simTime.
+             */
+            @Override
+            public long getSimTime() {
+                return simTime_;
+            }
+
+            /**
+             * <pre>
+             * 当前仿真时间：ms
+             * </pre>
+             *
+             * <code>int64 sim_time = 1;</code>
+             *
+             * @param value The simTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSimTime(long value) {
+
+                simTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 当前仿真时间：ms
+             * </pre>
+             *
+             * <code>int64 sim_time = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSimTime() {
+
+                simTime_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 仿真步长时间: ms
+             * </pre>
+             *
+             * <code>int64 step_time = 2;</code>
+             *
+             * @return The stepTime.
+             */
+            @Override
+            public long getStepTime() {
+                return stepTime_;
+            }
+
+            /**
+             * <pre>
+             * 仿真步长时间: ms
+             * </pre>
+             *
+             * <code>int64 step_time = 2;</code>
+             *
+             * @param value The stepTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setStepTime(long value) {
+
+                stepTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 仿真步长时间: ms
+             * </pre>
+             *
+             * <code>int64 step_time = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearStepTime() {
+
+                stepTime_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.NextStep)
+        }
+
     }
 
-    public static final int SIM_ID_FIELD_NUMBER = 1;
-    private int simId_;
-    /**
-     * <pre>
-     * 推演任务id
-     * </pre>
-     *
-     * <code>uint32 sim_id = 1;</code>
-     * @return The simId.
-     */
-    @Override
-    public int getSimId() {
-      return simId_;
-    }
-
-    public static final int SIM_TIME_FIELD_NUMBER = 2;
-    private long simTime_;
-    /**
-     * <pre>
-     * 同步时的仿真时间
-     * </pre>
-     *
-     * <code>int64 sim_time = 2;</code>
-     * @return The simTime.
-     */
-    @Override
-    public long getSimTime() {
-      return simTime_;
-    }
-
-    public static final int FORCES_FIELD_NUMBER = 3;
-    private java.util.List<ForceProperty> forces_;
-    /**
-     * <pre>
-     * 场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-     */
-    @Override
-    public java.util.List<ForceProperty> getForcesList() {
-      return forces_;
-    }
-    /**
-     * <pre>
-     * 场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-     */
-    @Override
-    public java.util.List<? extends ForcePropertyOrBuilder>
-        getForcesOrBuilderList() {
-      return forces_;
-    }
-    /**
-     * <pre>
-     * 场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-     */
-    @Override
-    public int getForcesCount() {
-      return forces_.size();
-    }
-    /**
-     * <pre>
-     * 场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-     */
-    @Override
-    public ForceProperty getForces(int index) {
-      return forces_.get(index);
-    }
-    /**
-     * <pre>
-     * 场景内所有兵力状态
-     * </pre>
-     *
-     * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-     */
-    @Override
-    public ForcePropertyOrBuilder getForcesOrBuilder(
-        int index) {
-      return forces_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (simId_ != 0) {
-        output.writeUInt32(1, simId_);
-      }
-      if (simTime_ != 0L) {
-        output.writeInt64(2, simTime_);
-      }
-      for (int i = 0; i < forces_.size(); i++) {
-        output.writeMessage(3, forces_.get(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (simId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, simId_);
-      }
-      if (simTime_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, simTime_);
-      }
-      for (int i = 0; i < forces_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, forces_.get(i));
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof NextStepSync)) {
-        return super.equals(obj);
-      }
-      NextStepSync other = (NextStepSync) obj;
-
-      if (getSimId()
-          != other.getSimId()) return false;
-      if (getSimTime()
-          != other.getSimTime()) return false;
-      if (!getForcesList()
-          .equals(other.getForcesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SIM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSimId();
-      hash = (37 * hash) + SIM_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getSimTime());
-      if (getForcesCount() > 0) {
-        hash = (37 * hash) + FORCES_FIELD_NUMBER;
-        hash = (53 * hash) + getForcesList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static NextStepSync parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static NextStepSync parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static NextStepSync parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static NextStepSync parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static NextStepSync parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static NextStepSync parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static NextStepSync parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static NextStepSync parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static NextStepSync parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static NextStepSync parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static NextStepSync parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static NextStepSync parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(NextStepSync prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      * 单步计算完成后同步
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.soul.tinder.protobuf.proto.NextStepSync}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.NextStepSync)
-        NextStepSyncOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStepSync_descriptor;
-      }
-
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStepSync_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                NextStepSync.class, Builder.class);
-      }
-
-      // Construct using com.soul.tinder.protobuf.proto.TinderProto.NextStepSync.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getForcesFieldBuilder();
-        }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        simId_ = 0;
-
-        simTime_ = 0L;
-
-        if (forcesBuilder_ == null) {
-          forces_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          forcesBuilder_.clear();
-        }
-        return this;
-      }
-
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStepSync_descriptor;
-      }
-
-      @Override
-      public NextStepSync getDefaultInstanceForType() {
-        return NextStepSync.getDefaultInstance();
-      }
-
-      @Override
-      public NextStepSync build() {
-        NextStepSync result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @Override
-      public NextStepSync buildPartial() {
-        NextStepSync result = new NextStepSync(this);
-        int from_bitField0_ = bitField0_;
-        result.simId_ = simId_;
-        result.simTime_ = simTime_;
-        if (forcesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            forces_ = java.util.Collections.unmodifiableList(forces_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.forces_ = forces_;
-        } else {
-          result.forces_ = forcesBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof NextStepSync) {
-          return mergeFrom((NextStepSync)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(NextStepSync other) {
-        if (other == NextStepSync.getDefaultInstance()) return this;
-        if (other.getSimId() != 0) {
-          setSimId(other.getSimId());
-        }
-        if (other.getSimTime() != 0L) {
-          setSimTime(other.getSimTime());
-        }
-        if (forcesBuilder_ == null) {
-          if (!other.forces_.isEmpty()) {
-            if (forces_.isEmpty()) {
-              forces_ = other.forces_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureForcesIsMutable();
-              forces_.addAll(other.forces_);
+    public static final class NextStepSync extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.NextStepSync)
+            NextStepSyncOrBuilder {
+        public static final int SIM_ID_FIELD_NUMBER = 1;
+        public static final int SIM_TIME_FIELD_NUMBER = 2;
+        public static final int FORCES_FIELD_NUMBER = 3;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.NextStepSync)
+        private static final NextStepSync DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<NextStepSync>
+                PARSER = new com.google.protobuf.AbstractParser<NextStepSync>() {
+            @Override
+            public NextStepSync parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new NextStepSync(input, extensionRegistry);
             }
-            onChanged();
-          }
-        } else {
-          if (!other.forces_.isEmpty()) {
-            if (forcesBuilder_.isEmpty()) {
-              forcesBuilder_.dispose();
-              forcesBuilder_ = null;
-              forces_ = other.forces_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              forcesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getForcesFieldBuilder() : null;
-            } else {
-              forcesBuilder_.addAllMessages(other.forces_);
+        };
+
+        static {
+            DEFAULT_INSTANCE = new NextStepSync();
+        }
+
+        private int simId_;
+        private long simTime_;
+        private java.util.List<ForceProperty> forces_;
+        private byte memoizedIsInitialized = -1;
+
+        // Use NextStepSync.newBuilder() to construct.
+        private NextStepSync(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+        private NextStepSync() {
+            forces_ = java.util.Collections.emptyList();
+        }
+
+        private NextStepSync(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
             }
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
 
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
+                            simId_ = input.readUInt32();
+                            break;
+                        }
+                        case 16: {
 
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        NextStepSync parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (NextStepSync) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private int simId_ ;
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @return The simId.
-       */
-      @Override
-      public int getSimId() {
-        return simId_;
-      }
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @param value The simId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSimId(int value) {
-        
-        simId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSimId() {
-        
-        simId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long simTime_ ;
-      /**
-       * <pre>
-       * 同步时的仿真时间
-       * </pre>
-       *
-       * <code>int64 sim_time = 2;</code>
-       * @return The simTime.
-       */
-      @Override
-      public long getSimTime() {
-        return simTime_;
-      }
-      /**
-       * <pre>
-       * 同步时的仿真时间
-       * </pre>
-       *
-       * <code>int64 sim_time = 2;</code>
-       * @param value The simTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSimTime(long value) {
-        
-        simTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 同步时的仿真时间
-       * </pre>
-       *
-       * <code>int64 sim_time = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSimTime() {
-        
-        simTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<ForceProperty> forces_ =
-        java.util.Collections.emptyList();
-      private void ensureForcesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          forces_ = new java.util.ArrayList<ForceProperty>(forces_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          ForceProperty, ForceProperty.Builder, ForcePropertyOrBuilder> forcesBuilder_;
-
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public java.util.List<ForceProperty> getForcesList() {
-        if (forcesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(forces_);
-        } else {
-          return forcesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public int getForcesCount() {
-        if (forcesBuilder_ == null) {
-          return forces_.size();
-        } else {
-          return forcesBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public ForceProperty getForces(int index) {
-        if (forcesBuilder_ == null) {
-          return forces_.get(index);
-        } else {
-          return forcesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public Builder setForces(
-          int index, ForceProperty value) {
-        if (forcesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureForcesIsMutable();
-          forces_.set(index, value);
-          onChanged();
-        } else {
-          forcesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public Builder setForces(
-          int index, ForceProperty.Builder builderForValue) {
-        if (forcesBuilder_ == null) {
-          ensureForcesIsMutable();
-          forces_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          forcesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public Builder addForces(ForceProperty value) {
-        if (forcesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureForcesIsMutable();
-          forces_.add(value);
-          onChanged();
-        } else {
-          forcesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public Builder addForces(
-          int index, ForceProperty value) {
-        if (forcesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureForcesIsMutable();
-          forces_.add(index, value);
-          onChanged();
-        } else {
-          forcesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public Builder addForces(
-          ForceProperty.Builder builderForValue) {
-        if (forcesBuilder_ == null) {
-          ensureForcesIsMutable();
-          forces_.add(builderForValue.build());
-          onChanged();
-        } else {
-          forcesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public Builder addForces(
-          int index, ForceProperty.Builder builderForValue) {
-        if (forcesBuilder_ == null) {
-          ensureForcesIsMutable();
-          forces_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          forcesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public Builder addAllForces(
-          Iterable<? extends ForceProperty> values) {
-        if (forcesBuilder_ == null) {
-          ensureForcesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, forces_);
-          onChanged();
-        } else {
-          forcesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public Builder clearForces() {
-        if (forcesBuilder_ == null) {
-          forces_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          forcesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public Builder removeForces(int index) {
-        if (forcesBuilder_ == null) {
-          ensureForcesIsMutable();
-          forces_.remove(index);
-          onChanged();
-        } else {
-          forcesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public ForceProperty.Builder getForcesBuilder(
-          int index) {
-        return getForcesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public ForcePropertyOrBuilder getForcesOrBuilder(
-          int index) {
-        if (forcesBuilder_ == null) {
-          return forces_.get(index);  } else {
-          return forcesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public java.util.List<? extends ForcePropertyOrBuilder>
-           getForcesOrBuilderList() {
-        if (forcesBuilder_ != null) {
-          return forcesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(forces_);
-        }
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public ForceProperty.Builder addForcesBuilder() {
-        return getForcesFieldBuilder().addBuilder(
-            ForceProperty.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public ForceProperty.Builder addForcesBuilder(
-          int index) {
-        return getForcesFieldBuilder().addBuilder(
-            index, ForceProperty.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * 场景内所有兵力状态
-       * </pre>
-       *
-       * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
-       */
-      public java.util.List<ForceProperty.Builder>
-           getForcesBuilderList() {
-        return getForcesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          ForceProperty, ForceProperty.Builder, ForcePropertyOrBuilder>
-          getForcesFieldBuilder() {
-        if (forcesBuilder_ == null) {
-          forcesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              ForceProperty, ForceProperty.Builder, ForcePropertyOrBuilder>(
-                  forces_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          forces_ = null;
-        }
-        return forcesBuilder_;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.NextStepSync)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.NextStepSync)
-    private static final NextStepSync DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new NextStepSync();
-    }
-
-    public static NextStepSync getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<NextStepSync>
-        PARSER = new com.google.protobuf.AbstractParser<NextStepSync>() {
-      @Override
-      public NextStepSync parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new NextStepSync(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<NextStepSync> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<NextStepSync> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public NextStepSync getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface SimForceJoinedOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.SimForceJoined)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * 推演任务id
-     * </pre>
-     *
-     * <code>uint32 sim_id = 1;</code>
-     * @return The simId.
-     */
-    int getSimId();
-
-    /**
-     * <pre>
-     * 兵力id列表
-     * </pre>
-     *
-     * <code>repeated uint32 forces = 2;</code>
-     * @return A list containing the forces.
-     */
-    java.util.List<Integer> getForcesList();
-    /**
-     * <pre>
-     * 兵力id列表
-     * </pre>
-     *
-     * <code>repeated uint32 forces = 2;</code>
-     * @return The count of forces.
-     */
-    int getForcesCount();
-    /**
-     * <pre>
-     * 兵力id列表
-     * </pre>
-     *
-     * <code>repeated uint32 forces = 2;</code>
-     * @param index The index of the element to return.
-     * @return The forces at the given index.
-     */
-    int getForces(int index);
-  }
-  /**
-   * <pre>
-   * 兵力上线
-   * </pre>
-   *
-   * Protobuf type {@code com.soul.tinder.protobuf.proto.SimForceJoined}
-   */
-  public static final class SimForceJoined extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.SimForceJoined)
-      SimForceJoinedOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use SimForceJoined.newBuilder() to construct.
-    private SimForceJoined(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SimForceJoined() {
-      forces_ = emptyIntList();
-    }
-
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SimForceJoined();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private SimForceJoined(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              simId_ = input.readUInt32();
-              break;
+                            simTime_ = input.readInt64();
+                            break;
+                        }
+                        case 26: {
+                            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                forces_ = new java.util.ArrayList<ForceProperty>();
+                                mutable_bitField0_ |= 0x00000001;
+                            }
+                            forces_.add(
+                                    input.readMessage(ForceProperty.parser(), extensionRegistry));
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                    forces_ = java.util.Collections.unmodifiableList(forces_);
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
             }
-            case 16: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                forces_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              forces_.addInt(input.readUInt32());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                forces_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                forces_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          forces_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_descriptor;
-    }
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStepSync_descriptor;
+        }
 
-    @Override
-    protected FieldAccessorTable
+        public static NextStepSync parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static NextStepSync parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static NextStepSync parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static NextStepSync parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static NextStepSync parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static NextStepSync parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static NextStepSync parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static NextStepSync parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static NextStepSync parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static NextStepSync parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static NextStepSync parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static NextStepSync parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(NextStepSync prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static NextStepSync getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<NextStepSync> parser() {
+            return PARSER;
+        }
+
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new NextStepSync();
+        }
+
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @Override
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              SimForceJoined.class, Builder.class);
-    }
-
-    public static final int SIM_ID_FIELD_NUMBER = 1;
-    private int simId_;
-    /**
-     * <pre>
-     * 推演任务id
-     * </pre>
-     *
-     * <code>uint32 sim_id = 1;</code>
-     * @return The simId.
-     */
-    @Override
-    public int getSimId() {
-      return simId_;
-    }
-
-    public static final int FORCES_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.IntList forces_;
-    /**
-     * <pre>
-     * 兵力id列表
-     * </pre>
-     *
-     * <code>repeated uint32 forces = 2;</code>
-     * @return A list containing the forces.
-     */
-    @Override
-    public java.util.List<Integer>
-        getForcesList() {
-      return forces_;
-    }
-    /**
-     * <pre>
-     * 兵力id列表
-     * </pre>
-     *
-     * <code>repeated uint32 forces = 2;</code>
-     * @return The count of forces.
-     */
-    public int getForcesCount() {
-      return forces_.size();
-    }
-    /**
-     * <pre>
-     * 兵力id列表
-     * </pre>
-     *
-     * <code>repeated uint32 forces = 2;</code>
-     * @param index The index of the element to return.
-     * @return The forces at the given index.
-     */
-    public int getForces(int index) {
-      return forces_.getInt(index);
-    }
-    private int forcesMemoizedSerializedSize = -1;
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (simId_ != 0) {
-        output.writeUInt32(1, simId_);
-      }
-      if (getForcesList().size() > 0) {
-        output.writeUInt32NoTag(18);
-        output.writeUInt32NoTag(forcesMemoizedSerializedSize);
-      }
-      for (int i = 0; i < forces_.size(); i++) {
-        output.writeUInt32NoTag(forces_.getInt(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (simId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, simId_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < forces_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(forces_.getInt(i));
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStepSync_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            NextStepSync.class, Builder.class);
         }
-        size += dataSize;
-        if (!getForcesList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
+
+        /**
+         * <pre>
+         * 推演任务id
+         * </pre>
+         *
+         * <code>uint32 sim_id = 1;</code>
+         *
+         * @return The simId.
+         */
+        @Override
+        public int getSimId() {
+            return simId_;
         }
-        forcesMemoizedSerializedSize = dataSize;
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
+
+        /**
+         * <pre>
+         * 同步时的仿真时间
+         * </pre>
+         *
+         * <code>int64 sim_time = 2;</code>
+         *
+         * @return The simTime.
+         */
+        @Override
+        public long getSimTime() {
+            return simTime_;
+        }
+
+        /**
+         * <pre>
+         * 场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+         */
+        @Override
+        public java.util.List<ForceProperty> getForcesList() {
+            return forces_;
+        }
+
+        /**
+         * <pre>
+         * 场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+         */
+        @Override
+        public java.util.List<? extends ForcePropertyOrBuilder>
+        getForcesOrBuilderList() {
+            return forces_;
+        }
+
+        /**
+         * <pre>
+         * 场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+         */
+        @Override
+        public int getForcesCount() {
+            return forces_.size();
+        }
+
+        /**
+         * <pre>
+         * 场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+         */
+        @Override
+        public ForceProperty getForces(int index) {
+            return forces_.get(index);
+        }
+
+        /**
+         * <pre>
+         * 场景内所有兵力状态
+         * </pre>
+         *
+         * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+         */
+        @Override
+        public ForcePropertyOrBuilder getForcesOrBuilder(
+                int index) {
+            return forces_.get(index);
+        }
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (simId_ != 0) {
+                output.writeUInt32(1, simId_);
+            }
+            if (simTime_ != 0L) {
+                output.writeInt64(2, simTime_);
+            }
+            for (int i = 0; i < forces_.size(); i++) {
+                output.writeMessage(3, forces_.get(i));
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (simId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeUInt32Size(1, simId_);
+            }
+            if (simTime_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(2, simTime_);
+            }
+            for (int i = 0; i < forces_.size(); i++) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(3, forces_.get(i));
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof NextStepSync)) {
+                return super.equals(obj);
+            }
+            NextStepSync other = (NextStepSync) obj;
+
+            if (getSimId()
+                    != other.getSimId()) return false;
+            if (getSimTime()
+                    != other.getSimTime()) return false;
+            if (!getForcesList()
+                    .equals(other.getForcesList())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + SIM_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getSimId();
+            hash = (37 * hash) + SIM_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    getSimTime());
+            if (getForcesCount() > 0) {
+                hash = (37 * hash) + FORCES_FIELD_NUMBER;
+                hash = (53 * hash) + getForcesList().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<NextStepSync> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public NextStepSync getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * <pre>
+         * 单步计算完成后同步
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.soul.tinder.protobuf.proto.NextStepSync}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.NextStepSync)
+                NextStepSyncOrBuilder {
+            private int bitField0_;
+            private int simId_;
+            private long simTime_;
+            private java.util.List<ForceProperty> forces_ =
+                    java.util.Collections.emptyList();
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    ForceProperty, ForceProperty.Builder, ForcePropertyOrBuilder> forcesBuilder_;
+
+            // Construct using com.soul.tinder.protobuf.proto.TinderProto.NextStepSync.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStepSync_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStepSync_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                NextStepSync.class, Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                    getForcesFieldBuilder();
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                simId_ = 0;
+
+                simTime_ = 0L;
+
+                if (forcesBuilder_ == null) {
+                    forces_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                    forcesBuilder_.clear();
+                }
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_NextStepSync_descriptor;
+            }
+
+            @Override
+            public NextStepSync getDefaultInstanceForType() {
+                return NextStepSync.getDefaultInstance();
+            }
+
+            @Override
+            public NextStepSync build() {
+                NextStepSync result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public NextStepSync buildPartial() {
+                NextStepSync result = new NextStepSync(this);
+                int from_bitField0_ = bitField0_;
+                result.simId_ = simId_;
+                result.simTime_ = simTime_;
+                if (forcesBuilder_ == null) {
+                    if (((bitField0_ & 0x00000001) != 0)) {
+                        forces_ = java.util.Collections.unmodifiableList(forces_);
+                        bitField0_ = (bitField0_ & ~0x00000001);
+                    }
+                    result.forces_ = forces_;
+                } else {
+                    result.forces_ = forcesBuilder_.build();
+                }
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof NextStepSync) {
+                    return mergeFrom((NextStepSync) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(NextStepSync other) {
+                if (other == NextStepSync.getDefaultInstance()) return this;
+                if (other.getSimId() != 0) {
+                    setSimId(other.getSimId());
+                }
+                if (other.getSimTime() != 0L) {
+                    setSimTime(other.getSimTime());
+                }
+                if (forcesBuilder_ == null) {
+                    if (!other.forces_.isEmpty()) {
+                        if (forces_.isEmpty()) {
+                            forces_ = other.forces_;
+                            bitField0_ = (bitField0_ & ~0x00000001);
+                        } else {
+                            ensureForcesIsMutable();
+                            forces_.addAll(other.forces_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.forces_.isEmpty()) {
+                        if (forcesBuilder_.isEmpty()) {
+                            forcesBuilder_.dispose();
+                            forcesBuilder_ = null;
+                            forces_ = other.forces_;
+                            bitField0_ = (bitField0_ & ~0x00000001);
+                            forcesBuilder_ =
+                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                                            getForcesFieldBuilder() : null;
+                        } else {
+                            forcesBuilder_.addAllMessages(other.forces_);
+                        }
+                    }
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                NextStepSync parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (NextStepSync) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @return The simId.
+             */
+            @Override
+            public int getSimId() {
+                return simId_;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @param value The simId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSimId(int value) {
+
+                simId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSimId() {
+
+                simId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 同步时的仿真时间
+             * </pre>
+             *
+             * <code>int64 sim_time = 2;</code>
+             *
+             * @return The simTime.
+             */
+            @Override
+            public long getSimTime() {
+                return simTime_;
+            }
+
+            /**
+             * <pre>
+             * 同步时的仿真时间
+             * </pre>
+             *
+             * <code>int64 sim_time = 2;</code>
+             *
+             * @param value The simTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSimTime(long value) {
+
+                simTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 同步时的仿真时间
+             * </pre>
+             *
+             * <code>int64 sim_time = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSimTime() {
+
+                simTime_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private void ensureForcesIsMutable() {
+                if (!((bitField0_ & 0x00000001) != 0)) {
+                    forces_ = new java.util.ArrayList<ForceProperty>(forces_);
+                    bitField0_ |= 0x00000001;
+                }
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public java.util.List<ForceProperty> getForcesList() {
+                if (forcesBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(forces_);
+                } else {
+                    return forcesBuilder_.getMessageList();
+                }
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public int getForcesCount() {
+                if (forcesBuilder_ == null) {
+                    return forces_.size();
+                } else {
+                    return forcesBuilder_.getCount();
+                }
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public ForceProperty getForces(int index) {
+                if (forcesBuilder_ == null) {
+                    return forces_.get(index);
+                } else {
+                    return forcesBuilder_.getMessage(index);
+                }
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public Builder setForces(
+                    int index, ForceProperty value) {
+                if (forcesBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureForcesIsMutable();
+                    forces_.set(index, value);
+                    onChanged();
+                } else {
+                    forcesBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public Builder setForces(
+                    int index, ForceProperty.Builder builderForValue) {
+                if (forcesBuilder_ == null) {
+                    ensureForcesIsMutable();
+                    forces_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    forcesBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public Builder addForces(ForceProperty value) {
+                if (forcesBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureForcesIsMutable();
+                    forces_.add(value);
+                    onChanged();
+                } else {
+                    forcesBuilder_.addMessage(value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public Builder addForces(
+                    int index, ForceProperty value) {
+                if (forcesBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureForcesIsMutable();
+                    forces_.add(index, value);
+                    onChanged();
+                } else {
+                    forcesBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public Builder addForces(
+                    ForceProperty.Builder builderForValue) {
+                if (forcesBuilder_ == null) {
+                    ensureForcesIsMutable();
+                    forces_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    forcesBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public Builder addForces(
+                    int index, ForceProperty.Builder builderForValue) {
+                if (forcesBuilder_ == null) {
+                    ensureForcesIsMutable();
+                    forces_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    forcesBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public Builder addAllForces(
+                    Iterable<? extends ForceProperty> values) {
+                if (forcesBuilder_ == null) {
+                    ensureForcesIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                            values, forces_);
+                    onChanged();
+                } else {
+                    forcesBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public Builder clearForces() {
+                if (forcesBuilder_ == null) {
+                    forces_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                    onChanged();
+                } else {
+                    forcesBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public Builder removeForces(int index) {
+                if (forcesBuilder_ == null) {
+                    ensureForcesIsMutable();
+                    forces_.remove(index);
+                    onChanged();
+                } else {
+                    forcesBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public ForceProperty.Builder getForcesBuilder(
+                    int index) {
+                return getForcesFieldBuilder().getBuilder(index);
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public ForcePropertyOrBuilder getForcesOrBuilder(
+                    int index) {
+                if (forcesBuilder_ == null) {
+                    return forces_.get(index);
+                } else {
+                    return forcesBuilder_.getMessageOrBuilder(index);
+                }
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public java.util.List<? extends ForcePropertyOrBuilder>
+            getForcesOrBuilderList() {
+                if (forcesBuilder_ != null) {
+                    return forcesBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(forces_);
+                }
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public ForceProperty.Builder addForcesBuilder() {
+                return getForcesFieldBuilder().addBuilder(
+                        ForceProperty.getDefaultInstance());
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public ForceProperty.Builder addForcesBuilder(
+                    int index) {
+                return getForcesFieldBuilder().addBuilder(
+                        index, ForceProperty.getDefaultInstance());
+            }
+
+            /**
+             * <pre>
+             * 场景内所有兵力状态
+             * </pre>
+             *
+             * <code>repeated .com.soul.tinder.protobuf.proto.ForceProperty forces = 3;</code>
+             */
+            public java.util.List<ForceProperty.Builder>
+            getForcesBuilderList() {
+                return getForcesFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    ForceProperty, ForceProperty.Builder, ForcePropertyOrBuilder>
+            getForcesFieldBuilder() {
+                if (forcesBuilder_ == null) {
+                    forcesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                            ForceProperty, ForceProperty.Builder, ForcePropertyOrBuilder>(
+                            forces_,
+                            ((bitField0_ & 0x00000001) != 0),
+                            getParentForChildren(),
+                            isClean());
+                    forces_ = null;
+                }
+                return forcesBuilder_;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.NextStepSync)
+        }
+
     }
 
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof SimForceJoined)) {
-        return super.equals(obj);
-      }
-      SimForceJoined other = (SimForceJoined) obj;
-
-      if (getSimId()
-          != other.getSimId()) return false;
-      if (!getForcesList()
-          .equals(other.getForcesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SIM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSimId();
-      if (getForcesCount() > 0) {
-        hash = (37 * hash) + FORCES_FIELD_NUMBER;
-        hash = (53 * hash) + getForcesList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static SimForceJoined parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SimForceJoined parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SimForceJoined parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SimForceJoined parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SimForceJoined parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SimForceJoined parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SimForceJoined parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static SimForceJoined parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static SimForceJoined parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static SimForceJoined parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static SimForceJoined parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static SimForceJoined parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(SimForceJoined prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      * 兵力上线
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.soul.tinder.protobuf.proto.SimForceJoined}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.SimForceJoined)
-        SimForceJoinedOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_descriptor;
-      }
-
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                SimForceJoined.class, Builder.class);
-      }
-
-      // Construct using com.soul.tinder.protobuf.proto.TinderProto.SimForceJoined.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        simId_ = 0;
-
-        forces_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_descriptor;
-      }
-
-      @Override
-      public SimForceJoined getDefaultInstanceForType() {
-        return SimForceJoined.getDefaultInstance();
-      }
-
-      @Override
-      public SimForceJoined build() {
-        SimForceJoined result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @Override
-      public SimForceJoined buildPartial() {
-        SimForceJoined result = new SimForceJoined(this);
-        int from_bitField0_ = bitField0_;
-        result.simId_ = simId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          forces_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.forces_ = forces_;
-        onBuilt();
-        return result;
-      }
-
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SimForceJoined) {
-          return mergeFrom((SimForceJoined)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(SimForceJoined other) {
-        if (other == SimForceJoined.getDefaultInstance()) return this;
-        if (other.getSimId() != 0) {
-          setSimId(other.getSimId());
-        }
-        if (!other.forces_.isEmpty()) {
-          if (forces_.isEmpty()) {
-            forces_ = other.forces_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureForcesIsMutable();
-            forces_.addAll(other.forces_);
-          }
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        SimForceJoined parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SimForceJoined) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private int simId_ ;
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @return The simId.
-       */
-      @Override
-      public int getSimId() {
-        return simId_;
-      }
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @param value The simId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSimId(int value) {
-        
-        simId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSimId() {
-        
-        simId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList forces_ = emptyIntList();
-      private void ensureForcesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          forces_ = mutableCopy(forces_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @return A list containing the forces.
-       */
-      public java.util.List<Integer>
-          getForcesList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(forces_) : forces_;
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @return The count of forces.
-       */
-      public int getForcesCount() {
-        return forces_.size();
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @param index The index of the element to return.
-       * @return The forces at the given index.
-       */
-      public int getForces(int index) {
-        return forces_.getInt(index);
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @param index The index to set the value at.
-       * @param value The forces to set.
-       * @return This builder for chaining.
-       */
-      public Builder setForces(
-          int index, int value) {
-        ensureForcesIsMutable();
-        forces_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @param value The forces to add.
-       * @return This builder for chaining.
-       */
-      public Builder addForces(int value) {
-        ensureForcesIsMutable();
-        forces_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @param values The forces to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllForces(
-          Iterable<? extends Integer> values) {
-        ensureForcesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, forces_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearForces() {
-        forces_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.SimForceJoined)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.SimForceJoined)
-    private static final SimForceJoined DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new SimForceJoined();
-    }
-
-    public static SimForceJoined getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SimForceJoined>
-        PARSER = new com.google.protobuf.AbstractParser<SimForceJoined>() {
-      @Override
-      public SimForceJoined parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SimForceJoined(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SimForceJoined> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<SimForceJoined> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public SimForceJoined getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface SimForceResignedOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.SimForceResigned)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * 推演任务id
-     * </pre>
-     *
-     * <code>uint32 sim_id = 1;</code>
-     * @return The simId.
-     */
-    int getSimId();
-
-    /**
-     * <pre>
-     * 兵力id列表
-     * </pre>
-     *
-     * <code>repeated uint32 forces = 2;</code>
-     * @return A list containing the forces.
-     */
-    java.util.List<Integer> getForcesList();
-    /**
-     * <pre>
-     * 兵力id列表
-     * </pre>
-     *
-     * <code>repeated uint32 forces = 2;</code>
-     * @return The count of forces.
-     */
-    int getForcesCount();
-    /**
-     * <pre>
-     * 兵力id列表
-     * </pre>
-     *
-     * <code>repeated uint32 forces = 2;</code>
-     * @param index The index of the element to return.
-     * @return The forces at the given index.
-     */
-    int getForces(int index);
-  }
-  /**
-   * <pre>
-   * 兵力下线
-   * </pre>
-   *
-   * Protobuf type {@code com.soul.tinder.protobuf.proto.SimForceResigned}
-   */
-  public static final class SimForceResigned extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.SimForceResigned)
-      SimForceResignedOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use SimForceResigned.newBuilder() to construct.
-    private SimForceResigned(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SimForceResigned() {
-      forces_ = emptyIntList();
-    }
-
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SimForceResigned();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private SimForceResigned(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              simId_ = input.readUInt32();
-              break;
+    public static final class SimForceJoined extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.SimForceJoined)
+            SimForceJoinedOrBuilder {
+        public static final int SIM_ID_FIELD_NUMBER = 1;
+        public static final int FORCES_FIELD_NUMBER = 2;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.SimForceJoined)
+        private static final SimForceJoined DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<SimForceJoined>
+                PARSER = new com.google.protobuf.AbstractParser<SimForceJoined>() {
+            @Override
+            public SimForceJoined parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new SimForceJoined(input, extensionRegistry);
             }
-            case 16: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                forces_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              forces_.addInt(input.readUInt32());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                forces_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                forces_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new SimForceJoined();
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          forces_.makeImmutable(); // C
+
+        private int simId_;
+        private com.google.protobuf.Internal.IntList forces_;
+        private int forcesMemoizedSerializedSize = -1;
+        private byte memoizedIsInitialized = -1;
+
+        // Use SimForceJoined.newBuilder() to construct.
+        private SimForceJoined(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        private SimForceJoined() {
+            forces_ = emptyIntList();
+        }
+        private SimForceJoined(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
+
+                            simId_ = input.readUInt32();
+                            break;
+                        }
+                        case 16: {
+                            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                forces_ = newIntList();
+                                mutable_bitField0_ |= 0x00000001;
+                            }
+                            forces_.addInt(input.readUInt32());
+                            break;
+                        }
+                        case 18: {
+                            int length = input.readRawVarint32();
+                            int limit = input.pushLimit(length);
+                            if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                                forces_ = newIntList();
+                                mutable_bitField0_ |= 0x00000001;
+                            }
+                            while (input.getBytesUntilLimit() > 0) {
+                                forces_.addInt(input.readUInt32());
+                            }
+                            input.popLimit(limit);
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                    forces_.makeImmutable(); // C
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_descriptor;
-    }
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_descriptor;
+        }
 
-    @Override
-    protected FieldAccessorTable
+        public static SimForceJoined parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static SimForceJoined parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static SimForceJoined parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static SimForceJoined parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static SimForceJoined parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static SimForceJoined parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static SimForceJoined parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static SimForceJoined parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static SimForceJoined parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static SimForceJoined parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static SimForceJoined parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static SimForceJoined parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(SimForceJoined prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static SimForceJoined getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<SimForceJoined> parser() {
+            return PARSER;
+        }
+
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new SimForceJoined();
+        }
+
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @Override
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              SimForceResigned.class, Builder.class);
-    }
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            SimForceJoined.class, Builder.class);
+        }
 
-    public static final int SIM_ID_FIELD_NUMBER = 1;
-    private int simId_;
-    /**
-     * <pre>
-     * 推演任务id
-     * </pre>
-     *
-     * <code>uint32 sim_id = 1;</code>
-     * @return The simId.
-     */
-    @Override
-    public int getSimId() {
-      return simId_;
-    }
+        /**
+         * <pre>
+         * 推演任务id
+         * </pre>
+         *
+         * <code>uint32 sim_id = 1;</code>
+         *
+         * @return The simId.
+         */
+        @Override
+        public int getSimId() {
+            return simId_;
+        }
 
-    public static final int FORCES_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.IntList forces_;
-    /**
-     * <pre>
-     * 兵力id列表
-     * </pre>
-     *
-     * <code>repeated uint32 forces = 2;</code>
-     * @return A list containing the forces.
-     */
-    @Override
-    public java.util.List<Integer>
+        /**
+         * <pre>
+         * 兵力id列表
+         * </pre>
+         *
+         * <code>repeated uint32 forces = 2;</code>
+         *
+         * @return A list containing the forces.
+         */
+        @Override
+        public java.util.List<Integer>
         getForcesList() {
-      return forces_;
-    }
-    /**
-     * <pre>
-     * 兵力id列表
-     * </pre>
-     *
-     * <code>repeated uint32 forces = 2;</code>
-     * @return The count of forces.
-     */
-    public int getForcesCount() {
-      return forces_.size();
-    }
-    /**
-     * <pre>
-     * 兵力id列表
-     * </pre>
-     *
-     * <code>repeated uint32 forces = 2;</code>
-     * @param index The index of the element to return.
-     * @return The forces at the given index.
-     */
-    public int getForces(int index) {
-      return forces_.getInt(index);
-    }
-    private int forcesMemoizedSerializedSize = -1;
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (simId_ != 0) {
-        output.writeUInt32(1, simId_);
-      }
-      if (getForcesList().size() > 0) {
-        output.writeUInt32NoTag(18);
-        output.writeUInt32NoTag(forcesMemoizedSerializedSize);
-      }
-      for (int i = 0; i < forces_.size(); i++) {
-        output.writeUInt32NoTag(forces_.getInt(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (simId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, simId_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < forces_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(forces_.getInt(i));
+            return forces_;
         }
-        size += dataSize;
-        if (!getForcesList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
+
+        /**
+         * <pre>
+         * 兵力id列表
+         * </pre>
+         *
+         * <code>repeated uint32 forces = 2;</code>
+         *
+         * @return The count of forces.
+         */
+        public int getForcesCount() {
+            return forces_.size();
         }
-        forcesMemoizedSerializedSize = dataSize;
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
+
+        /**
+         * <pre>
+         * 兵力id列表
+         * </pre>
+         *
+         * <code>repeated uint32 forces = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The forces at the given index.
+         */
+        public int getForces(int index) {
+            return forces_.getInt(index);
+        }
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            getSerializedSize();
+            if (simId_ != 0) {
+                output.writeUInt32(1, simId_);
+            }
+            if (getForcesList().size() > 0) {
+                output.writeUInt32NoTag(18);
+                output.writeUInt32NoTag(forcesMemoizedSerializedSize);
+            }
+            for (int i = 0; i < forces_.size(); i++) {
+                output.writeUInt32NoTag(forces_.getInt(i));
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (simId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeUInt32Size(1, simId_);
+            }
+            {
+                int dataSize = 0;
+                for (int i = 0; i < forces_.size(); i++) {
+                    dataSize += com.google.protobuf.CodedOutputStream
+                            .computeUInt32SizeNoTag(forces_.getInt(i));
+                }
+                size += dataSize;
+                if (!getForcesList().isEmpty()) {
+                    size += 1;
+                    size += com.google.protobuf.CodedOutputStream
+                            .computeInt32SizeNoTag(dataSize);
+                }
+                forcesMemoizedSerializedSize = dataSize;
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof SimForceJoined)) {
+                return super.equals(obj);
+            }
+            SimForceJoined other = (SimForceJoined) obj;
+
+            if (getSimId()
+                    != other.getSimId()) return false;
+            if (!getForcesList()
+                    .equals(other.getForcesList())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + SIM_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getSimId();
+            if (getForcesCount() > 0) {
+                hash = (37 * hash) + FORCES_FIELD_NUMBER;
+                hash = (53 * hash) + getForcesList().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<SimForceJoined> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public SimForceJoined getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * <pre>
+         * 兵力上线
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.soul.tinder.protobuf.proto.SimForceJoined}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.SimForceJoined)
+                SimForceJoinedOrBuilder {
+            private int bitField0_;
+            private int simId_;
+            private com.google.protobuf.Internal.IntList forces_ = emptyIntList();
+
+            // Construct using com.soul.tinder.protobuf.proto.TinderProto.SimForceJoined.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                SimForceJoined.class, Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                simId_ = 0;
+
+                forces_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_descriptor;
+            }
+
+            @Override
+            public SimForceJoined getDefaultInstanceForType() {
+                return SimForceJoined.getDefaultInstance();
+            }
+
+            @Override
+            public SimForceJoined build() {
+                SimForceJoined result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public SimForceJoined buildPartial() {
+                SimForceJoined result = new SimForceJoined(this);
+                int from_bitField0_ = bitField0_;
+                result.simId_ = simId_;
+                if (((bitField0_ & 0x00000001) != 0)) {
+                    forces_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                }
+                result.forces_ = forces_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof SimForceJoined) {
+                    return mergeFrom((SimForceJoined) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(SimForceJoined other) {
+                if (other == SimForceJoined.getDefaultInstance()) return this;
+                if (other.getSimId() != 0) {
+                    setSimId(other.getSimId());
+                }
+                if (!other.forces_.isEmpty()) {
+                    if (forces_.isEmpty()) {
+                        forces_ = other.forces_;
+                        bitField0_ = (bitField0_ & ~0x00000001);
+                    } else {
+                        ensureForcesIsMutable();
+                        forces_.addAll(other.forces_);
+                    }
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                SimForceJoined parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (SimForceJoined) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @return The simId.
+             */
+            @Override
+            public int getSimId() {
+                return simId_;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @param value The simId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSimId(int value) {
+
+                simId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSimId() {
+
+                simId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private void ensureForcesIsMutable() {
+                if (!((bitField0_ & 0x00000001) != 0)) {
+                    forces_ = mutableCopy(forces_);
+                    bitField0_ |= 0x00000001;
+                }
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @return A list containing the forces.
+             */
+            public java.util.List<Integer>
+            getForcesList() {
+                return ((bitField0_ & 0x00000001) != 0) ?
+                        java.util.Collections.unmodifiableList(forces_) : forces_;
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @return The count of forces.
+             */
+            public int getForcesCount() {
+                return forces_.size();
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @param index The index of the element to return.
+             * @return The forces at the given index.
+             */
+            public int getForces(int index) {
+                return forces_.getInt(index);
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @param index The index to set the value at.
+             * @param value The forces to set.
+             * @return This builder for chaining.
+             */
+            public Builder setForces(
+                    int index, int value) {
+                ensureForcesIsMutable();
+                forces_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @param value The forces to add.
+             * @return This builder for chaining.
+             */
+            public Builder addForces(int value) {
+                ensureForcesIsMutable();
+                forces_.addInt(value);
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @param values The forces to add.
+             * @return This builder for chaining.
+             */
+            public Builder addAllForces(
+                    Iterable<? extends Integer> values) {
+                ensureForcesIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                        values, forces_);
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearForces() {
+                forces_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.SimForceJoined)
+        }
+
     }
 
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof SimForceResigned)) {
-        return super.equals(obj);
-      }
-      SimForceResigned other = (SimForceResigned) obj;
-
-      if (getSimId()
-          != other.getSimId()) return false;
-      if (!getForcesList()
-          .equals(other.getForcesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SIM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSimId();
-      if (getForcesCount() > 0) {
-        hash = (37 * hash) + FORCES_FIELD_NUMBER;
-        hash = (53 * hash) + getForcesList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static SimForceResigned parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SimForceResigned parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SimForceResigned parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SimForceResigned parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SimForceResigned parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SimForceResigned parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SimForceResigned parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static SimForceResigned parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static SimForceResigned parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static SimForceResigned parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static SimForceResigned parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static SimForceResigned parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(SimForceResigned prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      * 兵力下线
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.soul.tinder.protobuf.proto.SimForceResigned}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.SimForceResigned)
-        SimForceResignedOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_descriptor;
-      }
-
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                SimForceResigned.class, Builder.class);
-      }
-
-      // Construct using com.soul.tinder.protobuf.proto.TinderProto.SimForceResigned.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        simId_ = 0;
-
-        forces_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_descriptor;
-      }
-
-      @Override
-      public SimForceResigned getDefaultInstanceForType() {
-        return SimForceResigned.getDefaultInstance();
-      }
-
-      @Override
-      public SimForceResigned build() {
-        SimForceResigned result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @Override
-      public SimForceResigned buildPartial() {
-        SimForceResigned result = new SimForceResigned(this);
-        int from_bitField0_ = bitField0_;
-        result.simId_ = simId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          forces_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.forces_ = forces_;
-        onBuilt();
-        return result;
-      }
-
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SimForceResigned) {
-          return mergeFrom((SimForceResigned)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(SimForceResigned other) {
-        if (other == SimForceResigned.getDefaultInstance()) return this;
-        if (other.getSimId() != 0) {
-          setSimId(other.getSimId());
-        }
-        if (!other.forces_.isEmpty()) {
-          if (forces_.isEmpty()) {
-            forces_ = other.forces_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureForcesIsMutable();
-            forces_.addAll(other.forces_);
-          }
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        SimForceResigned parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SimForceResigned) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private int simId_ ;
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @return The simId.
-       */
-      @Override
-      public int getSimId() {
-        return simId_;
-      }
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @param value The simId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSimId(int value) {
-        
-        simId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSimId() {
-        
-        simId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList forces_ = emptyIntList();
-      private void ensureForcesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          forces_ = mutableCopy(forces_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @return A list containing the forces.
-       */
-      public java.util.List<Integer>
-          getForcesList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(forces_) : forces_;
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @return The count of forces.
-       */
-      public int getForcesCount() {
-        return forces_.size();
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @param index The index of the element to return.
-       * @return The forces at the given index.
-       */
-      public int getForces(int index) {
-        return forces_.getInt(index);
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @param index The index to set the value at.
-       * @param value The forces to set.
-       * @return This builder for chaining.
-       */
-      public Builder setForces(
-          int index, int value) {
-        ensureForcesIsMutable();
-        forces_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @param value The forces to add.
-       * @return This builder for chaining.
-       */
-      public Builder addForces(int value) {
-        ensureForcesIsMutable();
-        forces_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @param values The forces to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllForces(
-          Iterable<? extends Integer> values) {
-        ensureForcesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, forces_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 兵力id列表
-       * </pre>
-       *
-       * <code>repeated uint32 forces = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearForces() {
-        forces_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.SimForceResigned)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.SimForceResigned)
-    private static final SimForceResigned DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new SimForceResigned();
-    }
-
-    public static SimForceResigned getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SimForceResigned>
-        PARSER = new com.google.protobuf.AbstractParser<SimForceResigned>() {
-      @Override
-      public SimForceResigned parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SimForceResigned(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SimForceResigned> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<SimForceResigned> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public SimForceResigned getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface SimEventOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.SimEvent)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * 推演任务id
-     * </pre>
-     *
-     * <code>uint32 sim_id = 1;</code>
-     * @return The simId.
-     */
-    int getSimId();
-
-    /**
-     * <pre>
-     * 事件内容
-     * </pre>
-     *
-     * <code>string event = 2;</code>
-     * @return The event.
-     */
-    String getEvent();
-    /**
-     * <pre>
-     * 事件内容
-     * </pre>
-     *
-     * <code>string event = 2;</code>
-     * @return The bytes for event.
-     */
-    com.google.protobuf.ByteString
-        getEventBytes();
-  }
-  /**
-   * <pre>
-   * 仿真事件
-   * </pre>
-   *
-   * Protobuf type {@code com.soul.tinder.protobuf.proto.SimEvent}
-   */
-  public static final class SimEvent extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.SimEvent)
-      SimEventOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use SimEvent.newBuilder() to construct.
-    private SimEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SimEvent() {
-      event_ = "";
-    }
-
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SimEvent();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private SimEvent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              simId_ = input.readUInt32();
-              break;
+    public static final class SimForceResigned extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.SimForceResigned)
+            SimForceResignedOrBuilder {
+        public static final int SIM_ID_FIELD_NUMBER = 1;
+        public static final int FORCES_FIELD_NUMBER = 2;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.SimForceResigned)
+        private static final SimForceResigned DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<SimForceResigned>
+                PARSER = new com.google.protobuf.AbstractParser<SimForceResigned>() {
+            @Override
+            public SimForceResigned parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new SimForceResigned(input, extensionRegistry);
             }
-            case 18: {
-              String s = input.readStringRequireUtf8();
+        };
 
-              event_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
+        static {
+            DEFAULT_INSTANCE = new SimForceResigned();
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        private int simId_;
+        private com.google.protobuf.Internal.IntList forces_;
+        private int forcesMemoizedSerializedSize = -1;
+        private byte memoizedIsInitialized = -1;
+
+        // Use SimForceResigned.newBuilder() to construct.
+        private SimForceResigned(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private SimForceResigned() {
+            forces_ = emptyIntList();
+        }
+        private SimForceResigned(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
+
+                            simId_ = input.readUInt32();
+                            break;
+                        }
+                        case 16: {
+                            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                forces_ = newIntList();
+                                mutable_bitField0_ |= 0x00000001;
+                            }
+                            forces_.addInt(input.readUInt32());
+                            break;
+                        }
+                        case 18: {
+                            int length = input.readRawVarint32();
+                            int limit = input.pushLimit(length);
+                            if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                                forces_ = newIntList();
+                                mutable_bitField0_ |= 0x00000001;
+                            }
+                            while (input.getBytesUntilLimit() > 0) {
+                                forces_.addInt(input.readUInt32());
+                            }
+                            input.popLimit(limit);
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                    forces_.makeImmutable(); // C
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimEvent_descriptor;
-    }
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_descriptor;
+        }
 
-    @Override
-    protected FieldAccessorTable
+        public static SimForceResigned parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static SimForceResigned parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static SimForceResigned parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static SimForceResigned parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static SimForceResigned parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static SimForceResigned parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static SimForceResigned parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static SimForceResigned parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static SimForceResigned parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static SimForceResigned parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static SimForceResigned parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static SimForceResigned parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(SimForceResigned prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static SimForceResigned getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<SimForceResigned> parser() {
+            return PARSER;
+        }
+
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new SimForceResigned();
+        }
+
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @Override
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimEvent_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              SimEvent.class, Builder.class);
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            SimForceResigned.class, Builder.class);
+        }
+
+        /**
+         * <pre>
+         * 推演任务id
+         * </pre>
+         *
+         * <code>uint32 sim_id = 1;</code>
+         *
+         * @return The simId.
+         */
+        @Override
+        public int getSimId() {
+            return simId_;
+        }
+
+        /**
+         * <pre>
+         * 兵力id列表
+         * </pre>
+         *
+         * <code>repeated uint32 forces = 2;</code>
+         *
+         * @return A list containing the forces.
+         */
+        @Override
+        public java.util.List<Integer>
+        getForcesList() {
+            return forces_;
+        }
+
+        /**
+         * <pre>
+         * 兵力id列表
+         * </pre>
+         *
+         * <code>repeated uint32 forces = 2;</code>
+         *
+         * @return The count of forces.
+         */
+        public int getForcesCount() {
+            return forces_.size();
+        }
+
+        /**
+         * <pre>
+         * 兵力id列表
+         * </pre>
+         *
+         * <code>repeated uint32 forces = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The forces at the given index.
+         */
+        public int getForces(int index) {
+            return forces_.getInt(index);
+        }
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            getSerializedSize();
+            if (simId_ != 0) {
+                output.writeUInt32(1, simId_);
+            }
+            if (getForcesList().size() > 0) {
+                output.writeUInt32NoTag(18);
+                output.writeUInt32NoTag(forcesMemoizedSerializedSize);
+            }
+            for (int i = 0; i < forces_.size(); i++) {
+                output.writeUInt32NoTag(forces_.getInt(i));
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (simId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeUInt32Size(1, simId_);
+            }
+            {
+                int dataSize = 0;
+                for (int i = 0; i < forces_.size(); i++) {
+                    dataSize += com.google.protobuf.CodedOutputStream
+                            .computeUInt32SizeNoTag(forces_.getInt(i));
+                }
+                size += dataSize;
+                if (!getForcesList().isEmpty()) {
+                    size += 1;
+                    size += com.google.protobuf.CodedOutputStream
+                            .computeInt32SizeNoTag(dataSize);
+                }
+                forcesMemoizedSerializedSize = dataSize;
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof SimForceResigned)) {
+                return super.equals(obj);
+            }
+            SimForceResigned other = (SimForceResigned) obj;
+
+            if (getSimId()
+                    != other.getSimId()) return false;
+            if (!getForcesList()
+                    .equals(other.getForcesList())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + SIM_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getSimId();
+            if (getForcesCount() > 0) {
+                hash = (37 * hash) + FORCES_FIELD_NUMBER;
+                hash = (53 * hash) + getForcesList().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<SimForceResigned> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public SimForceResigned getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * <pre>
+         * 兵力下线
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.soul.tinder.protobuf.proto.SimForceResigned}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.SimForceResigned)
+                SimForceResignedOrBuilder {
+            private int bitField0_;
+            private int simId_;
+            private com.google.protobuf.Internal.IntList forces_ = emptyIntList();
+
+            // Construct using com.soul.tinder.protobuf.proto.TinderProto.SimForceResigned.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                SimForceResigned.class, Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                simId_ = 0;
+
+                forces_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_descriptor;
+            }
+
+            @Override
+            public SimForceResigned getDefaultInstanceForType() {
+                return SimForceResigned.getDefaultInstance();
+            }
+
+            @Override
+            public SimForceResigned build() {
+                SimForceResigned result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public SimForceResigned buildPartial() {
+                SimForceResigned result = new SimForceResigned(this);
+                int from_bitField0_ = bitField0_;
+                result.simId_ = simId_;
+                if (((bitField0_ & 0x00000001) != 0)) {
+                    forces_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                }
+                result.forces_ = forces_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof SimForceResigned) {
+                    return mergeFrom((SimForceResigned) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(SimForceResigned other) {
+                if (other == SimForceResigned.getDefaultInstance()) return this;
+                if (other.getSimId() != 0) {
+                    setSimId(other.getSimId());
+                }
+                if (!other.forces_.isEmpty()) {
+                    if (forces_.isEmpty()) {
+                        forces_ = other.forces_;
+                        bitField0_ = (bitField0_ & ~0x00000001);
+                    } else {
+                        ensureForcesIsMutable();
+                        forces_.addAll(other.forces_);
+                    }
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                SimForceResigned parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (SimForceResigned) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @return The simId.
+             */
+            @Override
+            public int getSimId() {
+                return simId_;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @param value The simId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSimId(int value) {
+
+                simId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSimId() {
+
+                simId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private void ensureForcesIsMutable() {
+                if (!((bitField0_ & 0x00000001) != 0)) {
+                    forces_ = mutableCopy(forces_);
+                    bitField0_ |= 0x00000001;
+                }
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @return A list containing the forces.
+             */
+            public java.util.List<Integer>
+            getForcesList() {
+                return ((bitField0_ & 0x00000001) != 0) ?
+                        java.util.Collections.unmodifiableList(forces_) : forces_;
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @return The count of forces.
+             */
+            public int getForcesCount() {
+                return forces_.size();
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @param index The index of the element to return.
+             * @return The forces at the given index.
+             */
+            public int getForces(int index) {
+                return forces_.getInt(index);
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @param index The index to set the value at.
+             * @param value The forces to set.
+             * @return This builder for chaining.
+             */
+            public Builder setForces(
+                    int index, int value) {
+                ensureForcesIsMutable();
+                forces_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @param value The forces to add.
+             * @return This builder for chaining.
+             */
+            public Builder addForces(int value) {
+                ensureForcesIsMutable();
+                forces_.addInt(value);
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @param values The forces to add.
+             * @return This builder for chaining.
+             */
+            public Builder addAllForces(
+                    Iterable<? extends Integer> values) {
+                ensureForcesIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                        values, forces_);
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 兵力id列表
+             * </pre>
+             *
+             * <code>repeated uint32 forces = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearForces() {
+                forces_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.SimForceResigned)
+        }
+
     }
 
-    public static final int SIM_ID_FIELD_NUMBER = 1;
-    private int simId_;
-    /**
-     * <pre>
-     * 推演任务id
-     * </pre>
-     *
-     * <code>uint32 sim_id = 1;</code>
-     * @return The simId.
-     */
-    @Override
-    public int getSimId() {
-      return simId_;
-    }
-
-    public static final int EVENT_FIELD_NUMBER = 2;
-    private volatile Object event_;
-    /**
-     * <pre>
-     * 事件内容
-     * </pre>
-     *
-     * <code>string event = 2;</code>
-     * @return The event.
-     */
-    @Override
-    public String getEvent() {
-      Object ref = event_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        event_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 事件内容
-     * </pre>
-     *
-     * <code>string event = 2;</code>
-     * @return The bytes for event.
-     */
-    @Override
-    public com.google.protobuf.ByteString
-        getEventBytes() {
-      Object ref = event_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        event_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (simId_ != 0) {
-        output.writeUInt32(1, simId_);
-      }
-      if (!getEventBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, event_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (simId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, simId_);
-      }
-      if (!getEventBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, event_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof SimEvent)) {
-        return super.equals(obj);
-      }
-      SimEvent other = (SimEvent) obj;
-
-      if (getSimId()
-          != other.getSimId()) return false;
-      if (!getEvent()
-          .equals(other.getEvent())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SIM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSimId();
-      hash = (37 * hash) + EVENT_FIELD_NUMBER;
-      hash = (53 * hash) + getEvent().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static SimEvent parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SimEvent parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SimEvent parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SimEvent parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SimEvent parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SimEvent parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SimEvent parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static SimEvent parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static SimEvent parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static SimEvent parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static SimEvent parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static SimEvent parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(SimEvent prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      * 仿真事件
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.soul.tinder.protobuf.proto.SimEvent}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.SimEvent)
-        SimEventOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimEvent_descriptor;
-      }
-
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimEvent_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                SimEvent.class, Builder.class);
-      }
-
-      // Construct using com.soul.tinder.protobuf.proto.TinderProto.SimEvent.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        simId_ = 0;
-
-        event_ = "";
-
-        return this;
-      }
-
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimEvent_descriptor;
-      }
-
-      @Override
-      public SimEvent getDefaultInstanceForType() {
-        return SimEvent.getDefaultInstance();
-      }
-
-      @Override
-      public SimEvent build() {
-        SimEvent result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @Override
-      public SimEvent buildPartial() {
-        SimEvent result = new SimEvent(this);
-        result.simId_ = simId_;
-        result.event_ = event_;
-        onBuilt();
-        return result;
-      }
-
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SimEvent) {
-          return mergeFrom((SimEvent)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(SimEvent other) {
-        if (other == SimEvent.getDefaultInstance()) return this;
-        if (other.getSimId() != 0) {
-          setSimId(other.getSimId());
-        }
-        if (!other.getEvent().isEmpty()) {
-          event_ = other.event_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        SimEvent parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SimEvent) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int simId_ ;
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @return The simId.
-       */
-      @Override
-      public int getSimId() {
-        return simId_;
-      }
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @param value The simId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSimId(int value) {
-        
-        simId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 推演任务id
-       * </pre>
-       *
-       * <code>uint32 sim_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSimId() {
-        
-        simId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private Object event_ = "";
-      /**
-       * <pre>
-       * 事件内容
-       * </pre>
-       *
-       * <code>string event = 2;</code>
-       * @return The event.
-       */
-      public String getEvent() {
-        Object ref = event_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          event_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 事件内容
-       * </pre>
-       *
-       * <code>string event = 2;</code>
-       * @return The bytes for event.
-       */
-      public com.google.protobuf.ByteString
-          getEventBytes() {
-        Object ref = event_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          event_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 事件内容
-       * </pre>
-       *
-       * <code>string event = 2;</code>
-       * @param value The event to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEvent(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        event_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 事件内容
-       * </pre>
-       *
-       * <code>string event = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEvent() {
-        
-        event_ = getDefaultInstance().getEvent();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 事件内容
-       * </pre>
-       *
-       * <code>string event = 2;</code>
-       * @param value The bytes for event to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEventBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        event_ = value;
-        onChanged();
-        return this;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.SimEvent)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.SimEvent)
-    private static final SimEvent DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new SimEvent();
-    }
-
-    public static SimEvent getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SimEvent>
-        PARSER = new com.google.protobuf.AbstractParser<SimEvent>() {
-      @Override
-      public SimEvent parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SimEvent(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SimEvent> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<SimEvent> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public SimEvent getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ScenarioEventOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.ScenarioEvent)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * 订单号
-     * </pre>
-     *
-     * <code>string simId = 1;</code>
-     * @return The simId.
-     */
-    String getSimId();
-    /**
-     * <pre>
-     * 订单号
-     * </pre>
-     *
-     * <code>string simId = 1;</code>
-     * @return The bytes for simId.
-     */
-    com.google.protobuf.ByteString
-        getSimIdBytes();
-
-    /**
-     * <pre>
-     * 仿真时间
-     * </pre>
-     *
-     * <code>int64 time = 2;</code>
-     * @return The time.
-     */
-    long getTime();
-
-    /**
-     * <pre>
-     * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
-     * </pre>
-     *
-     * <code>string instId = 3;</code>
-     * @return The instId.
-     */
-    String getInstId();
-    /**
-     * <pre>
-     * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
-     * </pre>
-     *
-     * <code>string instId = 3;</code>
-     * @return The bytes for instId.
-     */
-    com.google.protobuf.ByteString
-        getInstIdBytes();
-
-    /**
-     * <pre>
-     * 特效id
-     * </pre>
-     *
-     * <code>string effectId = 4;</code>
-     * @return The effectId.
-     */
-    String getEffectId();
-    /**
-     * <pre>
-     * 特效id
-     * </pre>
-     *
-     * <code>string effectId = 4;</code>
-     * @return The bytes for effectId.
-     */
-    com.google.protobuf.ByteString
-        getEffectIdBytes();
-
-    /**
-     * <pre>
-     * 事件类型，详见协议
-     * </pre>
-     *
-     * <code>int32 type = 5;</code>
-     * @return The type.
-     */
-    int getType();
-  }
-  /**
-   * <pre>
-   * 重要的变化事件
-   * </pre>
-   *
-   * Protobuf type {@code com.soul.tinder.protobuf.proto.ScenarioEvent}
-   */
-  public static final class ScenarioEvent extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.ScenarioEvent)
-      ScenarioEventOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ScenarioEvent.newBuilder() to construct.
-    private ScenarioEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ScenarioEvent() {
-      simId_ = "";
-      instId_ = "";
-      effectId_ = "";
-    }
-
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ScenarioEvent();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ScenarioEvent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              String s = input.readStringRequireUtf8();
-
-              simId_ = s;
-              break;
+    public static final class SimEvent extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.SimEvent)
+            SimEventOrBuilder {
+        public static final int SIM_ID_FIELD_NUMBER = 1;
+        public static final int EVENT_FIELD_NUMBER = 2;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.SimEvent)
+        private static final SimEvent DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<SimEvent>
+                PARSER = new com.google.protobuf.AbstractParser<SimEvent>() {
+            @Override
+            public SimEvent parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new SimEvent(input, extensionRegistry);
             }
-            case 16: {
+        };
 
-              time_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              String s = input.readStringRequireUtf8();
-
-              instId_ = s;
-              break;
-            }
-            case 34: {
-              String s = input.readStringRequireUtf8();
-
-              effectId_ = s;
-              break;
-            }
-            case 40: {
-
-              type_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
+        static {
+            DEFAULT_INSTANCE = new SimEvent();
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        private int simId_;
+        private volatile Object event_;
+        private byte memoizedIsInitialized = -1;
+        // Use SimEvent.newBuilder() to construct.
+        private SimEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private SimEvent() {
+            event_ = "";
+        }
+
+        private SimEvent(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
+
+                            simId_ = input.readUInt32();
+                            break;
+                        }
+                        case 18: {
+                            String s = input.readStringRequireUtf8();
+
+                            event_ = s;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_descriptor;
-    }
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimEvent_descriptor;
+        }
 
-    @Override
-    protected FieldAccessorTable
+        public static SimEvent parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static SimEvent parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static SimEvent parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static SimEvent parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static SimEvent parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static SimEvent parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static SimEvent parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static SimEvent parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static SimEvent parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static SimEvent parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static SimEvent parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static SimEvent parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(SimEvent prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static SimEvent getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<SimEvent> parser() {
+            return PARSER;
+        }
+
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new SimEvent();
+        }
+
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @Override
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              ScenarioEvent.class, Builder.class);
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimEvent_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            SimEvent.class, Builder.class);
+        }
+
+        /**
+         * <pre>
+         * 推演任务id
+         * </pre>
+         *
+         * <code>uint32 sim_id = 1;</code>
+         *
+         * @return The simId.
+         */
+        @Override
+        public int getSimId() {
+            return simId_;
+        }
+
+        /**
+         * <pre>
+         * 事件内容
+         * </pre>
+         *
+         * <code>string event = 2;</code>
+         *
+         * @return The event.
+         */
+        @Override
+        public String getEvent() {
+            Object ref = event_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                event_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 事件内容
+         * </pre>
+         *
+         * <code>string event = 2;</code>
+         *
+         * @return The bytes for event.
+         */
+        @Override
+        public com.google.protobuf.ByteString
+        getEventBytes() {
+            Object ref = event_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                event_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (simId_ != 0) {
+                output.writeUInt32(1, simId_);
+            }
+            if (!getEventBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, event_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (simId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeUInt32Size(1, simId_);
+            }
+            if (!getEventBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, event_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof SimEvent)) {
+                return super.equals(obj);
+            }
+            SimEvent other = (SimEvent) obj;
+
+            if (getSimId()
+                    != other.getSimId()) return false;
+            if (!getEvent()
+                    .equals(other.getEvent())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + SIM_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getSimId();
+            hash = (37 * hash) + EVENT_FIELD_NUMBER;
+            hash = (53 * hash) + getEvent().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<SimEvent> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public SimEvent getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * <pre>
+         * 仿真事件
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.soul.tinder.protobuf.proto.SimEvent}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.SimEvent)
+                SimEventOrBuilder {
+            private int simId_;
+            private Object event_ = "";
+
+            // Construct using com.soul.tinder.protobuf.proto.TinderProto.SimEvent.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimEvent_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimEvent_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                SimEvent.class, Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                simId_ = 0;
+
+                event_ = "";
+
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_SimEvent_descriptor;
+            }
+
+            @Override
+            public SimEvent getDefaultInstanceForType() {
+                return SimEvent.getDefaultInstance();
+            }
+
+            @Override
+            public SimEvent build() {
+                SimEvent result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public SimEvent buildPartial() {
+                SimEvent result = new SimEvent(this);
+                result.simId_ = simId_;
+                result.event_ = event_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof SimEvent) {
+                    return mergeFrom((SimEvent) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(SimEvent other) {
+                if (other == SimEvent.getDefaultInstance()) return this;
+                if (other.getSimId() != 0) {
+                    setSimId(other.getSimId());
+                }
+                if (!other.getEvent().isEmpty()) {
+                    event_ = other.event_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                SimEvent parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (SimEvent) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @return The simId.
+             */
+            @Override
+            public int getSimId() {
+                return simId_;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @param value The simId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSimId(int value) {
+
+                simId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演任务id
+             * </pre>
+             *
+             * <code>uint32 sim_id = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSimId() {
+
+                simId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 事件内容
+             * </pre>
+             *
+             * <code>string event = 2;</code>
+             *
+             * @return The event.
+             */
+            public String getEvent() {
+                Object ref = event_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    event_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 事件内容
+             * </pre>
+             *
+             * <code>string event = 2;</code>
+             *
+             * @param value The event to set.
+             * @return This builder for chaining.
+             */
+            public Builder setEvent(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                event_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 事件内容
+             * </pre>
+             *
+             * <code>string event = 2;</code>
+             *
+             * @return The bytes for event.
+             */
+            public com.google.protobuf.ByteString
+            getEventBytes() {
+                Object ref = event_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    event_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 事件内容
+             * </pre>
+             *
+             * <code>string event = 2;</code>
+             *
+             * @param value The bytes for event to set.
+             * @return This builder for chaining.
+             */
+            public Builder setEventBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                event_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 事件内容
+             * </pre>
+             *
+             * <code>string event = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearEvent() {
+
+                event_ = getDefaultInstance().getEvent();
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.SimEvent)
+        }
+
     }
 
-    public static final int SIMID_FIELD_NUMBER = 1;
-    private volatile Object simId_;
-    /**
-     * <pre>
-     * 订单号
-     * </pre>
-     *
-     * <code>string simId = 1;</code>
-     * @return The simId.
-     */
-    @Override
-    public String getSimId() {
-      Object ref = simId_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        simId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 订单号
-     * </pre>
-     *
-     * <code>string simId = 1;</code>
-     * @return The bytes for simId.
-     */
-    @Override
-    public com.google.protobuf.ByteString
-        getSimIdBytes() {
-      Object ref = simId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        simId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TIME_FIELD_NUMBER = 2;
-    private long time_;
-    /**
-     * <pre>
-     * 仿真时间
-     * </pre>
-     *
-     * <code>int64 time = 2;</code>
-     * @return The time.
-     */
-    @Override
-    public long getTime() {
-      return time_;
-    }
-
-    public static final int INSTID_FIELD_NUMBER = 3;
-    private volatile Object instId_;
-    /**
-     * <pre>
-     * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
-     * </pre>
-     *
-     * <code>string instId = 3;</code>
-     * @return The instId.
-     */
-    @Override
-    public String getInstId() {
-      Object ref = instId_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        instId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
-     * </pre>
-     *
-     * <code>string instId = 3;</code>
-     * @return The bytes for instId.
-     */
-    @Override
-    public com.google.protobuf.ByteString
-        getInstIdBytes() {
-      Object ref = instId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        instId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EFFECTID_FIELD_NUMBER = 4;
-    private volatile Object effectId_;
-    /**
-     * <pre>
-     * 特效id
-     * </pre>
-     *
-     * <code>string effectId = 4;</code>
-     * @return The effectId.
-     */
-    @Override
-    public String getEffectId() {
-      Object ref = effectId_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        effectId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 特效id
-     * </pre>
-     *
-     * <code>string effectId = 4;</code>
-     * @return The bytes for effectId.
-     */
-    @Override
-    public com.google.protobuf.ByteString
-        getEffectIdBytes() {
-      Object ref = effectId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        effectId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 5;
-    private int type_;
-    /**
-     * <pre>
-     * 事件类型，详见协议
-     * </pre>
-     *
-     * <code>int32 type = 5;</code>
-     * @return The type.
-     */
-    @Override
-    public int getType() {
-      return type_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getSimIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, simId_);
-      }
-      if (time_ != 0L) {
-        output.writeInt64(2, time_);
-      }
-      if (!getInstIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instId_);
-      }
-      if (!getEffectIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, effectId_);
-      }
-      if (type_ != 0) {
-        output.writeInt32(5, type_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getSimIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, simId_);
-      }
-      if (time_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, time_);
-      }
-      if (!getInstIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instId_);
-      }
-      if (!getEffectIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, effectId_);
-      }
-      if (type_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, type_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof ScenarioEvent)) {
-        return super.equals(obj);
-      }
-      ScenarioEvent other = (ScenarioEvent) obj;
-
-      if (!getSimId()
-          .equals(other.getSimId())) return false;
-      if (getTime()
-          != other.getTime()) return false;
-      if (!getInstId()
-          .equals(other.getInstId())) return false;
-      if (!getEffectId()
-          .equals(other.getEffectId())) return false;
-      if (getType()
-          != other.getType()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SIMID_FIELD_NUMBER;
-      hash = (53 * hash) + getSimId().hashCode();
-      hash = (37 * hash) + TIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTime());
-      hash = (37 * hash) + INSTID_FIELD_NUMBER;
-      hash = (53 * hash) + getInstId().hashCode();
-      hash = (37 * hash) + EFFECTID_FIELD_NUMBER;
-      hash = (53 * hash) + getEffectId().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static ScenarioEvent parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ScenarioEvent parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ScenarioEvent parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ScenarioEvent parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ScenarioEvent parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ScenarioEvent parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ScenarioEvent parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static ScenarioEvent parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static ScenarioEvent parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static ScenarioEvent parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static ScenarioEvent parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static ScenarioEvent parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(ScenarioEvent prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      * 重要的变化事件
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.soul.tinder.protobuf.proto.ScenarioEvent}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.ScenarioEvent)
-        ScenarioEventOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_descriptor;
-      }
-
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                ScenarioEvent.class, Builder.class);
-      }
-
-      // Construct using com.soul.tinder.protobuf.proto.TinderProto.ScenarioEvent.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        simId_ = "";
-
-        time_ = 0L;
-
-        instId_ = "";
-
-        effectId_ = "";
-
-        type_ = 0;
-
-        return this;
-      }
-
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_descriptor;
-      }
-
-      @Override
-      public ScenarioEvent getDefaultInstanceForType() {
-        return ScenarioEvent.getDefaultInstance();
-      }
-
-      @Override
-      public ScenarioEvent build() {
-        ScenarioEvent result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @Override
-      public ScenarioEvent buildPartial() {
-        ScenarioEvent result = new ScenarioEvent(this);
-        result.simId_ = simId_;
-        result.time_ = time_;
-        result.instId_ = instId_;
-        result.effectId_ = effectId_;
-        result.type_ = type_;
-        onBuilt();
-        return result;
-      }
-
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ScenarioEvent) {
-          return mergeFrom((ScenarioEvent)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(ScenarioEvent other) {
-        if (other == ScenarioEvent.getDefaultInstance()) return this;
-        if (!other.getSimId().isEmpty()) {
-          simId_ = other.simId_;
-          onChanged();
-        }
-        if (other.getTime() != 0L) {
-          setTime(other.getTime());
-        }
-        if (!other.getInstId().isEmpty()) {
-          instId_ = other.instId_;
-          onChanged();
-        }
-        if (!other.getEffectId().isEmpty()) {
-          effectId_ = other.effectId_;
-          onChanged();
-        }
-        if (other.getType() != 0) {
-          setType(other.getType());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        ScenarioEvent parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ScenarioEvent) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private Object simId_ = "";
-      /**
-       * <pre>
-       * 订单号
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @return The simId.
-       */
-      public String getSimId() {
-        Object ref = simId_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          simId_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 订单号
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @return The bytes for simId.
-       */
-      public com.google.protobuf.ByteString
-          getSimIdBytes() {
-        Object ref = simId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          simId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 订单号
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @param value The simId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSimId(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        simId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 订单号
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSimId() {
-        
-        simId_ = getDefaultInstance().getSimId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 订单号
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @param value The bytes for simId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSimIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        simId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long time_ ;
-      /**
-       * <pre>
-       * 仿真时间
-       * </pre>
-       *
-       * <code>int64 time = 2;</code>
-       * @return The time.
-       */
-      @Override
-      public long getTime() {
-        return time_;
-      }
-      /**
-       * <pre>
-       * 仿真时间
-       * </pre>
-       *
-       * <code>int64 time = 2;</code>
-       * @param value The time to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTime(long value) {
-        
-        time_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 仿真时间
-       * </pre>
-       *
-       * <code>int64 time = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTime() {
-        
-        time_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private Object instId_ = "";
-      /**
-       * <pre>
-       * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
-       * </pre>
-       *
-       * <code>string instId = 3;</code>
-       * @return The instId.
-       */
-      public String getInstId() {
-        Object ref = instId_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          instId_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
-       * </pre>
-       *
-       * <code>string instId = 3;</code>
-       * @return The bytes for instId.
-       */
-      public com.google.protobuf.ByteString
-          getInstIdBytes() {
-        Object ref = instId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          instId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
-       * </pre>
-       *
-       * <code>string instId = 3;</code>
-       * @param value The instId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInstId(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        instId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
-       * </pre>
-       *
-       * <code>string instId = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInstId() {
-        
-        instId_ = getDefaultInstance().getInstId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
-       * </pre>
-       *
-       * <code>string instId = 3;</code>
-       * @param value The bytes for instId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInstIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        instId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private Object effectId_ = "";
-      /**
-       * <pre>
-       * 特效id
-       * </pre>
-       *
-       * <code>string effectId = 4;</code>
-       * @return The effectId.
-       */
-      public String getEffectId() {
-        Object ref = effectId_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          effectId_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 特效id
-       * </pre>
-       *
-       * <code>string effectId = 4;</code>
-       * @return The bytes for effectId.
-       */
-      public com.google.protobuf.ByteString
-          getEffectIdBytes() {
-        Object ref = effectId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          effectId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 特效id
-       * </pre>
-       *
-       * <code>string effectId = 4;</code>
-       * @param value The effectId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEffectId(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        effectId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 特效id
-       * </pre>
-       *
-       * <code>string effectId = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEffectId() {
-        
-        effectId_ = getDefaultInstance().getEffectId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 特效id
-       * </pre>
-       *
-       * <code>string effectId = 4;</code>
-       * @param value The bytes for effectId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEffectIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        effectId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int type_ ;
-      /**
-       * <pre>
-       * 事件类型，详见协议
-       * </pre>
-       *
-       * <code>int32 type = 5;</code>
-       * @return The type.
-       */
-      @Override
-      public int getType() {
-        return type_;
-      }
-      /**
-       * <pre>
-       * 事件类型，详见协议
-       * </pre>
-       *
-       * <code>int32 type = 5;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 事件类型，详见协议
-       * </pre>
-       *
-       * <code>int32 type = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
-        onChanged();
-        return this;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.ScenarioEvent)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.ScenarioEvent)
-    private static final ScenarioEvent DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new ScenarioEvent();
-    }
-
-    public static ScenarioEvent getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ScenarioEvent>
-        PARSER = new com.google.protobuf.AbstractParser<ScenarioEvent>() {
-      @Override
-      public ScenarioEvent parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ScenarioEvent(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ScenarioEvent> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<ScenarioEvent> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public ScenarioEvent getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ScenarioLogOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.ScenarioLog)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * 仿真任务id
-     * </pre>
-     *
-     * <code>string simId = 1;</code>
-     * @return The simId.
-     */
-    String getSimId();
-    /**
-     * <pre>
-     * 仿真任务id
-     * </pre>
-     *
-     * <code>string simId = 1;</code>
-     * @return The bytes for simId.
-     */
-    com.google.protobuf.ByteString
-        getSimIdBytes();
-
-    /**
-     * <pre>
-     * 阵营
-     * </pre>
-     *
-     * <code>string team = 2;</code>
-     * @return The team.
-     */
-    String getTeam();
-    /**
-     * <pre>
-     * 阵营
-     * </pre>
-     *
-     * <code>string team = 2;</code>
-     * @return The bytes for team.
-     */
-    com.google.protobuf.ByteString
-        getTeamBytes();
-
-    /**
-     * <pre>
-     * 仿真时间（格式化后）
-     * </pre>
-     *
-     * <code>int64 time = 3;</code>
-     * @return The time.
-     */
-    long getTime();
-
-    /**
-     * <pre>
-     * 日志信息
-     * </pre>
-     *
-     * <code>string info = 4;</code>
-     * @return The info.
-     */
-    String getInfo();
-    /**
-     * <pre>
-     * 日志信息
-     * </pre>
-     *
-     * <code>string info = 4;</code>
-     * @return The bytes for info.
-     */
-    com.google.protobuf.ByteString
-        getInfoBytes();
-  }
-  /**
-   * Protobuf type {@code com.soul.tinder.protobuf.proto.ScenarioLog}
-   */
-  public static final class ScenarioLog extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.ScenarioLog)
-      ScenarioLogOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ScenarioLog.newBuilder() to construct.
-    private ScenarioLog(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ScenarioLog() {
-      simId_ = "";
-      team_ = "";
-      info_ = "";
-    }
-
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ScenarioLog();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ScenarioLog(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              String s = input.readStringRequireUtf8();
-
-              simId_ = s;
-              break;
+    public static final class ScenarioEvent extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.ScenarioEvent)
+            ScenarioEventOrBuilder {
+        public static final int SIMID_FIELD_NUMBER = 1;
+        public static final int TIME_FIELD_NUMBER = 2;
+        public static final int INSTID_FIELD_NUMBER = 3;
+        public static final int EFFECTID_FIELD_NUMBER = 4;
+        public static final int TYPE_FIELD_NUMBER = 5;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.ScenarioEvent)
+        private static final ScenarioEvent DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<ScenarioEvent>
+                PARSER = new com.google.protobuf.AbstractParser<ScenarioEvent>() {
+            @Override
+            public ScenarioEvent parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ScenarioEvent(input, extensionRegistry);
             }
-            case 18: {
-              String s = input.readStringRequireUtf8();
+        };
 
-              team_ = s;
-              break;
-            }
-            case 24: {
-
-              time_ = input.readInt64();
-              break;
-            }
-            case 34: {
-              String s = input.readStringRequireUtf8();
-
-              info_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
+        static {
+            DEFAULT_INSTANCE = new ScenarioEvent();
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        private volatile Object simId_;
+        private long time_;
+        private volatile Object instId_;
+        private volatile Object effectId_;
+        private int type_;
+        private byte memoizedIsInitialized = -1;
+
+        // Use ScenarioEvent.newBuilder() to construct.
+        private ScenarioEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+        private ScenarioEvent() {
+            simId_ = "";
+            instId_ = "";
+            effectId_ = "";
+        }
+
+        private ScenarioEvent(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            String s = input.readStringRequireUtf8();
+
+                            simId_ = s;
+                            break;
+                        }
+                        case 16: {
+
+                            time_ = input.readInt64();
+                            break;
+                        }
+                        case 26: {
+                            String s = input.readStringRequireUtf8();
+
+                            instId_ = s;
+                            break;
+                        }
+                        case 34: {
+                            String s = input.readStringRequireUtf8();
+
+                            effectId_ = s;
+                            break;
+                        }
+                        case 40: {
+
+                            type_ = input.readInt32();
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_descriptor;
-    }
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_descriptor;
+        }
 
-    @Override
-    protected FieldAccessorTable
+        public static ScenarioEvent parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ScenarioEvent parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ScenarioEvent parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ScenarioEvent parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ScenarioEvent parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ScenarioEvent parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ScenarioEvent parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ScenarioEvent parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ScenarioEvent parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static ScenarioEvent parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ScenarioEvent parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ScenarioEvent parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(ScenarioEvent prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static ScenarioEvent getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<ScenarioEvent> parser() {
+            return PARSER;
+        }
+
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new ScenarioEvent();
+        }
+
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @Override
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              ScenarioLog.class, Builder.class);
-    }
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            ScenarioEvent.class, Builder.class);
+        }
 
-    public static final int SIMID_FIELD_NUMBER = 1;
-    private volatile Object simId_;
-    /**
-     * <pre>
-     * 仿真任务id
-     * </pre>
-     *
-     * <code>string simId = 1;</code>
-     * @return The simId.
-     */
-    @Override
-    public String getSimId() {
-      Object ref = simId_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        simId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 仿真任务id
-     * </pre>
-     *
-     * <code>string simId = 1;</code>
-     * @return The bytes for simId.
-     */
-    @Override
-    public com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * 订单号
+         * </pre>
+         *
+         * <code>string simId = 1;</code>
+         *
+         * @return The simId.
+         */
+        @Override
+        public String getSimId() {
+            Object ref = simId_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                simId_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 订单号
+         * </pre>
+         *
+         * <code>string simId = 1;</code>
+         *
+         * @return The bytes for simId.
+         */
+        @Override
+        public com.google.protobuf.ByteString
         getSimIdBytes() {
-      Object ref = simId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        simId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+            Object ref = simId_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                simId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 仿真时间
+         * </pre>
+         *
+         * <code>int64 time = 2;</code>
+         *
+         * @return The time.
+         */
+        @Override
+        public long getTime() {
+            return time_;
+        }
+
+        /**
+         * <pre>
+         * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
+         * </pre>
+         *
+         * <code>string instId = 3;</code>
+         *
+         * @return The instId.
+         */
+        @Override
+        public String getInstId() {
+            Object ref = instId_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                instId_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
+         * </pre>
+         *
+         * <code>string instId = 3;</code>
+         *
+         * @return The bytes for instId.
+         */
+        @Override
+        public com.google.protobuf.ByteString
+        getInstIdBytes() {
+            Object ref = instId_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                instId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 特效id
+         * </pre>
+         *
+         * <code>string effectId = 4;</code>
+         *
+         * @return The effectId.
+         */
+        @Override
+        public String getEffectId() {
+            Object ref = effectId_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                effectId_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 特效id
+         * </pre>
+         *
+         * <code>string effectId = 4;</code>
+         *
+         * @return The bytes for effectId.
+         */
+        @Override
+        public com.google.protobuf.ByteString
+        getEffectIdBytes() {
+            Object ref = effectId_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                effectId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 事件类型，详见协议
+         * </pre>
+         *
+         * <code>int32 type = 5;</code>
+         *
+         * @return The type.
+         */
+        @Override
+        public int getType() {
+            return type_;
+        }
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getSimIdBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, simId_);
+            }
+            if (time_ != 0L) {
+                output.writeInt64(2, time_);
+            }
+            if (!getInstIdBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instId_);
+            }
+            if (!getEffectIdBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 4, effectId_);
+            }
+            if (type_ != 0) {
+                output.writeInt32(5, type_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getSimIdBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, simId_);
+            }
+            if (time_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(2, time_);
+            }
+            if (!getInstIdBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instId_);
+            }
+            if (!getEffectIdBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, effectId_);
+            }
+            if (type_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(5, type_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof ScenarioEvent)) {
+                return super.equals(obj);
+            }
+            ScenarioEvent other = (ScenarioEvent) obj;
+
+            if (!getSimId()
+                    .equals(other.getSimId())) return false;
+            if (getTime()
+                    != other.getTime()) return false;
+            if (!getInstId()
+                    .equals(other.getInstId())) return false;
+            if (!getEffectId()
+                    .equals(other.getEffectId())) return false;
+            if (getType()
+                    != other.getType()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + SIMID_FIELD_NUMBER;
+            hash = (53 * hash) + getSimId().hashCode();
+            hash = (37 * hash) + TIME_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    getTime());
+            hash = (37 * hash) + INSTID_FIELD_NUMBER;
+            hash = (53 * hash) + getInstId().hashCode();
+            hash = (37 * hash) + EFFECTID_FIELD_NUMBER;
+            hash = (53 * hash) + getEffectId().hashCode();
+            hash = (37 * hash) + TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + getType();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<ScenarioEvent> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public ScenarioEvent getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * <pre>
+         * 重要的变化事件
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.soul.tinder.protobuf.proto.ScenarioEvent}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.ScenarioEvent)
+                ScenarioEventOrBuilder {
+            private Object simId_ = "";
+            private long time_;
+            private Object instId_ = "";
+            private Object effectId_ = "";
+            private int type_;
+
+            // Construct using com.soul.tinder.protobuf.proto.TinderProto.ScenarioEvent.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                ScenarioEvent.class, Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                simId_ = "";
+
+                time_ = 0L;
+
+                instId_ = "";
+
+                effectId_ = "";
+
+                type_ = 0;
+
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_descriptor;
+            }
+
+            @Override
+            public ScenarioEvent getDefaultInstanceForType() {
+                return ScenarioEvent.getDefaultInstance();
+            }
+
+            @Override
+            public ScenarioEvent build() {
+                ScenarioEvent result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public ScenarioEvent buildPartial() {
+                ScenarioEvent result = new ScenarioEvent(this);
+                result.simId_ = simId_;
+                result.time_ = time_;
+                result.instId_ = instId_;
+                result.effectId_ = effectId_;
+                result.type_ = type_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof ScenarioEvent) {
+                    return mergeFrom((ScenarioEvent) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(ScenarioEvent other) {
+                if (other == ScenarioEvent.getDefaultInstance()) return this;
+                if (!other.getSimId().isEmpty()) {
+                    simId_ = other.simId_;
+                    onChanged();
+                }
+                if (other.getTime() != 0L) {
+                    setTime(other.getTime());
+                }
+                if (!other.getInstId().isEmpty()) {
+                    instId_ = other.instId_;
+                    onChanged();
+                }
+                if (!other.getEffectId().isEmpty()) {
+                    effectId_ = other.effectId_;
+                    onChanged();
+                }
+                if (other.getType() != 0) {
+                    setType(other.getType());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                ScenarioEvent parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (ScenarioEvent) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 订单号
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @return The simId.
+             */
+            public String getSimId() {
+                Object ref = simId_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    simId_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 订单号
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @param value The simId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSimId(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                simId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 订单号
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @return The bytes for simId.
+             */
+            public com.google.protobuf.ByteString
+            getSimIdBytes() {
+                Object ref = simId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    simId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 订单号
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @param value The bytes for simId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSimIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                simId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 订单号
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSimId() {
+
+                simId_ = getDefaultInstance().getSimId();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 仿真时间
+             * </pre>
+             *
+             * <code>int64 time = 2;</code>
+             *
+             * @return The time.
+             */
+            @Override
+            public long getTime() {
+                return time_;
+            }
+
+            /**
+             * <pre>
+             * 仿真时间
+             * </pre>
+             *
+             * <code>int64 time = 2;</code>
+             *
+             * @param value The time to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTime(long value) {
+
+                time_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 仿真时间
+             * </pre>
+             *
+             * <code>int64 time = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearTime() {
+
+                time_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
+             * </pre>
+             *
+             * <code>string instId = 3;</code>
+             *
+             * @return The instId.
+             */
+            public String getInstId() {
+                Object ref = instId_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    instId_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
+             * </pre>
+             *
+             * <code>string instId = 3;</code>
+             *
+             * @param value The instId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setInstId(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                instId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
+             * </pre>
+             *
+             * <code>string instId = 3;</code>
+             *
+             * @return The bytes for instId.
+             */
+            public com.google.protobuf.ByteString
+            getInstIdBytes() {
+                Object ref = instId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    instId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
+             * </pre>
+             *
+             * <code>string instId = 3;</code>
+             *
+             * @param value The bytes for instId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setInstIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                instId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 实例ID（兵力实体Id，航线Id,区域id），表示这个事件作用于谁
+             * </pre>
+             *
+             * <code>string instId = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearInstId() {
+
+                instId_ = getDefaultInstance().getInstId();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 特效id
+             * </pre>
+             *
+             * <code>string effectId = 4;</code>
+             *
+             * @return The effectId.
+             */
+            public String getEffectId() {
+                Object ref = effectId_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    effectId_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 特效id
+             * </pre>
+             *
+             * <code>string effectId = 4;</code>
+             *
+             * @param value The effectId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setEffectId(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                effectId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 特效id
+             * </pre>
+             *
+             * <code>string effectId = 4;</code>
+             *
+             * @return The bytes for effectId.
+             */
+            public com.google.protobuf.ByteString
+            getEffectIdBytes() {
+                Object ref = effectId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    effectId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 特效id
+             * </pre>
+             *
+             * <code>string effectId = 4;</code>
+             *
+             * @param value The bytes for effectId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setEffectIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                effectId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 特效id
+             * </pre>
+             *
+             * <code>string effectId = 4;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearEffectId() {
+
+                effectId_ = getDefaultInstance().getEffectId();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 事件类型，详见协议
+             * </pre>
+             *
+             * <code>int32 type = 5;</code>
+             *
+             * @return The type.
+             */
+            @Override
+            public int getType() {
+                return type_;
+            }
+
+            /**
+             * <pre>
+             * 事件类型，详见协议
+             * </pre>
+             *
+             * <code>int32 type = 5;</code>
+             *
+             * @param value The type to set.
+             * @return This builder for chaining.
+             */
+            public Builder setType(int value) {
+
+                type_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 事件类型，详见协议
+             * </pre>
+             *
+             * <code>int32 type = 5;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearType() {
+
+                type_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.ScenarioEvent)
+        }
+
     }
 
-    public static final int TEAM_FIELD_NUMBER = 2;
-    private volatile Object team_;
-    /**
-     * <pre>
-     * 阵营
-     * </pre>
-     *
-     * <code>string team = 2;</code>
-     * @return The team.
-     */
-    @Override
-    public String getTeam() {
-      Object ref = team_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        team_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 阵营
-     * </pre>
-     *
-     * <code>string team = 2;</code>
-     * @return The bytes for team.
-     */
-    @Override
-    public com.google.protobuf.ByteString
-        getTeamBytes() {
-      Object ref = team_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        team_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TIME_FIELD_NUMBER = 3;
-    private long time_;
-    /**
-     * <pre>
-     * 仿真时间（格式化后）
-     * </pre>
-     *
-     * <code>int64 time = 3;</code>
-     * @return The time.
-     */
-    @Override
-    public long getTime() {
-      return time_;
-    }
-
-    public static final int INFO_FIELD_NUMBER = 4;
-    private volatile Object info_;
-    /**
-     * <pre>
-     * 日志信息
-     * </pre>
-     *
-     * <code>string info = 4;</code>
-     * @return The info.
-     */
-    @Override
-    public String getInfo() {
-      Object ref = info_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        info_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 日志信息
-     * </pre>
-     *
-     * <code>string info = 4;</code>
-     * @return The bytes for info.
-     */
-    @Override
-    public com.google.protobuf.ByteString
-        getInfoBytes() {
-      Object ref = info_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        info_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getSimIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, simId_);
-      }
-      if (!getTeamBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, team_);
-      }
-      if (time_ != 0L) {
-        output.writeInt64(3, time_);
-      }
-      if (!getInfoBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, info_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getSimIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, simId_);
-      }
-      if (!getTeamBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, team_);
-      }
-      if (time_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, time_);
-      }
-      if (!getInfoBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, info_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof ScenarioLog)) {
-        return super.equals(obj);
-      }
-      ScenarioLog other = (ScenarioLog) obj;
-
-      if (!getSimId()
-          .equals(other.getSimId())) return false;
-      if (!getTeam()
-          .equals(other.getTeam())) return false;
-      if (getTime()
-          != other.getTime()) return false;
-      if (!getInfo()
-          .equals(other.getInfo())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SIMID_FIELD_NUMBER;
-      hash = (53 * hash) + getSimId().hashCode();
-      hash = (37 * hash) + TEAM_FIELD_NUMBER;
-      hash = (53 * hash) + getTeam().hashCode();
-      hash = (37 * hash) + TIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTime());
-      hash = (37 * hash) + INFO_FIELD_NUMBER;
-      hash = (53 * hash) + getInfo().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static ScenarioLog parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ScenarioLog parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ScenarioLog parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ScenarioLog parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ScenarioLog parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ScenarioLog parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ScenarioLog parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static ScenarioLog parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static ScenarioLog parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static ScenarioLog parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static ScenarioLog parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static ScenarioLog parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(ScenarioLog prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.soul.tinder.protobuf.proto.ScenarioLog}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.ScenarioLog)
-        ScenarioLogOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_descriptor;
-      }
-
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                ScenarioLog.class, Builder.class);
-      }
-
-      // Construct using com.soul.tinder.protobuf.proto.TinderProto.ScenarioLog.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        simId_ = "";
-
-        team_ = "";
-
-        time_ = 0L;
-
-        info_ = "";
-
-        return this;
-      }
-
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_descriptor;
-      }
-
-      @Override
-      public ScenarioLog getDefaultInstanceForType() {
-        return ScenarioLog.getDefaultInstance();
-      }
-
-      @Override
-      public ScenarioLog build() {
-        ScenarioLog result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @Override
-      public ScenarioLog buildPartial() {
-        ScenarioLog result = new ScenarioLog(this);
-        result.simId_ = simId_;
-        result.team_ = team_;
-        result.time_ = time_;
-        result.info_ = info_;
-        onBuilt();
-        return result;
-      }
-
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ScenarioLog) {
-          return mergeFrom((ScenarioLog)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(ScenarioLog other) {
-        if (other == ScenarioLog.getDefaultInstance()) return this;
-        if (!other.getSimId().isEmpty()) {
-          simId_ = other.simId_;
-          onChanged();
-        }
-        if (!other.getTeam().isEmpty()) {
-          team_ = other.team_;
-          onChanged();
-        }
-        if (other.getTime() != 0L) {
-          setTime(other.getTime());
-        }
-        if (!other.getInfo().isEmpty()) {
-          info_ = other.info_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        ScenarioLog parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ScenarioLog) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private Object simId_ = "";
-      /**
-       * <pre>
-       * 仿真任务id
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @return The simId.
-       */
-      public String getSimId() {
-        Object ref = simId_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          simId_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 仿真任务id
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @return The bytes for simId.
-       */
-      public com.google.protobuf.ByteString
-          getSimIdBytes() {
-        Object ref = simId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          simId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 仿真任务id
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @param value The simId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSimId(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        simId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 仿真任务id
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSimId() {
-        
-        simId_ = getDefaultInstance().getSimId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 仿真任务id
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @param value The bytes for simId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSimIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        simId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private Object team_ = "";
-      /**
-       * <pre>
-       * 阵营
-       * </pre>
-       *
-       * <code>string team = 2;</code>
-       * @return The team.
-       */
-      public String getTeam() {
-        Object ref = team_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          team_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 阵营
-       * </pre>
-       *
-       * <code>string team = 2;</code>
-       * @return The bytes for team.
-       */
-      public com.google.protobuf.ByteString
-          getTeamBytes() {
-        Object ref = team_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          team_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 阵营
-       * </pre>
-       *
-       * <code>string team = 2;</code>
-       * @param value The team to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTeam(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        team_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 阵营
-       * </pre>
-       *
-       * <code>string team = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTeam() {
-        
-        team_ = getDefaultInstance().getTeam();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 阵营
-       * </pre>
-       *
-       * <code>string team = 2;</code>
-       * @param value The bytes for team to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTeamBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        team_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long time_ ;
-      /**
-       * <pre>
-       * 仿真时间（格式化后）
-       * </pre>
-       *
-       * <code>int64 time = 3;</code>
-       * @return The time.
-       */
-      @Override
-      public long getTime() {
-        return time_;
-      }
-      /**
-       * <pre>
-       * 仿真时间（格式化后）
-       * </pre>
-       *
-       * <code>int64 time = 3;</code>
-       * @param value The time to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTime(long value) {
-        
-        time_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 仿真时间（格式化后）
-       * </pre>
-       *
-       * <code>int64 time = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTime() {
-        
-        time_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private Object info_ = "";
-      /**
-       * <pre>
-       * 日志信息
-       * </pre>
-       *
-       * <code>string info = 4;</code>
-       * @return The info.
-       */
-      public String getInfo() {
-        Object ref = info_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          info_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 日志信息
-       * </pre>
-       *
-       * <code>string info = 4;</code>
-       * @return The bytes for info.
-       */
-      public com.google.protobuf.ByteString
-          getInfoBytes() {
-        Object ref = info_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          info_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 日志信息
-       * </pre>
-       *
-       * <code>string info = 4;</code>
-       * @param value The info to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInfo(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        info_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 日志信息
-       * </pre>
-       *
-       * <code>string info = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInfo() {
-        
-        info_ = getDefaultInstance().getInfo();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 日志信息
-       * </pre>
-       *
-       * <code>string info = 4;</code>
-       * @param value The bytes for info to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInfoBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        info_ = value;
-        onChanged();
-        return this;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.ScenarioLog)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.ScenarioLog)
-    private static final ScenarioLog DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new ScenarioLog();
-    }
-
-    public static ScenarioLog getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ScenarioLog>
-        PARSER = new com.google.protobuf.AbstractParser<ScenarioLog>() {
-      @Override
-      public ScenarioLog parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ScenarioLog(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ScenarioLog> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<ScenarioLog> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public ScenarioLog getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ForceSummaryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.ForceSummary)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint32 id = 1;</code>
-     * @return The id.
-     */
-    int getId();
-
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
-    String getName();
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-  }
-  /**
-   * <pre>
-   * ForceSummary 兵力概要信息
-   * </pre>
-   *
-   * Protobuf type {@code com.soul.tinder.protobuf.proto.ForceSummary}
-   */
-  public static final class ForceSummary extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.ForceSummary)
-      ForceSummaryOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ForceSummary.newBuilder() to construct.
-    private ForceSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ForceSummary() {
-      name_ = "";
-    }
-
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ForceSummary();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ForceSummary(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              id_ = input.readUInt32();
-              break;
+    public static final class ScenarioLog extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.ScenarioLog)
+            ScenarioLogOrBuilder {
+        public static final int SIMID_FIELD_NUMBER = 1;
+        public static final int TEAM_FIELD_NUMBER = 2;
+        public static final int TIME_FIELD_NUMBER = 3;
+        public static final int INFO_FIELD_NUMBER = 4;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.ScenarioLog)
+        private static final ScenarioLog DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<ScenarioLog>
+                PARSER = new com.google.protobuf.AbstractParser<ScenarioLog>() {
+            @Override
+            public ScenarioLog parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ScenarioLog(input, extensionRegistry);
             }
-            case 18: {
-              String s = input.readStringRequireUtf8();
+        };
 
-              name_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
+        static {
+            DEFAULT_INSTANCE = new ScenarioLog();
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        private volatile Object simId_;
+        private volatile Object team_;
+        private long time_;
+        private volatile Object info_;
+        private byte memoizedIsInitialized = -1;
+        // Use ScenarioLog.newBuilder() to construct.
+        private ScenarioLog(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private ScenarioLog() {
+            simId_ = "";
+            team_ = "";
+            info_ = "";
+        }
+
+        private ScenarioLog(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            String s = input.readStringRequireUtf8();
+
+                            simId_ = s;
+                            break;
+                        }
+                        case 18: {
+                            String s = input.readStringRequireUtf8();
+
+                            team_ = s;
+                            break;
+                        }
+                        case 24: {
+
+                            time_ = input.readInt64();
+                            break;
+                        }
+                        case 34: {
+                            String s = input.readStringRequireUtf8();
+
+                            info_ = s;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceSummary_descriptor;
-    }
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_descriptor;
+        }
 
-    @Override
-    protected FieldAccessorTable
+        public static ScenarioLog parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ScenarioLog parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ScenarioLog parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ScenarioLog parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ScenarioLog parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ScenarioLog parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ScenarioLog parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ScenarioLog parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ScenarioLog parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static ScenarioLog parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ScenarioLog parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ScenarioLog parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(ScenarioLog prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static ScenarioLog getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<ScenarioLog> parser() {
+            return PARSER;
+        }
+
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new ScenarioLog();
+        }
+
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @Override
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceSummary_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              ForceSummary.class, Builder.class);
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            ScenarioLog.class, Builder.class);
+        }
+
+        /**
+         * <pre>
+         * 仿真任务id
+         * </pre>
+         *
+         * <code>string simId = 1;</code>
+         *
+         * @return The simId.
+         */
+        @Override
+        public String getSimId() {
+            Object ref = simId_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                simId_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 仿真任务id
+         * </pre>
+         *
+         * <code>string simId = 1;</code>
+         *
+         * @return The bytes for simId.
+         */
+        @Override
+        public com.google.protobuf.ByteString
+        getSimIdBytes() {
+            Object ref = simId_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                simId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 阵营
+         * </pre>
+         *
+         * <code>string team = 2;</code>
+         *
+         * @return The team.
+         */
+        @Override
+        public String getTeam() {
+            Object ref = team_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                team_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 阵营
+         * </pre>
+         *
+         * <code>string team = 2;</code>
+         *
+         * @return The bytes for team.
+         */
+        @Override
+        public com.google.protobuf.ByteString
+        getTeamBytes() {
+            Object ref = team_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                team_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 仿真时间（格式化后）
+         * </pre>
+         *
+         * <code>int64 time = 3;</code>
+         *
+         * @return The time.
+         */
+        @Override
+        public long getTime() {
+            return time_;
+        }
+
+        /**
+         * <pre>
+         * 日志信息
+         * </pre>
+         *
+         * <code>string info = 4;</code>
+         *
+         * @return The info.
+         */
+        @Override
+        public String getInfo() {
+            Object ref = info_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                info_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 日志信息
+         * </pre>
+         *
+         * <code>string info = 4;</code>
+         *
+         * @return The bytes for info.
+         */
+        @Override
+        public com.google.protobuf.ByteString
+        getInfoBytes() {
+            Object ref = info_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                info_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getSimIdBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, simId_);
+            }
+            if (!getTeamBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, team_);
+            }
+            if (time_ != 0L) {
+                output.writeInt64(3, time_);
+            }
+            if (!getInfoBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 4, info_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getSimIdBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, simId_);
+            }
+            if (!getTeamBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, team_);
+            }
+            if (time_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(3, time_);
+            }
+            if (!getInfoBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, info_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof ScenarioLog)) {
+                return super.equals(obj);
+            }
+            ScenarioLog other = (ScenarioLog) obj;
+
+            if (!getSimId()
+                    .equals(other.getSimId())) return false;
+            if (!getTeam()
+                    .equals(other.getTeam())) return false;
+            if (getTime()
+                    != other.getTime()) return false;
+            if (!getInfo()
+                    .equals(other.getInfo())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + SIMID_FIELD_NUMBER;
+            hash = (53 * hash) + getSimId().hashCode();
+            hash = (37 * hash) + TEAM_FIELD_NUMBER;
+            hash = (53 * hash) + getTeam().hashCode();
+            hash = (37 * hash) + TIME_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    getTime());
+            hash = (37 * hash) + INFO_FIELD_NUMBER;
+            hash = (53 * hash) + getInfo().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<ScenarioLog> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public ScenarioLog getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code com.soul.tinder.protobuf.proto.ScenarioLog}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.ScenarioLog)
+                ScenarioLogOrBuilder {
+            private Object simId_ = "";
+            private Object team_ = "";
+            private long time_;
+            private Object info_ = "";
+
+            // Construct using com.soul.tinder.protobuf.proto.TinderProto.ScenarioLog.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                ScenarioLog.class, Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                simId_ = "";
+
+                team_ = "";
+
+                time_ = 0L;
+
+                info_ = "";
+
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_descriptor;
+            }
+
+            @Override
+            public ScenarioLog getDefaultInstanceForType() {
+                return ScenarioLog.getDefaultInstance();
+            }
+
+            @Override
+            public ScenarioLog build() {
+                ScenarioLog result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public ScenarioLog buildPartial() {
+                ScenarioLog result = new ScenarioLog(this);
+                result.simId_ = simId_;
+                result.team_ = team_;
+                result.time_ = time_;
+                result.info_ = info_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof ScenarioLog) {
+                    return mergeFrom((ScenarioLog) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(ScenarioLog other) {
+                if (other == ScenarioLog.getDefaultInstance()) return this;
+                if (!other.getSimId().isEmpty()) {
+                    simId_ = other.simId_;
+                    onChanged();
+                }
+                if (!other.getTeam().isEmpty()) {
+                    team_ = other.team_;
+                    onChanged();
+                }
+                if (other.getTime() != 0L) {
+                    setTime(other.getTime());
+                }
+                if (!other.getInfo().isEmpty()) {
+                    info_ = other.info_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                ScenarioLog parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (ScenarioLog) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 仿真任务id
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @return The simId.
+             */
+            public String getSimId() {
+                Object ref = simId_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    simId_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 仿真任务id
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @param value The simId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSimId(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                simId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 仿真任务id
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @return The bytes for simId.
+             */
+            public com.google.protobuf.ByteString
+            getSimIdBytes() {
+                Object ref = simId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    simId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 仿真任务id
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @param value The bytes for simId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSimIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                simId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 仿真任务id
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSimId() {
+
+                simId_ = getDefaultInstance().getSimId();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 阵营
+             * </pre>
+             *
+             * <code>string team = 2;</code>
+             *
+             * @return The team.
+             */
+            public String getTeam() {
+                Object ref = team_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    team_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 阵营
+             * </pre>
+             *
+             * <code>string team = 2;</code>
+             *
+             * @param value The team to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTeam(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                team_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 阵营
+             * </pre>
+             *
+             * <code>string team = 2;</code>
+             *
+             * @return The bytes for team.
+             */
+            public com.google.protobuf.ByteString
+            getTeamBytes() {
+                Object ref = team_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    team_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 阵营
+             * </pre>
+             *
+             * <code>string team = 2;</code>
+             *
+             * @param value The bytes for team to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTeamBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                team_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 阵营
+             * </pre>
+             *
+             * <code>string team = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearTeam() {
+
+                team_ = getDefaultInstance().getTeam();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 仿真时间（格式化后）
+             * </pre>
+             *
+             * <code>int64 time = 3;</code>
+             *
+             * @return The time.
+             */
+            @Override
+            public long getTime() {
+                return time_;
+            }
+
+            /**
+             * <pre>
+             * 仿真时间（格式化后）
+             * </pre>
+             *
+             * <code>int64 time = 3;</code>
+             *
+             * @param value The time to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTime(long value) {
+
+                time_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 仿真时间（格式化后）
+             * </pre>
+             *
+             * <code>int64 time = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearTime() {
+
+                time_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 日志信息
+             * </pre>
+             *
+             * <code>string info = 4;</code>
+             *
+             * @return The info.
+             */
+            public String getInfo() {
+                Object ref = info_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    info_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 日志信息
+             * </pre>
+             *
+             * <code>string info = 4;</code>
+             *
+             * @param value The info to set.
+             * @return This builder for chaining.
+             */
+            public Builder setInfo(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                info_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 日志信息
+             * </pre>
+             *
+             * <code>string info = 4;</code>
+             *
+             * @return The bytes for info.
+             */
+            public com.google.protobuf.ByteString
+            getInfoBytes() {
+                Object ref = info_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    info_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 日志信息
+             * </pre>
+             *
+             * <code>string info = 4;</code>
+             *
+             * @param value The bytes for info to set.
+             * @return This builder for chaining.
+             */
+            public Builder setInfoBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                info_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 日志信息
+             * </pre>
+             *
+             * <code>string info = 4;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearInfo() {
+
+                info_ = getDefaultInstance().getInfo();
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.ScenarioLog)
+        }
+
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
-    /**
-     * <code>uint32 id = 1;</code>
-     * @return The id.
-     */
-    @Override
-    public int getId() {
-      return id_;
-    }
-
-    public static final int NAME_FIELD_NUMBER = 2;
-    private volatile Object name_;
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
-    @Override
-    public String getName() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
-    @Override
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeUInt32(1, id_);
-      }
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, id_);
-      }
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof ForceSummary)) {
-        return super.equals(obj);
-      }
-      ForceSummary other = (ForceSummary) obj;
-
-      if (getId()
-          != other.getId()) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static ForceSummary parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ForceSummary parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ForceSummary parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ForceSummary parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ForceSummary parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ForceSummary parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ForceSummary parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static ForceSummary parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static ForceSummary parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static ForceSummary parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static ForceSummary parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static ForceSummary parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(ForceSummary prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      * ForceSummary 兵力概要信息
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.soul.tinder.protobuf.proto.ForceSummary}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.ForceSummary)
-        ForceSummaryOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceSummary_descriptor;
-      }
+    public static final class ForceSummary extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.ForceSummary)
+            ForceSummaryOrBuilder {
+        public static final int ID_FIELD_NUMBER = 1;
+        public static final int NAME_FIELD_NUMBER = 2;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.ForceSummary)
+        private static final ForceSummary DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<ForceSummary>
+                PARSER = new com.google.protobuf.AbstractParser<ForceSummary>() {
+            @Override
+            public ForceSummary parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ForceSummary(input, extensionRegistry);
+            }
+        };
 
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceSummary_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                ForceSummary.class, Builder.class);
-      }
-
-      // Construct using com.soul.tinder.protobuf.proto.TinderProto.ForceSummary.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        static {
+            DEFAULT_INSTANCE = new ForceSummary();
         }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        id_ = 0;
 
-        name_ = "";
-
-        return this;
-      }
-
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceSummary_descriptor;
-      }
-
-      @Override
-      public ForceSummary getDefaultInstanceForType() {
-        return ForceSummary.getDefaultInstance();
-      }
-
-      @Override
-      public ForceSummary build() {
-        ForceSummary result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private int id_;
+        private volatile Object name_;
+        private byte memoizedIsInitialized = -1;
+        // Use ForceSummary.newBuilder() to construct.
+        private ForceSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-        return result;
-      }
 
-      @Override
-      public ForceSummary buildPartial() {
-        ForceSummary result = new ForceSummary(this);
-        result.id_ = id_;
-        result.name_ = name_;
-        onBuilt();
-        return result;
-      }
-
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ForceSummary) {
-          return mergeFrom((ForceSummary)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        private ForceSummary() {
+            name_ = "";
         }
-      }
 
-      public Builder mergeFrom(ForceSummary other) {
-        if (other == ForceSummary.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
+        private ForceSummary(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
+
+                            id_ = input.readUInt32();
+                            break;
+                        }
+                        case 18: {
+                            String s = input.readStringRequireUtf8();
+
+                            name_ = s;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        ForceSummary parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ForceSummary) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int id_ ;
-      /**
-       * <code>uint32 id = 1;</code>
-       * @return The id.
-       */
-      @Override
-      public int getId() {
-        return id_;
-      }
-      /**
-       * <code>uint32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(int value) {
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private Object name_ = "";
-      /**
-       * <code>string name = 2;</code>
-       * @return The name.
-       */
-      public String getName() {
-        Object ref = name_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @return The bytes for name.
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.ForceSummary)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.ForceSummary)
-    private static final ForceSummary DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new ForceSummary();
-    }
-
-    public static ForceSummary getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ForceSummary>
-        PARSER = new com.google.protobuf.AbstractParser<ForceSummary>() {
-      @Override
-      public ForceSummary parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ForceSummary(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ForceSummary> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<ForceSummary> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public ForceSummary getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ForcePropertyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.ForceProperty)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * 兵力id
-     * </pre>
-     *
-     * <code>uint32 force_id = 1;</code>
-     * @return The forceId.
-     */
-    int getForceId();
-
-    /**
-     * <pre>
-     * 平台编号
-     * </pre>
-     *
-     * <code>uint32 platform_code = 2;</code>
-     * @return The platformCode.
-     */
-    int getPlatformCode();
-
-    /**
-     * <pre>
-     * 平台类型
-     * </pre>
-     *
-     * <code>string platform_type = 3;</code>
-     * @return The platformType.
-     */
-    String getPlatformType();
-    /**
-     * <pre>
-     * 平台类型
-     * </pre>
-     *
-     * <code>string platform_type = 3;</code>
-     * @return The bytes for platformType.
-     */
-    com.google.protobuf.ByteString
-        getPlatformTypeBytes();
-
-    /**
-     * <pre>
-     * 名称
-     * </pre>
-     *
-     * <code>string name = 4;</code>
-     * @return The name.
-     */
-    String getName();
-    /**
-     * <pre>
-     * 名称
-     * </pre>
-     *
-     * <code>string name = 4;</code>
-     * @return The bytes for name.
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    /**
-     * <pre>
-     * 阵营
-     * </pre>
-     *
-     * <code>string team = 5;</code>
-     * @return The team.
-     */
-    String getTeam();
-    /**
-     * <pre>
-     * 阵营
-     * </pre>
-     *
-     * <code>string team = 5;</code>
-     * @return The bytes for team.
-     */
-    com.google.protobuf.ByteString
-        getTeamBytes();
-
-    /**
-     * <pre>
-     * 生命值
-     * </pre>
-     *
-     * <code>double life = 6;</code>
-     * @return The life.
-     */
-    double getLife();
-
-    /**
-     * <pre>
-     * 经度
-     * </pre>
-     *
-     * <code>double lon = 7;</code>
-     * @return The lon.
-     */
-    double getLon();
-
-    /**
-     * <pre>
-     * 纬度
-     * </pre>
-     *
-     * <code>double lat = 8;</code>
-     * @return The lat.
-     */
-    double getLat();
-
-    /**
-     * <pre>
-     * 高度
-     * </pre>
-     *
-     * <code>double alt = 9;</code>
-     * @return The alt.
-     */
-    double getAlt();
-
-    /**
-     * <pre>
-     * 偏航角(北向东)
-     * </pre>
-     *
-     * <code>double heading = 10;</code>
-     * @return The heading.
-     */
-    double getHeading();
-
-    /**
-     * <pre>
-     * 俯仰角
-     * </pre>
-     *
-     * <code>double pitch = 11;</code>
-     * @return The pitch.
-     */
-    double getPitch();
-
-    /**
-     * <pre>
-     * 滚转角
-     * </pre>
-     *
-     * <code>double roll = 12;</code>
-     * @return The roll.
-     */
-    double getRoll();
-
-    /**
-     * <pre>
-     * 速度
-     * </pre>
-     *
-     * <code>double speed = 13;</code>
-     * @return The speed.
-     */
-    double getSpeed();
-  }
-  /**
-   * <pre>
-   * 兵力属性
-   * </pre>
-   *
-   * Protobuf type {@code com.soul.tinder.protobuf.proto.ForceProperty}
-   */
-  public static final class ForceProperty extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.ForceProperty)
-      ForcePropertyOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ForceProperty.newBuilder() to construct.
-    private ForceProperty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ForceProperty() {
-      platformType_ = "";
-      name_ = "";
-      team_ = "";
-    }
-
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ForceProperty();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ForceProperty(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              forceId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              platformCode_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              String s = input.readStringRequireUtf8();
-
-              platformType_ = s;
-              break;
-            }
-            case 34: {
-              String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 42: {
-              String s = input.readStringRequireUtf8();
-
-              team_ = s;
-              break;
-            }
-            case 49: {
-
-              life_ = input.readDouble();
-              break;
-            }
-            case 57: {
-
-              lon_ = input.readDouble();
-              break;
-            }
-            case 65: {
-
-              lat_ = input.readDouble();
-              break;
-            }
-            case 73: {
-
-              alt_ = input.readDouble();
-              break;
-            }
-            case 81: {
-
-              heading_ = input.readDouble();
-              break;
-            }
-            case 89: {
-
-              pitch_ = input.readDouble();
-              break;
-            }
-            case 97: {
-
-              roll_ = input.readDouble();
-              break;
-            }
-            case 105: {
-
-              speed_ = input.readDouble();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceProperty_descriptor;
-    }
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceSummary_descriptor;
+        }
 
-    @Override
-    protected FieldAccessorTable
+        public static ForceSummary parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ForceSummary parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ForceSummary parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ForceSummary parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ForceSummary parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ForceSummary parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ForceSummary parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ForceSummary parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ForceSummary parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static ForceSummary parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ForceSummary parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ForceSummary parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(ForceSummary prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static ForceSummary getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<ForceSummary> parser() {
+            return PARSER;
+        }
+
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new ForceSummary();
+        }
+
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @Override
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceProperty_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              ForceProperty.class, Builder.class);
-    }
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceSummary_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            ForceSummary.class, Builder.class);
+        }
 
-    public static final int FORCE_ID_FIELD_NUMBER = 1;
-    private int forceId_;
-    /**
-     * <pre>
-     * 兵力id
-     * </pre>
-     *
-     * <code>uint32 force_id = 1;</code>
-     * @return The forceId.
-     */
-    @Override
-    public int getForceId() {
-      return forceId_;
-    }
+        /**
+         * <code>uint32 id = 1;</code>
+         *
+         * @return The id.
+         */
+        @Override
+        public int getId() {
+            return id_;
+        }
 
-    public static final int PLATFORM_CODE_FIELD_NUMBER = 2;
-    private int platformCode_;
-    /**
-     * <pre>
-     * 平台编号
-     * </pre>
-     *
-     * <code>uint32 platform_code = 2;</code>
-     * @return The platformCode.
-     */
-    @Override
-    public int getPlatformCode() {
-      return platformCode_;
-    }
+        /**
+         * <code>string name = 2;</code>
+         *
+         * @return The name.
+         */
+        @Override
+        public String getName() {
+            Object ref = name_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                name_ = s;
+                return s;
+            }
+        }
 
-    public static final int PLATFORM_TYPE_FIELD_NUMBER = 3;
-    private volatile Object platformType_;
-    /**
-     * <pre>
-     * 平台类型
-     * </pre>
-     *
-     * <code>string platform_type = 3;</code>
-     * @return The platformType.
-     */
-    @Override
-    public String getPlatformType() {
-      Object ref = platformType_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        platformType_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 平台类型
-     * </pre>
-     *
-     * <code>string platform_type = 3;</code>
-     * @return The bytes for platformType.
-     */
-    @Override
-    public com.google.protobuf.ByteString
-        getPlatformTypeBytes() {
-      Object ref = platformType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        platformType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NAME_FIELD_NUMBER = 4;
-    private volatile Object name_;
-    /**
-     * <pre>
-     * 名称
-     * </pre>
-     *
-     * <code>string name = 4;</code>
-     * @return The name.
-     */
-    @Override
-    public String getName() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 名称
-     * </pre>
-     *
-     * <code>string name = 4;</code>
-     * @return The bytes for name.
-     */
-    @Override
-    public com.google.protobuf.ByteString
+        /**
+         * <code>string name = 2;</code>
+         *
+         * @return The bytes for name.
+         */
+        @Override
+        public com.google.protobuf.ByteString
         getNameBytes() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+            Object ref = name_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                name_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (id_ != 0) {
+                output.writeUInt32(1, id_);
+            }
+            if (!getNameBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (id_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeUInt32Size(1, id_);
+            }
+            if (!getNameBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof ForceSummary)) {
+                return super.equals(obj);
+            }
+            ForceSummary other = (ForceSummary) obj;
+
+            if (getId()
+                    != other.getId()) return false;
+            if (!getName()
+                    .equals(other.getName())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + ID_FIELD_NUMBER;
+            hash = (53 * hash) + getId();
+            hash = (37 * hash) + NAME_FIELD_NUMBER;
+            hash = (53 * hash) + getName().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<ForceSummary> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public ForceSummary getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * <pre>
+         * ForceSummary 兵力概要信息
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.soul.tinder.protobuf.proto.ForceSummary}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.ForceSummary)
+                ForceSummaryOrBuilder {
+            private int id_;
+            private Object name_ = "";
+
+            // Construct using com.soul.tinder.protobuf.proto.TinderProto.ForceSummary.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceSummary_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceSummary_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                ForceSummary.class, Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                id_ = 0;
+
+                name_ = "";
+
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceSummary_descriptor;
+            }
+
+            @Override
+            public ForceSummary getDefaultInstanceForType() {
+                return ForceSummary.getDefaultInstance();
+            }
+
+            @Override
+            public ForceSummary build() {
+                ForceSummary result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public ForceSummary buildPartial() {
+                ForceSummary result = new ForceSummary(this);
+                result.id_ = id_;
+                result.name_ = name_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof ForceSummary) {
+                    return mergeFrom((ForceSummary) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(ForceSummary other) {
+                if (other == ForceSummary.getDefaultInstance()) return this;
+                if (other.getId() != 0) {
+                    setId(other.getId());
+                }
+                if (!other.getName().isEmpty()) {
+                    name_ = other.name_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                ForceSummary parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (ForceSummary) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>uint32 id = 1;</code>
+             *
+             * @return The id.
+             */
+            @Override
+            public int getId() {
+                return id_;
+            }
+
+            /**
+             * <code>uint32 id = 1;</code>
+             *
+             * @param value The id to set.
+             * @return This builder for chaining.
+             */
+            public Builder setId(int value) {
+
+                id_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint32 id = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearId() {
+
+                id_ = 0;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string name = 2;</code>
+             *
+             * @return The name.
+             */
+            public String getName() {
+                Object ref = name_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    name_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>string name = 2;</code>
+             *
+             * @param value The name to set.
+             * @return This builder for chaining.
+             */
+            public Builder setName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string name = 2;</code>
+             *
+             * @return The bytes for name.
+             */
+            public com.google.protobuf.ByteString
+            getNameBytes() {
+                Object ref = name_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    name_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string name = 2;</code>
+             *
+             * @param value The bytes for name to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNameBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string name = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearName() {
+
+                name_ = getDefaultInstance().getName();
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.ForceSummary)
+        }
+
     }
 
-    public static final int TEAM_FIELD_NUMBER = 5;
-    private volatile Object team_;
-    /**
-     * <pre>
-     * 阵营
-     * </pre>
-     *
-     * <code>string team = 5;</code>
-     * @return The team.
-     */
-    @Override
-    public String getTeam() {
-      Object ref = team_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        team_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 阵营
-     * </pre>
-     *
-     * <code>string team = 5;</code>
-     * @return The bytes for team.
-     */
-    @Override
-    public com.google.protobuf.ByteString
-        getTeamBytes() {
-      Object ref = team_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        team_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LIFE_FIELD_NUMBER = 6;
-    private double life_;
-    /**
-     * <pre>
-     * 生命值
-     * </pre>
-     *
-     * <code>double life = 6;</code>
-     * @return The life.
-     */
-    @Override
-    public double getLife() {
-      return life_;
-    }
-
-    public static final int LON_FIELD_NUMBER = 7;
-    private double lon_;
-    /**
-     * <pre>
-     * 经度
-     * </pre>
-     *
-     * <code>double lon = 7;</code>
-     * @return The lon.
-     */
-    @Override
-    public double getLon() {
-      return lon_;
-    }
-
-    public static final int LAT_FIELD_NUMBER = 8;
-    private double lat_;
-    /**
-     * <pre>
-     * 纬度
-     * </pre>
-     *
-     * <code>double lat = 8;</code>
-     * @return The lat.
-     */
-    @Override
-    public double getLat() {
-      return lat_;
-    }
-
-    public static final int ALT_FIELD_NUMBER = 9;
-    private double alt_;
-    /**
-     * <pre>
-     * 高度
-     * </pre>
-     *
-     * <code>double alt = 9;</code>
-     * @return The alt.
-     */
-    @Override
-    public double getAlt() {
-      return alt_;
-    }
-
-    public static final int HEADING_FIELD_NUMBER = 10;
-    private double heading_;
-    /**
-     * <pre>
-     * 偏航角(北向东)
-     * </pre>
-     *
-     * <code>double heading = 10;</code>
-     * @return The heading.
-     */
-    @Override
-    public double getHeading() {
-      return heading_;
-    }
-
-    public static final int PITCH_FIELD_NUMBER = 11;
-    private double pitch_;
-    /**
-     * <pre>
-     * 俯仰角
-     * </pre>
-     *
-     * <code>double pitch = 11;</code>
-     * @return The pitch.
-     */
-    @Override
-    public double getPitch() {
-      return pitch_;
-    }
-
-    public static final int ROLL_FIELD_NUMBER = 12;
-    private double roll_;
-    /**
-     * <pre>
-     * 滚转角
-     * </pre>
-     *
-     * <code>double roll = 12;</code>
-     * @return The roll.
-     */
-    @Override
-    public double getRoll() {
-      return roll_;
-    }
-
-    public static final int SPEED_FIELD_NUMBER = 13;
-    private double speed_;
-    /**
-     * <pre>
-     * 速度
-     * </pre>
-     *
-     * <code>double speed = 13;</code>
-     * @return The speed.
-     */
-    @Override
-    public double getSpeed() {
-      return speed_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (forceId_ != 0) {
-        output.writeUInt32(1, forceId_);
-      }
-      if (platformCode_ != 0) {
-        output.writeUInt32(2, platformCode_);
-      }
-      if (!getPlatformTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, platformType_);
-      }
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
-      }
-      if (!getTeamBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, team_);
-      }
-      if (life_ != 0D) {
-        output.writeDouble(6, life_);
-      }
-      if (lon_ != 0D) {
-        output.writeDouble(7, lon_);
-      }
-      if (lat_ != 0D) {
-        output.writeDouble(8, lat_);
-      }
-      if (alt_ != 0D) {
-        output.writeDouble(9, alt_);
-      }
-      if (heading_ != 0D) {
-        output.writeDouble(10, heading_);
-      }
-      if (pitch_ != 0D) {
-        output.writeDouble(11, pitch_);
-      }
-      if (roll_ != 0D) {
-        output.writeDouble(12, roll_);
-      }
-      if (speed_ != 0D) {
-        output.writeDouble(13, speed_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (forceId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, forceId_);
-      }
-      if (platformCode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, platformCode_);
-      }
-      if (!getPlatformTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, platformType_);
-      }
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
-      }
-      if (!getTeamBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, team_);
-      }
-      if (life_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, life_);
-      }
-      if (lon_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(7, lon_);
-      }
-      if (lat_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(8, lat_);
-      }
-      if (alt_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(9, alt_);
-      }
-      if (heading_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, heading_);
-      }
-      if (pitch_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(11, pitch_);
-      }
-      if (roll_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(12, roll_);
-      }
-      if (speed_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(13, speed_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof ForceProperty)) {
-        return super.equals(obj);
-      }
-      ForceProperty other = (ForceProperty) obj;
-
-      if (getForceId()
-          != other.getForceId()) return false;
-      if (getPlatformCode()
-          != other.getPlatformCode()) return false;
-      if (!getPlatformType()
-          .equals(other.getPlatformType())) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!getTeam()
-          .equals(other.getTeam())) return false;
-      if (Double.doubleToLongBits(getLife())
-          != Double.doubleToLongBits(
-              other.getLife())) return false;
-      if (Double.doubleToLongBits(getLon())
-          != Double.doubleToLongBits(
-              other.getLon())) return false;
-      if (Double.doubleToLongBits(getLat())
-          != Double.doubleToLongBits(
-              other.getLat())) return false;
-      if (Double.doubleToLongBits(getAlt())
-          != Double.doubleToLongBits(
-              other.getAlt())) return false;
-      if (Double.doubleToLongBits(getHeading())
-          != Double.doubleToLongBits(
-              other.getHeading())) return false;
-      if (Double.doubleToLongBits(getPitch())
-          != Double.doubleToLongBits(
-              other.getPitch())) return false;
-      if (Double.doubleToLongBits(getRoll())
-          != Double.doubleToLongBits(
-              other.getRoll())) return false;
-      if (Double.doubleToLongBits(getSpeed())
-          != Double.doubleToLongBits(
-              other.getSpeed())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FORCE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getForceId();
-      hash = (37 * hash) + PLATFORM_CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getPlatformCode();
-      hash = (37 * hash) + PLATFORM_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getPlatformType().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + TEAM_FIELD_NUMBER;
-      hash = (53 * hash) + getTeam().hashCode();
-      hash = (37 * hash) + LIFE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          Double.doubleToLongBits(getLife()));
-      hash = (37 * hash) + LON_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          Double.doubleToLongBits(getLon()));
-      hash = (37 * hash) + LAT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          Double.doubleToLongBits(getLat()));
-      hash = (37 * hash) + ALT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          Double.doubleToLongBits(getAlt()));
-      hash = (37 * hash) + HEADING_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          Double.doubleToLongBits(getHeading()));
-      hash = (37 * hash) + PITCH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          Double.doubleToLongBits(getPitch()));
-      hash = (37 * hash) + ROLL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          Double.doubleToLongBits(getRoll()));
-      hash = (37 * hash) + SPEED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          Double.doubleToLongBits(getSpeed()));
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static ForceProperty parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ForceProperty parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ForceProperty parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ForceProperty parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ForceProperty parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ForceProperty parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ForceProperty parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static ForceProperty parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static ForceProperty parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static ForceProperty parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static ForceProperty parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static ForceProperty parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(ForceProperty prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      * 兵力属性
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.soul.tinder.protobuf.proto.ForceProperty}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.ForceProperty)
-        ForcePropertyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceProperty_descriptor;
-      }
-
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceProperty_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                ForceProperty.class, Builder.class);
-      }
-
-      // Construct using com.soul.tinder.protobuf.proto.TinderProto.ForceProperty.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        forceId_ = 0;
-
-        platformCode_ = 0;
-
-        platformType_ = "";
-
-        name_ = "";
-
-        team_ = "";
-
-        life_ = 0D;
-
-        lon_ = 0D;
-
-        lat_ = 0D;
-
-        alt_ = 0D;
-
-        heading_ = 0D;
-
-        pitch_ = 0D;
-
-        roll_ = 0D;
-
-        speed_ = 0D;
-
-        return this;
-      }
-
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceProperty_descriptor;
-      }
-
-      @Override
-      public ForceProperty getDefaultInstanceForType() {
-        return ForceProperty.getDefaultInstance();
-      }
-
-      @Override
-      public ForceProperty build() {
-        ForceProperty result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @Override
-      public ForceProperty buildPartial() {
-        ForceProperty result = new ForceProperty(this);
-        result.forceId_ = forceId_;
-        result.platformCode_ = platformCode_;
-        result.platformType_ = platformType_;
-        result.name_ = name_;
-        result.team_ = team_;
-        result.life_ = life_;
-        result.lon_ = lon_;
-        result.lat_ = lat_;
-        result.alt_ = alt_;
-        result.heading_ = heading_;
-        result.pitch_ = pitch_;
-        result.roll_ = roll_;
-        result.speed_ = speed_;
-        onBuilt();
-        return result;
-      }
-
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ForceProperty) {
-          return mergeFrom((ForceProperty)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(ForceProperty other) {
-        if (other == ForceProperty.getDefaultInstance()) return this;
-        if (other.getForceId() != 0) {
-          setForceId(other.getForceId());
-        }
-        if (other.getPlatformCode() != 0) {
-          setPlatformCode(other.getPlatformCode());
-        }
-        if (!other.getPlatformType().isEmpty()) {
-          platformType_ = other.platformType_;
-          onChanged();
-        }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
-        if (!other.getTeam().isEmpty()) {
-          team_ = other.team_;
-          onChanged();
-        }
-        if (other.getLife() != 0D) {
-          setLife(other.getLife());
-        }
-        if (other.getLon() != 0D) {
-          setLon(other.getLon());
-        }
-        if (other.getLat() != 0D) {
-          setLat(other.getLat());
-        }
-        if (other.getAlt() != 0D) {
-          setAlt(other.getAlt());
-        }
-        if (other.getHeading() != 0D) {
-          setHeading(other.getHeading());
-        }
-        if (other.getPitch() != 0D) {
-          setPitch(other.getPitch());
-        }
-        if (other.getRoll() != 0D) {
-          setRoll(other.getRoll());
-        }
-        if (other.getSpeed() != 0D) {
-          setSpeed(other.getSpeed());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        ForceProperty parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ForceProperty) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int forceId_ ;
-      /**
-       * <pre>
-       * 兵力id
-       * </pre>
-       *
-       * <code>uint32 force_id = 1;</code>
-       * @return The forceId.
-       */
-      @Override
-      public int getForceId() {
-        return forceId_;
-      }
-      /**
-       * <pre>
-       * 兵力id
-       * </pre>
-       *
-       * <code>uint32 force_id = 1;</code>
-       * @param value The forceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setForceId(int value) {
-        
-        forceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 兵力id
-       * </pre>
-       *
-       * <code>uint32 force_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearForceId() {
-        
-        forceId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int platformCode_ ;
-      /**
-       * <pre>
-       * 平台编号
-       * </pre>
-       *
-       * <code>uint32 platform_code = 2;</code>
-       * @return The platformCode.
-       */
-      @Override
-      public int getPlatformCode() {
-        return platformCode_;
-      }
-      /**
-       * <pre>
-       * 平台编号
-       * </pre>
-       *
-       * <code>uint32 platform_code = 2;</code>
-       * @param value The platformCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlatformCode(int value) {
-        
-        platformCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 平台编号
-       * </pre>
-       *
-       * <code>uint32 platform_code = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPlatformCode() {
-        
-        platformCode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private Object platformType_ = "";
-      /**
-       * <pre>
-       * 平台类型
-       * </pre>
-       *
-       * <code>string platform_type = 3;</code>
-       * @return The platformType.
-       */
-      public String getPlatformType() {
-        Object ref = platformType_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          platformType_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 平台类型
-       * </pre>
-       *
-       * <code>string platform_type = 3;</code>
-       * @return The bytes for platformType.
-       */
-      public com.google.protobuf.ByteString
-          getPlatformTypeBytes() {
-        Object ref = platformType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          platformType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 平台类型
-       * </pre>
-       *
-       * <code>string platform_type = 3;</code>
-       * @param value The platformType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlatformType(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        platformType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 平台类型
-       * </pre>
-       *
-       * <code>string platform_type = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPlatformType() {
-        
-        platformType_ = getDefaultInstance().getPlatformType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 平台类型
-       * </pre>
-       *
-       * <code>string platform_type = 3;</code>
-       * @param value The bytes for platformType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlatformTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        platformType_ = value;
-        onChanged();
-        return this;
-      }
-
-      private Object name_ = "";
-      /**
-       * <pre>
-       * 名称
-       * </pre>
-       *
-       * <code>string name = 4;</code>
-       * @return The name.
-       */
-      public String getName() {
-        Object ref = name_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 名称
-       * </pre>
-       *
-       * <code>string name = 4;</code>
-       * @return The bytes for name.
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 名称
-       * </pre>
-       *
-       * <code>string name = 4;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 名称
-       * </pre>
-       *
-       * <code>string name = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 名称
-       * </pre>
-       *
-       * <code>string name = 4;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private Object team_ = "";
-      /**
-       * <pre>
-       * 阵营
-       * </pre>
-       *
-       * <code>string team = 5;</code>
-       * @return The team.
-       */
-      public String getTeam() {
-        Object ref = team_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          team_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 阵营
-       * </pre>
-       *
-       * <code>string team = 5;</code>
-       * @return The bytes for team.
-       */
-      public com.google.protobuf.ByteString
-          getTeamBytes() {
-        Object ref = team_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          team_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 阵营
-       * </pre>
-       *
-       * <code>string team = 5;</code>
-       * @param value The team to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTeam(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        team_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 阵营
-       * </pre>
-       *
-       * <code>string team = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTeam() {
-        
-        team_ = getDefaultInstance().getTeam();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 阵营
-       * </pre>
-       *
-       * <code>string team = 5;</code>
-       * @param value The bytes for team to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTeamBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        team_ = value;
-        onChanged();
-        return this;
-      }
-
-      private double life_ ;
-      /**
-       * <pre>
-       * 生命值
-       * </pre>
-       *
-       * <code>double life = 6;</code>
-       * @return The life.
-       */
-      @Override
-      public double getLife() {
-        return life_;
-      }
-      /**
-       * <pre>
-       * 生命值
-       * </pre>
-       *
-       * <code>double life = 6;</code>
-       * @param value The life to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLife(double value) {
-        
-        life_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 生命值
-       * </pre>
-       *
-       * <code>double life = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLife() {
-        
-        life_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double lon_ ;
-      /**
-       * <pre>
-       * 经度
-       * </pre>
-       *
-       * <code>double lon = 7;</code>
-       * @return The lon.
-       */
-      @Override
-      public double getLon() {
-        return lon_;
-      }
-      /**
-       * <pre>
-       * 经度
-       * </pre>
-       *
-       * <code>double lon = 7;</code>
-       * @param value The lon to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLon(double value) {
-        
-        lon_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 经度
-       * </pre>
-       *
-       * <code>double lon = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLon() {
-        
-        lon_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double lat_ ;
-      /**
-       * <pre>
-       * 纬度
-       * </pre>
-       *
-       * <code>double lat = 8;</code>
-       * @return The lat.
-       */
-      @Override
-      public double getLat() {
-        return lat_;
-      }
-      /**
-       * <pre>
-       * 纬度
-       * </pre>
-       *
-       * <code>double lat = 8;</code>
-       * @param value The lat to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLat(double value) {
-        
-        lat_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 纬度
-       * </pre>
-       *
-       * <code>double lat = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLat() {
-        
-        lat_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double alt_ ;
-      /**
-       * <pre>
-       * 高度
-       * </pre>
-       *
-       * <code>double alt = 9;</code>
-       * @return The alt.
-       */
-      @Override
-      public double getAlt() {
-        return alt_;
-      }
-      /**
-       * <pre>
-       * 高度
-       * </pre>
-       *
-       * <code>double alt = 9;</code>
-       * @param value The alt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAlt(double value) {
-        
-        alt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 高度
-       * </pre>
-       *
-       * <code>double alt = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAlt() {
-        
-        alt_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double heading_ ;
-      /**
-       * <pre>
-       * 偏航角(北向东)
-       * </pre>
-       *
-       * <code>double heading = 10;</code>
-       * @return The heading.
-       */
-      @Override
-      public double getHeading() {
-        return heading_;
-      }
-      /**
-       * <pre>
-       * 偏航角(北向东)
-       * </pre>
-       *
-       * <code>double heading = 10;</code>
-       * @param value The heading to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHeading(double value) {
-        
-        heading_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 偏航角(北向东)
-       * </pre>
-       *
-       * <code>double heading = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHeading() {
-        
-        heading_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double pitch_ ;
-      /**
-       * <pre>
-       * 俯仰角
-       * </pre>
-       *
-       * <code>double pitch = 11;</code>
-       * @return The pitch.
-       */
-      @Override
-      public double getPitch() {
-        return pitch_;
-      }
-      /**
-       * <pre>
-       * 俯仰角
-       * </pre>
-       *
-       * <code>double pitch = 11;</code>
-       * @param value The pitch to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPitch(double value) {
-        
-        pitch_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 俯仰角
-       * </pre>
-       *
-       * <code>double pitch = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPitch() {
-        
-        pitch_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double roll_ ;
-      /**
-       * <pre>
-       * 滚转角
-       * </pre>
-       *
-       * <code>double roll = 12;</code>
-       * @return The roll.
-       */
-      @Override
-      public double getRoll() {
-        return roll_;
-      }
-      /**
-       * <pre>
-       * 滚转角
-       * </pre>
-       *
-       * <code>double roll = 12;</code>
-       * @param value The roll to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoll(double value) {
-        
-        roll_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 滚转角
-       * </pre>
-       *
-       * <code>double roll = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoll() {
-        
-        roll_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double speed_ ;
-      /**
-       * <pre>
-       * 速度
-       * </pre>
-       *
-       * <code>double speed = 13;</code>
-       * @return The speed.
-       */
-      @Override
-      public double getSpeed() {
-        return speed_;
-      }
-      /**
-       * <pre>
-       * 速度
-       * </pre>
-       *
-       * <code>double speed = 13;</code>
-       * @param value The speed to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpeed(double value) {
-        
-        speed_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 速度
-       * </pre>
-       *
-       * <code>double speed = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpeed() {
-        
-        speed_ = 0D;
-        onChanged();
-        return this;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.ForceProperty)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.ForceProperty)
-    private static final ForceProperty DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new ForceProperty();
-    }
-
-    public static ForceProperty getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ForceProperty>
-        PARSER = new com.google.protobuf.AbstractParser<ForceProperty>() {
-      @Override
-      public ForceProperty parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ForceProperty(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ForceProperty> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<ForceProperty> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public ForceProperty getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ScenarioTimeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.soul.tinder.protobuf.proto.ScenarioTime)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * 订单号
-     * </pre>
-     *
-     * <code>string simId = 1;</code>
-     * @return The simId.
-     */
-    String getSimId();
-    /**
-     * <pre>
-     * 订单号
-     * </pre>
-     *
-     * <code>string simId = 1;</code>
-     * @return The bytes for simId.
-     */
-    com.google.protobuf.ByteString
-        getSimIdBytes();
-
-    /**
-     * <pre>
-     * 推演时间
-     * </pre>
-     *
-     * <code>int64 time = 2;</code>
-     * @return The time.
-     */
-    long getTime();
-
-    /**
-     * <pre>
-     * 推演速度
-     * </pre>
-     *
-     * <code>double ratio = 3;</code>
-     * @return The ratio.
-     */
-    double getRatio();
-  }
-  /**
-   * <pre>
-   * 推演时间倍率
-   * </pre>
-   *
-   * Protobuf type {@code com.soul.tinder.protobuf.proto.ScenarioTime}
-   */
-  public static final class ScenarioTime extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.ScenarioTime)
-      ScenarioTimeOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ScenarioTime.newBuilder() to construct.
-    private ScenarioTime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ScenarioTime() {
-      simId_ = "";
-    }
-
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ScenarioTime();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ScenarioTime(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              String s = input.readStringRequireUtf8();
-
-              simId_ = s;
-              break;
+    public static final class ForceProperty extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.ForceProperty)
+            ForcePropertyOrBuilder {
+        public static final int FORCE_ID_FIELD_NUMBER = 1;
+        public static final int PLATFORM_CODE_FIELD_NUMBER = 2;
+        public static final int PLATFORM_TYPE_FIELD_NUMBER = 3;
+        public static final int NAME_FIELD_NUMBER = 4;
+        public static final int TEAM_FIELD_NUMBER = 5;
+        public static final int LIFE_FIELD_NUMBER = 6;
+        public static final int LON_FIELD_NUMBER = 7;
+        public static final int LAT_FIELD_NUMBER = 8;
+        public static final int ALT_FIELD_NUMBER = 9;
+        public static final int HEADING_FIELD_NUMBER = 10;
+        public static final int PITCH_FIELD_NUMBER = 11;
+        public static final int ROLL_FIELD_NUMBER = 12;
+        public static final int SPEED_FIELD_NUMBER = 13;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.ForceProperty)
+        private static final ForceProperty DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<ForceProperty>
+                PARSER = new com.google.protobuf.AbstractParser<ForceProperty>() {
+            @Override
+            public ForceProperty parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ForceProperty(input, extensionRegistry);
             }
-            case 16: {
+        };
 
-              time_ = input.readInt64();
-              break;
-            }
-            case 25: {
-
-              ratio_ = input.readDouble();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
+        static {
+            DEFAULT_INSTANCE = new ForceProperty();
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        private int forceId_;
+        private int platformCode_;
+        private volatile Object platformType_;
+        private volatile Object name_;
+        private volatile Object team_;
+        private double life_;
+        private double lon_;
+        private double lat_;
+        private double alt_;
+        private double heading_;
+        private double pitch_;
+        private double roll_;
+        private double speed_;
+        private byte memoizedIsInitialized = -1;
+
+        // Use ForceProperty.newBuilder() to construct.
+        private ForceProperty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private ForceProperty() {
+            platformType_ = "";
+            name_ = "";
+            team_ = "";
+        }
+        private ForceProperty(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
+
+                            forceId_ = input.readUInt32();
+                            break;
+                        }
+                        case 16: {
+
+                            platformCode_ = input.readUInt32();
+                            break;
+                        }
+                        case 26: {
+                            String s = input.readStringRequireUtf8();
+
+                            platformType_ = s;
+                            break;
+                        }
+                        case 34: {
+                            String s = input.readStringRequireUtf8();
+
+                            name_ = s;
+                            break;
+                        }
+                        case 42: {
+                            String s = input.readStringRequireUtf8();
+
+                            team_ = s;
+                            break;
+                        }
+                        case 49: {
+
+                            life_ = input.readDouble();
+                            break;
+                        }
+                        case 57: {
+
+                            lon_ = input.readDouble();
+                            break;
+                        }
+                        case 65: {
+
+                            lat_ = input.readDouble();
+                            break;
+                        }
+                        case 73: {
+
+                            alt_ = input.readDouble();
+                            break;
+                        }
+                        case 81: {
+
+                            heading_ = input.readDouble();
+                            break;
+                        }
+                        case 89: {
+
+                            pitch_ = input.readDouble();
+                            break;
+                        }
+                        case 97: {
+
+                            roll_ = input.readDouble();
+                            break;
+                        }
+                        case 105: {
+
+                            speed_ = input.readDouble();
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_descriptor;
-    }
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceProperty_descriptor;
+        }
 
-    @Override
-    protected FieldAccessorTable
+        public static ForceProperty parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ForceProperty parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ForceProperty parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ForceProperty parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ForceProperty parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static ForceProperty parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static ForceProperty parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ForceProperty parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ForceProperty parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static ForceProperty parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ForceProperty parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ForceProperty parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(ForceProperty prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static ForceProperty getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<ForceProperty> parser() {
+            return PARSER;
+        }
+
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new ForceProperty();
+        }
+
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @Override
+        protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              ScenarioTime.class, Builder.class);
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceProperty_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            ForceProperty.class, Builder.class);
+        }
+
+        /**
+         * <pre>
+         * 兵力id
+         * </pre>
+         *
+         * <code>uint32 force_id = 1;</code>
+         *
+         * @return The forceId.
+         */
+        @Override
+        public int getForceId() {
+            return forceId_;
+        }
+
+        /**
+         * <pre>
+         * 平台编号
+         * </pre>
+         *
+         * <code>uint32 platform_code = 2;</code>
+         *
+         * @return The platformCode.
+         */
+        @Override
+        public int getPlatformCode() {
+            return platformCode_;
+        }
+
+        /**
+         * <pre>
+         * 平台类型
+         * </pre>
+         *
+         * <code>string platform_type = 3;</code>
+         *
+         * @return The platformType.
+         */
+        @Override
+        public String getPlatformType() {
+            Object ref = platformType_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                platformType_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 平台类型
+         * </pre>
+         *
+         * <code>string platform_type = 3;</code>
+         *
+         * @return The bytes for platformType.
+         */
+        @Override
+        public com.google.protobuf.ByteString
+        getPlatformTypeBytes() {
+            Object ref = platformType_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                platformType_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 名称
+         * </pre>
+         *
+         * <code>string name = 4;</code>
+         *
+         * @return The name.
+         */
+        @Override
+        public String getName() {
+            Object ref = name_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                name_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 名称
+         * </pre>
+         *
+         * <code>string name = 4;</code>
+         *
+         * @return The bytes for name.
+         */
+        @Override
+        public com.google.protobuf.ByteString
+        getNameBytes() {
+            Object ref = name_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                name_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 阵营
+         * </pre>
+         *
+         * <code>string team = 5;</code>
+         *
+         * @return The team.
+         */
+        @Override
+        public String getTeam() {
+            Object ref = team_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                team_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 阵营
+         * </pre>
+         *
+         * <code>string team = 5;</code>
+         *
+         * @return The bytes for team.
+         */
+        @Override
+        public com.google.protobuf.ByteString
+        getTeamBytes() {
+            Object ref = team_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                team_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 生命值
+         * </pre>
+         *
+         * <code>double life = 6;</code>
+         *
+         * @return The life.
+         */
+        @Override
+        public double getLife() {
+            return life_;
+        }
+
+        /**
+         * <pre>
+         * 经度
+         * </pre>
+         *
+         * <code>double lon = 7;</code>
+         *
+         * @return The lon.
+         */
+        @Override
+        public double getLon() {
+            return lon_;
+        }
+
+        /**
+         * <pre>
+         * 纬度
+         * </pre>
+         *
+         * <code>double lat = 8;</code>
+         *
+         * @return The lat.
+         */
+        @Override
+        public double getLat() {
+            return lat_;
+        }
+
+        /**
+         * <pre>
+         * 高度
+         * </pre>
+         *
+         * <code>double alt = 9;</code>
+         *
+         * @return The alt.
+         */
+        @Override
+        public double getAlt() {
+            return alt_;
+        }
+
+        /**
+         * <pre>
+         * 偏航角(北向东)
+         * </pre>
+         *
+         * <code>double heading = 10;</code>
+         *
+         * @return The heading.
+         */
+        @Override
+        public double getHeading() {
+            return heading_;
+        }
+
+        /**
+         * <pre>
+         * 俯仰角
+         * </pre>
+         *
+         * <code>double pitch = 11;</code>
+         *
+         * @return The pitch.
+         */
+        @Override
+        public double getPitch() {
+            return pitch_;
+        }
+
+        /**
+         * <pre>
+         * 滚转角
+         * </pre>
+         *
+         * <code>double roll = 12;</code>
+         *
+         * @return The roll.
+         */
+        @Override
+        public double getRoll() {
+            return roll_;
+        }
+
+        /**
+         * <pre>
+         * 速度
+         * </pre>
+         *
+         * <code>double speed = 13;</code>
+         *
+         * @return The speed.
+         */
+        @Override
+        public double getSpeed() {
+            return speed_;
+        }
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (forceId_ != 0) {
+                output.writeUInt32(1, forceId_);
+            }
+            if (platformCode_ != 0) {
+                output.writeUInt32(2, platformCode_);
+            }
+            if (!getPlatformTypeBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, platformType_);
+            }
+            if (!getNameBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+            }
+            if (!getTeamBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 5, team_);
+            }
+            if (life_ != 0D) {
+                output.writeDouble(6, life_);
+            }
+            if (lon_ != 0D) {
+                output.writeDouble(7, lon_);
+            }
+            if (lat_ != 0D) {
+                output.writeDouble(8, lat_);
+            }
+            if (alt_ != 0D) {
+                output.writeDouble(9, alt_);
+            }
+            if (heading_ != 0D) {
+                output.writeDouble(10, heading_);
+            }
+            if (pitch_ != 0D) {
+                output.writeDouble(11, pitch_);
+            }
+            if (roll_ != 0D) {
+                output.writeDouble(12, roll_);
+            }
+            if (speed_ != 0D) {
+                output.writeDouble(13, speed_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (forceId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeUInt32Size(1, forceId_);
+            }
+            if (platformCode_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeUInt32Size(2, platformCode_);
+            }
+            if (!getPlatformTypeBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, platformType_);
+            }
+            if (!getNameBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+            }
+            if (!getTeamBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, team_);
+            }
+            if (life_ != 0D) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeDoubleSize(6, life_);
+            }
+            if (lon_ != 0D) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeDoubleSize(7, lon_);
+            }
+            if (lat_ != 0D) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeDoubleSize(8, lat_);
+            }
+            if (alt_ != 0D) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeDoubleSize(9, alt_);
+            }
+            if (heading_ != 0D) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeDoubleSize(10, heading_);
+            }
+            if (pitch_ != 0D) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeDoubleSize(11, pitch_);
+            }
+            if (roll_ != 0D) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeDoubleSize(12, roll_);
+            }
+            if (speed_ != 0D) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeDoubleSize(13, speed_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof ForceProperty)) {
+                return super.equals(obj);
+            }
+            ForceProperty other = (ForceProperty) obj;
+
+            if (getForceId()
+                    != other.getForceId()) return false;
+            if (getPlatformCode()
+                    != other.getPlatformCode()) return false;
+            if (!getPlatformType()
+                    .equals(other.getPlatformType())) return false;
+            if (!getName()
+                    .equals(other.getName())) return false;
+            if (!getTeam()
+                    .equals(other.getTeam())) return false;
+            if (Double.doubleToLongBits(getLife())
+                    != Double.doubleToLongBits(
+                    other.getLife())) return false;
+            if (Double.doubleToLongBits(getLon())
+                    != Double.doubleToLongBits(
+                    other.getLon())) return false;
+            if (Double.doubleToLongBits(getLat())
+                    != Double.doubleToLongBits(
+                    other.getLat())) return false;
+            if (Double.doubleToLongBits(getAlt())
+                    != Double.doubleToLongBits(
+                    other.getAlt())) return false;
+            if (Double.doubleToLongBits(getHeading())
+                    != Double.doubleToLongBits(
+                    other.getHeading())) return false;
+            if (Double.doubleToLongBits(getPitch())
+                    != Double.doubleToLongBits(
+                    other.getPitch())) return false;
+            if (Double.doubleToLongBits(getRoll())
+                    != Double.doubleToLongBits(
+                    other.getRoll())) return false;
+            if (Double.doubleToLongBits(getSpeed())
+                    != Double.doubleToLongBits(
+                    other.getSpeed())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + FORCE_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getForceId();
+            hash = (37 * hash) + PLATFORM_CODE_FIELD_NUMBER;
+            hash = (53 * hash) + getPlatformCode();
+            hash = (37 * hash) + PLATFORM_TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + getPlatformType().hashCode();
+            hash = (37 * hash) + NAME_FIELD_NUMBER;
+            hash = (53 * hash) + getName().hashCode();
+            hash = (37 * hash) + TEAM_FIELD_NUMBER;
+            hash = (53 * hash) + getTeam().hashCode();
+            hash = (37 * hash) + LIFE_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    Double.doubleToLongBits(getLife()));
+            hash = (37 * hash) + LON_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    Double.doubleToLongBits(getLon()));
+            hash = (37 * hash) + LAT_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    Double.doubleToLongBits(getLat()));
+            hash = (37 * hash) + ALT_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    Double.doubleToLongBits(getAlt()));
+            hash = (37 * hash) + HEADING_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    Double.doubleToLongBits(getHeading()));
+            hash = (37 * hash) + PITCH_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    Double.doubleToLongBits(getPitch()));
+            hash = (37 * hash) + ROLL_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    Double.doubleToLongBits(getRoll()));
+            hash = (37 * hash) + SPEED_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    Double.doubleToLongBits(getSpeed()));
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<ForceProperty> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public ForceProperty getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * <pre>
+         * 兵力属性
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.soul.tinder.protobuf.proto.ForceProperty}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.ForceProperty)
+                ForcePropertyOrBuilder {
+            private int forceId_;
+            private int platformCode_;
+            private Object platformType_ = "";
+            private Object name_ = "";
+            private Object team_ = "";
+            private double life_;
+            private double lon_;
+            private double lat_;
+            private double alt_;
+            private double heading_;
+            private double pitch_;
+            private double roll_;
+            private double speed_;
+
+            // Construct using com.soul.tinder.protobuf.proto.TinderProto.ForceProperty.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceProperty_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceProperty_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                ForceProperty.class, Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                forceId_ = 0;
+
+                platformCode_ = 0;
+
+                platformType_ = "";
+
+                name_ = "";
+
+                team_ = "";
+
+                life_ = 0D;
+
+                lon_ = 0D;
+
+                lat_ = 0D;
+
+                alt_ = 0D;
+
+                heading_ = 0D;
+
+                pitch_ = 0D;
+
+                roll_ = 0D;
+
+                speed_ = 0D;
+
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ForceProperty_descriptor;
+            }
+
+            @Override
+            public ForceProperty getDefaultInstanceForType() {
+                return ForceProperty.getDefaultInstance();
+            }
+
+            @Override
+            public ForceProperty build() {
+                ForceProperty result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public ForceProperty buildPartial() {
+                ForceProperty result = new ForceProperty(this);
+                result.forceId_ = forceId_;
+                result.platformCode_ = platformCode_;
+                result.platformType_ = platformType_;
+                result.name_ = name_;
+                result.team_ = team_;
+                result.life_ = life_;
+                result.lon_ = lon_;
+                result.lat_ = lat_;
+                result.alt_ = alt_;
+                result.heading_ = heading_;
+                result.pitch_ = pitch_;
+                result.roll_ = roll_;
+                result.speed_ = speed_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof ForceProperty) {
+                    return mergeFrom((ForceProperty) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(ForceProperty other) {
+                if (other == ForceProperty.getDefaultInstance()) return this;
+                if (other.getForceId() != 0) {
+                    setForceId(other.getForceId());
+                }
+                if (other.getPlatformCode() != 0) {
+                    setPlatformCode(other.getPlatformCode());
+                }
+                if (!other.getPlatformType().isEmpty()) {
+                    platformType_ = other.platformType_;
+                    onChanged();
+                }
+                if (!other.getName().isEmpty()) {
+                    name_ = other.name_;
+                    onChanged();
+                }
+                if (!other.getTeam().isEmpty()) {
+                    team_ = other.team_;
+                    onChanged();
+                }
+                if (other.getLife() != 0D) {
+                    setLife(other.getLife());
+                }
+                if (other.getLon() != 0D) {
+                    setLon(other.getLon());
+                }
+                if (other.getLat() != 0D) {
+                    setLat(other.getLat());
+                }
+                if (other.getAlt() != 0D) {
+                    setAlt(other.getAlt());
+                }
+                if (other.getHeading() != 0D) {
+                    setHeading(other.getHeading());
+                }
+                if (other.getPitch() != 0D) {
+                    setPitch(other.getPitch());
+                }
+                if (other.getRoll() != 0D) {
+                    setRoll(other.getRoll());
+                }
+                if (other.getSpeed() != 0D) {
+                    setSpeed(other.getSpeed());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                ForceProperty parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (ForceProperty) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 兵力id
+             * </pre>
+             *
+             * <code>uint32 force_id = 1;</code>
+             *
+             * @return The forceId.
+             */
+            @Override
+            public int getForceId() {
+                return forceId_;
+            }
+
+            /**
+             * <pre>
+             * 兵力id
+             * </pre>
+             *
+             * <code>uint32 force_id = 1;</code>
+             *
+             * @param value The forceId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setForceId(int value) {
+
+                forceId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 兵力id
+             * </pre>
+             *
+             * <code>uint32 force_id = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearForceId() {
+
+                forceId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 平台编号
+             * </pre>
+             *
+             * <code>uint32 platform_code = 2;</code>
+             *
+             * @return The platformCode.
+             */
+            @Override
+            public int getPlatformCode() {
+                return platformCode_;
+            }
+
+            /**
+             * <pre>
+             * 平台编号
+             * </pre>
+             *
+             * <code>uint32 platform_code = 2;</code>
+             *
+             * @param value The platformCode to set.
+             * @return This builder for chaining.
+             */
+            public Builder setPlatformCode(int value) {
+
+                platformCode_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 平台编号
+             * </pre>
+             *
+             * <code>uint32 platform_code = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearPlatformCode() {
+
+                platformCode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 平台类型
+             * </pre>
+             *
+             * <code>string platform_type = 3;</code>
+             *
+             * @return The platformType.
+             */
+            public String getPlatformType() {
+                Object ref = platformType_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    platformType_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 平台类型
+             * </pre>
+             *
+             * <code>string platform_type = 3;</code>
+             *
+             * @param value The platformType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setPlatformType(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                platformType_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 平台类型
+             * </pre>
+             *
+             * <code>string platform_type = 3;</code>
+             *
+             * @return The bytes for platformType.
+             */
+            public com.google.protobuf.ByteString
+            getPlatformTypeBytes() {
+                Object ref = platformType_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    platformType_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 平台类型
+             * </pre>
+             *
+             * <code>string platform_type = 3;</code>
+             *
+             * @param value The bytes for platformType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setPlatformTypeBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                platformType_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 平台类型
+             * </pre>
+             *
+             * <code>string platform_type = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearPlatformType() {
+
+                platformType_ = getDefaultInstance().getPlatformType();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 名称
+             * </pre>
+             *
+             * <code>string name = 4;</code>
+             *
+             * @return The name.
+             */
+            public String getName() {
+                Object ref = name_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    name_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 名称
+             * </pre>
+             *
+             * <code>string name = 4;</code>
+             *
+             * @param value The name to set.
+             * @return This builder for chaining.
+             */
+            public Builder setName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 名称
+             * </pre>
+             *
+             * <code>string name = 4;</code>
+             *
+             * @return The bytes for name.
+             */
+            public com.google.protobuf.ByteString
+            getNameBytes() {
+                Object ref = name_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    name_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 名称
+             * </pre>
+             *
+             * <code>string name = 4;</code>
+             *
+             * @param value The bytes for name to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNameBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 名称
+             * </pre>
+             *
+             * <code>string name = 4;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearName() {
+
+                name_ = getDefaultInstance().getName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 阵营
+             * </pre>
+             *
+             * <code>string team = 5;</code>
+             *
+             * @return The team.
+             */
+            public String getTeam() {
+                Object ref = team_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    team_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 阵营
+             * </pre>
+             *
+             * <code>string team = 5;</code>
+             *
+             * @param value The team to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTeam(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                team_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 阵营
+             * </pre>
+             *
+             * <code>string team = 5;</code>
+             *
+             * @return The bytes for team.
+             */
+            public com.google.protobuf.ByteString
+            getTeamBytes() {
+                Object ref = team_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    team_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 阵营
+             * </pre>
+             *
+             * <code>string team = 5;</code>
+             *
+             * @param value The bytes for team to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTeamBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                team_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 阵营
+             * </pre>
+             *
+             * <code>string team = 5;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearTeam() {
+
+                team_ = getDefaultInstance().getTeam();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 生命值
+             * </pre>
+             *
+             * <code>double life = 6;</code>
+             *
+             * @return The life.
+             */
+            @Override
+            public double getLife() {
+                return life_;
+            }
+
+            /**
+             * <pre>
+             * 生命值
+             * </pre>
+             *
+             * <code>double life = 6;</code>
+             *
+             * @param value The life to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLife(double value) {
+
+                life_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 生命值
+             * </pre>
+             *
+             * <code>double life = 6;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearLife() {
+
+                life_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 经度
+             * </pre>
+             *
+             * <code>double lon = 7;</code>
+             *
+             * @return The lon.
+             */
+            @Override
+            public double getLon() {
+                return lon_;
+            }
+
+            /**
+             * <pre>
+             * 经度
+             * </pre>
+             *
+             * <code>double lon = 7;</code>
+             *
+             * @param value The lon to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLon(double value) {
+
+                lon_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 经度
+             * </pre>
+             *
+             * <code>double lon = 7;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearLon() {
+
+                lon_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 纬度
+             * </pre>
+             *
+             * <code>double lat = 8;</code>
+             *
+             * @return The lat.
+             */
+            @Override
+            public double getLat() {
+                return lat_;
+            }
+
+            /**
+             * <pre>
+             * 纬度
+             * </pre>
+             *
+             * <code>double lat = 8;</code>
+             *
+             * @param value The lat to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLat(double value) {
+
+                lat_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 纬度
+             * </pre>
+             *
+             * <code>double lat = 8;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearLat() {
+
+                lat_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 高度
+             * </pre>
+             *
+             * <code>double alt = 9;</code>
+             *
+             * @return The alt.
+             */
+            @Override
+            public double getAlt() {
+                return alt_;
+            }
+
+            /**
+             * <pre>
+             * 高度
+             * </pre>
+             *
+             * <code>double alt = 9;</code>
+             *
+             * @param value The alt to set.
+             * @return This builder for chaining.
+             */
+            public Builder setAlt(double value) {
+
+                alt_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 高度
+             * </pre>
+             *
+             * <code>double alt = 9;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearAlt() {
+
+                alt_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 偏航角(北向东)
+             * </pre>
+             *
+             * <code>double heading = 10;</code>
+             *
+             * @return The heading.
+             */
+            @Override
+            public double getHeading() {
+                return heading_;
+            }
+
+            /**
+             * <pre>
+             * 偏航角(北向东)
+             * </pre>
+             *
+             * <code>double heading = 10;</code>
+             *
+             * @param value The heading to set.
+             * @return This builder for chaining.
+             */
+            public Builder setHeading(double value) {
+
+                heading_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 偏航角(北向东)
+             * </pre>
+             *
+             * <code>double heading = 10;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearHeading() {
+
+                heading_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 俯仰角
+             * </pre>
+             *
+             * <code>double pitch = 11;</code>
+             *
+             * @return The pitch.
+             */
+            @Override
+            public double getPitch() {
+                return pitch_;
+            }
+
+            /**
+             * <pre>
+             * 俯仰角
+             * </pre>
+             *
+             * <code>double pitch = 11;</code>
+             *
+             * @param value The pitch to set.
+             * @return This builder for chaining.
+             */
+            public Builder setPitch(double value) {
+
+                pitch_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 俯仰角
+             * </pre>
+             *
+             * <code>double pitch = 11;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearPitch() {
+
+                pitch_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 滚转角
+             * </pre>
+             *
+             * <code>double roll = 12;</code>
+             *
+             * @return The roll.
+             */
+            @Override
+            public double getRoll() {
+                return roll_;
+            }
+
+            /**
+             * <pre>
+             * 滚转角
+             * </pre>
+             *
+             * <code>double roll = 12;</code>
+             *
+             * @param value The roll to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRoll(double value) {
+
+                roll_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 滚转角
+             * </pre>
+             *
+             * <code>double roll = 12;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearRoll() {
+
+                roll_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 速度
+             * </pre>
+             *
+             * <code>double speed = 13;</code>
+             *
+             * @return The speed.
+             */
+            @Override
+            public double getSpeed() {
+                return speed_;
+            }
+
+            /**
+             * <pre>
+             * 速度
+             * </pre>
+             *
+             * <code>double speed = 13;</code>
+             *
+             * @param value The speed to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSpeed(double value) {
+
+                speed_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 速度
+             * </pre>
+             *
+             * <code>double speed = 13;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSpeed() {
+
+                speed_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.ForceProperty)
+        }
+
     }
 
-    public static final int SIMID_FIELD_NUMBER = 1;
-    private volatile Object simId_;
-    /**
-     * <pre>
-     * 订单号
-     * </pre>
-     *
-     * <code>string simId = 1;</code>
-     * @return The simId.
-     */
-    @Override
-    public String getSimId() {
-      Object ref = simId_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        simId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 订单号
-     * </pre>
-     *
-     * <code>string simId = 1;</code>
-     * @return The bytes for simId.
-     */
-    @Override
-    public com.google.protobuf.ByteString
-        getSimIdBytes() {
-      Object ref = simId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        simId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TIME_FIELD_NUMBER = 2;
-    private long time_;
-    /**
-     * <pre>
-     * 推演时间
-     * </pre>
-     *
-     * <code>int64 time = 2;</code>
-     * @return The time.
-     */
-    @Override
-    public long getTime() {
-      return time_;
-    }
-
-    public static final int RATIO_FIELD_NUMBER = 3;
-    private double ratio_;
-    /**
-     * <pre>
-     * 推演速度
-     * </pre>
-     *
-     * <code>double ratio = 3;</code>
-     * @return The ratio.
-     */
-    @Override
-    public double getRatio() {
-      return ratio_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getSimIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, simId_);
-      }
-      if (time_ != 0L) {
-        output.writeInt64(2, time_);
-      }
-      if (ratio_ != 0D) {
-        output.writeDouble(3, ratio_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getSimIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, simId_);
-      }
-      if (time_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, time_);
-      }
-      if (ratio_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, ratio_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof ScenarioTime)) {
-        return super.equals(obj);
-      }
-      ScenarioTime other = (ScenarioTime) obj;
-
-      if (!getSimId()
-          .equals(other.getSimId())) return false;
-      if (getTime()
-          != other.getTime()) return false;
-      if (Double.doubleToLongBits(getRatio())
-          != Double.doubleToLongBits(
-              other.getRatio())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SIMID_FIELD_NUMBER;
-      hash = (53 * hash) + getSimId().hashCode();
-      hash = (37 * hash) + TIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTime());
-      hash = (37 * hash) + RATIO_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          Double.doubleToLongBits(getRatio()));
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static ScenarioTime parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ScenarioTime parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ScenarioTime parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ScenarioTime parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ScenarioTime parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static ScenarioTime parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static ScenarioTime parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static ScenarioTime parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static ScenarioTime parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static ScenarioTime parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static ScenarioTime parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static ScenarioTime parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(ScenarioTime prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
      * 推演时间倍率
      * </pre>
-     *
+     * <p>
      * Protobuf type {@code com.soul.tinder.protobuf.proto.ScenarioTime}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.ScenarioTime)
-        ScenarioTimeOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_descriptor;
-      }
+    public static final class ScenarioTime extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.soul.tinder.protobuf.proto.ScenarioTime)
+            ScenarioTimeOrBuilder {
+        public static final int SIMID_FIELD_NUMBER = 1;
+        public static final int TIME_FIELD_NUMBER = 2;
+        public static final int RATIO_FIELD_NUMBER = 3;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.ScenarioTime)
+        private static final ScenarioTime DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<ScenarioTime>
+                PARSER = new com.google.protobuf.AbstractParser<ScenarioTime>() {
+            @Override
+            public ScenarioTime parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ScenarioTime(input, extensionRegistry);
+            }
+        };
 
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                ScenarioTime.class, Builder.class);
-      }
-
-      // Construct using com.soul.tinder.protobuf.proto.TinderProto.ScenarioTime.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        static {
+            DEFAULT_INSTANCE = new ScenarioTime();
         }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        simId_ = "";
 
-        time_ = 0L;
+        private volatile Object simId_;
+        private long time_;
+        private double ratio_;
+        private byte memoizedIsInitialized = -1;
 
-        ratio_ = 0D;
-
-        return this;
-      }
-
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_descriptor;
-      }
-
-      @Override
-      public ScenarioTime getDefaultInstanceForType() {
-        return ScenarioTime.getDefaultInstance();
-      }
-
-      @Override
-      public ScenarioTime build() {
-        ScenarioTime result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        // Use ScenarioTime.newBuilder() to construct.
+        private ScenarioTime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-        return result;
-      }
 
-      @Override
-      public ScenarioTime buildPartial() {
-        ScenarioTime result = new ScenarioTime(this);
-        result.simId_ = simId_;
-        result.time_ = time_;
-        result.ratio_ = ratio_;
-        onBuilt();
-        return result;
-      }
-
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ScenarioTime) {
-          return mergeFrom((ScenarioTime)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        private ScenarioTime() {
+            simId_ = "";
         }
-      }
+        private ScenarioTime(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            String s = input.readStringRequireUtf8();
 
-      public Builder mergeFrom(ScenarioTime other) {
-        if (other == ScenarioTime.getDefaultInstance()) return this;
-        if (!other.getSimId().isEmpty()) {
-          simId_ = other.simId_;
-          onChanged();
+                            simId_ = s;
+                            break;
+                        }
+                        case 16: {
+
+                            time_ = input.readInt64();
+                            break;
+                        }
+                        case 25: {
+
+                            ratio_ = input.readDouble();
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-        if (other.getTime() != 0L) {
-          setTime(other.getTime());
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_descriptor;
         }
-        if (other.getRatio() != 0D) {
-          setRatio(other.getRatio());
+
+        public static ScenarioTime parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        ScenarioTime parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ScenarioTime) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        public static ScenarioTime parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
         }
-        return this;
-      }
 
-      private Object simId_ = "";
-      /**
-       * <pre>
-       * 订单号
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @return The simId.
-       */
-      public String getSimId() {
-        Object ref = simId_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          simId_ = s;
-          return s;
-        } else {
-          return (String) ref;
+        public static ScenarioTime parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
         }
-      }
-      /**
-       * <pre>
-       * 订单号
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @return The bytes for simId.
-       */
-      public com.google.protobuf.ByteString
-          getSimIdBytes() {
-        Object ref = simId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          simId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        public static ScenarioTime parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
         }
-      }
-      /**
-       * <pre>
-       * 订单号
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @param value The simId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSimId(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        simId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 订单号
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSimId() {
-        
-        simId_ = getDefaultInstance().getSimId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 订单号
-       * </pre>
-       *
-       * <code>string simId = 1;</code>
-       * @param value The bytes for simId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSimIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        simId_ = value;
-        onChanged();
-        return this;
-      }
 
-      private long time_ ;
-      /**
-       * <pre>
-       * 推演时间
-       * </pre>
-       *
-       * <code>int64 time = 2;</code>
-       * @return The time.
-       */
-      @Override
-      public long getTime() {
-        return time_;
-      }
-      /**
-       * <pre>
-       * 推演时间
-       * </pre>
-       *
-       * <code>int64 time = 2;</code>
-       * @param value The time to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTime(long value) {
-        
-        time_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 推演时间
-       * </pre>
-       *
-       * <code>int64 time = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTime() {
-        
-        time_ = 0L;
-        onChanged();
-        return this;
-      }
+        public static ScenarioTime parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
 
-      private double ratio_ ;
-      /**
-       * <pre>
-       * 推演速度
-       * </pre>
-       *
-       * <code>double ratio = 3;</code>
-       * @return The ratio.
-       */
-      @Override
-      public double getRatio() {
-        return ratio_;
-      }
-      /**
-       * <pre>
-       * 推演速度
-       * </pre>
-       *
-       * <code>double ratio = 3;</code>
-       * @param value The ratio to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRatio(double value) {
-        
-        ratio_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 推演速度
-       * </pre>
-       *
-       * <code>double ratio = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRatio() {
-        
-        ratio_ = 0D;
-        onChanged();
-        return this;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        public static ScenarioTime parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
 
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        public static ScenarioTime parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ScenarioTime parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ScenarioTime parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static ScenarioTime parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static ScenarioTime parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static ScenarioTime parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(ScenarioTime prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static ScenarioTime getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<ScenarioTime> parser() {
+            return PARSER;
+        }
+
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new ScenarioTime();
+        }
+
+        @Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @Override
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            ScenarioTime.class, Builder.class);
+        }
+
+        /**
+         * <pre>
+         * 订单号
+         * </pre>
+         *
+         * <code>string simId = 1;</code>
+         *
+         * @return The simId.
+         */
+        @Override
+        public String getSimId() {
+            Object ref = simId_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                String s = bs.toStringUtf8();
+                simId_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <pre>
+         * 订单号
+         * </pre>
+         *
+         * <code>string simId = 1;</code>
+         *
+         * @return The bytes for simId.
+         */
+        @Override
+        public com.google.protobuf.ByteString
+        getSimIdBytes() {
+            Object ref = simId_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (String) ref);
+                simId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 推演时间
+         * </pre>
+         *
+         * <code>int64 time = 2;</code>
+         *
+         * @return The time.
+         */
+        @Override
+        public long getTime() {
+            return time_;
+        }
+
+        /**
+         * <pre>
+         * 推演速度
+         * </pre>
+         *
+         * <code>double ratio = 3;</code>
+         *
+         * @return The ratio.
+         */
+        @Override
+        public double getRatio() {
+            return ratio_;
+        }
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getSimIdBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, simId_);
+            }
+            if (time_ != 0L) {
+                output.writeInt64(2, time_);
+            }
+            if (ratio_ != 0D) {
+                output.writeDouble(3, ratio_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getSimIdBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, simId_);
+            }
+            if (time_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(2, time_);
+            }
+            if (ratio_ != 0D) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeDoubleSize(3, ratio_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof ScenarioTime)) {
+                return super.equals(obj);
+            }
+            ScenarioTime other = (ScenarioTime) obj;
+
+            if (!getSimId()
+                    .equals(other.getSimId())) return false;
+            if (getTime()
+                    != other.getTime()) return false;
+            if (Double.doubleToLongBits(getRatio())
+                    != Double.doubleToLongBits(
+                    other.getRatio())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + SIMID_FIELD_NUMBER;
+            hash = (53 * hash) + getSimId().hashCode();
+            hash = (37 * hash) + TIME_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    getTime());
+            hash = (37 * hash) + RATIO_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    Double.doubleToLongBits(getRatio()));
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @Override
+        public com.google.protobuf.Parser<ScenarioTime> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public ScenarioTime getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * <pre>
+         * 推演时间倍率
+         * </pre>
+         * <p>
+         * Protobuf type {@code com.soul.tinder.protobuf.proto.ScenarioTime}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.soul.tinder.protobuf.proto.ScenarioTime)
+                ScenarioTimeOrBuilder {
+            private Object simId_ = "";
+            private long time_;
+            private double ratio_;
+
+            // Construct using com.soul.tinder.protobuf.proto.TinderProto.ScenarioTime.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                ScenarioTime.class, Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                simId_ = "";
+
+                time_ = 0L;
+
+                ratio_ = 0D;
+
+                return this;
+            }
+
+            @Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return TinderProto.internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_descriptor;
+            }
+
+            @Override
+            public ScenarioTime getDefaultInstanceForType() {
+                return ScenarioTime.getDefaultInstance();
+            }
+
+            @Override
+            public ScenarioTime build() {
+                ScenarioTime result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public ScenarioTime buildPartial() {
+                ScenarioTime result = new ScenarioTime(this);
+                result.simId_ = simId_;
+                result.time_ = time_;
+                result.ratio_ = ratio_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof ScenarioTime) {
+                    return mergeFrom((ScenarioTime) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(ScenarioTime other) {
+                if (other == ScenarioTime.getDefaultInstance()) return this;
+                if (!other.getSimId().isEmpty()) {
+                    simId_ = other.simId_;
+                    onChanged();
+                }
+                if (other.getTime() != 0L) {
+                    setTime(other.getTime());
+                }
+                if (other.getRatio() != 0D) {
+                    setRatio(other.getRatio());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                ScenarioTime parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (ScenarioTime) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 订单号
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @return The simId.
+             */
+            public String getSimId() {
+                Object ref = simId_;
+                if (!(ref instanceof String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    simId_ = s;
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 订单号
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @param value The simId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSimId(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                simId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 订单号
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @return The bytes for simId.
+             */
+            public com.google.protobuf.ByteString
+            getSimIdBytes() {
+                Object ref = simId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (String) ref);
+                    simId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * 订单号
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @param value The bytes for simId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSimIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                simId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 订单号
+             * </pre>
+             *
+             * <code>string simId = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSimId() {
+
+                simId_ = getDefaultInstance().getSimId();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演时间
+             * </pre>
+             *
+             * <code>int64 time = 2;</code>
+             *
+             * @return The time.
+             */
+            @Override
+            public long getTime() {
+                return time_;
+            }
+
+            /**
+             * <pre>
+             * 推演时间
+             * </pre>
+             *
+             * <code>int64 time = 2;</code>
+             *
+             * @param value The time to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTime(long value) {
+
+                time_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演时间
+             * </pre>
+             *
+             * <code>int64 time = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearTime() {
+
+                time_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演速度
+             * </pre>
+             *
+             * <code>double ratio = 3;</code>
+             *
+             * @return The ratio.
+             */
+            @Override
+            public double getRatio() {
+                return ratio_;
+            }
+
+            /**
+             * <pre>
+             * 推演速度
+             * </pre>
+             *
+             * <code>double ratio = 3;</code>
+             *
+             * @param value The ratio to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRatio(double value) {
+
+                ratio_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * 推演速度
+             * </pre>
+             *
+             * <code>double ratio = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearRatio() {
+
+                ratio_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
 
 
-      // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.ScenarioTime)
+            // @@protoc_insertion_point(builder_scope:com.soul.tinder.protobuf.proto.ScenarioTime)
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:com.soul.tinder.protobuf.proto.ScenarioTime)
-    private static final ScenarioTime DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new ScenarioTime();
-    }
-
-    public static ScenarioTime getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ScenarioTime>
-        PARSER = new com.google.protobuf.AbstractParser<ScenarioTime>() {
-      @Override
-      public ScenarioTime parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ScenarioTime(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ScenarioTime> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<ScenarioTime> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public ScenarioTime getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_soul_tinder_protobuf_proto_InitSync_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_soul_tinder_protobuf_proto_InitSync_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_soul_tinder_protobuf_proto_NextStep_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_soul_tinder_protobuf_proto_NextStep_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_soul_tinder_protobuf_proto_NextStepSync_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_soul_tinder_protobuf_proto_NextStepSync_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_soul_tinder_protobuf_proto_SimEvent_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_soul_tinder_protobuf_proto_SimEvent_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_soul_tinder_protobuf_proto_ForceSummary_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_soul_tinder_protobuf_proto_ForceSummary_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_soul_tinder_protobuf_proto_ForceProperty_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_soul_tinder_protobuf_proto_ForceProperty_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    String[] descriptorData = {
-      "\n\014tinder.proto\022\036com.soul.tinder.protobuf" +
-      ".proto\"Y\n\010InitSync\022\016\n\006sim_id\030\001 \001(\r\022=\n\006fo" +
-      "rces\030\002 \003(\0132-.com.soul.tinder.protobuf.pr" +
-      "oto.ForceProperty\"/\n\010NextStep\022\020\n\010sim_tim" +
-      "e\030\001 \001(\003\022\021\n\tstep_time\030\002 \001(\003\"o\n\014NextStepSy" +
-      "nc\022\016\n\006sim_id\030\001 \001(\r\022\020\n\010sim_time\030\002 \001(\003\022=\n\006" +
-      "forces\030\003 \003(\0132-.com.soul.tinder.protobuf." +
-      "proto.ForceProperty\"0\n\016SimForceJoined\022\016\n" +
-      "\006sim_id\030\001 \001(\r\022\016\n\006forces\030\002 \003(\r\"2\n\020SimForc" +
-      "eResigned\022\016\n\006sim_id\030\001 \001(\r\022\016\n\006forces\030\002 \003(" +
-      "\r\")\n\010SimEvent\022\016\n\006sim_id\030\001 \001(\r\022\r\n\005event\030\002" +
-      " \001(\t\"\\\n\rScenarioEvent\022\r\n\005simId\030\001 \001(\t\022\014\n\004" +
-      "time\030\002 \001(\003\022\016\n\006instId\030\003 \001(\t\022\020\n\010effectId\030\004" +
-      " \001(\t\022\014\n\004type\030\005 \001(\005\"F\n\013ScenarioLog\022\r\n\005sim" +
-      "Id\030\001 \001(\t\022\014\n\004team\030\002 \001(\t\022\014\n\004time\030\003 \001(\003\022\014\n\004" +
-      "info\030\004 \001(\t\"(\n\014ForceSummary\022\n\n\002id\030\001 \001(\r\022\014" +
-      "\n\004name\030\002 \001(\t\"\335\001\n\rForceProperty\022\020\n\010force_" +
-      "id\030\001 \001(\r\022\025\n\rplatform_code\030\002 \001(\r\022\025\n\rplatf" +
-      "orm_type\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\014\n\004team\030\005 \001" +
-      "(\t\022\014\n\004life\030\006 \001(\001\022\013\n\003lon\030\007 \001(\001\022\013\n\003lat\030\010 \001" +
-      "(\001\022\013\n\003alt\030\t \001(\001\022\017\n\007heading\030\n \001(\001\022\r\n\005pitc" +
-      "h\030\013 \001(\001\022\014\n\004roll\030\014 \001(\001\022\r\n\005speed\030\r \001(\001\":\n\014" +
-      "ScenarioTime\022\r\n\005simId\030\001 \001(\t\022\014\n\004time\030\002 \001(" +
-      "\003\022\r\n\005ratio\030\003 \001(\001B-\n\036com.soul.tinder.prot" +
-      "obuf.protoB\013TinderProtob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_com_soul_tinder_protobuf_proto_InitSync_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_soul_tinder_protobuf_proto_InitSync_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_soul_tinder_protobuf_proto_InitSync_descriptor,
-        new String[] { "SimId", "Forces", });
-    internal_static_com_soul_tinder_protobuf_proto_NextStep_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_soul_tinder_protobuf_proto_NextStep_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_soul_tinder_protobuf_proto_NextStep_descriptor,
-        new String[] { "SimTime", "StepTime", });
-    internal_static_com_soul_tinder_protobuf_proto_NextStepSync_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_com_soul_tinder_protobuf_proto_NextStepSync_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_soul_tinder_protobuf_proto_NextStepSync_descriptor,
-        new String[] { "SimId", "SimTime", "Forces", });
-    internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_soul_tinder_protobuf_proto_SimForceJoined_descriptor,
-        new String[] { "SimId", "Forces", });
-    internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_soul_tinder_protobuf_proto_SimForceResigned_descriptor,
-        new String[] { "SimId", "Forces", });
-    internal_static_com_soul_tinder_protobuf_proto_SimEvent_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_com_soul_tinder_protobuf_proto_SimEvent_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_soul_tinder_protobuf_proto_SimEvent_descriptor,
-        new String[] { "SimId", "Event", });
-    internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_soul_tinder_protobuf_proto_ScenarioEvent_descriptor,
-        new String[] { "SimId", "Time", "InstId", "EffectId", "Type", });
-    internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_soul_tinder_protobuf_proto_ScenarioLog_descriptor,
-        new String[] { "SimId", "Team", "Time", "Info", });
-    internal_static_com_soul_tinder_protobuf_proto_ForceSummary_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_com_soul_tinder_protobuf_proto_ForceSummary_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_soul_tinder_protobuf_proto_ForceSummary_descriptor,
-        new String[] { "Id", "Name", });
-    internal_static_com_soul_tinder_protobuf_proto_ForceProperty_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_com_soul_tinder_protobuf_proto_ForceProperty_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_soul_tinder_protobuf_proto_ForceProperty_descriptor,
-        new String[] { "ForceId", "PlatformCode", "PlatformType", "Name", "Team", "Life", "Lon", "Lat", "Alt", "Heading", "Pitch", "Roll", "Speed", });
-    internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_soul_tinder_protobuf_proto_ScenarioTime_descriptor,
-        new String[] { "SimId", "Time", "Ratio", });
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

@@ -1,13 +1,12 @@
 package com.juntai.tinder.controller;
 
-import com.egova.web.annotation.Api;
-import com.soul.tinder.condition.ForcesLibraryCondition;
-import com.soul.tinder.entity.ForcesLibrary;
-import com.soul.tinder.model.ForcesEntity;
-import com.soul.tinder.model.ForcesLibraryUpdateModel;
-import com.soul.tinder.service.ForcesLibraryService;
+import com.juntai.soulboot.web.api.ApiResultWrap;
+import com.juntai.tinder.condition.ForcesLibraryCondition;
+import com.juntai.tinder.entity.ForcesLibrary;
+import com.juntai.tinder.model.ForcesEntity;
+import com.juntai.tinder.model.ForcesLibraryUpdateModel;
+import com.juntai.tinder.service.ForcesLibraryService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,9 +17,9 @@ import java.util.List;
  * @Author: nemo
  * @Date: 2022/3/22
  */
-@Slf4j
+@ApiResultWrap
 @RestController
-@RequestMapping("/unity/forces-library")
+@RequestMapping("/tinder/v3/forces-library")
 @RequiredArgsConstructor
 public class ForceLibraryController {
 
@@ -32,7 +31,7 @@ public class ForceLibraryController {
      * @param id 主键
      * @return MapSetting
      */
-    @Api
+
     @GetMapping(value = "/{id}")
     public ForcesLibrary getById(@PathVariable String id) {
         return forcesLibraryService.getById(id);
@@ -44,10 +43,10 @@ public class ForceLibraryController {
      * @param id 主键
      * @return MapSetting
      */
-    @Api
+
     @GetMapping(value = "/new")
-    public ForcesLibrary getByNewId(@RequestParam String id ,@RequestParam String experimentId) {
-        return forcesLibraryService.getNewId(id,experimentId);
+    public ForcesLibrary getByNewId(@RequestParam String id, @RequestParam String experimentId) {
+        return forcesLibraryService.getNewId(id, experimentId);
     }
 
     /**
@@ -58,13 +57,12 @@ public class ForceLibraryController {
      * @return
      */
 
-    @Api
+
     @GetMapping(value = "/list")
     public List<ForcesLibrary> list(@RequestParam(name = "experimentId") String experimentId,
                                     @RequestParam(name = "team", required = false) String team) {
         return forcesLibraryService.queryByExperiment(experimentId, team);
     }
-
 
 
     /**
@@ -73,7 +71,7 @@ public class ForceLibraryController {
      * @param entity
      * @return
      */
-    @Api
+
     @PostMapping("/add")
     public String insert(@RequestBody ForcesEntity entity) {
 
@@ -86,7 +84,7 @@ public class ForceLibraryController {
      * @param belongId
      * @param entity
      */
-    @Api
+
     @PostMapping("add/carry/{belongId}")
     public void insertRelation(@PathVariable String belongId, @RequestBody ForcesEntity entity) {
         forcesLibraryService.addRelation(entity.getExperimentId(), entity.getTeam(), entity.getEquipmentId(), entity.getModelId(), belongId, entity.getNum());
@@ -97,7 +95,7 @@ public class ForceLibraryController {
      *
      * @param model
      */
-    @Api
+
     @PostMapping(value = "/modify")
     public void update(@RequestBody ForcesLibraryUpdateModel model) {
         forcesLibraryService.update(model);
@@ -105,12 +103,13 @@ public class ForceLibraryController {
 
     /**
      * 修改兵力名称
+     *
      * @param id
      * @param name
      */
-    @Api
+
     @GetMapping(value = "/modify/name")
-    public void updateName(@RequestParam String id,@RequestParam String name) {
+    public void updateName(@RequestParam String id, @RequestParam String name) {
         forcesLibraryService.updateName(id, name);
     }
 
@@ -120,7 +119,7 @@ public class ForceLibraryController {
      * @param belongId
      * @param entity
      */
-    @Api
+
     @PostMapping("modify/carry/{belongId}")
     public void updateRelation(@PathVariable String belongId, @RequestBody ForcesLibraryUpdateModel entity) {
         forcesLibraryService.updateCarry(belongId, entity);
@@ -133,7 +132,7 @@ public class ForceLibraryController {
      * @param belongId
      * @param list
      */
-    @Api
+
     @PostMapping("modify/carry-list/{belongId}")
     public void updateRelationList(@PathVariable String belongId, @RequestBody List<ForcesLibraryUpdateModel> list) {
         forcesLibraryService.updateCarryList(belongId, list);
@@ -145,7 +144,7 @@ public class ForceLibraryController {
      * @param id
      * @return
      */
-    @Api
+
     @DeleteMapping(value = "/{id}")
     public int deleteById(@PathVariable String id) {
         return forcesLibraryService.deleteById(id);
@@ -157,7 +156,7 @@ public class ForceLibraryController {
      * @param id
      * @return
      */
-    @Api
+
     @DeleteMapping("{id}/carry/{belongId}")
     public int deleteRelation(@PathVariable String belongId, @PathVariable String id) {
         return forcesLibraryService.deleteCarryById(belongId, id);
@@ -165,11 +164,12 @@ public class ForceLibraryController {
 
     /**
      * 根据兵力查询
+     *
      * @param experimentId
      * @param forcesId
      * @return
      */
-    @Api
+
     @GetMapping(value = "/list/carry")
     public List<ForcesLibrary> getRelation(@RequestParam String experimentId, @RequestParam String forcesId) {
         ForcesLibraryCondition condition = new ForcesLibraryCondition();
@@ -180,9 +180,10 @@ public class ForceLibraryController {
 
     /**
      * 刷新inputInfo
+     *
      * @param forceId
      */
-    @Api
+
     @GetMapping(value = "/flash/inputInfo/{forceId}")
     public void flashInput(@PathVariable String forceId) {
         forcesLibraryService.flashInput(forceId);

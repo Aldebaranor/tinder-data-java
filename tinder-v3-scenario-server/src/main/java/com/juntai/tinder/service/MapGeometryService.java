@@ -4,7 +4,6 @@ import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
 import com.juntai.tinder.condition.MapGeometryCondition;
 import com.juntai.tinder.entity.MapGeometry;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.juntai.tinder.facade.MapGeometryFacade;
 import com.juntai.tinder.model.GeometryModel;
 
@@ -12,7 +11,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author nemo
@@ -51,7 +50,7 @@ public interface MapGeometryService extends MapGeometryFacade {
      * @param mode
      * @return
      */
-    Pagination<MapGeometry> page(Query<MapGeometryCondition,MapGeometry> mode);
+    Pagination<MapGeometry> page(Query<MapGeometryCondition, MapGeometry> mode);
 
     /**
      * 主键查询
@@ -70,11 +69,11 @@ public interface MapGeometryService extends MapGeometryFacade {
     String insert(MapGeometry entity);
 
     /**
-     * 批量插入
-     *
-     * @param entity
+     * @param experimentId
+     * @param team
+     * @param json
      */
-    void insertList(List<MapGeometry> entity);
+    void insertJson(String experimentId, String team, String json);
 
     /**
      * 保存
@@ -104,5 +103,5 @@ public interface MapGeometryService extends MapGeometryFacade {
      */
     int deleteById(String id);
 
-    void update(MapGeometry entity)
+    void update(MapGeometry entity);
 }

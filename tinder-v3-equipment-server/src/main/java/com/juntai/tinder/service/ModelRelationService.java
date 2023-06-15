@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author nemo
@@ -23,7 +23,7 @@ public interface ModelRelationService extends ModelRelationFacade {
      * @param model QueryModel
      * @return 分页数据
      */
-    Pagination<ModelRelation> page(Query<ModelRelationCondition,ModelRelation> model);
+    Pagination<ModelRelation> page(Query<ModelRelationCondition, ModelRelation> model);
 
     ModelRelation getById(String id);
 
@@ -33,4 +33,8 @@ public interface ModelRelationService extends ModelRelationFacade {
 
 
     int deleteByIds(List<String> ids);
+
+    int update(ModelRelation entity);
+
+    String insert(ModelRelation entity);
 }

@@ -16,7 +16,7 @@ public class PinyingUtils {
 
 
     public static String[] stringToPinyin(String src) {
-        return stringToPinyin(src, false, (String)null);
+        return stringToPinyin(src, false, (String) null);
     }
 
     public static String[] stringToPinyin(String src, String separator) {
@@ -29,7 +29,7 @@ public class PinyingUtils {
             int srcCount = srcChar.length;
             String[] srcStr = new String[srcCount];
 
-            for(int i = 0; i < srcCount; ++i) {
+            for (int i = 0; i < srcCount; ++i) {
                 srcStr[i] = charToPinyin(srcChar[i], isPolyphone, separator);
             }
 
@@ -48,7 +48,7 @@ public class PinyingUtils {
             try {
                 String[] strs = PinyinHelper.toHanyuPinyinStringArray(src, defaultFormat);
                 if (isPolyphone && null != separator) {
-                    for(int i = 0; i < strs.length; ++i) {
+                    for (int i = 0; i < strs.length; ++i) {
                         tempPinying.append(strs[i]);
                         if (strs.length != i + 1) {
                             tempPinying.append(separator);
@@ -93,7 +93,7 @@ public class PinyingUtils {
     public static String stringArrayToString(String[] str, String separator) {
         StringBuffer sb = new StringBuffer();
 
-        for(int i = 0; i < str.length; ++i) {
+        for (int i = 0; i < str.length; ++i) {
             sb.append(str[i]);
             if (str.length != i + 1) {
                 sb.append(separator);
@@ -110,7 +110,7 @@ public class PinyingUtils {
     public static String charArrayToString(char[] ch, String separator) {
         StringBuffer sb = new StringBuffer();
 
-        for(int i = 0; i < ch.length; ++i) {
+        for (int i = 0; i < ch.length; ++i) {
             sb.append(ch[i]);
             if (ch.length != i + 1) {
                 sb.append(separator);
@@ -139,7 +139,7 @@ public class PinyingUtils {
             String[] var6 = pinyingStr;
             int var7 = pinyingStr.length;
 
-            for(int var8 = 0; var8 < var7; ++var8) {
+            for (int var8 = 0; var8 < var7; ++var8) {
                 String s = var6[var8];
                 char headChar = s.charAt(0);
                 if (isCapital) {
@@ -164,7 +164,7 @@ public class PinyingUtils {
     }
 
     public static String[] getHeadByString(String src, boolean isCapital) {
-        return getHeadByString(src, isCapital, (String)null);
+        return getHeadByString(src, isCapital, (String) null);
     }
 
     public static String[] getHeadByString(String src, boolean isCapital, String separator) {
@@ -174,7 +174,7 @@ public class PinyingUtils {
         char[] var6 = chars;
         int var7 = chars.length;
 
-        for(int var8 = 0; var8 < var7; ++var8) {
+        for (int var8 = 0; var8 < var7; ++var8) {
             char ch = var6[var8];
             char[] chs = getHeadByChar(ch, isCapital);
             StringBuffer sb = new StringBuffer();
@@ -183,7 +183,7 @@ public class PinyingUtils {
                 char[] var13 = chs;
                 int var14 = chs.length;
 
-                for(int var15 = 0; var15 < var14; ++var15) {
+                for (int var15 = 0; var15 < var14; ++var15) {
                     char ch1 = var13[var15];
                     sb.append(ch1);
                     if (j != chs.length) {

@@ -13,32 +13,32 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public enum GeometryFunctionType implements I18nEnum<Integer> {
+public enum GeometryFunctionType implements I18nEnum<String> {
 
     /**
      * 其他
      */
-    OTHER(0),
+    OTHER("0"),
     /**
      * 任务区
      */
-    MISSION_AREA(2),
-    WOMAN(2),
+    MISSION_AREA("2"),
+    WOMAN("2"),
     /**
      * 禁区
      */
-    PENALTY_ZONE(3),
+    PENALTY_ZONE("3"),
     /**
      * 出发点
      */
-    DEPARTURE_AREA(4),
+    DEPARTURE_AREA("4"),
     /**
      * 到达点
      */
-    ARRIVAL_AREA(5),
+    ARRIVAL_AREA("5"),
     ;
 
-    private final Integer value;
+    private final String value;
 
 }
 

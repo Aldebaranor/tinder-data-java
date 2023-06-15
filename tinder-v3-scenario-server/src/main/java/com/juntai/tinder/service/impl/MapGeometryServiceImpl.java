@@ -1,48 +1,64 @@
 package com.juntai.tinder.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
+import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
+import com.baomidou.mybatisplus.extension.toolkit.ChainWrappers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.juntai.soulboot.common.exception.SoulBootException;
+import com.juntai.soulboot.data.ConditionParser;
 import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
+import com.juntai.soulboot.util.JsonUtils;
 import com.juntai.tinder.condition.MapGeometryCondition;
 import com.juntai.tinder.entity.MapGeometry;
+import com.juntai.tinder.entity.enums.GeometryFunctionType;
+import com.juntai.tinder.entity.enums.GeometryType;
+import com.juntai.tinder.entity.enums.TeamType;
+import com.juntai.tinder.exception.TinderErrorCode;
 import com.juntai.tinder.mapper.MapGeometryMapper;
 import com.juntai.tinder.model.GeometryModel;
+import com.juntai.tinder.model.Properties;
 import com.juntai.tinder.service.MapGeometryService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.sun.istack.internal.NotNull;
+import com.juntai.tinder.utils.GeometryUtils;
+import com.juntai.tinder.utils.UUIDUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author nemo
  * @since 2023-06-07
  */
 @Service
-public class MapGeometryServiceImpl  implements MapGeometryService {
+public class MapGeometryServiceImpl implements MapGeometryService {
+
+    @Autowired
+    private MapGeometryMapper mapper;
 
     @Override
     public List<MapGeometry> getByExperiment(String experimentId, String team) {
         //Clause clause;
-        CombineClause clause = CombineClause.and(
-                SingleClause.equal("experimentId", experimentId)
-        );
+        LambdaQueryWrapper<MapGeometry> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(MapGeometry::getExperimentId, experimentId);
+
         //白方可以查询到所有，红方查询到白方与红方，蓝方查询到白方与蓝方
         if (StringUtils.equals(TeamType.RED.getValue(), team)) {
-            clause.add(SingleClause.in("team", new String[]{TeamType.RED.getValue(), TeamType.WHITE.getValue()}));
+            wrapper.in(MapGeometry::getTeam, new Object[]{TeamType.RED.getValue(), TeamType.WHITE.getValue()});
         } else if (StringUtils.equals(TeamType.BLUE.getValue(), team)) {
-            clause.add(SingleClause.in("team", new String[]{TeamType.BLUE.getValue(), TeamType.WHITE.getValue()}));
+            wrapper.in(MapGeometry::getTeam, new Object[]{TeamType.BLUE.getValue(), TeamType.WHITE.getValue()});
         }
-        return repository.query(clause);
+        return mapper.selectList(wrapper);
     }
 
     @Override
@@ -53,37 +69,45 @@ public class MapGeometryServiceImpl  implements MapGeometryService {
 
     @Override
     public List<MapGeometry> query(MapGeometryCondition condition) {
-        return super.query(condition, null);;
+        QueryChainWrapper<MapGeometry> wrapper = ChainWrappers.queryChain(MapGeometry.class);
+        ;
+        ConditionParser.parse(wrapper, condition);
+        return wrapper.list();
     }
 
     @Override
-    public Pagination<MapGeometry> page(Query<MapGeometryCondition, MapGeometry> mode) {
-        return super.page(mode.getCondition(), mode.getPaging(), null);
+    public Pagination<MapGeometry> page(Query<MapGeometryCondition, MapGeometry> query) {
+        QueryChainWrapper<MapGeometry> wrapper = ChainWrappers.queryChain(MapGeometry.class);
+        ;
+        ConditionParser.parse(wrapper, query.getCondition());
+        return wrapper.page(query.toPage(MapGeometry.class));
     }
 
     @Override
     public MapGeometry getById(String id) {
-        return null;
+        return mapper.selectById(id);
     }
 
     @Override
     public String insert(MapGeometry entity) {
-        entity.setId(UUIDUtils.getHashUuid());
-        entity.setCreateTime(new Timestamp(System.currentTimeMillis()));
-        return super.insert(entity);
+        String id = UUIDUtils.getHashUuid();
+        entity.setId(id);
+        entity.setCreateTime(LocalDateTime.now());
+        mapper.insert(entity);
+        return id;
     }
 
     @Override
-    public void insertList(List<MapGeometry> entity) {
+    public void insertJson(String experimentId, String team, String json) {
         List<MapGeometry> list = new ArrayList<>();
-        List<Object> jsonList = JsonUtils.deserializeList(json, Object.class);
+        List<Object> jsonList = JsonUtils.readList(json, Object.class);
         jsonList.forEach(s -> {
             try {
                 MapGeometry entity = new MapGeometry();
                 entity.setExperimentId(experimentId);
                 entity.setTeam(team);
                 ObjectMapper mapper = new ObjectMapper();
-                JsonNode node = mapper.readTree(JsonUtils.serialize(s));
+                JsonNode node = mapper.readTree(JsonUtils.write(s));
                 entity.setId(node.findValue("id").asText());
                 JsonNode areaType = node.findValue("areaType");
                 if (areaType != null && !StringUtils.isBlank(areaType.asText())) {
@@ -98,53 +122,53 @@ public class MapGeometryServiceImpl  implements MapGeometryService {
                 JsonNode geometryNode = node.findValue("geometry");
                 String type = geometryNode.findValue("type").asText();
                 if (StringUtils.isBlank(type)) {
-                    throw ExceptionUtils.api("geometry.type 不能为空");
+                    throw new SoulBootException(TinderErrorCode.TINDER_GEOMETRY_ERROR, "geometry.type 不能为空");
                 }
                 entity.setGeometryType(type);
-                entity.setGeometry(JsonUtils.serialize(s));
+                entity.setGeometry(JsonUtils.write(s));
 
                 JsonNode properties = node.findValue("properties");
                 String propertiesType = properties.findValue("type").asText();
                 if (StringUtils.isBlank(propertiesType)) {
-                    throw ExceptionUtils.api("properties.type 不能为空");
+                    throw new SoulBootException(TinderErrorCode.TINDER_GEOMETRY_ERROR, "properties.type 不能为空");
                 }
                 entity.setPropertiesType(propertiesType);
-                entity.setCreateTime(new Timestamp(System.currentTimeMillis()));
+                entity.setCreateTime(LocalDateTime.now());
                 list.add(entity);
             } catch (JsonProcessingException e) {
-                throw ExceptionUtils.api(e.getMessage());
+                throw new SoulBootException(TinderErrorCode.TINDER_GEOMETRY_ERROR, e.getMessage());
             }
 
         });
-        super.insertList(list);
+        list.forEach(q -> {
+            mapper.insert(q);
+        });
     }
 
     @Override
-    public void updateListByJson(String experimentId, String team, List<String> json) {
+    public void updateListByJson(String experimentId, String team, List<String> jsonList) {
         MapGeometryCondition condition = new MapGeometryCondition();
-        condition.setTeam(team);
-        condition.setExperimentId(experimentId);
-        List<MapGeometry> updateList = new ArrayList<>();
-        List<MapGeometry> list = super.query(condition);
-        for(String s : jsonList){
+        List<MapGeometry> list = new LambdaQueryChainWrapper<>(mapper).eq(MapGeometry::getTeam, team)
+                .eq(MapGeometry::getExperimentId, experimentId).list();
+        for (String s : jsonList) {
             try {
-                Object object = JsonUtils.deserialize(s, Object.class);
-                ObjectMapper mapper = new ObjectMapper();
-                JsonNode node = mapper.readTree(JsonUtils.serialize(object));
+                Object object = JsonUtils.read(s, Object.class);
+                ObjectMapper map = new ObjectMapper();
+                JsonNode node = map.readTree(JsonUtils.write(object));
                 String id = node.findValue("id").asText();
                 MapGeometry mapGeometry = list.stream().filter(q -> StringUtils.equals(q.getId(), id)).findFirst().orElse(null);
-                if(mapGeometry == null){
+                if (mapGeometry == null) {
                     continue;
                 }
-                mapGeometry.setGeometry(JsonUtils.serialize(object));
-                mapGeometry.setModifyTime(new Timestamp(System.currentTimeMillis()));
-                updateList.add(mapGeometry);
+                mapGeometry.setGeometry(JsonUtils.write(object));
+                mapGeometry.setModifyTime(LocalDateTime.now());
+                mapper.updateById(mapGeometry);
             } catch (JsonProcessingException e) {
-                throw ExceptionUtils.api(e.getMessage());
+                throw new SoulBootException(TinderErrorCode.TINDER_GEOMETRY_ERROR, e.getMessage());
             }
 
         }
-        super.updateList(updateList);
+
     }
 
     @Override
@@ -152,36 +176,35 @@ public class MapGeometryServiceImpl  implements MapGeometryService {
 
         try {
             MapGeometry entity = convert(experimentId, team, json);
-            if (super.getById(entity.getId()) == null) {
-                super.insert(entity);
+            if (mapper.selectById(entity.getId()) == null) {
+                mapper.insert(entity);
             } else {
-                super.update(entity);
+                mapper.updateById(entity);
             }
         } catch (Exception e) {
-            throw ExceptionUtils.api(e.getMessage());
+            throw new SoulBootException(TinderErrorCode.TINDER_GEOMETRY_ERROR, e.getMessage());
         }
     }
 
     @Override
     public int deleteById(String id) {
-        return 0;
+        return mapper.deleteById(id);
     }
 
     @Override
     public void update(MapGeometry entity) {
-        entity.setModifyTime(new Timestamp(System.currentTimeMillis()));
-        super.update(entity);
+        entity.setModifyTime(LocalDateTime.now());
+        mapper.updateById(entity);
     }
 
-    @NotNull
     private MapGeometry convert(String experimentId, String team, String json) {
-        Object object = JsonUtils.deserialize(json, Object.class);
+        Object object = JsonUtils.read(json, Object.class);
         try {
             MapGeometry entity = new MapGeometry();
             entity.setExperimentId(experimentId);
             entity.setTeam(team);
             ObjectMapper mapper = new ObjectMapper();
-            JsonNode node = mapper.readTree(JsonUtils.serialize(object));
+            JsonNode node = mapper.readTree(JsonUtils.write(object));
             entity.setId(node.findValue("id").asText());
             entity.setName(node.findValue("name").asText());
             JsonNode areaType = node.findValue("areaType");
@@ -197,21 +220,21 @@ public class MapGeometryServiceImpl  implements MapGeometryService {
             JsonNode geometryNode = node.findValue("geometry");
             String geometryType = geometryNode.findValue("type").asText();
             if (StringUtils.isBlank(geometryType)) {
-                throw ExceptionUtils.api("geometry.type 不能为空");
+                throw new SoulBootException(TinderErrorCode.TINDER_GEOMETRY_ERROR, "geometry.type 不能为空");
             }
             entity.setGeometryType(geometryType);
-            entity.setGeometry(JsonUtils.serialize(object));
+            entity.setGeometry(JsonUtils.write(object));
 
             JsonNode properties = node.findValue("properties");
             String propertiesType = properties.findValue("type").asText();
             if (StringUtils.isBlank(propertiesType)) {
-                throw ExceptionUtils.api("properties.type 不能为空");
+                throw new SoulBootException(TinderErrorCode.TINDER_GEOMETRY_ERROR, "properties.type 不能为空");
             }
             entity.setPropertiesType(propertiesType);
-            entity.setCreateTime(new Timestamp(System.currentTimeMillis()));
+            entity.setCreateTime(LocalDateTime.now());
             return entity;
         } catch (Exception e) {
-            throw ExceptionUtils.api(e.getMessage());
+            throw new SoulBootException(TinderErrorCode.TINDER_GEOMETRY_ERROR, e.getMessage());
         }
     }
 
@@ -220,9 +243,9 @@ public class MapGeometryServiceImpl  implements MapGeometryService {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode node = mapper.readTree(geometry.getGeometry());
             String str = node.findValue("properties").toString();
-            return JsonUtils.deserialize(str, Properties.class);
+            return JsonUtils.read(str, Properties.class);
         } catch (Exception ex) {
-            throw ExceptionUtils.api(ex.getMessage());
+            throw new SoulBootException(TinderErrorCode.TINDER_GEOMETRY_ERROR, ex.getMessage());
         }
 
     }
@@ -232,9 +255,9 @@ public class MapGeometryServiceImpl  implements MapGeometryService {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode node = mapper.readTree(geometry.getGeometry());
             String str = node.findValue("heights").toString();
-            return JsonUtils.deserializeList(str, Double.class);
+            return JsonUtils.readList(str, Double.class);
         } catch (Exception ex) {
-            throw ExceptionUtils.api(ex.getMessage());
+            throw new SoulBootException(TinderErrorCode.TINDER_GEOMETRY_ERROR, ex.getMessage());
         }
     }
 
@@ -284,9 +307,9 @@ public class MapGeometryServiceImpl  implements MapGeometryService {
                     model.setPoints(points);
                 }
                 model.setId(geometry.getId());
-                if(geometry.getType() == null){
+                if (geometry.getType() == null) {
                     model.setType(GeometryFunctionType.OTHER.getValue());
-                }else{
+                } else {
                     model.setType(geometry.getType().getValue());
                 }
 
@@ -294,7 +317,7 @@ public class MapGeometryServiceImpl  implements MapGeometryService {
                 result.add(model);
             }
         } catch (Exception ex) {
-            throw ExceptionUtils.api(ex.getMessage());
+            throw new SoulBootException(TinderErrorCode.TINDER_GEOMETRY_ERROR, ex.getMessage());
         }
         return result;
     }

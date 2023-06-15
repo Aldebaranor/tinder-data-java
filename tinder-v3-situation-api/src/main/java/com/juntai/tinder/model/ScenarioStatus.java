@@ -1,4 +1,5 @@
 package com.juntai.tinder.model;
+
 import lombok.Data;
 
 import java.io.Serializable;

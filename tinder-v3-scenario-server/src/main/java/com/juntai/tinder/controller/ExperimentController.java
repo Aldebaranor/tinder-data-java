@@ -1,52 +1,43 @@
 package com.juntai.tinder.controller;
 
-import com.egova.entity.Person;
-import com.egova.exception.ExceptionUtils;
-import com.egova.facade.PersonFacade;
-import com.egova.model.PageResult;
-import com.egova.model.QueryModel;
-import com.egova.security.UserContext;
-import com.egova.web.annotation.Api;
-import com.egova.web.annotation.RequestDecorating;
+
+import com.juntai.soulboot.data.Pagination;
+import com.juntai.soulboot.data.Query;
 import com.juntai.soulboot.web.api.ApiResultWrap;
+import com.juntai.tinder.condition.ExperimentCondition;
+import com.juntai.tinder.condition.ExperimentTeamCondition;
+import com.juntai.tinder.condition.UserCondition;
+import com.juntai.tinder.entity.Experiment;
+import com.juntai.tinder.entity.ExperimentTeam;
+import com.juntai.tinder.entity.MapPoint;
+import com.juntai.tinder.entity.User;
+import com.juntai.tinder.entity.enums.TeamType;
+import com.juntai.tinder.model.ExperimentModel;
+import com.juntai.tinder.model.Scenario;
 import com.juntai.tinder.service.*;
-import com.soul.tinder.condition.ExperimentCondition;
-import com.soul.tinder.condition.ExperimentTeamCondition;
-import com.soul.tinder.entity.Experiment;
-import com.soul.tinder.entity.ExperimentTeam;
-import com.soul.tinder.entity.MapPoint;
-import com.soul.tinder.entity.enums.TeamType;
-import com.soul.tinder.model.ExperimentModel;
-import com.soul.tinder.model.Scenario;
-import com.soul.tinder.service.ExperimentService;
-import com.soul.tinder.service.ExperimentTeamService;
-import com.soul.tinder.service.MapPointService;
-import com.soul.tinder.service.ScenarioService;
-import com.soul.tinder.utils.FileUtil;
+import com.juntai.tinder.utils.FileUtil;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 /**
  * @Description:
  * @Author: nemo
  * @Date: 2022/5/17
  */
-@Slf4j
+
 @ApiResultWrap
 @RestController
-@RequestMapping("/tinder/v3/experiment")
+@RequestMapping("/tinder/v3/equipment")
 @RequiredArgsConstructor
 public class ExperimentController {
 
@@ -91,10 +82,9 @@ public class ExperimentController {
 
     }
 
-    @Api
     @GetMapping(value = "/{id}/copy")
-    public String copyById(@PathVariable String id,@RequestParam String name,@RequestParam String scenarioCode) {
-        return experimentService.copyById(id,name,scenarioCode);
+    public String copyById(@PathVariable String id, @RequestParam String name, @RequestParam String scenarioCode) {
+        return experimentService.copyById(id, name, scenarioCode);
     }
 
     /**
@@ -103,7 +93,6 @@ public class ExperimentController {
      * @param experimentModel 我的试验
      * @return 主键
      */
-    @Api
     @PostMapping
     @Transactional(rollbackFor = Exception.class)
     public String insert(@RequestBody ExperimentModel experimentModel) {
@@ -121,49 +110,45 @@ public class ExperimentController {
         point.setExperimentId(id);
         point.setDisabled(false);
         point.setBeDefault(true);
-        point.setCreateTime(new Timestamp(System.currentTimeMillis()));
+        point.setCreateTime(LocalDateTime.now());
         mapPointService.insert(point);
 
         List<ExperimentTeam> teamList = new ArrayList<>();
-        List<Person> personsBlue = experimentModel.getPersonsBlue();
-        List<Person> personsRed = experimentModel.getPersonsRed();
-        List<Person> personsWhite = experimentModel.getPersonsWhite();
-        List<Person> persons = new ArrayList<>();
+        List<User> personsBlue = experimentModel.getPersonsBlue();
+        List<User> personsRed = experimentModel.getPersonsRed();
+        List<User> personsWhite = experimentModel.getPersonsWhite();
+        List<User> persons = new ArrayList<>();
         persons.addAll(personsBlue);
         persons.addAll(personsRed);
         persons.addAll(personsWhite);
-        long count = persons.stream().distinct().count();
-        if (persons.size() > count) {
-            //存在重复
-            throw ExceptionUtils.api("不同阵营存在重复人员,请重新添加人员!");
-        }
+
         if (!CollectionUtils.isEmpty(personsBlue)) {
-            for (Person person : personsBlue) {
+            for (User person : personsBlue) {
                 ExperimentTeam experimentTeam = new ExperimentTeam();
                 experimentTeam.setExperimentId(id);
                 experimentTeam.setTeam(TeamType.BLUE.getValue());
                 experimentTeam.setId(UUID.randomUUID().toString());
-                experimentTeam.setPersonId(person.getId());
+                experimentTeam.setPersonId(person.getUsername());
                 teamList.add(experimentTeam);
             }
         }
         if (!CollectionUtils.isEmpty(personsRed)) {
-            for (Person person : personsRed) {
+            for (User person : personsRed) {
                 ExperimentTeam experimentTeam = new ExperimentTeam();
                 experimentTeam.setExperimentId(id);
                 experimentTeam.setTeam(TeamType.RED.getValue());
                 experimentTeam.setId(UUID.randomUUID().toString());
-                experimentTeam.setPersonId(person.getId());
+                experimentTeam.setPersonId(person.getUsername());
                 teamList.add(experimentTeam);
             }
         }
         if (!CollectionUtils.isEmpty(personsWhite)) {
-            for (Person person : personsWhite) {
+            for (User person : personsWhite) {
                 ExperimentTeam experimentTeam = new ExperimentTeam();
                 experimentTeam.setExperimentId(id);
                 experimentTeam.setTeam(TeamType.WHITE.getValue());
                 experimentTeam.setId(UUID.randomUUID().toString());
-                experimentTeam.setPersonId(person.getId());
+                experimentTeam.setPersonId(person.getUsername());
                 teamList.add(experimentTeam);
             }
         }
@@ -178,7 +163,6 @@ public class ExperimentController {
      *
      * @param experimentModel 我的试验
      */
-    @Api
     @PutMapping
     @Transactional(rollbackFor = Exception.class)
     public void update(@RequestBody ExperimentModel experimentModel) {
@@ -194,54 +178,50 @@ public class ExperimentController {
         point.setExperimentId((experiment.getId()));
         point.setDisabled(false);
         point.setBeDefault(true);
-        point.setCreateTime(new Timestamp(System.currentTimeMillis()));
+        point.setCreateTime(LocalDateTime.now());
         point.setLat(experimentModel.getPoint().getLat());
         point.setLon(experimentModel.getPoint().getLon());
         point.setZoom(experimentModel.getPoint().getZoom());
         mapPointService.insert(point);
         //
         List<ExperimentTeam> teamList = new ArrayList<>();
-        List<Person> personsBlue = experimentModel.getPersonsBlue();
-        List<Person> personsRed = experimentModel.getPersonsRed();
-        List<Person> personsWhite = experimentModel.getPersonsWhite();
-        List<Person> persons = new ArrayList<>();
+        List<User> personsBlue = experimentModel.getPersonsBlue();
+        List<User> personsRed = experimentModel.getPersonsRed();
+        List<User> personsWhite = experimentModel.getPersonsWhite();
+        List<User> persons = new ArrayList<>();
         persons.addAll(personsBlue);
         persons.addAll(personsRed);
         persons.addAll(personsWhite);
-        long count = persons.stream().distinct().count();
-        if (persons.size() > count) {
-            //存在重复
-            throw ExceptionUtils.api("不同阵营存在重复人员,请重新添加人员!");
-        }
+
         if (!CollectionUtils.isEmpty(personsBlue)) {
-            for (Person person : personsBlue) {
+            for (User person : personsBlue) {
                 ExperimentTeam experimentTeam = new ExperimentTeam();
                 experimentTeam.setExperimentId(experiment.getId());
                 experimentTeam.setTeam(TeamType.BLUE.getValue());
                 experimentTeam.setId(UUID.randomUUID().toString());
-                experimentTeam.setPersonId(person.getId());
+                experimentTeam.setPersonId(person.getUsername());
                 teamList.add(experimentTeam);
             }
         }
 
         if (!CollectionUtils.isEmpty(personsRed)) {
-            for (Person person : personsRed) {
+            for (User person : personsRed) {
                 ExperimentTeam experimentTeam = new ExperimentTeam();
                 experimentTeam.setExperimentId(experiment.getId());
                 experimentTeam.setTeam(TeamType.RED.getValue());
                 experimentTeam.setId(UUID.randomUUID().toString());
-                experimentTeam.setPersonId(person.getId());
+                experimentTeam.setPersonId(person.getUsername());
                 teamList.add(experimentTeam);
             }
         }
 
         if (!CollectionUtils.isEmpty(personsWhite)) {
-            for (Person person : personsWhite) {
+            for (User person : personsWhite) {
                 ExperimentTeam experimentTeam = new ExperimentTeam();
                 experimentTeam.setExperimentId(experiment.getId());
                 experimentTeam.setTeam(TeamType.WHITE.getValue());
                 experimentTeam.setId(UUID.randomUUID().toString());
-                experimentTeam.setPersonId(person.getId());
+                experimentTeam.setPersonId(person.getUsername());
                 teamList.add(experimentTeam);
             }
         }
@@ -254,7 +234,7 @@ public class ExperimentController {
      * @param id 主键
      * @return 影响记录行数
      */
-    @Api
+
     @DeleteMapping(value = "/{id}")
     public int deleteById(@PathVariable String id) {
         return experimentService.deleteById(id);
@@ -266,40 +246,25 @@ public class ExperimentController {
      * @param model 模型
      * @return PageResult
      */
-    @Api
+
     @PostMapping("/page")
-    public PageResult<Experiment> page(@RequestBody QueryModel<ExperimentCondition> model) {
+    public Pagination<Experiment> page(@RequestBody Query<ExperimentCondition, Experiment> model) {
         return experimentService.page(model);
     }
 
-    /**
-     * 批量删除
-     *
-     * @param ids 主键列表
-     * @return 影响记录行数
-     */
-    @Api
-    @PostMapping("/batch")
-    @RequestDecorating(value = "delete")
-    public int batchDelete(@RequestBody List<String> ids) {
-        return experimentService.deleteByIds(ids);
-    }
 
-
-    @Api
     @GetMapping("/person/list")
-    public List<Person> getPersons() {
-        List<Person> all = personService.getAll();
-        return all.stream().filter((person -> !person.getCode().equals(UserContext.username()))).collect(Collectors.toList());
+    public List<User> getPersons() {
+        return personService.list(new UserCondition());
     }
 
-    @Api
+
     @GetMapping("/scenario/view/{experimentId}")
     public Scenario viewFiles(@PathVariable String experimentId) {
         return scenarioService.getScenarioById(experimentId);
     }
 
-    @Api
+
     @PostMapping("/screenshot/{experimentId}")
     public Map<String, Object> screenshot(@RequestPart("file") MultipartFile multipartFile, @PathVariable String experimentId) {
         Map<String, Object> map = FileUtil.upload(multipartFile);

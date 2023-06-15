@@ -1,20 +1,36 @@
 package com.juntai.tinder.service.impl;
 
-import com.juntai.tinder.entity.Equipment;
-import com.juntai.tinder.entity.Forces;
-import com.juntai.tinder.entity.ForcesLibrary;
+import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
+import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
+import com.baomidou.mybatisplus.extension.conditions.update.LambdaUpdateChainWrapper;
+import com.baomidou.mybatisplus.extension.toolkit.ChainWrappers;
+import com.juntai.soulboot.common.exception.SoulBootException;
+import com.juntai.soulboot.data.ConditionParser;
+import com.juntai.soulboot.util.JsonUtils;
+import com.juntai.tinder.cache.EquipmentCache;
+import com.juntai.tinder.condition.ForcesCondition;
+import com.juntai.tinder.entity.*;
+import com.juntai.tinder.exception.TinderErrorCode;
+import com.juntai.tinder.facade.EquipmentTypeFacade;
+import com.juntai.tinder.facade.ModelFacade;
+import com.juntai.tinder.mapper.ForcesCarryMapper;
 import com.juntai.tinder.mapper.ForcesMapper;
+import com.juntai.tinder.mapper.ForcesPlanMapper;
+import com.juntai.tinder.model.ForcesUpdateModel;
+import com.juntai.tinder.model.ModelParameter;
+import com.juntai.tinder.model.ModelParameterBase;
 import com.juntai.tinder.model.Point;
 import com.juntai.tinder.service.ForcesService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.juntai.tinder.utils.UUIDUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -25,54 +41,85 @@ import java.util.List;
  * @since 2023-06-07
  */
 @Service
-public class ForcesServiceImpl  implements ForcesService {
+public class ForcesServiceImpl implements ForcesService {
 
-    private final ForcesRepository forcesRepository;
+    @Autowired
+    private ForcesMapper mapper;
 
-    private final ModelFacade modelFacade;
+    @Autowired
+    private ModelFacade modelFacade;
 
-    private final ForcesPlanRepository forcesPlanRepository;
+    @Autowired
+    private EquipmentTypeFacade equipmentTypeFacade;
 
-    private final ForcesCarryRepository forcesCarryRepository;
-    private final CommunicatesRepository communicatesRepository;
-    private final CommunicatesPlanRepository communicatesPlanRepository;
-    private final CommunicatesPlanLinkRepository communicatesPlanLinkRepository;
+    @Autowired
+    private ForcesPlanMapper forcesPlanMapper;
 
-    private final EquipmentCache equipmentCache;
-    @Override
-    public String copyForces(String id, String experimentId, Point point) {
-        Forces byId = super.seekById(id);
-        if(byId == null){
-            throw ExceptionUtils.api("没有该id的兵力");
+    @Autowired
+    private ForcesCarryMapper forcesCarryMapper;
+
+    @Autowired
+    private EquipmentCache equipmentCache;
+
+    private Forces seek(Forces forces) {
+        forces.setEquipmentTypeName(equipmentTypeFacade.getNameById(forces.getEquipmentType()));
+        if (!StringUtils.isEmpty(forces.getInputInfo())) {
+            forces.setInputParameter(JsonUtils.readList(forces.getInputInfo(), ModelParameterBase.class));
         }
-        if(point != null){
-            byId.setLon(point.getLon()+0.00001);
-            byId.setLat(point.getLat()+0.00001);
+        if (!StringUtils.isEmpty(forces.getOutputInfo())) {
+            forces.setOutputParameter(JsonUtils.readList(forces.getOutputInfo(), ModelParameterBase.class));
+        }
+        Equipment cacheData = equipmentCache.getCacheData(forces.getEquipmentId());
+        if (cacheData != null) {
+            forces.setIconArmy(cacheData.getIconArmy());
+            forces.setIcon3dUrl(cacheData.getIcon3dUrl());
+        }
+        List<ForcesCarry> carry = new LambdaQueryChainWrapper<>(forcesCarryMapper).eq(ForcesCarry::getBelongId, forces.getId())
+                .eq(ForcesCarry::getExperimentId, forces.getExperimentId()).list();
+        forces.setRelations(carry);
+        return forces;
+
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public String copyForces(String id, String experimentId, Point point) {
+
+        Forces byId = mapper.selectById(id);
+        if (byId == null) {
+            throw new SoulBootException(TinderErrorCode.TINDER_FORCES_ERROR, "没有该id的兵力");
+        }
+        byId = seek(byId);
+        if (point != null) {
+            byId.setLon(point.getLon() + 0.00001);
+            byId.setLat(point.getLat() + 0.00001);
             byId.setAlt(point.getAlt());
         }
-        if(StringUtils.isEmpty(experimentId)){
-            byId.setName(byId.getName()+"-copy");
+        if (StringUtils.isEmpty(experimentId)) {
+            byId.setName(byId.getName() + "-copy");
             experimentId = byId.getExperimentId();
         }
         String experimentIdNew = experimentId;
         String forcesId = this.insert(byId);
         //处理兵力的搭载
         List<ForcesCarry> relations = byId.getRelations();
-        if(!CollectionUtils.isEmpty(relations)){
-            relations.stream().forEach(q->{
+        if (!CollectionUtils.isEmpty(relations)) {
+            relations.stream().forEach(q -> {
                 q.setId(UUIDUtils.getHashUuid());
                 q.setBelongId(forcesId);
-                q.setExperimentId(experimentIdNew);});
-            forcesCarryRepository.insertList(relations);
+                q.setExperimentId(experimentIdNew);
+                forcesCarryMapper.insert(q);
+            });
         }
         //处理兵力的任务
-        List<ForcesPlan> plans = forcesPlanRepository.query(SingleClause.equal("forcesId", id));
-        if(!CollectionUtils.isEmpty(plans)){
-            plans.stream().forEach(q->{
+        List<ForcesPlan> plans = new LambdaQueryChainWrapper<>(forcesPlanMapper).eq(ForcesPlan::getForcesId, id).list();
+        if (!CollectionUtils.isEmpty(plans)) {
+            plans.stream().forEach(q -> {
                 q.setId(UUIDUtils.getHashUuid());
                 q.setForcesId(forcesId);
-                q.setExperimentId(experimentIdNew);});
-            forcesPlanRepository.insertList(plans);
+                q.setExperimentId(experimentIdNew);
+                forcesPlanMapper.insert(q);
+            });
         }
 
         return forcesId;
@@ -80,48 +127,52 @@ public class ForcesServiceImpl  implements ForcesService {
 
     @Override
     public String copyById(String id, String experimentId) {
-        return null;
+        return this.copyForces(id, experimentId, null);
     }
 
     @Override
     public Forces getById(String id) {
-        return this.copyForces(id,experimentId,null);
+        return mapper.selectById(id);
     }
 
     @Override
     public String insert(Forces entity) {
-        entity.setId(UUIDUtils.getHashUuid());
-        return super.insert(entity);
+        String id = UUIDUtils.getHashUuid();
+        entity.setId(id);
+        mapper.insert(entity);
+        return id;
     }
 
     @Override
     public void insertList(List<Forces> entity) {
-
+        entity.forEach(q -> {
+            String id = UUIDUtils.getHashUuid();
+            q.setId(id);
+            mapper.insert(q);
+        });
     }
 
     @Override
     public String addForces(String experimentId, String team, Equipment equipment, String modelId) {
         //判断是否有重名
         if (StringUtils.isBlank(equipment.getName())) {
-            throw ExceptionUtils.api("名称不能为空");
+            throw new SoulBootException(TinderErrorCode.TINDER_FORCES_ERROR, "名称不能为空");
         }
         Model model = modelFacade.seekById(modelId);
         if (model == null) {
-            throw ExceptionUtils.api("模型数据为空");
+            throw new SoulBootException(TinderErrorCode.TINDER_FORCES_ERROR, "模型数据为空");
         }
-        ForcesCondition condition = new ForcesCondition();
-        condition.setExperimentId(experimentId);
+        List<Forces> query = new LambdaQueryChainWrapper<>(mapper).eq(Forces::getEquipmentId, experimentId).list();
 
-        List<Forces> query = super.query(condition);
         String name = equipment.getName();
         int suffixNum = 1;
         for (Forces forces : query) {
             String forceName = forces.getName();
-            if(forces.getName().startsWith(name + "-")){
-                String suffix = forceName.replace(name+"-","");
+            if (forces.getName().startsWith(name + "-")) {
+                String suffix = forceName.replace(name + "-", "");
                 try {
                     int num = Integer.parseInt(suffix);
-                    if(num > suffixNum){
+                    if (num > suffixNum) {
                         suffixNum = num + 1;
                     }
                 } catch (NumberFormatException e) {
@@ -129,41 +180,47 @@ public class ForcesServiceImpl  implements ForcesService {
                 }
             }
         }
-        equipment.setName(name+ "-" +suffixNum);
+        equipment.setName(name + "-" + suffixNum);
+        String id = UUIDUtils.getHashUuid();
         Forces forces = new Forces();
         forces.setTeam(team);
         forces.setExperimentId(experimentId);
         forces.setEquipmentType(equipment.getEquipmentType());
         forces.setName(equipment.getName());
-        forces.setId(UUIDUtils.getHashUuid());
+        forces.setId(id);
         if (equipment.getDetail() != null) {
             forces.setAttributeInfo(equipment.getDetail().getAttributeInfo());
         }
         forces.setModelId(model.getId());
         forces.setInputInfo(model.getInputInfo());
         forces.setOutputInfo(model.getOutputInfo());
-        return super.insert(forces);
+        mapper.insert(forces);
+        return id;
     }
 
     @Override
-    public String addForcesFromLibrary(String experimentId, String team, ForcesLibrary equipment) {
+    @Transactional(rollbackFor = Exception.class)
+    public String addForcesFromLibrary(String experimentId, String team, ForcesLibrary forcesLibrary) {
         Forces forces = new Forces();
+        String forcesId = UUIDUtils.getHashUuid();
         forces.setTeam(team);
         forces.setExperimentId(experimentId);
         forces.setEquipmentType(forcesLibrary.getEquipmentType());
         forces.setEquipmentId(forcesLibrary.getEquipmentId());
         forces.setModelId(forcesLibrary.getModelId());
         forces.setName(forcesLibrary.getName());
-        forces.setId(UUIDUtils.getHashUuid());
+        forces.setId(forcesId);
         forces.setAttributeInfo(forcesLibrary.getAttributeInfo());
         forces.setInputInfo(forcesLibrary.getInputInfo());
         forces.setOutputInfo(forcesLibrary.getOutputInfo());
-        String forcesId = super.insert(forces);
+        mapper.insert(forces);
 
         //关联新增搭载
         if (!CollectionUtils.isEmpty(forcesLibrary.getRelations())) {
             List<ForcesCarry> relations = toForcesLibrary(forcesId, forcesLibrary.getRelations());
-            forcesCarryRepository.insertList(relations);
+            relations.forEach(q -> {
+                forcesCarryMapper.insert(q);
+            });
         }
         return forcesId;
     }
@@ -171,76 +228,83 @@ public class ForcesServiceImpl  implements ForcesService {
     @Override
     public void update(ForcesUpdateModel entity) {
         if (StringUtils.isBlank(entity.getId())) {
-            throw ExceptionUtils.api("id 不能为空");
+            throw new SoulBootException(TinderErrorCode.TINDER_FORCES_ERROR, "id 不能为空");
         }
-        HashMap<String, Object> map = new LinkedHashMap<>(16);
+        LambdaUpdateChainWrapper<Forces> wrapper = new LambdaUpdateChainWrapper<>(mapper);
+        wrapper.eq(Forces::getId, entity.getId());
+
         if (entity.getAlt() != null) {
-            map.put("alt", entity.getAlt());
+            wrapper.set(Forces::getAlt, entity.getAlt());
         }
         if (entity.getLon() != null) {
-            map.put("lon", entity.getLon());
+            wrapper.set(Forces::getLon, entity.getLon());
         }
         if (entity.getLat() != null) {
-            map.put("lat", entity.getLat());
+            wrapper.set(Forces::getLat, entity.getLat());
         }
         if (entity.getHeading() != null) {
-            map.put("heading", entity.getHeading());
+            wrapper.set(Forces::getHeading, entity.getHeading());
         }
         if (entity.getSpeed() != null) {
-            map.put("speed", entity.getSpeed());
+            wrapper.set(Forces::getSpeed, entity.getSpeed());
         }
         if (entity.getLife() != null) {
-            map.put("life", entity.getLife());
+            wrapper.set(Forces::getLife, entity.getLife());
         }
         if (!StringUtils.isBlank(entity.getName())) {
-            map.put("name", entity.getName());
+            wrapper.set(Forces::getName, entity.getName());
         }
         if (!StringUtils.isBlank(entity.getInputInfo())) {
-            map.put("inputInfo", entity.getInputInfo());
+            wrapper.set(Forces::getInputInfo, entity.getInputInfo());
         }
-        ForcesCondition condition = new ForcesCondition();
-        condition.setId(entity.getId());
-        super.modify(map, condition);
+        wrapper.update();
+
+
     }
 
     @Override
     public void updateParentId(ForcesUpdateModel entity) {
         if (StringUtils.isBlank(entity.getId())) {
-            throw ExceptionUtils.api("id 不能为空");
+            throw new SoulBootException(TinderErrorCode.TINDER_FORCES_ERROR, "id 不能为空");
         }
-        HashMap<String, Object> map = new LinkedHashMap<>(16);
-        map.put("parentId", entity.getParentId());
-        ForcesCondition condition = new ForcesCondition();
-        condition.setId(entity.getId());
-        super.modify(map, condition);
-    }
+        LambdaUpdateChainWrapper<Forces> wrapper = new LambdaUpdateChainWrapper<>(mapper);
+        wrapper.eq(Forces::getId, entity.getId());
+        wrapper.set(Forces::getParentId, entity.getParentId());
+        wrapper.update();
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public int deleteById(String id) {
-        forcesCarryRepository.deleteByForceId(id);
-        forcesPlanRepository.deleteByForceId(id);
-        communicatesRepository.deleteByForceId(id);
-        communicatesPlanRepository.deleteByForceId(id);
-        communicatesPlanLinkRepository.deleteByDestForceId(id);
-        communicatesPlanLinkRepository.deleteBySourceForceId(id);
-        return super.deleteById(id);
+        List<ForcesCarry> listForcesCarry = new LambdaQueryChainWrapper<>(forcesCarryMapper)
+                .eq(ForcesCarry::getBelongId, id).list();
+        forcesCarryMapper.deleteBatchIds(listForcesCarry.stream().map(ForcesCarry::getId).collect(Collectors.toList()));
+        List<ForcesPlan> listForcesPlan = new LambdaQueryChainWrapper<>(forcesPlanMapper)
+                .eq(ForcesPlan::getForcesId, id).list();
+        forcesPlanMapper.deleteBatchIds(listForcesPlan.stream().map(ForcesPlan::getId).collect(Collectors.toList()));
+
+        return mapper.deleteById(id);
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public int deleteByIds(List<String> ids) {
-        forcesCarryRepository.deleteByForceIds(ids);
-        forcesPlanRepository.deleteByForceIds(ids);
-        communicatesRepository.deleteByForceIds(ids);
-        communicatesPlanLinkRepository.deleteByDestForceIds(ids);
-        communicatesPlanLinkRepository.deleteBySourceForceIds(ids);
-        return super.deleteByIds(ids);
+        List<ForcesCarry> listForcesCarry = new LambdaQueryChainWrapper<>(forcesCarryMapper)
+                .in(ForcesCarry::getBelongId, ids).list();
+        forcesCarryMapper.deleteBatchIds(listForcesCarry.stream().map(ForcesCarry::getId).collect(Collectors.toList()));
+        List<ForcesPlan> listForcesPlan = new LambdaQueryChainWrapper<>(forcesPlanMapper)
+                .in(ForcesPlan::getForcesId, ids).list();
+        forcesPlanMapper.deleteBatchIds(listForcesPlan.stream().map(ForcesPlan::getId).collect(Collectors.toList()));
+        return mapper.deleteBatchIds(ids);
     }
 
     @Override
     public List<Forces> list(ForcesCondition condition) {
-        List<Forces> list = super.query(condition, SortingBuilder.create().asc("name").toSorts());
-        for(Forces force :list){
+        QueryChainWrapper<Forces> wrapper = ChainWrappers.queryChain(Forces.class);
+        ;
+        ConditionParser.parse(wrapper, condition);
+        List<Forces> list = wrapper.orderByAsc("name").list();
+        for (Forces force : list) {
             Equipment byTypeAndTeam = equipmentCache.getCacheData(force.getEquipmentId());
             if (org.apache.commons.lang3.StringUtils.isBlank(byTypeAndTeam.getIconArmy())) {
                 force.setIconArmy("军标库_无人艇.svg");
@@ -254,21 +318,22 @@ public class ForcesServiceImpl  implements ForcesService {
 
     @Override
     public List<Forces> seekByExperiment(String experimentId) {
-        ForcesCondition condition = new ForcesCondition();
-        condition.setExperimentId(experimentId);
-        return super.seek(condition);
+        List<Forces> query = new LambdaQueryChainWrapper<>(mapper).eq(Forces::getEquipmentId, experimentId).list();
+        query.forEach(q -> {
+            q = seek(q);
+        });
+        return query;
     }
 
     @Override
     public List<String> queryByExperiment(String experimentId, String team) {
-        ForcesCondition condition = new ForcesCondition();
-        condition.setExperimentId(experimentId);
+        LambdaQueryChainWrapper<Forces> wrapper = new LambdaQueryChainWrapper<>(mapper).eq(Forces::getEquipmentId, experimentId);
         if (!StringUtils.isBlank(team)) {
-            condition.setTeam(team);
+            wrapper.eq(Forces::getTeam, team);
         }
-        List<Forces> query = super.query(condition, SortingBuilder.create().asc("name").toSorts());
+        List<Forces> query = wrapper.orderByAsc(Forces::getName).list();
         List<String> result = new ArrayList<>();
-        for(Forces force :query){
+        for (Forces force : query) {
             Equipment byTypeAndTeam = equipmentCache.getCacheData(force.getEquipmentId());
             if (org.apache.commons.lang3.StringUtils.isBlank(byTypeAndTeam.getIconArmy())) {
                 force.setIconArmy("军标库_无人艇.svg");
@@ -284,24 +349,27 @@ public class ForcesServiceImpl  implements ForcesService {
     @Override
     public void flashInput(String forcesId) {
         Forces byId = this.getById(forcesId);
-        if(byId == null){
+        if (byId == null) {
             return;
         }
-        List<ModelParameter> oldParameters = JsonUtils.deserializeList(byId.getInputInfo(), ModelParameter.class);
+        List<ModelParameter> oldParameters = JsonUtils.readList(byId.getInputInfo(), ModelParameter.class);
 
-        String input = modelFacade.getInput(byId.getModelId());
+        Model model = modelFacade.getById(byId.getModelId());
+        if (model == null || StringUtils.isEmpty(model.getInputInfo())) {
+            return;
+        }
 
-        List<ModelParameter> modelParameters = JsonUtils.deserializeList(input, ModelParameter.class);
+        List<ModelParameter> modelParameters = JsonUtils.readList(model.getInputInfo(), ModelParameter.class);
         for (ModelParameter parameter : modelParameters) {
             ModelParameter temp = oldParameters.stream().filter(q -> StringUtils.equals(q.getName(), parameter.getName())).findFirst().orElse(null);
-            if(temp == null){
+            if (temp == null) {
                 oldParameters.add(parameter);
             }
         }
-        String newInput = JsonUtils.serialize(oldParameters);
-        HashMap<String, Object> map = new LinkedHashMap<>(16);
-        map.put("inputInfo", newInput);
-        super.modify(map, SingleClause.equal("id", forcesId));
+        String newInput = JsonUtils.write(oldParameters);
+        new LambdaUpdateChainWrapper<>(mapper).eq(Forces::getId, forcesId)
+                .set(Forces::getInputInfo, newInput).update();
+
     }
 
     private List<ForcesCarry> toForcesLibrary(String belongId, List<ForcesLibrary> list) {

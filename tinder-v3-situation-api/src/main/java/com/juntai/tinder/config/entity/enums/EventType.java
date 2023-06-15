@@ -23,73 +23,73 @@ public enum EventType implements I18nEnum<Integer> {
      */
     ARMY_DELETE(11),
     /**
-     *兵力下线
+     * 兵力下线
      */
     ARMY_OFFLINE(12),
     /**
-     *兵力被发现
+     * 兵力被发现
      */
     ARMY_FOUND(13),
     /**
-     *传感器生成
+     * 传感器生成
      */
     SENSOR_ADD(20),
     /**
-     *传感器关
+     * 传感器关
      */
     SENSOR_DELETE(21),
     /**
-     *传感器变更（变化）
+     * 传感器变更（变化）
      */
     SENSOR_CHANGE(22),
     /**
-     *告警生成
+     * 告警生成
      */
     MESSAGE_ADD(30),
     /**
-     *告警销毁
+     * 告警销毁
      */
     MESSAGE_DELETE(31),
     /**
-     *告警变化
+     * 告警变化
      */
     MESSAGE_CHANGE(32),
     /**
-     *区域生成
+     * 区域生成
      */
     AREA_ADD(40),
     /**
-     *区域销毁
+     * 区域销毁
      */
     AREA_DELETE(41),
     /**
-     *区域变化
+     * 区域变化
      */
     AREA_CHANGE(42),
     /**
-     *数据链路生成
+     * 数据链路生成
      */
     LINK_ADD(50),
     /**
-     *数据链路销毁
+     * 数据链路销毁
      */
     LINK_DELETE(51),
     /**
-     *数据链路变化
+     * 数据链路变化
      */
     LINK_CHANGE(52),
     /**
-     *点线生成
+     * 点线生成
      */
 
     POINTS_ADD(60),
     /**
-     *点线销毁
+     * 点线销毁
      */
 
     POINTS_DELETE(61),
     /**
-     *点线变化
+     * 点线变化
      */
 
     POINTS_CHANGE(62);

@@ -18,16 +18,17 @@ import java.util.UUID;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author nemo
  * @since 2023-05-07
  */
 @Service
-public class EquipmentCarryServiceImpl  implements EquipmentCarryService {
+public class EquipmentCarryServiceImpl implements EquipmentCarryService {
     @Autowired
     private EquipmentCarryMapper mapper;
+
     @Override
     @Transactional(readOnly = true)
     public EquipmentCarry getById(String id) {
@@ -37,7 +38,8 @@ public class EquipmentCarryServiceImpl  implements EquipmentCarryService {
     @Override
     @Transactional(readOnly = true)
     public List<EquipmentCarry> list(EquipmentCarryCondition condition) {
-        QueryChainWrapper<EquipmentCarry> wrapper = ChainWrappers.queryChain(EquipmentCarry.class);;
+        QueryChainWrapper<EquipmentCarry> wrapper = ChainWrappers.queryChain(EquipmentCarry.class);
+        ;
         ConditionParser.parse(wrapper, condition);
         return wrapper.list();
     }
@@ -45,11 +47,11 @@ public class EquipmentCarryServiceImpl  implements EquipmentCarryService {
     @Override
     @Transactional(readOnly = true)
     public Pagination<EquipmentCarry> page(Query<EquipmentCarryCondition, EquipmentCarry> query) {
-        QueryChainWrapper<EquipmentCarry> wrapper = ChainWrappers.queryChain(EquipmentCarry.class);;
+        QueryChainWrapper<EquipmentCarry> wrapper = ChainWrappers.queryChain(EquipmentCarry.class);
+        ;
         ConditionParser.parse(wrapper, query.getCondition());
-        return wrapper.page(query.toPage());
+        return wrapper.page(query.toPage(EquipmentCarry.class));
     }
-
 
 
     @Override
@@ -77,7 +79,11 @@ public class EquipmentCarryServiceImpl  implements EquipmentCarryService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void insertList(List<EquipmentCarry> list) {
+        list.forEach(q -> {
+            insert(q);
+        });
 
     }
 }

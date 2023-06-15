@@ -2,17 +2,18 @@ package com.juntai.tinder.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.time.LocalDateTime;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.juntai.tinder.entity.enums.GeometryFunctionType;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author nemo
@@ -44,9 +45,9 @@ public class MapGeometry implements Serializable {
     private String name;
 
     /**
-     *  空间资源功能类型 0其他 1航线 2任务区 3禁区 4出发点 5到达点 
+     * 空间资源功能类型 0其他 1航线 2任务区 3禁区 4出发点 5到达点
      */
-    private String type;
+    private GeometryFunctionType type;
 
     /**
      * 几何形状，用于前端还原

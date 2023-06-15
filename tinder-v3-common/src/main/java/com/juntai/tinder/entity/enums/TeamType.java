@@ -12,13 +12,13 @@ import lombok.RequiredArgsConstructor;
  */
 @Getter
 @RequiredArgsConstructor
-public enum TeamType implements I18nEnum<Integer> {
+public enum TeamType implements I18nEnum<String> {
 
-    RED(0),
-    BLUE(1),
-    WHITE(2),
+    RED("0"),
+    BLUE("1"),
+    WHITE("2"),
     ;
 
-    private final Integer value;
+    private final String value;
 
 }

@@ -1,6 +1,5 @@
 package com.juntai.tinder.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
 import com.juntai.tinder.condition.EquipmentRelationCondition;
@@ -11,7 +10,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author nemo
@@ -20,6 +19,7 @@ import java.util.List;
 public interface EquipmentRelationService extends EquipmentRelationFacade {
     /**
      * 主键查询
+     *
      * @param id
      * @return
      */
@@ -27,6 +27,7 @@ public interface EquipmentRelationService extends EquipmentRelationFacade {
 
     /**
      * 列表查询
+     *
      * @param condition
      * @return
      */
@@ -34,6 +35,7 @@ public interface EquipmentRelationService extends EquipmentRelationFacade {
 
     /**
      * 分页查询
+     *
      * @param query
      * @return
      */
@@ -42,17 +44,19 @@ public interface EquipmentRelationService extends EquipmentRelationFacade {
 
     /**
      * 更新
+     *
      * @param entity
      * @return
      */
-    int update(EquipmentRelation entity) ;
+    int update(EquipmentRelation entity);
 
     /**
      * 新增
+     *
      * @param entity
      * @return
      */
-    String insert(EquipmentRelation entity) ;
+    String insert(EquipmentRelation entity);
 
     /**
      * 主键删除
@@ -65,6 +69,7 @@ public interface EquipmentRelationService extends EquipmentRelationFacade {
 
     /**
      * 批量删除
+     *
      * @param ids
      * @return
      */
@@ -73,6 +78,7 @@ public interface EquipmentRelationService extends EquipmentRelationFacade {
 
     /**
      * 批量新增
+     *
      * @param list
      * @return
      */

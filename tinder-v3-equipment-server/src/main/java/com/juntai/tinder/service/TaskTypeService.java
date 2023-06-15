@@ -2,26 +2,24 @@ package com.juntai.tinder.service;
 
 import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
-import com.juntai.tinder.condition.EquipmentCondition;
 import com.juntai.tinder.condition.TaskTypeCondition;
-import com.juntai.tinder.entity.Equipment;
 import com.juntai.tinder.entity.TaskType;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.juntai.tinder.facade.TaskTypeFacade;
 
 import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author nemo
  * @since 2023-06-07
  */
-public interface TaskTypeService  extends TaskTypeFacade {
+public interface TaskTypeService extends TaskTypeFacade {
     /**
      * 根据任务编号查询
+     *
      * @param code
      * @return
      */
@@ -29,6 +27,7 @@ public interface TaskTypeService  extends TaskTypeFacade {
 
     /**
      * 根据任务大类查询
+     *
      * @param type
      * @return
      */
@@ -36,6 +35,7 @@ public interface TaskTypeService  extends TaskTypeFacade {
 
     /**
      * 查询任务列表
+     *
      * @param condition
      * @return
      */
@@ -43,6 +43,7 @@ public interface TaskTypeService  extends TaskTypeFacade {
 
     /**
      * 新增
+     *
      * @param entity
      * @return
      */
@@ -51,7 +52,7 @@ public interface TaskTypeService  extends TaskTypeFacade {
     /**
      * 更新
      *
-     * @param  entity
+     * @param entity
      */
     void update(TaskType entity);
 

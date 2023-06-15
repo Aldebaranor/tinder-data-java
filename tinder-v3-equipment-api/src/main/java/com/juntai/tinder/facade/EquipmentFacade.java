@@ -1,10 +1,8 @@
 package com.juntai.tinder.facade;
 
 import com.juntai.tinder.entity.Equipment;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @Description:
@@ -25,19 +23,6 @@ public interface EquipmentFacade {
 
     Equipment getById(String id);
 
-    /**
-     * id-name map
-     *
-     * @return map
-     */
-    Map<String, String> getNameMapById();
-
-    /**
-     * id-name map
-     *
-     * @return map
-     */
-    Map<String, String> getDepartmentIdMapById();
 
     /**
      * 获取全部
@@ -61,5 +46,7 @@ public interface EquipmentFacade {
      * @date 2022/5/3 17:42
      */
     List<Equipment> getModelsByType(String equipmentType);
+
+    Equipment seek(Equipment equipment);
 
 }

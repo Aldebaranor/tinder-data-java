@@ -1,15 +1,19 @@
 package com.juntai.tinder.service.impl;
 
+import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
+import com.juntai.soulboot.common.exception.SoulBootException;
 import com.juntai.tinder.entity.MapPoint;
+import com.juntai.tinder.exception.TinderErrorCode;
 import com.juntai.tinder.mapper.MapPointMapper;
 import com.juntai.tinder.service.MapPointService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -21,78 +25,70 @@ import java.util.stream.Collectors;
  * @since 2023-06-07
  */
 @Service
-public class MapPointServiceImpl  implements MapPointService {
+public class MapPointServiceImpl implements MapPointService {
+
+    @Autowired
+    private MapPointMapper mapper;
 
     @Override
     public MapPoint getById(String id) {
-        return null;
+        return mapper.selectById(id);
     }
 
     @Override
     public String insert(MapPoint entity) {
-        mapPoint.setCreateTime(new Timestamp(System.currentTimeMillis()));
-        return super.insert(mapPoint);
+        String id = UUID.randomUUID().toString();
+        entity.setId(id);
+        entity.setCreateTime(LocalDateTime.now());
+        mapper.insert(entity);
+        return id;
     }
 
     @Override
     public void update(MapPoint entity) {
-        mapPoint.setModifyTime(new Timestamp(System.currentTimeMillis()));
-        super.update(mapPoint);
+        entity.setModifyTime(LocalDateTime.now());
+        mapper.updateById(entity);
     }
 
     @Override
     public void save(MapPoint entity) {
         if (StringUtils.isBlank(entity.getId())) {
-            entity.setCreateTime(new Timestamp(System.currentTimeMillis()));
-            super.insert(entity);
+            insert(entity);
         } else {
-            entity.setModifyTime(new Timestamp(System.currentTimeMillis()));
-            super.update(entity);
+            update(entity);
         }
     }
 
     @Override
     public int deleteById(String id) {
-        return 0;
-    }
-
-    @Override
-    public List<MapPoint> getByPageCode(String pageCode) {
-        Clause clause;
-        clause = CombineClause.and(
-                SingleClause.equal("pageCode", pageCode),
-                SingleClause.equal("disabled", 0)
-        );
-        return mapPointRepository.query(clause).stream().collect(Collectors.toList());
-    }
-
-    @Override
-    public Boolean setDisabledById(String id) {
-        MapPoint mapPoint = super.getById(id);
-        if (mapPoint == null) {
-            throw ExceptionUtils.api("没有相应的数据");
-        }
-        mapPoint.setModifyTime(new Timestamp(System.currentTimeMillis()));
-        mapPoint.setDisabled(true);
-        super.update(mapPoint);
-        return true;
+        return mapper.deleteById(id);
     }
 
     @Override
     public MapPoint getByExperimentId(String experimentId) {
-        MapPointCondition mapPointCondition = new MapPointCondition();
-        mapPointCondition.setExperimentId(experimentId);
-        return super.first(mapPointCondition);
+        return new LambdaQueryChainWrapper<>(mapper).eq(MapPoint::getDisabled, 0)
+                .eq(MapPoint::getExperimentId, experimentId).one();
     }
 
     @Override
+    public int setDisabledById(String id) {
+        MapPoint mapPoint = this.getById(id);
+        if (mapPoint == null) {
+            throw new SoulBootException(TinderErrorCode.TINDER_MAP_POINT_ERROR, "没有相应的数据");
+        }
+        mapPoint.setModifyTime(LocalDateTime.now());
+        mapPoint.setDisabled(true);
+        return mapper.updateById(mapPoint);
+    }
+
+
+    @Override
     public void deleteByExperimentId(String experimentId) {
-        MapPointCondition mapPointCondition = new MapPointCondition();
-        mapPointCondition.setExperimentId(experimentId);
-        List<MapPoint> query = super.query(mapPointCondition);
-        if(CollectionUtils.isEmpty(query)){
+        List<MapPoint> query = new LambdaQueryChainWrapper<>(mapper)
+                .eq(MapPoint::getExperimentId, experimentId).list();
+        if (CollectionUtils.isEmpty(query)) {
             return;
         }
-        super.deleteByIds(query.stream().map(MapPoint::getId).collect(Collectors.toList()));
+        mapper.deleteBatchIds(query.stream().map(MapPoint::getId).collect(Collectors.toList()));
     }
 }

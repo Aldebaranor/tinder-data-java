@@ -8,9 +8,7 @@ import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
 import com.juntai.tinder.cache.TaskTypeCache;
 import com.juntai.tinder.condition.TaskTypeCondition;
-import com.juntai.tinder.entity.Equipment;
 import com.juntai.tinder.entity.TaskType;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.juntai.tinder.mapper.TaskTypeMapper;
 import com.juntai.tinder.service.TaskTypeService;
 import org.apache.commons.lang3.StringUtils;
@@ -22,14 +20,14 @@ import java.util.List;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author nemo
  * @since 2023-06-07
  */
 @Service
-public class TaskTypeServiceImpl  implements TaskTypeService {
+public class TaskTypeServiceImpl implements TaskTypeService {
 
     @Autowired
     TaskTypeMapper mapper;
@@ -50,18 +48,19 @@ public class TaskTypeServiceImpl  implements TaskTypeService {
 
     @Override
     public TaskType getByCode(String code) {
-        return new LambdaQueryChainWrapper<>(mapper).eq(TaskType::getCode,code).one();
+        return new LambdaQueryChainWrapper<>(mapper).eq(TaskType::getCode, code).one();
     }
 
     @Override
     public List<TaskType> getByType(String type) {
-        return new LambdaQueryChainWrapper<>(mapper).eq(TaskType::getType,type).list();
+        return new LambdaQueryChainWrapper<>(mapper).eq(TaskType::getType, type).list();
     }
 
     @Override
     public List<TaskType> list(TaskTypeCondition condition) {
 
-        QueryChainWrapper<TaskType> wrapper = ChainWrappers.queryChain(TaskType.class);;
+        QueryChainWrapper<TaskType> wrapper = ChainWrappers.queryChain(TaskType.class);
+        ;
         ConditionParser.parse(wrapper, condition);
         return wrapper.list();
     }
@@ -79,7 +78,7 @@ public class TaskTypeServiceImpl  implements TaskTypeService {
     @Override
     public void update(TaskType entity) {
         mapper.updateById(entity);
-        taskTypeCache.setCacheData(entity.getId(),entity);
+        taskTypeCache.setCacheData(entity.getId(), entity);
     }
 
     @Override
@@ -94,14 +93,15 @@ public class TaskTypeServiceImpl  implements TaskTypeService {
 
     @Override
     public Pagination<TaskType> page(Query<TaskTypeCondition, TaskType> query) {
-        QueryChainWrapper<TaskType> wrapper = ChainWrappers.queryChain(TaskType.class);;
+        QueryChainWrapper<TaskType> wrapper = ChainWrappers.queryChain(TaskType.class);
+        ;
         ConditionParser.parse(wrapper, query.getCondition());
-        return wrapper.page(query.toPage());
+        return wrapper.page(query.toPage(TaskType.class));
 
     }
 
     private String getNewId(String type) {
-        List<TaskType> query = new LambdaQueryChainWrapper<>(mapper).eq(TaskType::getType,type).list();
+        List<TaskType> query = new LambdaQueryChainWrapper<>(mapper).eq(TaskType::getType, type).list();
         Long max = 0L;
         for (TaskType taskType : query) {
             String replace = taskType.getId().replaceFirst(type, "");

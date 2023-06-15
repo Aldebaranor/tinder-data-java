@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author nemo
@@ -19,6 +19,7 @@ import java.util.List;
 public interface EquipmentCarryService extends EquipmentCarryFacade {
     /**
      * 主键查询
+     *
      * @param id
      * @return
      */
@@ -26,6 +27,7 @@ public interface EquipmentCarryService extends EquipmentCarryFacade {
 
     /**
      * 列表查询
+     *
      * @param condition
      * @return
      */
@@ -33,6 +35,7 @@ public interface EquipmentCarryService extends EquipmentCarryFacade {
 
     /**
      * 分页查询
+     *
      * @param query
      * @return
      */
@@ -41,17 +44,19 @@ public interface EquipmentCarryService extends EquipmentCarryFacade {
 
     /**
      * 更新
+     *
      * @param entity
      * @return
      */
-    int update(EquipmentCarry entity) ;
+    int update(EquipmentCarry entity);
 
     /**
      * 新增
+     *
      * @param entity
      * @return
      */
-    String insert(EquipmentCarry entity) ;
+    String insert(EquipmentCarry entity);
 
     /**
      * 主键删除
@@ -64,20 +69,20 @@ public interface EquipmentCarryService extends EquipmentCarryFacade {
 
     /**
      * 批量删除
+     *
      * @param ids
      * @return
      */
     int deleteByIds(List<String> ids);
 
 
-
     /**
      * 批量新增
+     *
      * @param list
      * @return
      */
     void insertList(List<EquipmentCarry> list);
-
 
 
 }

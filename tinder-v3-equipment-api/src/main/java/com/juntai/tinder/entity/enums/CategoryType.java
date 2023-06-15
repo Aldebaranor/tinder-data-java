@@ -1,4 +1,5 @@
 package com.juntai.tinder.entity.enums;
+
 import com.juntai.soulboot.common.enums.EnumDict;
 import com.juntai.soulboot.common.enums.I18nEnum;
 import lombok.Getter;
@@ -12,7 +13,7 @@ import lombok.RequiredArgsConstructor;
  */
 @Getter
 @RequiredArgsConstructor
-@EnumDict(name="categoryTypeDict")
+@EnumDict(name = "categoryTypeDict")
 public enum CategoryType implements I18nEnum<String> {
 
     /**

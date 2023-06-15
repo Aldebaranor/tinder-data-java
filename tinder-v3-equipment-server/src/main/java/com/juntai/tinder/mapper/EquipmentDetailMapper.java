@@ -1,7 +1,7 @@
 package com.juntai.tinder.mapper;
 
-import com.juntai.tinder.entity.EquipmentDetail;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.juntai.tinder.entity.EquipmentDetail;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

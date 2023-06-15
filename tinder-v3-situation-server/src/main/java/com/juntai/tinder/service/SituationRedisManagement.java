@@ -35,32 +35,26 @@ import java.util.stream.Collectors;
 @Priority(5)
 public class SituationRedisManagement {
 
-    @Autowired
-    public StringRedisTemplate redisTemplate;
-
-    @Autowired
-    private WebSocketHandler webSocketHandler;
-
     private static final String CONNECTOR = "_";
-
     private final ConcurrentMap<String, SituationArmyData> armyData = new ConcurrentHashMap(16);
     private final ConcurrentMap<String, SituationMoveData> moveData = new ConcurrentHashMap(16);
     private final ConcurrentMap<String, SituationSensorData> sensorData = new ConcurrentHashMap(16);
     private final ConcurrentMap<String, SituationLinkData> linkData = new ConcurrentHashMap(16);
     private final ConcurrentMap<String, SituationPointsData> pointsData = new ConcurrentHashMap(16);
-
     private final ConcurrentMap<String, SituationMessageData> messageData = new ConcurrentHashMap(16);
     private final ConcurrentMap<String, SituationGeometryData> geometryData = new ConcurrentHashMap(16);
     private final ConcurrentMap<String, List<String>> infoData = new ConcurrentHashMap(16);
     private final ConcurrentMap<String, SituationTemEvent> eventTemp = new ConcurrentHashMap(16);
-
     /**
      * 仿真时序
      */
     private final ConcurrentMap<String, List<SequenceModel>> sequenceData = new ConcurrentHashMap(16);
-
+    @Autowired
+    public StringRedisTemplate redisTemplate;
     @Autowired
     public EquipmentCache equipmentCache;
+    @Autowired
+    private WebSocketHandler webSocketHandler;
 
     public void delete(String order) {
         armyData.forEach((k, v) -> {
@@ -110,7 +104,6 @@ public class SituationRedisManagement {
         });
 
 
-
     }
 
 
@@ -144,15 +137,15 @@ public class SituationRedisManagement {
         String key = String.format(Constants.SCENARIO_MESSAGE, order);
 
 
-        Map<String, SituationTemMessage> hGetAll = ConvertUtils.convertMap(redisTemplate.opsForHash().entries(key),SituationTemMessage.class);
+        Map<String, SituationTemMessage> hGetAll = ConvertUtils.convertMap(redisTemplate.opsForHash().entries(key), SituationTemMessage.class);
         for (Map.Entry<String, SituationTemMessage> entry : hGetAll.entrySet()) {
             if (messageData.containsKey(order + CONNECTOR + entry.getValue().getId())) {
-                SituationMessageData situationMessageData = messageData.get(order + CONNECTOR +entry.getValue().getId());
+                SituationMessageData situationMessageData = messageData.get(order + CONNECTOR + entry.getValue().getId());
                 map.put(order + CONNECTOR + entry.getKey(), situationMessageData);
 
             } else {
                 SituationMessageData data = new SituationMessageData();
-                data.setId(order + CONNECTOR+ entry.getValue().getId());
+                data.setId(order + CONNECTOR + entry.getValue().getId());
                 data.setTeam(entry.getValue().getTeam());
                 data.setContent(entry.getValue().getContent());
                 data.setType(String.valueOf(entry.getValue().getType()));
@@ -163,9 +156,10 @@ public class SituationRedisManagement {
         }
         return map;
     }
+
     public Map<String, SituationMessageData> getMessageDataMap(String order) {
         Map<String, SituationMessageData> collect = messageData.entrySet().stream()
-                .filter(map -> map.getKey().startsWith(order + CONNECTOR) )
+                .filter(map -> map.getKey().startsWith(order + CONNECTOR))
                 .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
         return collect;
 
@@ -211,6 +205,7 @@ public class SituationRedisManagement {
     public SituationMoveData getMoveData(String id) {
         return moveData.get(id);
     }
+
     public Map<String, SituationMoveData> getMoveDataMap(String order) {
 
         Map<String, SituationMoveData> collect = moveData.entrySet().stream()
@@ -223,6 +218,7 @@ public class SituationRedisManagement {
     public List<String> getInfoData(String order) {
         return infoData.get(order);
     }
+
     public void addInfoData(String order, List<String> list, Boolean sendFlag) {
         for (String s : list) {
             if (CollectionUtils.isEmpty(infoData.get(order))) {
@@ -280,7 +276,7 @@ public class SituationRedisManagement {
 
         Map<String, SituationArmyData> map = new HashMap<>(16);
         String key = String.format(Constants.SCENARIO_FORCES, order);
-        Map<String, SituationTemArmy> hGetAll = ConvertUtils.convertMap(redisTemplate.opsForHash().entries(key),SituationTemArmy.class);
+        Map<String, SituationTemArmy> hGetAll = ConvertUtils.convertMap(redisTemplate.opsForHash().entries(key), SituationTemArmy.class);
         for (Map.Entry<String, SituationTemArmy> entry : hGetAll.entrySet()) {
             if (armyData.containsKey(order + CONNECTOR + entry.getValue().getId())) {
                 SituationArmyData situationArmyData = armyData.get(order + CONNECTOR + entry.getValue().getId());
@@ -315,7 +311,7 @@ public class SituationRedisManagement {
         return map;
     }
 
-    public void removeArmyData(String order, String id, Boolean sendFlag,Boolean beDestroy ) {
+    public void removeArmyData(String order, String id, Boolean sendFlag, Boolean beDestroy) {
         String keyId = order + CONNECTOR + id;
         //注销该兵力的传感器特效
         Map<String, SituationSensorData> sensorDataMap = getSensorDataMap(order);
@@ -332,26 +328,26 @@ public class SituationRedisManagement {
         List<SituationLinkData> updateList = new ArrayList<>();
         Map<String, SituationLinkData> linkDataMap = getLinkDataMap(order);
         for (Map.Entry<String, SituationLinkData> tmp : linkDataMap.entrySet()) {
-            if(StringUtils.equals(tmp.getValue().getStartId(), keyId)){
+            if (StringUtils.equals(tmp.getValue().getStartId(), keyId)) {
                 deleteList.add(tmp.getKey());
                 linkData.remove(tmp.getKey());
-            }else if(tmp.getValue().getEndId().contains(keyId)){
-                tmp.getValue().getEndId().replace(keyId+";","");
-                tmp.getValue().getEndId().replace(keyId,"");
+            } else if (tmp.getValue().getEndId().contains(keyId)) {
+                tmp.getValue().getEndId().replace(keyId + ";", "");
+                tmp.getValue().getEndId().replace(keyId, "");
                 updateList.add(tmp.getValue());
-                linkData.put(tmp.getKey(),tmp.getValue());
+                linkData.put(tmp.getKey(), tmp.getValue());
             }
         }
-        sendDeleteLinkEvent(order,deleteList);
-        sendChangeLinkEvent(order,updateList);
+        sendDeleteLinkEvent(order, deleteList);
+        sendChangeLinkEvent(order, updateList);
 
 
         List<String> armyList = new ArrayList<>();
         armyList.add(keyId);
         if (sendFlag) {
-            if(beDestroy){
+            if (beDestroy) {
                 sendDeleteArmyEvent(order, armyList);
-            }else{
+            } else {
                 sendOfflineArmyEvent(order, armyList);
             }
 
@@ -402,7 +398,7 @@ public class SituationRedisManagement {
 
         Map<String, SituationSensorData> map = new HashMap<>(16);
         String key = String.format(Constants.SCENARIO_RADAR, order);
-        Map<String, SituationTemRadar> hGetAll = ConvertUtils.convertMap(redisTemplate.opsForHash().entries(key),SituationTemRadar.class);
+        Map<String, SituationTemRadar> hGetAll = ConvertUtils.convertMap(redisTemplate.opsForHash().entries(key), SituationTemRadar.class);
         for (Map.Entry<String, SituationTemRadar> entry : hGetAll.entrySet()) {
             if (sensorData.containsKey(order + CONNECTOR + entry.getValue().getId())) {
                 SituationSensorData situationSensorData = sensorData.get(order + CONNECTOR + entry.getValue().getId());
@@ -411,7 +407,7 @@ public class SituationRedisManagement {
             } else {
                 SituationSensorData data = new SituationSensorData();
                 data.setId(order + CONNECTOR + entry.getValue().getId());
-                data.setArmyId( entry.getValue().getInstId());
+                data.setArmyId(entry.getValue().getInstId());
                 data.setPoints(entry.getValue().getPoints());
                 data.setType(String.valueOf(entry.getValue().getType()));
                 map.put(order + CONNECTOR + entry.getValue().getId(), data);
@@ -428,6 +424,7 @@ public class SituationRedisManagement {
                 .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
         return collect;
     }
+
     public void removeSensorData(String order, String id) {
         List<String> sensorIds = new ArrayList<>();
         sensorIds.add(order + CONNECTOR + id);
@@ -438,7 +435,7 @@ public class SituationRedisManagement {
     public void addSensorData(String order, SituationSensorData data, Boolean sendFlag) {
         String armyId = data.getArmyId();
         if (StringUtils.isBlank(armyId)) {
-            throw new SoulBootException(TinderErrorCode.TINDER_COMMON_ERROR,"该传感器的父兵力不能为空");
+            throw new SoulBootException(TinderErrorCode.TINDER_COMMON_ERROR, "该传感器的父兵力不能为空");
         }
         List<SituationSensorData> sensors = new ArrayList<>();
         data.setId(order + CONNECTOR + data.getId());
@@ -492,18 +489,18 @@ public class SituationRedisManagement {
         Map<String, SituationTemLink> hGetAll = ConvertUtils.convertMap(redisTemplate.opsForHash().entries(key), SituationTemLink.class);
         for (Map.Entry<String, SituationTemLink> entry : hGetAll.entrySet()) {
             if (linkData.containsKey(order + CONNECTOR + entry.getKey())) {
-                SituationLinkData situationLinkData = linkData.get(order + CONNECTOR +entry.getKey());
+                SituationLinkData situationLinkData = linkData.get(order + CONNECTOR + entry.getKey());
                 map.put(order + CONNECTOR + entry.getKey(), situationLinkData);
 
             } else {
                 SituationLinkData data = new SituationLinkData();
-                data.setId(order + CONNECTOR +entry.getKey());
+                data.setId(order + CONNECTOR + entry.getKey());
                 data.setStartId(order + CONNECTOR + entry.getValue().getSrc());
                 List<Long> dest = entry.getValue().getDest();
                 StringBuilder sb = new StringBuilder();
-                for(int i =0;i<dest.size();i++){
+                for (int i = 0; i < dest.size(); i++) {
                     sb.append(order + CONNECTOR + dest.get(i));
-                    if(i<dest.size() -1){
+                    if (i < dest.size() - 1) {
                         sb.append(";");
                     }
                 }
@@ -539,9 +536,9 @@ public class SituationRedisManagement {
         StringBuilder end = new StringBuilder();
         if (!StringUtils.isBlank(data.getEndId())) {
             for (int i = 0; i < split.length; i++) {
-                end.append(order + CONNECTOR + split[i]) ;
-                if (i < split.length-1) {
-                    end.append(";") ;
+                end.append(order + CONNECTOR + split[i]);
+                if (i < split.length - 1) {
+                    end.append(";");
                 }
             }
         }
@@ -560,9 +557,9 @@ public class SituationRedisManagement {
         if (!StringUtils.isBlank(data.getEndId())) {
             String[] split = data.getEndId().split(",");
             for (int i = 0; i < split.length; i++) {
-                end.append(order + CONNECTOR + split[i]) ;
-                if (i < split.length-1) {
-                    end.append(";") ;
+                end.append(order + CONNECTOR + split[i]);
+                if (i < split.length - 1) {
+                    end.append(";");
                 }
             }
         }
@@ -583,7 +580,7 @@ public class SituationRedisManagement {
         Map<String, SituationTemPoints> hGetAll = ConvertUtils.convertMap(redisTemplate.opsForHash().entries(key), SituationTemPoints.class);
         for (Map.Entry<String, SituationTemPoints> entry : hGetAll.entrySet()) {
             if (pointsData.containsKey(order + CONNECTOR + entry.getValue().getId())) {
-                SituationPointsData situationPointsData = pointsData.get(order + CONNECTOR +entry.getValue().getId());
+                SituationPointsData situationPointsData = pointsData.get(order + CONNECTOR + entry.getValue().getId());
                 map.put(order + CONNECTOR + entry.getKey(), situationPointsData);
 
             } else {
@@ -599,6 +596,7 @@ public class SituationRedisManagement {
         }
         return map;
     }
+
     public Map<String, SituationPointsData> getPointsDataMap(String order) {
 
         Map<String, SituationPointsData> collect = pointsData.entrySet().stream()
@@ -660,8 +658,8 @@ public class SituationRedisManagement {
         for (SituationArmyData entity : situationData) {
             map.put(entity.getId(), entity.toString());
         }
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_ARMY_ADD,JsonUtils.write(map));
-        log.info("{}----->{}", simId+"_"+Constants.TOPIC_ARMY_ADD, JsonUtils.write(map));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_ARMY_ADD, JsonUtils.write(map));
+        log.info("{}----->{}", simId + "_" + Constants.TOPIC_ARMY_ADD, JsonUtils.write(map));
     }
 
     private void sendChangeArmyEvent(String simId, List<SituationArmyData> situationData) {
@@ -669,14 +667,14 @@ public class SituationRedisManagement {
         for (SituationArmyData entity : situationData) {
             map.put(entity.getId(), entity.toString());
         }
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_ARMY_CHANGE,JsonUtils.write(map));
-        log.info("{}----->{}", simId+"_"+Constants.TOPIC_ARMY_CHANGE, JsonUtils.write(map));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_ARMY_CHANGE, JsonUtils.write(map));
+        log.info("{}----->{}", simId + "_" + Constants.TOPIC_ARMY_CHANGE, JsonUtils.write(map));
 
     }
 
     private void sendDeleteArmyEvent(String simId, List<String> armyIds) {
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_ARMY_DELETE,JsonUtils.write(armyIds));
-        log.info("{}----->{}", simId+"_"+Constants.TOPIC_ARMY_DELETE, JsonUtils.write(armyIds));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_ARMY_DELETE, JsonUtils.write(armyIds));
+        log.info("{}----->{}", simId + "_" + Constants.TOPIC_ARMY_DELETE, JsonUtils.write(armyIds));
     }
 
     private void sendAddSensorEvent(String simId, List<SituationSensorData> situationData) {
@@ -684,8 +682,8 @@ public class SituationRedisManagement {
         for (SituationSensorData entity : situationData) {
             map.put(entity.getId(), entity.toString());
         }
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_SENSOR_ADD,JsonUtils.write(map));
-        log.info("{}----->{}", simId+"_"+Constants.TOPIC_SENSOR_ADD, JsonUtils.write(map));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_SENSOR_ADD, JsonUtils.write(map));
+        log.info("{}----->{}", simId + "_" + Constants.TOPIC_SENSOR_ADD, JsonUtils.write(map));
 
     }
 
@@ -694,12 +692,12 @@ public class SituationRedisManagement {
         for (SituationSensorData entity : situationData) {
             map.put(entity.getId(), entity.toString());
         }
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_SENSOR_CHANGE,JsonUtils.write(map));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_SENSOR_CHANGE, JsonUtils.write(map));
     }
 
     private void sendDeleteSensorEvent(String simId, List<String> sensorIds) {
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_SENSOR_DELETE,JsonUtils.write(sensorIds));
-        log.info("{}----->{}", simId+"_"+Constants.TOPIC_SENSOR_DELETE, JsonUtils.write(sensorIds));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_SENSOR_DELETE, JsonUtils.write(sensorIds));
+        log.info("{}----->{}", simId + "_" + Constants.TOPIC_SENSOR_DELETE, JsonUtils.write(sensorIds));
     }
 
     public void sendMoveDataEvent(String simId, List<SituationMoveData> situationMoveData) {
@@ -725,7 +723,7 @@ public class SituationRedisManagement {
         if (CollectionUtils.isEmpty(map)) {
             return;
         }
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_MOVE_MAP,JsonUtils.write(map));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_MOVE_MAP, JsonUtils.write(map));
 
     }
 
@@ -749,17 +747,17 @@ public class SituationRedisManagement {
         if (CollectionUtils.isEmpty(map)) {
             return;
         }
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_MOVE_MAP,JsonUtils.write(map));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_MOVE_MAP, JsonUtils.write(map));
 
     }
 
     public void sendTimeEvent(String simId, String time) {
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_TIME,time);
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_TIME, time);
 
     }
 
     public void sendRealTimeEvent(String simId, String time) {
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_REAL_TIME,time);
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_REAL_TIME, time);
 
 
     }
@@ -769,14 +767,14 @@ public class SituationRedisManagement {
         for (SituationLinkData entity : situationLinkData) {
             map.put(entity.getId(), entity.toString());
         }
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_LINK_ADD,JsonUtils.write(map));
-        log.info("{}----->{}", simId+"_"+Constants.TOPIC_LINK_ADD, JsonUtils.write(map));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_LINK_ADD, JsonUtils.write(map));
+        log.info("{}----->{}", simId + "_" + Constants.TOPIC_LINK_ADD, JsonUtils.write(map));
 
     }
 
     private void sendDeleteLinkEvent(String simId, List<String> linkIds) {
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_LINK_DELETE,JsonUtils.write(linkIds));
-        log.info("{}----->{}", simId+"_"+Constants.TOPIC_LINK_DELETE, JsonUtils.write(linkIds));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_LINK_DELETE, JsonUtils.write(linkIds));
+        log.info("{}----->{}", simId + "_" + Constants.TOPIC_LINK_DELETE, JsonUtils.write(linkIds));
 
     }
 
@@ -786,8 +784,8 @@ public class SituationRedisManagement {
         for (SituationLinkData entity : situationLinkData) {
             map.put(entity.getId(), entity.toString());
         }
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_LINK_CHANGE,JsonUtils.write(map));
-        log.info("{}----->{}", simId+"_"+Constants.TOPIC_LINK_CHANGE, JsonUtils.write(map));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_LINK_CHANGE, JsonUtils.write(map));
+        log.info("{}----->{}", simId + "_" + Constants.TOPIC_LINK_CHANGE, JsonUtils.write(map));
 
     }
 
@@ -796,13 +794,13 @@ public class SituationRedisManagement {
         for (SituationPointsData entity : situationPointsData) {
             map.put(entity.getId(), entity.toString());
         }
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_POINTS_ADD,JsonUtils.write(map));
-        log.info("{}----->{}", simId+"_"+Constants.TOPIC_POINTS_ADD, JsonUtils.write(map));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_POINTS_ADD, JsonUtils.write(map));
+        log.info("{}----->{}", simId + "_" + Constants.TOPIC_POINTS_ADD, JsonUtils.write(map));
 
     }
 
     private void sendDeletePointsEvent(String simId, List<String> ids) {
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_POINTS_DELETE,JsonUtils.write(ids));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_POINTS_DELETE, JsonUtils.write(ids));
     }
 
     private void sendChangePointsEvent(String simId, List<SituationPointsData> situationPointsData) {
@@ -810,7 +808,7 @@ public class SituationRedisManagement {
         for (SituationPointsData entity : situationPointsData) {
             map.put(entity.getId(), entity.toString());
         }
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_POINTS_CHANGE,JsonUtils.write(map));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_POINTS_CHANGE, JsonUtils.write(map));
 
     }
 
@@ -819,14 +817,14 @@ public class SituationRedisManagement {
         for (SituationMessageData entity : situationMessageData) {
             map.put(entity.getId(), entity.toString());
         }
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_MESSAGE_ADD,JsonUtils.write(map));
-        log.info("{}----->{}", simId+"_"+Constants.TOPIC_MESSAGE_ADD, JsonUtils.write(map));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_MESSAGE_ADD, JsonUtils.write(map));
+        log.info("{}----->{}", simId + "_" + Constants.TOPIC_MESSAGE_ADD, JsonUtils.write(map));
 
     }
 
     private void sendDeleteMessageEvent(String simId, List<String> ids) {
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_MESSAGE_DELETE,JsonUtils.write(ids));
-        log.info("{}----->{}", simId+"_"+Constants.TOPIC_MESSAGE_DELETE, JsonUtils.write(ids));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_MESSAGE_DELETE, JsonUtils.write(ids));
+        log.info("{}----->{}", simId + "_" + Constants.TOPIC_MESSAGE_DELETE, JsonUtils.write(ids));
 
     }
 
@@ -835,27 +833,27 @@ public class SituationRedisManagement {
         for (SituationMessageData entity : situationMessageData) {
             map.put(entity.getId(), entity.toString());
         }
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_MESSAGE_CHANGE,JsonUtils.write(map));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_MESSAGE_CHANGE, JsonUtils.write(map));
 
     }
 
     private void sendInfoEvent(String simId, List<String> info) {
 
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_INFO,JsonUtils.write(info));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_INFO, JsonUtils.write(info));
 
     }
 
 
     public void sendScenarioStop(String simId) {
 
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_SCENARIO_STOP,simId);
-        log.info("{}----->{}", simId+"_"+Constants.TOPIC_SCENARIO_STOP, simId);
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_SCENARIO_STOP, simId);
+        log.info("{}----->{}", simId + "_" + Constants.TOPIC_SCENARIO_STOP, simId);
 
     }
 
     private void sendOfflineArmyEvent(String simId, List<String> armyList) {
 
-        webSocketHandler.sendAllMessage(simId,Constants.TOPIC_ARMY_OFFLINE,JsonUtils.write(armyList));
+        webSocketHandler.sendAllMessage(simId, Constants.TOPIC_ARMY_OFFLINE, JsonUtils.write(armyList));
     }
 }
 

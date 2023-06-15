@@ -2,7 +2,6 @@ package com.juntai.tinder.service.impl;
 
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
-import com.baomidou.mybatisplus.extension.conditions.update.LambdaUpdateChainWrapper;
 import com.baomidou.mybatisplus.extension.toolkit.ChainWrappers;
 import com.juntai.soulboot.common.exception.SoulBootException;
 import com.juntai.soulboot.data.ConditionParser;
@@ -22,14 +21,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author nemo
@@ -51,23 +53,19 @@ public class EquipmentTypeServiceImpl implements EquipmentTypeService {
 
     @Override
     public List<EquipmentType> children(String id) {
-        return  new LambdaQueryChainWrapper<>(mapper).eq(EquipmentType::getParentId,id).list();
+        return new LambdaQueryChainWrapper<>(mapper).eq(EquipmentType::getParentId, id).list();
     }
 
     @Override
     public List<EquipmentType> childrens(String id) {
-        return new LambdaQueryChainWrapper<>(mapper).likeRight(EquipmentType::getParentId,id).list();
+        return new LambdaQueryChainWrapper<>(mapper).likeRight(EquipmentType::getParentId, id).list();
     }
-
-//    @Override
-//    public Map<String, String> getNameMapById() {
-//        return null;
-//    }
 
     @Override
     @Transactional(readOnly = true)
     public List<EquipmentType> list(EquipmentTypeCondition condition) {
-        QueryChainWrapper<EquipmentType> wrapper = ChainWrappers.queryChain(EquipmentType.class);;
+        QueryChainWrapper<EquipmentType> wrapper = ChainWrappers.queryChain(EquipmentType.class);
+        ;
         ConditionParser.parse(wrapper, condition);
         return wrapper.list();
     }
@@ -75,11 +73,11 @@ public class EquipmentTypeServiceImpl implements EquipmentTypeService {
     @Override
     @Transactional(readOnly = true)
     public Pagination<EquipmentType> page(Query<EquipmentTypeCondition, EquipmentType> query) {
-        QueryChainWrapper<EquipmentType> wrapper = ChainWrappers.queryChain(EquipmentType.class);;
+        QueryChainWrapper<EquipmentType> wrapper = ChainWrappers.queryChain(EquipmentType.class);
+        ;
         ConditionParser.parse(wrapper, query.getCondition());
-        return wrapper.page(query.toPage());
+        return wrapper.page(query.toPage(EquipmentType.class));
     }
-
 
 
     @Override
@@ -91,19 +89,19 @@ public class EquipmentTypeServiceImpl implements EquipmentTypeService {
     public String insert(EquipmentType entity) {
         String id = "";
         if (entity.getGrade() == null) {
-            throw new SoulBootException(TinderErrorCode.TINDER_EQUIPMENT_TYPE_ERROR,"grade不能为空");
+            throw new SoulBootException(TinderErrorCode.TINDER_EQUIPMENT_TYPE_ERROR, "grade不能为空");
         }
         int order = 1;
         if (entity.getGrade() != 0) {
             String parentId = entity.getParentId();
             if (StringUtils.isBlank(parentId)) {
-                throw new SoulBootException(TinderErrorCode.TINDER_EQUIPMENT_TYPE_ERROR,"非根节点的parentId不能为空");
+                throw new SoulBootException(TinderErrorCode.TINDER_EQUIPMENT_TYPE_ERROR, "非根节点的parentId不能为空");
             }
             EquipmentTypeCondition condition = new EquipmentTypeCondition();
             condition.setId(parentId);
             boolean exists = new LambdaQueryChainWrapper<>(mapper).eq(EquipmentType::getId, parentId).exists();
             if (!exists) {
-                throw new SoulBootException(TinderErrorCode.TINDER_EQUIPMENT_TYPE_ERROR,"父节点parentId不存在");
+                throw new SoulBootException(TinderErrorCode.TINDER_EQUIPMENT_TYPE_ERROR, "父节点parentId不存在");
             }
             List<EquipmentType> children = children(parentId);
             order = children.stream().mapToInt(EquipmentType::getSort).max().orElse(0) + 1;
@@ -169,7 +167,7 @@ public class EquipmentTypeServiceImpl implements EquipmentTypeService {
     public String getNameById(String id) {
         EquipmentType equipmentType = mapper.selectById(id);
 
-        return equipmentType==null?null:equipmentType.getName();
+        return equipmentType == null ? null : equipmentType.getName();
     }
 
     /**
@@ -204,7 +202,7 @@ public class EquipmentTypeServiceImpl implements EquipmentTypeService {
             }
             if (hasEntity) {
                 List<Equipment> es = equipments.stream().filter(equipment -> StringUtils.equals(equipment.getEquipmentType(), first.getId())).collect(Collectors.toList());
-                first.setEquipments( es);
+                first.setEquipments(es);
             }
             for (EquipmentType second : data) {
                 // first 为 second 父级

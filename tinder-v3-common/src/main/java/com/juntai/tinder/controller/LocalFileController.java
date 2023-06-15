@@ -7,7 +7,6 @@ import com.juntai.tinder.utils.FileUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
@@ -43,7 +42,7 @@ public class LocalFileController {
     public void download(@PathVariable String id, HttpServletRequest req, HttpServletResponse resp) {
         Path filePath = Paths.get(fileConfig.getPath(), id);
         if (!Files.exists(filePath)) {
-            throw new SoulBootException(TinderErrorCode.FILE_ERROR,"文件不存在");
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR, "文件不存在");
         }
         resp.setContentType("application/x-download");
         FileUtil.setAttachment(id, req, resp);
@@ -52,7 +51,7 @@ public class LocalFileController {
         } catch (IOException e) {
             // 抛出自己的异常
             log.error("文件下载失败", e);
-            throw new SoulBootException(TinderErrorCode.FILE_ERROR,"文件下载失败" );
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR, "文件下载失败");
         }
     }
 
@@ -60,7 +59,7 @@ public class LocalFileController {
     @ResponseBody
     public Map<String, Object> upload(@RequestParam String kind, @RequestParam String name, @RequestPart("file") MultipartFile multipartFile) {
         if (multipartFile.isEmpty()) {
-            throw new SoulBootException(TinderErrorCode.FILE_ERROR,"文件不能为空");
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR, "文件不能为空");
         }
         String originalFilename = multipartFile.getOriginalFilename();
         String type = "";
@@ -83,7 +82,7 @@ public class LocalFileController {
             log.error("文件存储失败", e);
 
             // 抛出自己的异常
-            throw new SoulBootException(TinderErrorCode.FILE_ERROR,"文件存储失败" );
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR, "文件存储失败");
         }
     }
 
@@ -91,7 +90,7 @@ public class LocalFileController {
     @ResponseBody
     public Map<String, Object> upload(@RequestPart("file") MultipartFile multipartFile) {
         if (multipartFile.isEmpty()) {
-            throw new SoulBootException(TinderErrorCode.FILE_ERROR,"文件不能为空" );
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR, "文件不能为空");
         }
         String originalFilename = multipartFile.getOriginalFilename();
         String type = "";
@@ -112,7 +111,7 @@ public class LocalFileController {
         } catch (IOException e) {
             log.error("文件存储失败", e);
             // 抛出自己的异常
-            throw new SoulBootException(TinderErrorCode.FILE_ERROR,"文件存储失败" );
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR, "文件存储失败");
         }
     }
 
@@ -120,7 +119,7 @@ public class LocalFileController {
     @ResponseBody
     public Map<String, Object> uploadWithId(@PathVariable String id, @RequestPart("file") MultipartFile multipartFile) {
         if (multipartFile.isEmpty()) {
-            throw new SoulBootException(TinderErrorCode.FILE_ERROR,"文件不能为空" );
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR, "文件不能为空");
         }
         String originalFilename = multipartFile.getOriginalFilename();
         String type = "";
@@ -140,7 +139,7 @@ public class LocalFileController {
         } catch (IOException e) {
             log.error("文件存储失败", e);
             // 抛出自己的异常
-            throw new SoulBootException(TinderErrorCode.FILE_ERROR,"文件存储失败" );
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR, "文件存储失败");
         }
     }
 

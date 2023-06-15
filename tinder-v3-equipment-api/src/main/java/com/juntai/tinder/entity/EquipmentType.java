@@ -3,15 +3,15 @@ package com.juntai.tinder.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.util.List;
-
 import com.juntai.tinder.entity.enums.CategoryType;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.util.List;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author nemo

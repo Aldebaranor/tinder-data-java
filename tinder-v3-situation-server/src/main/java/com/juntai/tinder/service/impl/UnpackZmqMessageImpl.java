@@ -14,7 +14,10 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Priority;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.TimeZone;
 
 /**
  * @Description:
@@ -84,13 +87,12 @@ public class UnpackZmqMessageImpl implements SubscriptionListener {
                 list.add(format);
                 situationRedisManagement.addInfoData(order, list, true);
 
-                if(msg.startsWith("@Time@")){
+                if (msg.startsWith("@Time@")) {
                     msg = msg.replace("@Time@", "");
                     situationRedisManagement.sendRealTimeEvent(order, msg);
                 }
 
             }
-
 
 
         } catch (InvalidProtocolBufferException e) {

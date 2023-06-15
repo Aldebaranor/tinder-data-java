@@ -1,6 +1,5 @@
 package com.juntai.tinder.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
 import com.juntai.tinder.condition.ModelCondition;
@@ -25,19 +24,8 @@ public interface ModelService extends ModelFacade {
      * @param model QueryModel
      * @return 分页数据
      */
-    Pagination<Model> page(Query<ModelCondition,Model> model);
+    Pagination<Model> page(Query<ModelCondition, Model> model);
 
-
-    /**
-     * 列表查询
-     *
-     * @param condition
-     * @return java.util.List<com.soul.meta.entity.Model>
-     * @author huangkang
-     * @desc
-     * @date 2022/4/30 22:26
-     */
-    List<Model> query(ModelCondition condition);
 
     /**
      * 查询装备下所有模型

@@ -2,12 +2,8 @@ package com.juntai.tinder.cache;
 
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
-import com.juntai.soulboot.common.exception.SoulBootException;
 import com.juntai.tinder.config.ApplicationContextProvider;
-import com.juntai.tinder.entity.Equipment;
 import com.juntai.tinder.entity.Model;
-import com.juntai.tinder.exception.TinderErrorCode;
-import com.juntai.tinder.facade.EquipmentFacade;
 import com.juntai.tinder.facade.ModelFacade;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +12,6 @@ import org.springframework.stereotype.Component;
 import java.time.Duration;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.ExecutionException;
 
 /**
  * @author ：haungkang
@@ -28,7 +23,7 @@ import java.util.concurrent.ExecutionException;
 @RequiredArgsConstructor
 public class ModelCache {
 
-    protected Cache<String, Model> cache =  Caffeine.newBuilder()
+    protected Cache<String, Model> cache = Caffeine.newBuilder()
             .maximumSize(10_000)
             .expireAfterWrite(Duration.ofMinutes(10))
             .build();
@@ -50,10 +45,18 @@ public class ModelCache {
         cache.invalidate(id);
     }
 
+    public void clearCacheDataList(List<String> ids) {
+        ids.forEach(q -> {
+            cache.invalidate(q);
+        });
+
+    }
+
     public void refreshCache() {
         ModelFacade modelFacade = ApplicationContextProvider.getBean(ModelFacade.class);
         List<Model> all = modelFacade.getAll();
         for (Model model : all) {
+
             setCacheData(model.getId(), model);
         }
     }

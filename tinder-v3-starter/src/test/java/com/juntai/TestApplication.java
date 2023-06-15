@@ -49,7 +49,7 @@ public class TestApplication {
                 })
                 //策略配置(StrategyConfig)
                 .strategyConfig(builder -> {
-                    builder.addFieldPrefix("meta_") ; // 设置过滤表前缀
+                    builder.addFieldPrefix("meta_"); // 设置过滤表前缀
                     builder.entityBuilder()
                             .enableLombok();
 
@@ -59,7 +59,7 @@ public class TestApplication {
                     builder.controllerBuilder()
                             .enableRestStyle(); // 开启生成@RestController 控制器，不配置这个默认是Controller注解，RestController是返回Json字符串的，多用于前后端分离项目。
                     builder.mapperBuilder()
-                            .enableMapperAnnotation() ;//开启 @Mapper 注解，也就是在dao接口上添加一个@Mapper注解，这个注解的作用是开启注解模式，就可以在接口的抽象方法上面直接使用@Select和@Insert和@Update和@Delete注解。
+                            .enableMapperAnnotation();//开启 @Mapper 注解，也就是在dao接口上添加一个@Mapper注解，这个注解的作用是开启注解模式，就可以在接口的抽象方法上面直接使用@Select和@Insert和@Update和@Delete注解。
                 })
 //                .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
                 .templateEngine(new VelocityTemplateEngine())

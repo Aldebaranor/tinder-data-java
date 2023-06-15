@@ -3,7 +3,6 @@ package com.juntai.tinder.service.impl;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
-import com.baomidou.mybatisplus.extension.conditions.update.LambdaUpdateChainWrapper;
 import com.baomidou.mybatisplus.extension.toolkit.ChainWrappers;
 import com.google.common.base.CaseFormat;
 import com.juntai.soulboot.data.ConditionParser;
@@ -12,7 +11,6 @@ import com.juntai.soulboot.data.Query;
 import com.juntai.soulboot.util.JsonUtils;
 import com.juntai.tinder.cache.TaskTypeCache;
 import com.juntai.tinder.condition.EquipmentTaskCondition;
-import com.juntai.tinder.entity.EquipmentDetail;
 import com.juntai.tinder.entity.EquipmentTask;
 import com.juntai.tinder.entity.TaskType;
 import com.juntai.tinder.mapper.EquipmentTaskMapper;
@@ -64,16 +62,17 @@ public class EquipmentTaskServiceImpl implements EquipmentTaskService {
     @Override
     @Transactional(readOnly = true)
     public List<EquipmentTask> list(EquipmentTaskCondition condition) {
-        QueryChainWrapper<EquipmentTask> wrapper = ChainWrappers.queryChain(EquipmentTask.class);;
+        QueryChainWrapper<EquipmentTask> wrapper = ChainWrappers.queryChain(EquipmentTask.class);
+        ;
         ConditionParser.parse(wrapper, condition);
         List<EquipmentTask> list = wrapper.list();
-        list.forEach(q->{
-            List<String> ids = JsonUtils.readList(q.getTasks(),String.class);
+        list.forEach(q -> {
+            List<String> ids = JsonUtils.readList(q.getTasks(), String.class);
             List<String> names = new ArrayList<>();
-            for(String s : ids){
+            for (String s : ids) {
                 TaskType cacheData = taskTypeCache.getCacheData(s);
-                if(cacheData != null){
-                    names.add(String.format("%s(%s)",cacheData.getName(),cacheData.getCode()));
+                if (cacheData != null) {
+                    names.add(String.format("%s(%s)", cacheData.getName(), cacheData.getCode()));
                 }
             }
 
@@ -85,16 +84,17 @@ public class EquipmentTaskServiceImpl implements EquipmentTaskService {
     @Override
     @Transactional(readOnly = true)
     public Pagination<EquipmentTask> page(Query<EquipmentTaskCondition, EquipmentTask> query) {
-        QueryChainWrapper<EquipmentTask> wrapper = ChainWrappers.queryChain(EquipmentTask.class);;
+        QueryChainWrapper<EquipmentTask> wrapper = ChainWrappers.queryChain(EquipmentTask.class);
+        ;
         ConditionParser.parse(wrapper, query.getCondition());
         Pagination<EquipmentTask> page = wrapper.page(query.toPage());
-        page.getList().forEach(q->{
-            List<String> ids = JsonUtils.readList(q.getTasks(),String.class);
+        page.getList().forEach(q -> {
+            List<String> ids = JsonUtils.readList(q.getTasks(), String.class);
             List<String> names = new ArrayList<>();
-            for(String s : ids){
+            for (String s : ids) {
                 TaskType cacheData = taskTypeCache.getCacheData(s);
-                if(cacheData != null){
-                    names.add(String.format("%s(%s)",cacheData.getName(),cacheData.getCode()));
+                if (cacheData != null) {
+                    names.add(String.format("%s(%s)", cacheData.getName(), cacheData.getCode()));
                 }
             }
 
@@ -111,7 +111,7 @@ public class EquipmentTaskServiceImpl implements EquipmentTaskService {
 
     @Override
     public void insertList(List<EquipmentTask> list) {
-        list.forEach(q->{
+        list.forEach(q -> {
             String id = UUID.randomUUID().toString();
             q.setId(id);
             mapper.insert(q);
@@ -144,18 +144,18 @@ public class EquipmentTaskServiceImpl implements EquipmentTaskService {
         return buildEquipmentTask(equipmentTask);
     }
 
-    public EquipmentTask buildEquipmentTask(EquipmentTask equipmentTask){
-        if(equipmentTask == null){
+    public EquipmentTask buildEquipmentTask(EquipmentTask equipmentTask) {
+        if (equipmentTask == null) {
             return null;
         }
-        List<String> ids = JsonUtils.readList(equipmentTask.getTasks(),String.class);
+        List<String> ids = JsonUtils.readList(equipmentTask.getTasks(), String.class);
         List<TaskType> list = new ArrayList<>();
         List<String> names = new ArrayList<>();
-        for(String s : ids){
+        for (String s : ids) {
             TaskType cacheData = taskTypeCache.getCacheData(s);
-            if(cacheData != null){
+            if (cacheData != null) {
                 list.add(cacheData);
-                names.add(String.format("%s(%s)",cacheData.getName(),cacheData.getCode()));
+                names.add(String.format("%s(%s)", cacheData.getName(), cacheData.getCode()));
             }
         }
         equipmentTask.setTaskList(list);
@@ -168,12 +168,12 @@ public class EquipmentTaskServiceImpl implements EquipmentTaskService {
 
 
         UpdateWrapper<EquipmentTask> wrapper = new UpdateWrapper<>();
-        wrapper.eq("id",id);
-        map.forEach((k,v)->{
-            k = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, "k");
-            wrapper.set(k,v);
+        wrapper.eq("id", id);
+        map.forEach((k, v) -> {
+            k = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, k);
+            wrapper.set(k, v);
         });
-        mapper.update(null,wrapper);
+        mapper.update(null, wrapper);
 
     }
 }

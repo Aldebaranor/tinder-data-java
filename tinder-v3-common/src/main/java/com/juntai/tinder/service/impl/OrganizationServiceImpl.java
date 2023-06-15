@@ -5,24 +5,15 @@ import com.baomidou.mybatisplus.extension.toolkit.ChainWrappers;
 import com.juntai.soulboot.data.ConditionParser;
 import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
-import com.juntai.soulboot.security.DefaultUserDetails;
-import com.juntai.soulboot.security.UserDetails;
-import com.juntai.soulboot.security.UserDetailsService;
 import com.juntai.tinder.condition.OrganizationCondition;
-import com.juntai.tinder.condition.UserCondition;
 import com.juntai.tinder.entity.Organization;
-import com.juntai.tinder.entity.User;
 import com.juntai.tinder.mapper.OrganizationMapper;
-import com.juntai.tinder.mapper.UserMapper;
 import com.juntai.tinder.service.OrganizationService;
-import com.juntai.tinder.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Service Impl
@@ -49,7 +40,7 @@ public class OrganizationServiceImpl implements OrganizationService {
     public Pagination<Organization> page(Query<OrganizationCondition, Organization> query) {
         QueryChainWrapper<Organization> wrapper = ChainWrappers.queryChain(Organization.class);
         ConditionParser.parse(wrapper, query.getCondition());
-        return wrapper.page(query.toPage());
+        return wrapper.page(query.toPage(Organization.class));
     }
 
     @Override

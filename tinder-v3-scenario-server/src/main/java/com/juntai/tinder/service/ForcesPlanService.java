@@ -4,7 +4,6 @@ import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
 import com.juntai.tinder.condition.ForcesPlanCondition;
 import com.juntai.tinder.entity.ForcesPlan;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.juntai.tinder.facade.ForcesPlanFacade;
 import com.juntai.tinder.model.ForcesPlanModel;
 
@@ -84,7 +83,7 @@ public interface ForcesPlanService extends ForcesPlanFacade {
      * @param model
      * @return
      */
-    Pagination<ForcesPlan> page(Query<ForcesPlanCondition,ForcesPlan> model);
+    Pagination<ForcesPlan> page(Query<ForcesPlanCondition, ForcesPlan> model);
 
     /**
      * 根据试验Id和兵力ID查询兵力计划

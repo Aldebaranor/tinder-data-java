@@ -18,7 +18,7 @@ import java.util.UUID;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author nemo
@@ -28,6 +28,7 @@ import java.util.UUID;
 public class ArmyIconServiceImpl implements ArmyIconService {
     @Autowired
     private ArmyIconMapper mapper;
+
     @Override
     @Transactional(readOnly = true)
     public ArmyIcon getById(String id) {
@@ -37,7 +38,8 @@ public class ArmyIconServiceImpl implements ArmyIconService {
     @Override
     @Transactional(readOnly = true)
     public List<ArmyIcon> list(ArmyIconCondition condition) {
-        QueryChainWrapper<ArmyIcon> wrapper = ChainWrappers.queryChain(ArmyIcon.class);;
+        QueryChainWrapper<ArmyIcon> wrapper = ChainWrappers.queryChain(ArmyIcon.class);
+        ;
         ConditionParser.parse(wrapper, condition);
         return wrapper.list();
     }
@@ -45,11 +47,11 @@ public class ArmyIconServiceImpl implements ArmyIconService {
     @Override
     @Transactional(readOnly = true)
     public Pagination<ArmyIcon> page(Query<ArmyIconCondition, ArmyIcon> query) {
-        QueryChainWrapper<ArmyIcon> wrapper = ChainWrappers.queryChain(ArmyIcon.class);;
+        QueryChainWrapper<ArmyIcon> wrapper = ChainWrappers.queryChain(ArmyIcon.class);
+        ;
         ConditionParser.parse(wrapper, query.getCondition());
-        return wrapper.page(query.toPage());
+        return wrapper.page(query.toPage(ArmyIcon.class));
     }
-
 
 
     @Override

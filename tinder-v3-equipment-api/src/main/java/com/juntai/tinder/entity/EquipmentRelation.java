@@ -2,16 +2,14 @@ package com.juntai.tinder.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-
 import com.juntai.tinder.entity.enums.EquipmentKind;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+
+import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author nemo

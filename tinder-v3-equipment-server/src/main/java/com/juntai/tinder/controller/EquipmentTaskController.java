@@ -26,7 +26,7 @@ public class EquipmentTaskController {
     private EquipmentTaskService equipmentTask;
 
     @GetMapping(value = "/{id}")
-    public EquipmentTask getById(@PathVariable("id") String id){
+    public EquipmentTask getById(@PathVariable("id") String id) {
         return equipmentTask.getById(id);
     }
 
@@ -64,11 +64,12 @@ public class EquipmentTaskController {
 
     /**
      * 分页查询
+     *
      * @param task
      * @return
      */
     @PostMapping("/page")
-    public Pagination<EquipmentTask> page(@RequestBody Query<EquipmentTaskCondition,EquipmentTask> task) {
+    public Pagination<EquipmentTask> page(@RequestBody Query<EquipmentTaskCondition, EquipmentTask> task) {
         return equipmentTask.page(task);
     }
 }

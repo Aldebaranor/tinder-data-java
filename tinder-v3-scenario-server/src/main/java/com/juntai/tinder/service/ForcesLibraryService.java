@@ -2,7 +2,6 @@ package com.juntai.tinder.service;
 
 import com.juntai.tinder.condition.ForcesLibraryCondition;
 import com.juntai.tinder.entity.ForcesLibrary;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.juntai.tinder.facade.ForcesLibraryFacade;
 import com.juntai.tinder.model.ForcesLibraryUpdateModel;
 
@@ -10,7 +9,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author nemo
@@ -29,11 +28,12 @@ public interface ForcesLibraryService extends ForcesLibraryFacade {
 
     /**
      * 获取更新过名称的ForcesLibrary
+     *
      * @param id
      * @param experimentId
      * @return
      */
-    ForcesLibrary getNewId(String id,String experimentId);
+    ForcesLibrary getNewId(String id, String experimentId);
 
     /**
      * 关联查询
@@ -66,7 +66,7 @@ public interface ForcesLibraryService extends ForcesLibraryFacade {
      * @param experimentId
      * @return
      */
-    String copyForces(String id , String experimentId);
+    String copyForces(String id, String experimentId);
 
 
     /**
@@ -101,14 +101,6 @@ public interface ForcesLibraryService extends ForcesLibraryFacade {
      */
 
     int deleteById(String id);
-
-    /**
-     * 主键批量删除
-     *
-     * @param ids 主键
-     * @return 影响记录行数
-     */
-    int deleteByIds(List<String> ids);
 
     /**
      * 查询所有兵力，不处理兵力搭载
@@ -162,13 +154,15 @@ public interface ForcesLibraryService extends ForcesLibraryFacade {
 
     /**
      * 修改兵力资源库的名字
+     *
      * @param id
      * @param newName
      */
-    void updateName(String id,String newName);
+    void updateName(String id, String newName);
 
     /**
      * modelde input 新增后 更新兵力的input,
+     *
      * @param forcesId
      */
     public void flashInput(String forcesId);

@@ -29,47 +29,47 @@ public enum PropertiesType implements I18nEnum<String> {
      */
     POLYLINE("Polyline"),
     /**
-     *曲线
+     * 曲线
      */
     CURVE("Curve"),
     /**
-     *弧
+     * 弧
      */
     ARC("Arc"),
     /**
-     *自由线
+     * 自由线
      */
     FREE_HAND_LINE("FreeHandLine"),
     /**
-     *圆
+     * 圆
      */
     CIRCLE("Circle"),
     /**
-     *多边形
+     * 多边形
      */
     POLYGON("Polygon"),
     /**
-     *矩形
+     * 矩形
      */
     RECTANGLE("RectAngle"),
     /**
-     *自由面
+     * 自由面
      */
     FREE_POLYGON("FreePolygon"),
     /**
-     *椭圆
+     * 椭圆
      */
     ELLIPSE("Ellipse"),
     /**
-     *弧面
+     * 弧面
      */
     LUNE("Lune"),
     /**
-     *扇形
+     * 扇形
      */
     SECTOR("Sector"),
     /**
-     *闭合曲面
+     * 闭合曲面
      */
     CLOSED_CURVE("ClosedCurve"),
 

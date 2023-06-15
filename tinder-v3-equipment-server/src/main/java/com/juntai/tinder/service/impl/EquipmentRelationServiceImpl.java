@@ -18,16 +18,17 @@ import java.util.UUID;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author nemo
  * @since 2023-05-07
  */
 @Service
-public class EquipmentRelationServiceImpl  implements EquipmentRelationService {
+public class EquipmentRelationServiceImpl implements EquipmentRelationService {
     @Autowired
     private EquipmentRelationMapper mapper;
+
     @Override
     @Transactional(readOnly = true)
     public EquipmentRelation getById(String id) {
@@ -37,7 +38,8 @@ public class EquipmentRelationServiceImpl  implements EquipmentRelationService {
     @Override
     @Transactional(readOnly = true)
     public List<EquipmentRelation> list(EquipmentRelationCondition condition) {
-        QueryChainWrapper<EquipmentRelation> wrapper = ChainWrappers.queryChain(EquipmentRelation.class);;
+        QueryChainWrapper<EquipmentRelation> wrapper = ChainWrappers.queryChain(EquipmentRelation.class);
+        ;
         ConditionParser.parse(wrapper, condition);
         return wrapper.list();
     }
@@ -45,11 +47,11 @@ public class EquipmentRelationServiceImpl  implements EquipmentRelationService {
     @Override
     @Transactional(readOnly = true)
     public Pagination<EquipmentRelation> page(Query<EquipmentRelationCondition, EquipmentRelation> query) {
-        QueryChainWrapper<EquipmentRelation> wrapper = ChainWrappers.queryChain(EquipmentRelation.class);;
+        QueryChainWrapper<EquipmentRelation> wrapper = ChainWrappers.queryChain(EquipmentRelation.class);
+        ;
         ConditionParser.parse(wrapper, query.getCondition());
-        return wrapper.page(query.toPage());
+        return wrapper.page(query.toPage(EquipmentRelation.class));
     }
-
 
 
     @Override
@@ -77,7 +79,11 @@ public class EquipmentRelationServiceImpl  implements EquipmentRelationService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void insertList(List<EquipmentRelation> list) {
-
+        list.forEach(q -> {
+            insert(q);
+        });
     }
+
 }

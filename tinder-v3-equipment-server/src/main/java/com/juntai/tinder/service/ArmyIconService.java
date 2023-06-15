@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author nemo
@@ -21,6 +21,7 @@ public interface ArmyIconService extends ArmyIconFacade {
 
     /**
      * 列表查询
+     *
      * @param condition
      * @return
      */
@@ -28,6 +29,7 @@ public interface ArmyIconService extends ArmyIconFacade {
 
     /**
      * 分页查询
+     *
      * @param query
      * @return
      */
@@ -36,17 +38,19 @@ public interface ArmyIconService extends ArmyIconFacade {
 
     /**
      * 更新
+     *
      * @param entity
      * @return
      */
-    int update(ArmyIcon entity) ;
+    int update(ArmyIcon entity);
 
     /**
      * 新增
+     *
      * @param entity
      * @return
      */
-    String insert(ArmyIcon entity) ;
+    String insert(ArmyIcon entity);
 
     /**
      * 主键删除
@@ -59,11 +63,11 @@ public interface ArmyIconService extends ArmyIconFacade {
 
     /**
      * 批量删除
+     *
      * @param ids
      * @return
      */
     int deleteByIds(List<String> ids);
-
 
 
 }

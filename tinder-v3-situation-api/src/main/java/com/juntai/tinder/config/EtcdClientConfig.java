@@ -21,21 +21,14 @@ import javax.annotation.PreDestroy;
 @Slf4j
 public class EtcdClientConfig {
 
-    private String etcdUrl;
-
-    private Client client;
-
-    private KV kv;
-
-    private Lock lock;
-
-    private Lease lease;
-
-    private Watch watch;
-
-    private Election election;
-
     private final String DOUHAO = ",";
+    private String etcdUrl;
+    private Client client;
+    private KV kv;
+    private Lock lock;
+    private Lease lease;
+    private Watch watch;
+    private Election election;
 
     @PostConstruct
     private void init() {

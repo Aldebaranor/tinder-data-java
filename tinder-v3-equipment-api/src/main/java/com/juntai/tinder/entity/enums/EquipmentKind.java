@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
  */
 @Getter
 @RequiredArgsConstructor
-@EnumDict(name="equipmentKindDict")
+@EnumDict(name = "equipmentKindDict")
 public enum EquipmentKind implements I18nEnum<String> {
 
     /**

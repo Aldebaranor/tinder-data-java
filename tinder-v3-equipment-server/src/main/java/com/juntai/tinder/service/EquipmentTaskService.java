@@ -20,6 +20,7 @@ import java.util.List;
 public interface EquipmentTaskService extends EquipmentTaskFacade {
     /**
      * 主键查询
+     *
      * @param id
      * @return
      */
@@ -27,6 +28,7 @@ public interface EquipmentTaskService extends EquipmentTaskFacade {
 
     /**
      * 列表查询
+     *
      * @param condition
      * @return
      */
@@ -34,6 +36,7 @@ public interface EquipmentTaskService extends EquipmentTaskFacade {
 
     /**
      * 分页查询
+     *
      * @param query
      * @return
      */
@@ -42,13 +45,15 @@ public interface EquipmentTaskService extends EquipmentTaskFacade {
 
     /**
      * 更新
+     *
      * @param entity
      * @return
      */
-    int update(EquipmentTask entity) ;
+    int update(EquipmentTask entity);
 
     /**
      * 批量新增
+     *
      * @param list
      * @return
      */
@@ -56,10 +61,11 @@ public interface EquipmentTaskService extends EquipmentTaskFacade {
 
     /**
      * 新增
+     *
      * @param entity
      * @return
      */
-    String insert(EquipmentTask entity) ;
+    String insert(EquipmentTask entity);
 
     /**
      * 主键删除
@@ -72,6 +78,7 @@ public interface EquipmentTaskService extends EquipmentTaskFacade {
 
     /**
      * 批量删除
+     *
      * @param ids
      * @return
      */

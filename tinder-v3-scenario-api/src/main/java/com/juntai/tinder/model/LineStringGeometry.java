@@ -1,6 +1,5 @@
 package com.juntai.tinder.model;
 
-import com.egova.model.BaseEntity;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -13,7 +12,7 @@ import java.util.List;
  * @Date: 2022/5/23
  */
 @Data
-public class LineStringGeometry extends BaseEntity {
+public class LineStringGeometry {
 
     private static final long serialVersionUID = -7245951426445646191L;
     private String id;

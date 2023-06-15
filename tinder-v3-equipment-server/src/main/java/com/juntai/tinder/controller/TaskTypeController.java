@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author nemo
@@ -31,7 +31,7 @@ public class TaskTypeController {
     private TaskTypeService taskTypeService;
 
     @Autowired
-    private  TaskTypeCache taskTypeCache;
+    private TaskTypeCache taskTypeCache;
 
     @GetMapping(value = "/{id}")
     public TaskType getById(@PathVariable("id") String id) {
@@ -56,10 +56,10 @@ public class TaskTypeController {
     @PostMapping
     public String insert(@RequestBody TaskType entity) {
         if (entity.getType() == null) {
-            throw new SoulBootException(TinderErrorCode.TINDER_TASK_TYPE_ERROR,"任务类型不能为空");
+            throw new SoulBootException(TinderErrorCode.TINDER_TASK_TYPE_ERROR, "任务类型不能为空");
         }
         if (StringUtils.isBlank(entity.getName())) {
-            throw new SoulBootException(TinderErrorCode.TINDER_TASK_TYPE_ERROR,"任务名称不能为空");
+            throw new SoulBootException(TinderErrorCode.TINDER_TASK_TYPE_ERROR, "任务名称不能为空");
         }
         return taskTypeService.insert(entity);
     }
@@ -92,7 +92,7 @@ public class TaskTypeController {
      * @return
      */
     @PostMapping("/page")
-    public Pagination<TaskType> page(@RequestBody Query<TaskTypeCondition,TaskType> query) {
+    public Pagination<TaskType> page(@RequestBody Query<TaskTypeCondition, TaskType> query) {
         return taskTypeService.page(query);
     }
 

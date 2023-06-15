@@ -1,6 +1,7 @@
 package com.juntai.tinder.condition;
 
 import com.juntai.soulboot.data.annotation.Eq;
+import com.juntai.soulboot.data.annotation.Like;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -24,7 +25,7 @@ public class ForcesCondition implements Serializable {
     @Eq(column = "team")
     private String team;
 
-    @Eq(column = "name")
+    @Like(column = "name")
     private String name;
 
 }

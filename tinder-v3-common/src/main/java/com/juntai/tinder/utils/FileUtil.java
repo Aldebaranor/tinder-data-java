@@ -90,7 +90,7 @@ public class FileUtil {
         try {
             file.createNewFile();
         } catch (IOException e) {
-            throw new SoulBootException(TinderErrorCode.FILE_ERROR,e);
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR, e);
         }
     }
 
@@ -113,7 +113,7 @@ public class FileUtil {
                 toFile = new File(Objects.requireNonNull(originalFilename));
                 inputStreamToFile(ins, toFile);
             } catch (IOException e) {
-                throw new SoulBootException(TinderErrorCode.FILE_ERROR,e);
+                throw new SoulBootException(TinderErrorCode.FILE_ERROR, e);
             }
         }
         return toFile;
@@ -133,7 +133,7 @@ public class FileUtil {
                 os.write(buffer, 0, bytesRead);
             }
         } catch (Exception e) {
-            throw new SoulBootException(TinderErrorCode.FILE_ERROR,e);
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR, e);
         }
     }
 
@@ -357,7 +357,7 @@ public class FileUtil {
         } catch (IOException e) {
             log.error("文件存储失败", e);
             // 抛出自己的异常
-            throw new SoulBootException(TinderErrorCode.FILE_ERROR,e);
+            throw new SoulBootException(TinderErrorCode.FILE_ERROR, e);
         }
     }
 

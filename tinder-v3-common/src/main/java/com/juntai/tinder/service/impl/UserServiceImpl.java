@@ -16,9 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Service Impl
@@ -42,10 +40,17 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     @Transactional(readOnly = true)
+    public User getById(String id) {
+
+        return userMapper.selectById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public Pagination<User> page(Query<UserCondition, User> query) {
         QueryChainWrapper<User> wrapper = ChainWrappers.queryChain(User.class);
         ConditionParser.parse(wrapper, query.getCondition());
-        return wrapper.page(query.toPage());
+        return wrapper.page(query.toPage(User.class));
     }
 
     @Override
@@ -69,16 +74,5 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return u == null ? null : new DefaultUserDetails(u.getId(), username, u.getPassword());
     }
 
-    @Override
-    public Set<String> loadRoleByUsername(String username) {
-        // 返回账号分配的角色
-        return Collections.emptySet();
-    }
-
-    @Override
-    public Set<String> loadPermissionByUsername(String username) {
-        // 返回账号分配的权限
-        return Collections.emptySet();
-    }
 
 }

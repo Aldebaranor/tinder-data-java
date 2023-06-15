@@ -17,10 +17,10 @@ import java.util.List;
 
 
 /**
-* @Description:
-* @Author: nemo
-* @Date: 2023/2/9
-*/
+ * @Description:
+ * @Author: nemo
+ * @Date: 2023/2/9
+ */
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -36,7 +36,7 @@ public class EquipmentTaskInitTask {
         try {
             List<Equipment> all = equipmentFacade.getAll();
             List<EquipmentTask> tasks = new ArrayList<>();
-            for(Equipment equipment : all) {
+            for (Equipment equipment : all) {
                 if (equipment.getType() != CategoryType.ARM) {
                     continue;
                 }

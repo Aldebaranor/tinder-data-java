@@ -16,7 +16,7 @@ public class EquipmentRelationCondition implements Serializable {
     @Eq(column = "id")
     private String id;
 
-    @Eq(column= "equipment_id")
+    @Eq(column = "equipment_id")
     private String equipmentId;
 
     @Eq(column = "belong_id")

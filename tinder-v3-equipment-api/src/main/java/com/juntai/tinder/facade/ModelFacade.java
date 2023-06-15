@@ -2,8 +2,6 @@ package com.juntai.tinder.facade;
 
 import com.juntai.tinder.condition.ModelCondition;
 import com.juntai.tinder.entity.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -55,14 +53,6 @@ public interface ModelFacade {
 
     String insert(Model entity);
 
-    /**
-     * 更新
-     *
-     * @param entity
-     * @return OperateResult
-     */
-
-    void update(Model entity);
 
     /**
      * 主键删除
@@ -76,6 +66,8 @@ public interface ModelFacade {
     List<Model> list(ModelCondition condition);
 
     Model getById(String id);
+
+    Model seek(Model model);
 
 
 //    /**

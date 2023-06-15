@@ -32,6 +32,7 @@ public interface RcsDataFacade {
 
     /**
      * 批量删除
+     *
      * @param list
      */
     void insertList(List<RcsData> list);
@@ -41,7 +42,7 @@ public interface RcsDataFacade {
      *
      * @param entity
      */
-    void update(RcsData entity);
+    int update(RcsData entity);
 
     /**
      * 主键删除

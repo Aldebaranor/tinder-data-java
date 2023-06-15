@@ -1,6 +1,5 @@
 package com.juntai.tinder.service.impl;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
 import com.baomidou.mybatisplus.extension.conditions.update.LambdaUpdateChainWrapper;
@@ -25,9 +24,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -39,11 +39,11 @@ import java.util.stream.Collectors;
  * @since 2023-05-07
  */
 @Service
-public class EquipmentServiceImpl  implements EquipmentService {
+public class EquipmentServiceImpl implements EquipmentService {
     @Autowired
     private EquipmentMapper mapper;
     @Autowired
-    private  EquipmentMapper equipmentMapper;
+    private EquipmentMapper equipmentMapper;
     @Autowired
     private EquipmentCache equipmentCache;
     @Autowired
@@ -59,46 +59,44 @@ public class EquipmentServiceImpl  implements EquipmentService {
 
     @Autowired
     private OrganizationService organizationService;
+
     @Override
     @Transactional(readOnly = true)
     public Equipment getById(String id) {
         Equipment equipment = mapper.selectById(id);
-
-        if(equipment != null){
-            Organization byId = organizationService.getById(equipment.getDepartmentId());
-            equipment.setDepartmentName(byId==null ? "" : byId.getName());
-            equipment.setEquipmentTypeName(equipmentTypeFacade.getNameById(equipment.getEquipmentType()));
-            if(equipment.getCountry() != null){
-                equipment.setCountryFlag(String.format("%s.jpg",equipment.getCountry().name()));
-            }
-        }
-
-        return equipment;
+        return equipmentBuild(equipment);
     }
 
     @Override
     @Transactional(readOnly = true)
     public Equipment seekById(String id) {
         Equipment seek = seek(getById(id));
-        if(seek != null){
-            Organization byId = organizationService.getById(seek.getDepartmentId());
-            seek.setDepartmentName(byId==null ? "" : byId.getName());
-            seek.setEquipmentTypeName(equipmentTypeFacade.getNameById(seek.getEquipmentType()));
-            if(seek.getCountry() != null){
-                seek.setCountryFlag(String.format("%s.jpg",seek.getCountry().name()));
-            }
-
+        if (seek != null) {
+            seek = equipmentBuild(seek);
         }
         return seek;
-        
+
     }
 
-    public Equipment seek(Equipment equipment){
+    public Equipment equipmentBuild(Equipment equipment) {
+        if (equipment != null) {
+            Organization byId = organizationService.getById(equipment.getDepartmentId());
+            equipment.setDepartmentName(byId == null ? "" : byId.getName());
+            equipment.setEquipmentTypeName(equipmentTypeFacade.getNameById(equipment.getEquipmentType()));
+            if (equipment.getCountry() != null) {
+                equipment.setCountryFlag(String.format("%s.jpg", equipment.getCountry().name()));
+            }
+        }
+        return equipment;
+    }
+
+    @Override
+    public Equipment seek(Equipment equipment) {
         if (equipment == null) {
             return null;
         }
         List<EquipmentRelation> relations = new LambdaQueryChainWrapper<>(equipmentRelationMapper)
-                .eq(EquipmentRelation::getBelongId,equipment.getId()).list();
+                .eq(EquipmentRelation::getBelongId, equipment.getId()).list();
 
         Map<EquipmentKind, List<EquipmentRelation>> relationsMap = relations.stream()
                 .collect(Collectors.groupingBy(EquipmentRelation::getKind));
@@ -108,23 +106,23 @@ public class EquipmentServiceImpl  implements EquipmentService {
 
         List<EquipmentCarry> carries = new LambdaQueryChainWrapper<>(equipmentCarryMapper)
                 .eq(EquipmentCarry::getBelongId, equipment.getId())
-                .eq(EquipmentCarry::getKind,"0").list();
+                .eq(EquipmentCarry::getKind, "0").list();
 
         List<EquipmentCarry> weaponCarries = new LambdaQueryChainWrapper<>(equipmentCarryMapper)
                 .eq(EquipmentCarry::getBelongId, equipment.getId())
-                .eq(EquipmentCarry::getKind,"1").list();
+                .eq(EquipmentCarry::getKind, "1").list();
 
         relations.forEach(equipmentRelation -> {
             if (equipmentRelation.getKind().equals(EquipmentKind.WEAPON)) {
                 //属于武器，添加弹药搭载
 
                 List<EquipmentCarry> equipmentCarries = new LambdaQueryChainWrapper<>(equipmentCarryMapper)
-                        .eq(EquipmentCarry::getBelongId,equipmentRelation.getEquipmentId()).list();
+                        .eq(EquipmentCarry::getBelongId, equipmentRelation.getEquipmentId()).list();
                 weaponCarries.addAll(equipmentCarries);
             }
         });
 
-        List<RcsData> rcs = new LambdaQueryChainWrapper<>(rcsDataMapper).eq(RcsData::getGroupId,equipment.getId()).list();
+        List<RcsData> rcs = new LambdaQueryChainWrapper<>(rcsDataMapper).eq(RcsData::getGroupId, equipment.getId()).list();
         equipment.setRelations(relationsMap);
         equipment.setDetail(equipmentDetail);
         equipment.setCarries(carries);
@@ -133,22 +131,17 @@ public class EquipmentServiceImpl  implements EquipmentService {
         return equipment;
 
 
-
     }
 
     @Override
     @Transactional(readOnly = true)
     public List<Equipment> list(EquipmentCondition condition) {
-        QueryChainWrapper<Equipment> wrapper = ChainWrappers.queryChain(Equipment.class);;
+        QueryChainWrapper<Equipment> wrapper = ChainWrappers.queryChain(Equipment.class);
+        ;
         ConditionParser.parse(wrapper, condition);
         List<Equipment> list = wrapper.list();
-        list.forEach(q->{
-            Organization byId = organizationService.getById(q.getDepartmentId());
-            q.setDepartmentName(byId==null ? "" : byId.getName());
-            q.setEquipmentTypeName(equipmentTypeFacade.getNameById(q.getEquipmentType()));
-            if(q.getCountry() != null){
-                q.setCountryFlag(String.format("%s.jpg",q.getCountry().name()));
-            }
+        list.forEach(q -> {
+            q = equipmentBuild(q);
         });
         return list;
     }
@@ -156,18 +149,18 @@ public class EquipmentServiceImpl  implements EquipmentService {
     @Override
     @Transactional(readOnly = true)
     public Pagination<Equipment> page(Query<EquipmentCondition, Equipment> query) {
-        QueryChainWrapper<Equipment> wrapper = ChainWrappers.queryChain(Equipment.class);;
+        QueryChainWrapper<Equipment> wrapper = ChainWrappers.queryChain(Equipment.class);
+        ;
         ConditionParser.parse(wrapper, query.getCondition());
-        Pagination<Equipment> page = wrapper.page(query.toPage());
-        page.getList().forEach(q->{
-            q.setDepartmentName("");
-            q.setEquipmentTypeName("");
-            q.setCountryFlag("");
+        Pagination<Equipment> page = wrapper.page(query.toPage(Equipment.class));
+        page.getList().forEach(q -> {
+            q = equipmentBuild(q);
         });
         return page;
     }
 
     @Override
+    @Transactional()
     public int update(Equipment entity) {
         check(entity);
         entity.setModifier(UserContext.username());
@@ -184,19 +177,19 @@ public class EquipmentServiceImpl  implements EquipmentService {
 
             } else {
                 LambdaUpdateChainWrapper<EquipmentDetail> lambdaUpdateChainWrapper = new LambdaUpdateChainWrapper<>(equipmentDetailMapper);
-                lambdaUpdateChainWrapper.eq(EquipmentDetail::getId,entity.getDetail().getId())
-                        .eq(EquipmentDetail::getEquipmentId,entity.getId())
-                        .set(EquipmentDetail::getAttributeInfo,entity.getDetail().getAttributeInfo()).update();
+                lambdaUpdateChainWrapper.eq(EquipmentDetail::getId, entity.getDetail().getId())
+                        .eq(EquipmentDetail::getEquipmentId, entity.getId())
+                        .set(EquipmentDetail::getAttributeInfo, entity.getDetail().getAttributeInfo()).update();
             }
 
         }
-        equipmentCache.setCacheData(entity.getId(), entity);
+        equipmentCache.clearCacheData(entity.getId());
         return i;
     }
 
     @Override
+    @Transactional
     public String insert(Equipment entity) {
-
 
         check(entity);
         String id = getNewId(entity.getEquipmentType());
@@ -218,40 +211,38 @@ public class EquipmentServiceImpl  implements EquipmentService {
     }
 
 
-
-
-
     @Override
     public int deleteById(String id) {
-        return mapper.deleteById(id);
+        int i = mapper.deleteById(id);
+        equipmentCache.clearCacheData(id);
+        return i;
     }
 
     @Override
     public int deleteByIds(List<String> ids) {
-        return mapper.deleteBatchIds(ids);
+        int i = mapper.deleteBatchIds(ids);
+        equipmentCache.clearCacheDataList(ids);
+        return i;
     }
 
-    
-
-    @Override
-    public Map<String, String> getNameMapById() {
-        return null;
-    }
-
-    @Override
-    public Map<String, String> getDepartmentIdMapById() {
-        return null;
-    }
 
     @Override
     public List<Equipment> getAll() {
-        return new LambdaQueryChainWrapper<>(equipmentMapper).list();
+        List<Equipment> list = new LambdaQueryChainWrapper<>(equipmentMapper).list();
+        list.forEach(q -> {
+            q = equipmentBuild(q);
+        });
+        return list;
     }
 
     @Override
     public List<Equipment> getModelsByType(String equipmentType) {
-        return new LambdaQueryChainWrapper<>(equipmentMapper)
-                .likeRight(Equipment::getEquipmentType,equipmentType).list();
+        List<Equipment> list = new LambdaQueryChainWrapper<>(equipmentMapper)
+                .likeRight(Equipment::getEquipmentType, equipmentType).list();
+        list.forEach(q -> {
+            q = equipmentBuild(q);
+        });
+        return list;
     }
 
     private String getPicture(String equipmentType) {
@@ -272,7 +263,7 @@ public class EquipmentServiceImpl  implements EquipmentService {
         } else if (equipmentType.startsWith("30206")) {
             if (equipmentType.startsWith("3020602")) {
                 return "甲藻受激光发光探测.png";
-            }else if (equipmentType.startsWith("3020603")) {
+            } else if (equipmentType.startsWith("3020603")) {
                 return "仿生附着网探测.png";
             } else if (equipmentType.startsWith("3020604")) {
                 return "电测阵列探测.png";
@@ -306,7 +297,7 @@ public class EquipmentServiceImpl  implements EquipmentService {
 
     private String getNewId(String equipmentType) {
         List<Equipment> query = new LambdaQueryChainWrapper<>(equipmentMapper)
-                .eq(Equipment::getEquipmentType,equipmentType).list();
+                .eq(Equipment::getEquipmentType, equipmentType).list();
         Long max = 0L;
         for (Equipment equipment : query) {
             String replace = equipment.getId().replaceFirst(equipmentType, "");
@@ -322,14 +313,14 @@ public class EquipmentServiceImpl  implements EquipmentService {
 
     private void check(Equipment entity) {
         if (StringUtils.isAnyBlank(entity.getName(), entity.getDepartmentId())) {
-            throw new SoulBootException(TinderErrorCode.TINDER_EQUIPMENT_ERROR,"名称或部门不能为空");
+            throw new SoulBootException(TinderErrorCode.TINDER_EQUIPMENT_ERROR, "名称或部门不能为空");
         }
         boolean exists = new LambdaQueryChainWrapper<>(equipmentMapper)
                 .eq(Equipment::getName, entity.getName())
                 .ne(Equipment::getId, entity.getId()).exists();
 
         if (exists) {
-            throw new SoulBootException(TinderErrorCode.TINDER_EQUIPMENT_ERROR,"名称重复");
+            throw new SoulBootException(TinderErrorCode.TINDER_EQUIPMENT_ERROR, "名称重复");
         }
     }
 

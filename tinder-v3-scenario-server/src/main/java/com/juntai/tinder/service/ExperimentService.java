@@ -4,10 +4,7 @@ import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
 import com.juntai.tinder.condition.ExperimentCondition;
 import com.juntai.tinder.entity.Experiment;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.juntai.tinder.facade.ExperimentFacade;
-
-import java.util.List;
 
 /**
  * <p>
@@ -25,15 +22,8 @@ public interface ExperimentService extends ExperimentFacade {
      * @param query QueryModel
      * @return 分页数据
      */
-    Pagination<Experiment> page(Query<ExperimentCondition,Experiment> query);
+    Pagination<Experiment> page(Query<ExperimentCondition, Experiment> query);
 
-    /**
-     * 主键批量删除
-     *
-     * @param ids 主键
-     * @return 影响记录行数
-     */
-    int deleteByIds(List<String> ids);
 
     /**
      * 复制想定

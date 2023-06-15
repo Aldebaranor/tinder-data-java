@@ -4,7 +4,6 @@ import com.juntai.tinder.entity.EquipmentType;
 import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -48,10 +47,11 @@ public interface EquipmentTypeFacade {
 
     /**
      * 根据id 找名称
+     *
      * @param id
      * @return
      */
-    @Cacheable(cacheNames = "soul:cache:equipment-type:name",key = "'id:'+#p0")
+    @Cacheable(cacheNames = "soul:cache:equipment-type:name", key = "'id:'+#p0")
     String getNameById(String id);
 
 }

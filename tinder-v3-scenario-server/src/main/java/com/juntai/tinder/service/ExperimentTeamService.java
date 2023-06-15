@@ -4,14 +4,13 @@ import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
 import com.juntai.tinder.condition.ExperimentTeamCondition;
 import com.juntai.tinder.entity.ExperimentTeam;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.juntai.tinder.facade.ExperimentTeamFacade;
 
 import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author nemo
@@ -25,7 +24,7 @@ public interface ExperimentTeamService extends ExperimentTeamFacade {
      * @param model QueryModel
      * @return 分页数据
      */
-    Pagination<ExperimentTeam> page(Query<ExperimentTeamCondition,ExperimentTeam> model);
+    Pagination<ExperimentTeam> page(Query<ExperimentTeamCondition, ExperimentTeam> model);
 
     /**
      * 主键批量删除

@@ -2,13 +2,13 @@ package com.juntai.tinder.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.time.LocalDateTime;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -73,9 +73,9 @@ public class MapPoint implements Serializable {
      */
     private Object zoom;
 
-    private Integer disabled;
+    private Boolean disabled;
 
-    private Integer beDefault;
+    private Boolean beDefault;
 
     /**
      * 创建时间

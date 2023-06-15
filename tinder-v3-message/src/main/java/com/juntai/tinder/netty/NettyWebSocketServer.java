@@ -1,7 +1,6 @@
 package com.juntai.tinder.netty;
 
 
-import com.juntai.tinder.netty.handler.MyChannelHandler;
 import com.juntai.tinder.netty.handler.WebSocketHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -10,7 +9,6 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
-import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
 import lombok.Data;
@@ -51,10 +49,10 @@ public class NettyWebSocketServer implements Runnable {
     @PreDestroy
     public void stop() {
 
-            System.out.println("websocket已启动");
-            group.shutdownGracefully();
-            bossGroup.shutdownGracefully();
-            channel.close();
+        System.out.println("websocket已启动");
+        group.shutdownGracefully();
+        bossGroup.shutdownGracefully();
+        channel.close();
 
 
     }

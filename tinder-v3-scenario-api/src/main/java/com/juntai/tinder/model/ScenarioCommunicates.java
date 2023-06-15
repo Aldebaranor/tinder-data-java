@@ -3,7 +3,6 @@ package com.juntai.tinder.model;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * @ClassName LinkModel
@@ -30,7 +29,7 @@ public class ScenarioCommunicates implements Serializable {
      */
     private String type;
 
-    private List<CommunicatesLink> destination;
+//    private List<CommunicatesLink> destination;
 
 
 }

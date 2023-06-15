@@ -21,7 +21,6 @@ public interface EquipmentTaskFacade {
     EquipmentTask getById(String id);
 
 
-
     /**
      * 获取所有
      *
@@ -31,6 +30,7 @@ public interface EquipmentTaskFacade {
 
     /**
      * 包含任务的装备
+     *
      * @param task
      * @return
      */

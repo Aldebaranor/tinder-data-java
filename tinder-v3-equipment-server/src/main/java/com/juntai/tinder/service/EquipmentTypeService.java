@@ -5,13 +5,12 @@ import com.juntai.soulboot.data.Query;
 import com.juntai.tinder.condition.EquipmentTypeCondition;
 import com.juntai.tinder.entity.EquipmentType;
 import com.juntai.tinder.facade.EquipmentTypeFacade;
-import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author nemo
@@ -22,6 +21,7 @@ public interface EquipmentTypeService extends EquipmentTypeFacade {
 
     /**
      * 列表查询
+     *
      * @param condition
      * @return
      */
@@ -29,6 +29,7 @@ public interface EquipmentTypeService extends EquipmentTypeFacade {
 
     /**
      * 分页查询
+     *
      * @param query
      * @return
      */
@@ -37,17 +38,19 @@ public interface EquipmentTypeService extends EquipmentTypeFacade {
 
     /**
      * 更新
+     *
      * @param entity
      * @return
      */
-    int update(EquipmentType entity) ;
+    int update(EquipmentType entity);
 
     /**
      * 新增
+     *
      * @param entity
      * @return
      */
-    String insert(EquipmentType entity) ;
+    String insert(EquipmentType entity);
 
     /**
      * 主键删除
@@ -60,6 +63,7 @@ public interface EquipmentTypeService extends EquipmentTypeFacade {
 
     /**
      * 批量删除
+     *
      * @param ids
      * @return
      */

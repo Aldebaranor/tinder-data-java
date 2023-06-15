@@ -23,5 +23,4 @@ public class EtcdData implements Serializable {
     private String hostIp;
 
 
-
 }

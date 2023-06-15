@@ -1,19 +1,36 @@
 package com.juntai.tinder.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
+import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
+import com.baomidou.mybatisplus.extension.toolkit.ChainWrappers;
+import com.juntai.soulboot.common.exception.SoulBootException;
+import com.juntai.soulboot.data.ConditionParser;
 import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
+import com.juntai.soulboot.data.Sort;
+import com.juntai.soulboot.util.JsonUtils;
 import com.juntai.tinder.condition.ForcesPlanCondition;
+import com.juntai.tinder.entity.Forces;
 import com.juntai.tinder.entity.ForcesPlan;
+import com.juntai.tinder.exception.TinderErrorCode;
+import com.juntai.tinder.mapper.ForcesMapper;
 import com.juntai.tinder.mapper.ForcesPlanMapper;
+import com.juntai.tinder.model.ForcesPlanBaseModel;
 import com.juntai.tinder.model.ForcesPlanModel;
 import com.juntai.tinder.service.ForcesPlanService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.juntai.tinder.utils.UUIDUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
 
 /**
  * <p>
@@ -26,90 +43,118 @@ import java.util.List;
 @Service
 public class ForcesPlanServiceImpl implements ForcesPlanService {
 
-    private final ForcesPlanRepository forcesPlanRepository;
+    @Autowired
+    private ForcesPlanMapper mapper;
 
-    private final ForcesRepository forcesRepository;
+    @Autowired
+    private ForcesMapper forcesMapper;
 
     @Override
     public ForcesPlan getById(String id) {
-        ForcesPlan forcesPlan = super.getById(id);
+        ForcesPlan forcesPlan = mapper.selectById(id);
         String plan = forcesPlan.getPlan();
         if (!StringUtils.isBlank(plan)) {
-            forcesPlan.setPlanInfo(JsonUtils.deserialize(plan, ForcesPlanBaseModel.class));
+            forcesPlan.setPlanInfo(JsonUtils.read(plan, ForcesPlanBaseModel.class));
         }
         return forcesPlan;
     }
 
     @Override
     public String insert(ForcesPlan entity) {
-        Forces byId = forcesRepository.getById(entity.getForcesId());
+        Forces byId = forcesMapper.selectById(entity.getForcesId());
         if (byId == null) {
-            throw ExceptionUtils.api("没有该兵力，请确认兵力ID");
+            throw new SoulBootException(TinderErrorCode.TINDER_FORCES_PLAN_ERROR, "没有该兵力，请确认兵力ID");
         }
+        String id = UUIDUtils.getHashUuid();
         entity.setTeam(byId.getTeam());
-        entity.setId(UUIDUtils.getHashUuid());
+        entity.setId(id);
         if (entity.getPlanInfo() != null) {
-            entity.setPlan(JsonUtils.serialize(entity.getPlanInfo()));
+            entity.setPlan(JsonUtils.write(entity.getPlanInfo()));
         }
-        entity.setCreateTime(new Timestamp(System.currentTimeMillis()));
-        return super.insert(entity);
+        entity.setCreateTime(LocalDateTime.now());
+        mapper.insert(entity);
+        return id;
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void insertList(List<ForcesPlan> entity) {
-        if (entity.getPlanInfo() != null) {
-            entity.setPlan(JsonUtils.serialize(entity.getPlanInfo()));
-        }
-        Forces byId = forcesRepository.getById(entity.getForcesId());
-        if (byId == null) {
-            throw ExceptionUtils.api("没有该兵力，请确认兵力ID");
-        }
-        entity.setTeam(byId.getTeam());
-        super.update(entity);
+        entity.forEach(q -> {
+            Forces byId = forcesMapper.selectById(q.getForcesId());
+            if (byId == null) {
+                throw new SoulBootException(TinderErrorCode.TINDER_FORCES_PLAN_ERROR, "没有该兵力，请确认兵力ID");
+            }
+            String id = UUIDUtils.getHashUuid();
+            q.setTeam(byId.getTeam());
+            q.setId(id);
+            if (q.getPlanInfo() != null) {
+                q.setPlan(JsonUtils.write(q.getPlanInfo()));
+            }
+            q.setCreateTime(LocalDateTime.now());
+            mapper.insert(q);
+        });
     }
 
     @Override
     public void update(ForcesPlan entity) {
-
+        Forces byId = forcesMapper.selectById(entity.getForcesId());
+        if (byId == null) {
+            throw new SoulBootException(TinderErrorCode.TINDER_FORCES_PLAN_ERROR, "没有该兵力，请确认兵力ID");
+        }
+        if (entity.getPlanInfo() != null) {
+            entity.setPlan(JsonUtils.write(entity.getPlanInfo()));
+        }
+        entity.setTeam(byId.getTeam());
+        mapper.updateById(entity);
     }
 
     @Override
     public int deleteById(String id) {
-        return 0;
+        return mapper.deleteById(id);
     }
 
     @Override
     public int deleteByIds(List<String> ids) {
-        return 0;
+        return mapper.deleteBatchIds(ids);
     }
 
     @Override
     public List<ForcesPlan> list(ForcesPlanCondition condition) {
-        return super.query(condition, SortingBuilder.create().asc("createTime").toSorts());
+        QueryChainWrapper<ForcesPlan> wrapper = ChainWrappers.queryChain(ForcesPlan.class);
+        ;
+        ConditionParser.parse(wrapper, condition);
+        return wrapper.orderByDesc("create_time").list();
     }
 
     @Override
-    public Pagination<ForcesPlan> page(Query<ForcesPlanCondition, ForcesPlan> model) {
-        if(model.getSorts() == null){
-            model.setSorts(SortingBuilder.create().asc("createTime").toSorts());
+    public Pagination<ForcesPlan> page(Query<ForcesPlanCondition, ForcesPlan> query) {
+        if (CollectionUtils.isEmpty(query.getSorts())) {
+            Sort sort = new Sort();
+            sort.setColumn("create_time");
+            sort.setOrder(Sort.Order.DESC);
+            List<Sort> ts = new ArrayList<Sort>(Arrays.asList(sort));
+            query.setSorts(ts);
         }
-        return super.page(model.getCondition(), model.getPaging(), model.getSorts());
+        QueryChainWrapper<ForcesPlan> wrapper = ChainWrappers.queryChain(ForcesPlan.class);
+        ;
+        ConditionParser.parse(wrapper, query.getCondition());
+        return wrapper.page(query.toPage(ForcesPlan.class));
     }
 
     @Override
     public List<ForcesPlan> queryByExperiment(String experimentId, String forcesId, String team) {
-        ForcesPlanCondition forcesPlanCondition = new ForcesPlanCondition();
-        forcesPlanCondition.setExperimentId(experimentId);
+        LambdaQueryWrapper<ForcesPlan> wrap = new LambdaQueryWrapper<>();
+        wrap.eq(ForcesPlan::getExperimentId, experimentId);
         if (!StringUtils.isBlank(forcesId)) {
-            forcesPlanCondition.setForcesId(forcesId);
+            wrap.eq(ForcesPlan::getForcesId, forcesId);
         }
         if (!StringUtils.isBlank(team)) {
-            forcesPlanCondition.setTeam(team);
+            wrap.eq(ForcesPlan::getTeam, team);
         }
-        List<ForcesPlan> list = super.query(forcesPlanCondition, SortingBuilder.create().asc("createTime").toSorts());
+        List<ForcesPlan> list = mapper.selectList(wrap.orderByAsc(ForcesPlan::getCreateTime));
         for (ForcesPlan forcesPlan : list) {
             if (!StringUtils.isBlank(forcesPlan.getPlan())) {
-                forcesPlan.setPlanInfo(JsonUtils.deserialize(forcesPlan.getPlan(), ForcesPlanBaseModel.class));
+                forcesPlan.setPlanInfo(JsonUtils.read(forcesPlan.getPlan(), ForcesPlanBaseModel.class));
             }
         }
         return list;
@@ -118,11 +163,10 @@ public class ForcesPlanServiceImpl implements ForcesPlanService {
     @Override
     public List<ForcesPlanModel> getPlanModelExperiment(String experimentId) {
         List<ForcesPlanModel> list = new ArrayList<>();
-        ForcesPlanCondition forcesPlanCondition = new ForcesPlanCondition();
-        forcesPlanCondition.setExperimentId(experimentId);
-        List<ForcesPlan> query = super.query(forcesPlanCondition, SortingBuilder.create().asc("createTime").toSorts());
+        List<ForcesPlan> query = new LambdaQueryChainWrapper<>(mapper).eq(ForcesPlan::getExperimentId, experimentId)
+                .orderByAsc(ForcesPlan::getCreateTime).list();
         for (ForcesPlan plan : query) {
-            ForcesPlanBaseModel base = JsonUtils.deserialize(plan.getPlan(), ForcesPlanBaseModel.class);
+            ForcesPlanBaseModel base = JsonUtils.read(plan.getPlan(), ForcesPlanBaseModel.class);
             ForcesPlanModel model = new ForcesPlanModel();
             model.setForcesId(Long.valueOf(plan.getForcesId()));
             model.setId(Long.valueOf(plan.getId()));

@@ -1,8 +1,8 @@
 package com.juntai.tinder.model;
 
-import com.egova.entity.Person;
-import com.soul.tinder.entity.Experiment;
-import com.soul.tinder.entity.MapPoint;
+import com.juntai.tinder.entity.Experiment;
+import com.juntai.tinder.entity.MapPoint;
+import com.juntai.tinder.entity.User;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -21,11 +21,11 @@ public class ExperimentModel implements Serializable {
 
     private Experiment experiment;
 
-    private List<Person> personsRed = new ArrayList<>();
+    private List<User> personsRed = new ArrayList<>();
 
-    private List<Person> personsBlue = new ArrayList<>();
+    private List<User> personsBlue = new ArrayList<>();
 
-    private List<Person> personsWhite = new ArrayList<>();
+    private List<User> personsWhite = new ArrayList<>();
 
     private MapPoint point;
 

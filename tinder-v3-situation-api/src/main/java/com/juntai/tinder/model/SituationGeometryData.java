@@ -44,7 +44,6 @@ public class SituationGeometryData implements Serializable {
     private List<SituationPoint> properties;
 
 
-
     @Override
     public String toString() {
         List<String> resultList = properties.stream().map(situationPoint -> {

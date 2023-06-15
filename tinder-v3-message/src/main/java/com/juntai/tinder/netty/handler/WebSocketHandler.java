@@ -6,11 +6,7 @@ import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
 
 /**
  * @Description: $
@@ -36,7 +32,7 @@ public class WebSocketHandler extends SimpleChannelInboundHandler<TextWebSocketF
         MyChannelHandler.simIdMap.remove(ctx.channel().id());
         //触发仿真运行线程关闭的逻辑
         EventPublisher eventPublisher = ApplicationContextProvider.getBean(EventPublisher.class);
-        eventPublisher.publish("CLOSE_CHANNEL#"+ simId);
+        eventPublisher.publish("CLOSE_CHANNEL#" + simId);
     }
 
     @Override
@@ -59,7 +55,7 @@ public class WebSocketHandler extends SimpleChannelInboundHandler<TextWebSocketF
         }
     }
 
-    public void sendAllMessage(String simId,String topic,String msg) {
+    public void sendAllMessage(String simId, String topic, String msg) {
         for (Channel channel : MyChannelHandler.channelGroup) {
 //            String id = MyChannelHandler.simIdMap.get(channel.id());
 //            if(StringUtils.isEmpty(id)){
@@ -69,11 +65,9 @@ public class WebSocketHandler extends SimpleChannelInboundHandler<TextWebSocketF
 //            if(!StringUtils.equals(id,simId)){
 //                continue;
 //            }
-            channel.writeAndFlush(new TextWebSocketFrame(String.format("%s$%s$%s",simId,topic,msg)));
+            channel.writeAndFlush(new TextWebSocketFrame(String.format("%s$%s$%s", simId, topic, msg)));
         }
     }
-
-
 
 
 }

@@ -19,7 +19,6 @@ public final class UUIDUtils {
     }
 
 
-
     public static String getHashUuid() {
 
         return String.valueOf(UUID.randomUUID().toString().hashCode() & Integer.MAX_VALUE);

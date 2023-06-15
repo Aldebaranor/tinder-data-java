@@ -19,5 +19,4 @@ public interface ArmyIconFacade {
     ArmyIcon getById(String id);
 
 
-
 }

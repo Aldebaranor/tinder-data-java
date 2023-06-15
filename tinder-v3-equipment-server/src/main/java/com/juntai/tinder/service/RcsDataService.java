@@ -4,14 +4,13 @@ import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
 import com.juntai.tinder.condition.RcsDataCondition;
 import com.juntai.tinder.entity.RcsData;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.juntai.tinder.facade.RcsDataFacade;
 
 import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author nemo
@@ -22,10 +21,10 @@ public interface RcsDataService extends RcsDataFacade {
     /**
      * 分页查询
      *
-     * @param model QueryModel
+     * @param query QueryModel
      * @return 分页数据
      */
-    Pagination<RcsData> page(Query<RcsDataCondition,RcsData> model);
+    Pagination<RcsData> page(Query<RcsDataCondition, RcsData> query);
 
     /**
      * 主键批量删除

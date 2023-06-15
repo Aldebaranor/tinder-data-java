@@ -51,7 +51,7 @@ public class EtcdServiceImpl implements EtcdService {
             });
             return list;
         } catch (Exception ex) {
-            throw new SoulBootException(TinderErrorCode.ETCD_ERROR,"获取Etcd数据失败");
+            throw new SoulBootException(TinderErrorCode.ETCD_ERROR, "获取Etcd数据失败");
         }
 
     }
@@ -78,7 +78,7 @@ public class EtcdServiceImpl implements EtcdService {
             });
             return list;
         } catch (Exception ex) {
-            throw new SoulBootException(TinderErrorCode.ETCD_ERROR,"获取Etcd状态失败");
+            throw new SoulBootException(TinderErrorCode.ETCD_ERROR, "获取Etcd状态失败");
         }
     }
 

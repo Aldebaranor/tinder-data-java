@@ -17,7 +17,6 @@ import java.io.Serializable;
 public class EquipmentCondition implements Serializable {
 
 
-
     @Eq(column = "id")
     private String id;
 

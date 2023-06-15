@@ -1,6 +1,5 @@
 package com.juntai.tinder.service.impl;
 
-import com.egova.json.utils.JsonUtils;
 import com.juntai.soulboot.util.JsonUtils;
 import com.juntai.tinder.entity.Experiment;
 import com.juntai.tinder.entity.Forces;
@@ -10,23 +9,13 @@ import com.juntai.tinder.model.GeometryModel;
 import com.juntai.tinder.model.ModelParameterBase;
 import com.juntai.tinder.model.Scenario;
 import com.juntai.tinder.service.*;
-import com.soul.tinder.entity.CommunicatesPlan;
-import com.soul.tinder.entity.Experiment;
-import com.soul.tinder.entity.Forces;
-import com.soul.tinder.entity.ForcesCarry;
-import com.soul.tinder.model.*;
-import com.soul.tinder.service.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Priority;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * @Description: $
@@ -42,7 +31,6 @@ public class ScenarioServiceImpl implements ScenarioService {
     private final ForcesService forcesService;
     private final MapGeometryService mapGeometryService;
     private final ForcesPlanService forcesPlanService;
-
 
 
     public Scenario getScenario(Experiment experiment) {
@@ -121,11 +109,9 @@ public class ScenarioServiceImpl implements ScenarioService {
         }
         String experimentId = experiment.getId();
 
-        List<String> forces = forcesService.queryByExperiment(experimentId,"1");
+        List<String> forces = forcesService.queryByExperiment(experimentId, "1");
         return forces.size();
     }
-
-
 
 
 }

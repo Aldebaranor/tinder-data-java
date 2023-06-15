@@ -1,7 +1,6 @@
 package com.juntai.tinder.facade;
 
 import com.juntai.tinder.entity.EquipmentDetail;
-import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * @Description:
@@ -19,8 +18,6 @@ public interface EquipmentDetailFacade {
      */
 
     EquipmentDetail getById(String id);
-
-
 
 
 }

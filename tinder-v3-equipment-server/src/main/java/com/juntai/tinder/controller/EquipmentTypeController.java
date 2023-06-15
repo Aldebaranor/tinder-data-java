@@ -3,20 +3,17 @@ package com.juntai.tinder.controller;
 import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
 import com.juntai.soulboot.web.api.ApiResultWrap;
-import com.juntai.tinder.condition.EquipmentCondition;
 import com.juntai.tinder.condition.EquipmentTypeCondition;
-import com.juntai.tinder.entity.Equipment;
 import com.juntai.tinder.entity.EquipmentType;
 import com.juntai.tinder.service.EquipmentTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author nemo
@@ -46,7 +43,6 @@ public class EquipmentTypeController {
     public String getNameById(@PathVariable String id) {
         return equipmentTypeService.getNameById(id);
     }
-
 
 
     @GetMapping(value = "/{id}/children")

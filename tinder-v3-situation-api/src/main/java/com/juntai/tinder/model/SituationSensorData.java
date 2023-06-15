@@ -43,5 +43,4 @@ public class SituationSensorData implements Serializable {
     }
 
 
-
 }

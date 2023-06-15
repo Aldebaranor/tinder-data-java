@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
  */
 @Getter
 @RequiredArgsConstructor
-@EnumDict(name="modelDict")
+@EnumDict(name = "modelDict")
 public enum ModelStatus implements I18nEnum<String> {
 
     /**

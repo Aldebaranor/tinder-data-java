@@ -1,13 +1,7 @@
 package com.juntai.tinder.condition;
 
-import com.juntai.soulboot.data.annotation.Eq;
-import com.juntai.soulboot.data.annotation.Gte;
 import com.juntai.soulboot.data.annotation.Like;
-import com.juntai.soulboot.data.annotation.Lte;
-import com.juntai.tinder.entity.enums.UserType;
 import lombok.Data;
-
-import java.time.LocalDateTime;
 
 /**
  * 条件

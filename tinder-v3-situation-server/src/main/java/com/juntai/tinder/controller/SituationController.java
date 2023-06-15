@@ -10,12 +10,10 @@ import com.juntai.tinder.config.entity.enums.OperateType;
 import com.juntai.tinder.exception.TinderErrorCode;
 import com.juntai.tinder.facade.ScenarioFacade;
 import com.juntai.tinder.model.*;
-import com.juntai.tinder.scenario.ScenarioResult;
 import com.juntai.tinder.service.ScenarioEventService;
 import com.juntai.tinder.service.SituationRedisManagement;
 import com.juntai.tinder.service.impl.EtcdServiceImpl;
 import com.juntai.tinder.task.ScheduledTask;
-
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +25,6 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.websocket.server.PathParam;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 
@@ -65,19 +62,20 @@ public class SituationController {
     private EtcdServiceImpl etcdService;
 
 
-
     /**
      * 获取该引擎下的etcd
+     *
      * @return
      */
     @GetMapping("/etcd/list")
-    public List<EtcdData> getEtcd(){
-       return etcdService.getEtcd();
+    public List<EtcdData> getEtcd() {
+        return etcdService.getEtcd();
 
     }
 
     /**
      * 准备试验，先判断是否改想定是否正在运行，运行则返回simId
+     *
      * @param code
      * @return
      */
@@ -85,19 +83,20 @@ public class SituationController {
     public String ready(@PathVariable String code) {
         //获取节点当前运行的想定
         List<ResponseRunningData> responseRunningData = queryRunning();
-        if(CollectionUtils.isEmpty(responseRunningData)){
+        if (CollectionUtils.isEmpty(responseRunningData)) {
             return "new scenario";
         }
         ResponseRunningData data = responseRunningData.stream().filter(q -> StringUtils.equals(code, q.getScenarioCode())).findFirst().orElse(null);
         if (data != null) {
             return data.getSimId();
-        }else{
+        } else {
             return "new scenario";
         }
     }
 
     /**
      * 开始仿真
+     *
      * @param scenarioStart
      * @return
      */
@@ -106,13 +105,13 @@ public class SituationController {
         //开始
         String code = scenarioStart.getCode();
         if (StringUtils.isBlank(code)) {
-            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"开始仿真失败,错误信息:想定名为空");
+            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "开始仿真失败,错误信息:想定名为空");
         }
         //获取节点当前运行的想定
         ScenarioModel scenarioModel = new ScenarioModel();
         Distribution distribution = scenarioStart.getDistribution();
         if (distribution == null || CollectionUtils.isEmpty(distribution.getTasks())) {
-            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"任务节点不能为空");
+            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "任务节点不能为空");
         }
         distribution.setSituation(distribution.getTasks().get(0));
         scenarioModel.setDistribution(distribution);
@@ -125,15 +124,15 @@ public class SituationController {
         log.info("--------------------------------------------------------------------------------------------------");
         log.info(JsonUtils.write(scenarioModel));
         log.info("--------------------------------------------------------------------------------------------------");
-        String taskId ="";
+        String taskId = "";
         try {
             ResponseEntity<ScenarioResult> responseGet = restTemplate.postForEntity(metaConfig.getSimulationUrlHead() + url, request, ScenarioResult.class);
             if (responseGet.getStatusCode() != HttpStatus.OK) {
-                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"开始仿真失败,错误信息:" + responseGet.getStatusCode());
+                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "开始仿真失败,错误信息:" + responseGet.getStatusCode());
             }
             ScenarioResult<String> result = responseGet.getBody();
             if (result.getHasError()) {
-                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"开始仿真失败,错误信息：" + result.getMessage());
+                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "开始仿真失败,错误信息：" + result.getMessage());
             }
             String serialize = JsonUtils.write(result.getResult());
             ResponseOperatorData responseData = JsonUtils.read(serialize, ResponseOperatorData.class);
@@ -145,7 +144,7 @@ public class SituationController {
             }
 
         } catch (Exception ex) {
-            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"开始仿真失败,错误信息:" + ex.getMessage());
+            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "开始仿真失败,错误信息:" + ex.getMessage());
         }
 
         return taskId;
@@ -171,7 +170,7 @@ public class SituationController {
         try {
             ResponseEntity<ScenarioResult> response = restTemplate.postForEntity(metaConfig.getSimulationUrlHead() + Constants.CONTROL_SCENARIO_URL, request, ScenarioResult.class);
             if (response.getStatusCode() != HttpStatus.OK) {
-                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"操作失败,错误信息:" + response.getStatusCode());
+                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "操作失败,错误信息:" + response.getStatusCode());
             }
             if (scenarioOperate.getType().equals(OperateType.STOP.getValue())) {
                 situationManagement.sendScenarioStop(scenarioOperate.getId());
@@ -181,18 +180,18 @@ public class SituationController {
             }
             ScenarioResult<String> result = response.getBody();
             if (result.getHasError()) {
-                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"操作失败,错误码：" + result.getMessage());
+                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "操作失败,错误码：" + result.getMessage());
             }
 
             return result.getResult();
         } catch (Exception ex) {
-            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"操作失败,错误信息:" + ex.getMessage());
+            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "操作失败,错误信息:" + ex.getMessage());
         }
 
     }
 
     @PostMapping("/conduct")
-    public String conduct(@RequestBody ForcesPlanModel plan)  {
+    public String conduct(@RequestBody ForcesPlanModel plan) {
         //开始
 
         HttpHeaders headers = new HttpHeaders();
@@ -204,22 +203,23 @@ public class SituationController {
             System.out.printf(JsonUtils.write(request));
             System.out.printf("----------conduct------------");
             if (response.getStatusCode() != HttpStatus.OK) {
-                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"导条失败,错误信息:" + response.getStatusCode());
+                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "导条失败,错误信息:" + response.getStatusCode());
             }
             ScenarioResult<String> result = response.getBody();
             if (result.getHasError()) {
-                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"导条失败,错误码：" + result.getMessage());
+                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "导条失败,错误码：" + result.getMessage());
             }
             return result.getResult();
         } catch (Exception ex) {
-            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"导条失败,错误信息:" + ex.getMessage());
+            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "导条失败,错误信息:" + ex.getMessage());
         }
 
     }
+
     @PostMapping("/incapacity/conduct/{simId}")
-    public String conductIncapacityList(@PathVariable String simId,@RequestBody List<String> ids) throws InterruptedException {
+    public String conductIncapacityList(@PathVariable String simId, @RequestBody List<String> ids) throws InterruptedException {
         //开始
-        for(String id :ids){
+        for (String id : ids) {
             ForcesPlanModel planModel = new ForcesPlanModel();
             planModel.setId(Long.valueOf(simId));
             planModel.setForcesId(Long.valueOf(id));
@@ -235,7 +235,6 @@ public class SituationController {
         }
         return "OK";
     }
-
 
 
     @GetMapping("/event/{simId}")
@@ -269,44 +268,44 @@ public class SituationController {
      */
 
     @GetMapping("/query/model")
-    public List<PropertyItem> queryModel(@PathParam(value = "orderId") String orderId, @PathParam(value = "forceId") String forceId)  throws InterruptedException {
+    public List<PropertyItem> queryModel(@PathParam(value = "orderId") String orderId, @PathParam(value = "forceId") String forceId) throws InterruptedException {
         try {
-            String url = String.format(Constants.QUERY_MODEL_URL,orderId,forceId);
-            ResponseEntity<ScenarioResult> response = restTemplate.getForEntity(metaConfig.getSimulationUrlHead() +url ,  ScenarioResult.class);
+            String url = String.format(Constants.QUERY_MODEL_URL, orderId, forceId);
+            ResponseEntity<ScenarioResult> response = restTemplate.getForEntity(metaConfig.getSimulationUrlHead() + url, ScenarioResult.class);
             if (response.getStatusCode() != HttpStatus.OK) {
-                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"请求模型失败,错误信息:" + response.getStatusCode());
+                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "请求模型失败,错误信息:" + response.getStatusCode());
             }
             ScenarioResult<String> result = response.getBody();
             if (result.getHasError()) {
-                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"请求模型失败,错误码：" + result.getMessage());
+                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "请求模型失败,错误码：" + result.getMessage());
             }
             String serialize = JsonUtils.write(result.getResult());
             List<PropertyItem> responseData = JsonUtils.readList(serialize, PropertyItem.class);
             return responseData;
         } catch (Exception ex) {
-            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"请求模型失败,错误信息:" + ex.getMessage());
+            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "请求模型失败,错误信息:" + ex.getMessage());
         }
     }
 
 
     @GetMapping("/query/running")
-    public List<ResponseRunningData> queryRunning()   {
-        List<ResponseRunningData> list =  new ArrayList<>();
+    public List<ResponseRunningData> queryRunning() {
+        List<ResponseRunningData> list = new ArrayList<>();
         try {
             String url = String.format(Constants.RUNNING_URL);
-            ResponseEntity<ScenarioResult> response = restTemplate.getForEntity(metaConfig.getSimulationUrlHead() +url ,  ScenarioResult.class);
+            ResponseEntity<ScenarioResult> response = restTemplate.getForEntity(metaConfig.getSimulationUrlHead() + url, ScenarioResult.class);
             if (response.getStatusCode() != HttpStatus.OK) {
-                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"请求正在运行的想定失败,错误信息:" + response.getStatusCode());
+                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "请求正在运行的想定失败,错误信息:" + response.getStatusCode());
             }
             ScenarioResult<String> result = response.getBody();
             if (result.getHasError()) {
-                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"请求正在运行的想定失败,错误码：" + result.getMessage());
+                throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "请求正在运行的想定失败,错误码：" + result.getMessage());
             }
             String serialize = JsonUtils.write(result.getResult());
             list = JsonUtils.readList(serialize, ResponseRunningData.class);
             return list;
         } catch (Exception ex) {
-            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR,"请求正在运行的想定失败,错误信息:" + ex.getMessage());
+            throw new SoulBootException(TinderErrorCode.SCENARIO_RUNTIME_ERROR, "请求正在运行的想定失败,错误信息:" + ex.getMessage());
         }
     }
 
@@ -332,8 +331,6 @@ public class SituationController {
 //        redisTemplate.opsForValue().set(key, scenario,10, TimeUnit.SECONDS);
 //        return true;
 //    }
-
-
 
 
     @GetMapping("/info/list/{order}")
@@ -405,7 +402,6 @@ public class SituationController {
         }
         return keys.size();
     }
-
 
 
 }

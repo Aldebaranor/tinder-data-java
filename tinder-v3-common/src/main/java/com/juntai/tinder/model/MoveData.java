@@ -55,7 +55,7 @@ public class MoveData implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("%s_%s_%s_%s_%s_%s_%s", lon, lat, alt, heading, roll, pitch, speed,life,remainingMileage);
+        return String.format("%s_%s_%s_%s_%s_%s_%s", lon, lat, alt, heading, roll, pitch, speed, life, remainingMileage);
     }
 
 

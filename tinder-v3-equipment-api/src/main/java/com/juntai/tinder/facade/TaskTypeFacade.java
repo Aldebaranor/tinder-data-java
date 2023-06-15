@@ -23,6 +23,7 @@ public interface TaskTypeFacade {
 
     /**
      * 获取所有
+     *
      * @return
      */
     List<TaskType> getAll();

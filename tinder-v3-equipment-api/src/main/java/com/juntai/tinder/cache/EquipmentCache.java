@@ -1,20 +1,17 @@
 package com.juntai.tinder.cache;
+
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
-import com.juntai.soulboot.common.exception.SoulBootException;
 import com.juntai.tinder.config.ApplicationContextProvider;
 import com.juntai.tinder.entity.Equipment;
-import com.juntai.tinder.exception.TinderErrorCode;
 import com.juntai.tinder.facade.EquipmentFacade;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.ExecutionException;
 
 /**
  * @author ：haungkang
@@ -25,10 +22,11 @@ import java.util.concurrent.ExecutionException;
 @Slf4j
 @RequiredArgsConstructor
 public class EquipmentCache {
-    protected Cache<String, Equipment> cache =  Caffeine.newBuilder()
+    protected Cache<String, Equipment> cache = Caffeine.newBuilder()
             .maximumSize(10_000)
             .expireAfterWrite(Duration.ofMinutes(10))
             .build();
+
     public Equipment getCacheData(String id) {
         EquipmentFacade equipmentFacade = ApplicationContextProvider.getBean(EquipmentFacade.class);
         return cache.get(id, key -> Optional.ofNullable(equipmentFacade.seekById(key)).orElse(new Equipment()));
@@ -46,11 +44,19 @@ public class EquipmentCache {
         cache.invalidate(defineId);
     }
 
+    public void clearCacheDataList(List<String> defineIds) {
+        defineIds.forEach(q -> {
+            cache.invalidate(q);
+        });
+
+    }
+
     public void refreshCache() {
         EquipmentFacade equipmentFacade = ApplicationContextProvider.getBean(EquipmentFacade.class);
         List<Equipment> all = equipmentFacade.getAll();
         for (Equipment equipment : all) {
-            setCacheData(equipment.getId(), equipment);
+            Equipment seek = equipmentFacade.seek(equipment);
+            setCacheData(seek.getId(), seek);
         }
     }
 }

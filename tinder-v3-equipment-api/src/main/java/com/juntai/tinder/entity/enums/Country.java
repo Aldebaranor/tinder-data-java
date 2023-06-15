@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-@EnumDict(name="countryDict")
+@EnumDict(name = "countryDict")
 public enum Country implements I18nEnum<String> {
 
 
@@ -50,15 +50,15 @@ public enum Country implements I18nEnum<String> {
      */
     JPN("JPN"),
     /**
-     *韩国
+     * 韩国
      */
     KOR("KOR"),
     /**
-     *朝鲜
+     * 朝鲜
      */
     PRK("PRK"),
     /**
-     *土耳其
+     * 土耳其
      */
     TUR("TUR"),
     /**

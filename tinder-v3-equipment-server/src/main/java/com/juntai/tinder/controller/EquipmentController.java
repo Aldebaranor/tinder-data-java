@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * <p>
@@ -26,7 +25,7 @@ import java.util.Map;
 public class EquipmentController {
 
     @Autowired
-    private  EquipmentService equipmentService;
+    private EquipmentService equipmentService;
 
     /**
      * 分页查询

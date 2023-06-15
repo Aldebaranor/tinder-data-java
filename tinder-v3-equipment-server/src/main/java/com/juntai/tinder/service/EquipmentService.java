@@ -19,6 +19,7 @@ import java.util.List;
 public interface EquipmentService extends EquipmentFacade {
     /**
      * 主键查询
+     *
      * @param id
      * @return
      */
@@ -26,6 +27,7 @@ public interface EquipmentService extends EquipmentFacade {
 
     /**
      * 列表查询
+     *
      * @param condition
      * @return
      */
@@ -33,6 +35,7 @@ public interface EquipmentService extends EquipmentFacade {
 
     /**
      * 分页查询
+     *
      * @param query
      * @return
      */
@@ -41,17 +44,19 @@ public interface EquipmentService extends EquipmentFacade {
 
     /**
      * 更新
+     *
      * @param entity
      * @return
      */
-    int update(Equipment entity) ;
+    int update(Equipment entity);
 
     /**
      * 新增
+     *
      * @param entity
      * @return
      */
-    String insert(Equipment entity) ;
+    String insert(Equipment entity);
 
     /**
      * 主键删除
@@ -64,11 +69,11 @@ public interface EquipmentService extends EquipmentFacade {
 
     /**
      * 批量删除
+     *
      * @param ids
      * @return
      */
     int deleteByIds(List<String> ids);
-
 
 
 }

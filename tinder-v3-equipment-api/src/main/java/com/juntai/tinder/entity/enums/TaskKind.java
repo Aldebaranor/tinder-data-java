@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
  */
 @Getter
 @RequiredArgsConstructor
-@EnumDict(name="taskKindDict")
+@EnumDict(name = "taskKindDict")
 public enum TaskKind implements I18nEnum<String> {
 
     /**
@@ -48,8 +48,7 @@ public enum TaskKind implements I18nEnum<String> {
     /**
      * 补给任务
      */
-    FEED("07")
-    ;
+    FEED("07");
 
     private final String value;
 }

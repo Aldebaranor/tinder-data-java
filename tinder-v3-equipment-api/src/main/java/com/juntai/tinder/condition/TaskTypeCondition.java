@@ -3,7 +3,6 @@ package com.juntai.tinder.condition;
 
 import com.juntai.soulboot.data.annotation.Eq;
 import com.juntai.soulboot.data.annotation.Like;
-import com.juntai.tinder.entity.TaskType;
 import com.juntai.tinder.entity.enums.TaskKind;
 import lombok.Data;
 

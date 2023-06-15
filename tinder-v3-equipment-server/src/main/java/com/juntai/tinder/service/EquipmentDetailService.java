@@ -1,11 +1,7 @@
 package com.juntai.tinder.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.juntai.soulboot.data.Pagination;
-import com.juntai.soulboot.data.Query;
 import com.juntai.tinder.entity.EquipmentDetail;
 import com.juntai.tinder.facade.EquipmentDetailFacade;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 

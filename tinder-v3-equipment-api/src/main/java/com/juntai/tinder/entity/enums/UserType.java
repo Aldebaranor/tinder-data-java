@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
  */
 @Getter
 @RequiredArgsConstructor
-@EnumDict(name="userTypeDict")
+@EnumDict(name = "userTypeDict")
 public enum UserType implements I18nEnum<Integer> {
 
     ADMIN(0),

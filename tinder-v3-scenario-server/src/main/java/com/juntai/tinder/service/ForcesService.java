@@ -1,10 +1,11 @@
 package com.juntai.tinder.service;
 
+import com.juntai.tinder.condition.ForcesCondition;
 import com.juntai.tinder.entity.Equipment;
 import com.juntai.tinder.entity.Forces;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.juntai.tinder.entity.ForcesLibrary;
 import com.juntai.tinder.facade.ForcesFacade;
+import com.juntai.tinder.model.ForcesUpdateModel;
 import com.juntai.tinder.model.Point;
 
 import java.util.List;
@@ -26,15 +27,17 @@ public interface ForcesService extends ForcesFacade {
      * @param point
      * @return
      */
-    String copyForces(String id , String experimentId, Point point);
+    String copyForces(String id, String experimentId, Point point);
 
     /**
      * 用于复制想定中的兵力复制
+     *
      * @param id
      * @param experimentId
      * @return
      */
     String copyById(String id, String experimentId);
+
     /**
      * 主键查询
      *
@@ -103,6 +106,7 @@ public interface ForcesService extends ForcesFacade {
 
     /**
      * 批量删除
+     *
      * @param ids
      * @return
      */
@@ -135,6 +139,7 @@ public interface ForcesService extends ForcesFacade {
 
     /**
      * modelde input 新增后 更新兵力的input,
+     *
      * @param forcesId
      */
     public void flashInput(String forcesId);

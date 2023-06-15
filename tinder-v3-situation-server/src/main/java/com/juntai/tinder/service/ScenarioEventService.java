@@ -30,14 +30,12 @@ import java.util.concurrent.ConcurrentMap;
 public class ScenarioEventService {
 
     private final ConcurrentMap<String, String> orderMap = new ConcurrentHashMap(16);
-
+    @Autowired
+    public StringRedisTemplate redisTemplate;
     @Autowired
     private SituationRedisManagement situationRedisManagement;
     @Autowired
     private EquipmentCache equipmentCache;
-
-    @Autowired
-    public StringRedisTemplate redisTemplate;
 
     public void delete(String order) {
         this.orderMap.remove(order);
@@ -87,7 +85,7 @@ public class ScenarioEventService {
 //            dealChangePoints(situationTemEvent, simId, flag);
         } else if (EventType.POINTS_DELETE.getValue().equals(situationTemEvent.getType())) {
             dealDeletePoints(situationTemEvent, simId, flag);
-        }else if (EventType.MESSAGE_ADD.getValue().equals(situationTemEvent.getType())) {
+        } else if (EventType.MESSAGE_ADD.getValue().equals(situationTemEvent.getType())) {
             dealAddMessage(situationTemEvent, simId, flag);
 //        } else if (EventType.MESSAGE_CHANGE.getValue().equals(situationTemEvent.getType())) {
 //            dealChangeMessage(situationTemEvent, simId, flag);
@@ -117,11 +115,10 @@ public class ScenarioEventService {
     }
 
 
-
     void dealChangeArmy(SituationTemEvent situationTemEvent, String order, Boolean flag) {
         //发现兵力
         String key = String.format(Constants.SCENARIO_FORCES, order);
-        String s = (String)redisTemplate.opsForHash().get(key, situationTemEvent.getInstId());
+        String s = (String) redisTemplate.opsForHash().get(key, situationTemEvent.getInstId());
         if (StringUtils.isBlank(s)) {
             return;
         }
@@ -176,7 +173,7 @@ public class ScenarioEventService {
         //拼接特效的key
         String radarKey = String.format(Constants.SCENARIO_RADAR, order);
         //获取指定特效
-        String s = (String)redisTemplate.opsForHash().get(radarKey, situationTemEvent.getEffectId());
+        String s = (String) redisTemplate.opsForHash().get(radarKey, situationTemEvent.getEffectId());
 
         if (StringUtils.isBlank(s)) {
             situationRedisManagement.addEventTemp(situationTemEvent);
@@ -236,7 +233,7 @@ public class ScenarioEventService {
         String key = String.format(Constants.SCENARIO_LINK, order);
 
         //获取指定特效
-        String s = (String)redisTemplate.opsForHash().get(key, situationTemEvent.getEffectId());
+        String s = (String) redisTemplate.opsForHash().get(key, situationTemEvent.getEffectId());
         if (StringUtils.isBlank(s)) {
             situationRedisManagement.addEventTemp(situationTemEvent);
             return;
@@ -258,9 +255,9 @@ public class ScenarioEventService {
         data.setStartId(String.valueOf(link.getSrc()));
         List<Long> dest = link.getDest();
         StringBuilder sb = new StringBuilder();
-        for(int i =0;i<dest.size();i++){
+        for (int i = 0; i < dest.size(); i++) {
             sb.append(dest.get(i));
-            if(i<dest.size() -1){
+            if (i < dest.size() - 1) {
                 sb.append(",");
             }
         }
@@ -272,7 +269,7 @@ public class ScenarioEventService {
 
     void dealChangeLink(SituationTemEvent situationTemEvent, String order, Boolean flag) {
         String key = String.format(Constants.SCENARIO_LINK, order);
-        String s = (String)redisTemplate.opsForHash().get(key,situationTemEvent.getEffectId());
+        String s = (String) redisTemplate.opsForHash().get(key, situationTemEvent.getEffectId());
         if (StringUtils.isBlank(s)) {
             log.error("修改链路发现没有链路数据，删除" + situationTemEvent.getInstId());
             situationRedisManagement.removeEventTemp(situationTemEvent);
@@ -295,7 +292,7 @@ public class ScenarioEventService {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < dest.size(); i++) {
             sb.append(dest.get(i));
-            if(i<dest.size() -1){
+            if (i < dest.size() - 1) {
                 sb.append(",");
             }
         }
@@ -317,7 +314,7 @@ public class ScenarioEventService {
         //拼接特效的key
         String pointsKey = String.format(Constants.SCENARIO_POINTS, order);
         //获取指定特效
-        String s = (String)redisTemplate.opsForHash().get(pointsKey, situationTemEvent.getEffectId());
+        String s = (String) redisTemplate.opsForHash().get(pointsKey, situationTemEvent.getEffectId());
         if (StringUtils.isBlank(s)) {
             situationRedisManagement.addEventTemp(situationTemEvent);
             log.error("新增点线发现没有点线数据，转入到缓存中处理" + situationTemEvent.getEffectId());
@@ -371,7 +368,7 @@ public class ScenarioEventService {
         //拼接特效的key
         String messageKey = String.format(Constants.SCENARIO_MESSAGE, order);
         //获取指定特效
-        String s = (String)redisTemplate.opsForHash().get(messageKey, situationTemEvent.getEffectId());
+        String s = (String) redisTemplate.opsForHash().get(messageKey, situationTemEvent.getEffectId());
         if (StringUtils.isBlank(s)) {
             situationRedisManagement.addEventTemp(situationTemEvent);
             log.error("新增情报发现没有情报数据，转入到缓存中处理" + situationTemEvent.getEffectId());
@@ -399,7 +396,7 @@ public class ScenarioEventService {
         //拼接特效的key
         String messageKey = String.format(Constants.SCENARIO_MESSAGE, order);
 
-        String s = (String)redisTemplate.opsForHash().get(messageKey, situationTemEvent.getEffectId());
+        String s = (String) redisTemplate.opsForHash().get(messageKey, situationTemEvent.getEffectId());
         if (StringUtils.isBlank(s)) {
             log.error("修改情报发现没有情报数据，删除" + situationTemEvent.getEffectId());
             situationRedisManagement.removeEventTemp(situationTemEvent);
@@ -407,7 +404,7 @@ public class ScenarioEventService {
         }
         //添加特效
         SituationTemMessage situationTemMessage = JsonUtils.read(s, SituationTemMessage.class);
-        if(situationTemMessage.getType() > 1){
+        if (situationTemMessage.getType() > 1) {
             return;
         }
         if (situationTemEvent.getTime() > situationTemMessage.getTime()) {
@@ -427,7 +424,6 @@ public class ScenarioEventService {
     void dealDeleteMessage(SituationTemEvent situationTemEvent, String order, Boolean flag) {
         situationRedisManagement.removeMessageData(order, situationTemEvent.getEffectId());
     }
-
 
 
 }

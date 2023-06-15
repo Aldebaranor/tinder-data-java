@@ -15,16 +15,16 @@ import org.springframework.stereotype.Component;
 public class ApplicationContextProvider implements ApplicationContextAware {
     private static ApplicationContext applicationContextSpring;
 
-    @Override
-    public synchronized void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        applicationContextSpring = applicationContext;
-    }
-
     /**
      * 通过class 获取Bean
      */
     public static <T> T getBean(Class<T> clazz) {
         return applicationContextSpring.getBean(clazz);
+    }
+
+    @Override
+    public synchronized void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        applicationContextSpring = applicationContext;
     }
 
 }

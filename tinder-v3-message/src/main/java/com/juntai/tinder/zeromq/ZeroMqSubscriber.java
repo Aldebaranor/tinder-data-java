@@ -79,7 +79,7 @@ public class ZeroMqSubscriber {
         Thread zeroMqSubscriberThread = new ZeroMqSubscriberThread();
         zeroMqSubscriberThread.setName(zeroMqSubscriberThread.getClass().getSimpleName());
         zeroMqSubscriberThread.start();
-        log.info("ZeroMqSubscribe start success ："+address);
+        log.info("ZeroMqSubscribe start success ：" + address);
     }
 
     @PreDestroy
