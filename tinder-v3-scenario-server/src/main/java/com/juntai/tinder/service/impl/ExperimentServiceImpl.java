@@ -81,7 +81,7 @@ public class ExperimentServiceImpl implements ExperimentService {
             return experiment;
         }
         ExperimentTeam team = new LambdaQueryChainWrapper<>(experimentTeamMapper).eq(ExperimentTeam::getExperimentId, id)
-                .eq(ExperimentTeam::getPersonId, UserContext.username()).one();
+                .eq(ExperimentTeam::getPersonId, UserContext.username()).last("limit 1").one();
 
         if (team == null) {
             throw new SoulBootException(TinderErrorCode.TINDER_EXPERIMENT_ERROR, "没有查看当前试验的权限");
@@ -116,7 +116,7 @@ public class ExperimentServiceImpl implements ExperimentService {
 
     @Override
     public Experiment getByScenarioCode(String scenarioCode) {
-        return new LambdaQueryChainWrapper<>(mapper).eq(Experiment::getScenarioCode, scenarioCode).one();
+        return new LambdaQueryChainWrapper<>(mapper).eq(Experiment::getScenarioCode, scenarioCode).last("limit 1").one();
     }
 
     @Override

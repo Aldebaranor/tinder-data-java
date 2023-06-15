@@ -4,6 +4,7 @@ import com.juntai.soulboot.data.Pagination;
 import com.juntai.soulboot.data.Query;
 import com.juntai.tinder.condition.OrganizationCondition;
 import com.juntai.tinder.entity.Organization;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
@@ -22,8 +23,15 @@ public interface OrganizationService {
 
     int insert(Organization entity);
 
+    @CacheEvict(cacheNames = "tinder:cache:organization:id", key = "#p0.id")
     int update(Organization entity);
 
-    @Cacheable(cacheNames = "soul:cache:organization", key = "'id:'+#p0")
+    @Cacheable(cacheNames = "tinder:cache:organization:id", key = "#p0")
     Organization getById(String id);
+
+    @CacheEvict(cacheNames = "tinder:cache:organization:id", key = "#p0")
+    int deleteById(String id);
+
+    @CacheEvict(cacheNames = "tinder:cache:organization:id", key = "#p0")
+    int deleteByIds(List<String> ids);
 }

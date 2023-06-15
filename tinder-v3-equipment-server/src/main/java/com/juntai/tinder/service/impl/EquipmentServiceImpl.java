@@ -102,7 +102,7 @@ public class EquipmentServiceImpl implements EquipmentService {
                 .collect(Collectors.groupingBy(EquipmentRelation::getKind));
 
         EquipmentDetail equipmentDetail = new LambdaQueryChainWrapper<>(equipmentDetailMapper)
-                .eq(EquipmentDetail::getEquipmentId, equipment.getId()).one();
+                .eq(EquipmentDetail::getEquipmentId, equipment.getId()).last("limit 1").one();
 
         List<EquipmentCarry> carries = new LambdaQueryChainWrapper<>(equipmentCarryMapper)
                 .eq(EquipmentCarry::getBelongId, equipment.getId())

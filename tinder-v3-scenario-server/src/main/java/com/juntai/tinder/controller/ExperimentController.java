@@ -37,7 +37,7 @@ import java.util.UUID;
 
 @ApiResultWrap
 @RestController
-@RequestMapping("/tinder/v3/equipment")
+@RequestMapping("/tinder/v3/experiment")
 @RequiredArgsConstructor
 public class ExperimentController {
 

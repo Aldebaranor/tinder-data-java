@@ -30,7 +30,7 @@ public class ModelCache {
 
     public Model getCacheData(String id) {
         ModelFacade modelFacade = ApplicationContextProvider.getBean(ModelFacade.class);
-        return cache.get(id, key -> Optional.ofNullable(modelFacade.seekById(key)).orElse(new Model()));
+        return cache.get(id, key -> Optional.ofNullable(modelFacade.seekById(key)).orElse(null));
     }
 
     public void setCacheData(String id, Model model) {

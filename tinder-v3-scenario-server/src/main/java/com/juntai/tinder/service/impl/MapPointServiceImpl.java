@@ -67,7 +67,7 @@ public class MapPointServiceImpl implements MapPointService {
     @Override
     public MapPoint getByExperimentId(String experimentId) {
         return new LambdaQueryChainWrapper<>(mapper).eq(MapPoint::getDisabled, 0)
-                .eq(MapPoint::getExperimentId, experimentId).one();
+                .eq(MapPoint::getExperimentId, experimentId).last("limit 1").one();
     }
 
     @Override

@@ -51,7 +51,7 @@ public interface EquipmentTypeFacade {
      * @param id
      * @return
      */
-    @Cacheable(cacheNames = "soul:cache:equipment-type:name", key = "'id:'+#p0")
+    @Cacheable(cacheNames = "tinder:cache:equipment-type:name", key = "'id:'+#p0")
     String getNameById(String id);
 
 }

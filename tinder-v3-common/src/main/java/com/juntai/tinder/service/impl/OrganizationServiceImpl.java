@@ -60,5 +60,15 @@ public class OrganizationServiceImpl implements OrganizationService {
         return mapper.selectById(id);
     }
 
+    @Override
+    public int deleteById(String id) {
+        return mapper.deleteById(id);
+    }
+
+    @Override
+    public int deleteByIds(List<String> ids) {
+        return mapper.deleteBatchIds(ids);
+    }
+
 
 }

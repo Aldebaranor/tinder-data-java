@@ -22,6 +22,7 @@ com/juntai/tinder/entity/enums/UserType.class
 com/juntai/tinder/model/PropertyItem.class
 com/juntai/tinder/controller/LocalFileController.class
 com/juntai/tinder/utils/GeometryUtils$Point.class
+com/juntai/tinder/model/ScenarioResult.class
 com/juntai/tinder/config/RestTemplateConfig.class
 com/juntai/tinder/exception/TinderErrorCode.class
 com/juntai/tinder/utils/ConvertUtils.class

@@ -21,6 +21,7 @@ com/juntai/tinder/condition/EquipmentTaskCondition.class
 com/juntai/tinder/condition/ArmyIconCondition.class
 com/juntai/tinder/condition/ModelCondition.class
 com/juntai/tinder/facade/TaskTypeFacade.class
+com/juntai/tinder/facade/RcsDataFacade.class
 com/juntai/tinder/entity/EquipmentTask.class
 com/juntai/tinder/entity/Model.class
 com/juntai/tinder/entity/enums/Country.class

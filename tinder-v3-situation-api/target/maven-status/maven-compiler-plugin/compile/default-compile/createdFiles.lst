@@ -21,7 +21,7 @@ com/juntai/tinder/model/SituationMessageData.class
 com/juntai/tinder/model/ScenarioSankey.class
 com/juntai/tinder/entity/MapStyle.class
 com/juntai/tinder/model/EtcdData.class
+com/juntai/tinder/config/entity/enums/OperateType.class
 com/juntai/tinder/model/SituationGeometryData.class
 com/juntai/tinder/scenario/SituationTemArea.class
 com/juntai/tinder/model/ScenarioStatus.class
-com/juntai/tinder/scenario/ScenarioResult.class

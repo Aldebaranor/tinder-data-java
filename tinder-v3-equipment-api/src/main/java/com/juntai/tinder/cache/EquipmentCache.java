@@ -29,7 +29,7 @@ public class EquipmentCache {
 
     public Equipment getCacheData(String id) {
         EquipmentFacade equipmentFacade = ApplicationContextProvider.getBean(EquipmentFacade.class);
-        return cache.get(id, key -> Optional.ofNullable(equipmentFacade.seekById(key)).orElse(new Equipment()));
+        return cache.get(id, key -> Optional.ofNullable(equipmentFacade.seekById(key)).orElse(null));
     }
 
     public void setCacheData(String id, Equipment equipment) {

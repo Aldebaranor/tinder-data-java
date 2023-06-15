@@ -48,7 +48,7 @@ public class TaskTypeServiceImpl implements TaskTypeService {
 
     @Override
     public TaskType getByCode(String code) {
-        return new LambdaQueryChainWrapper<>(mapper).eq(TaskType::getCode, code).one();
+        return new LambdaQueryChainWrapper<>(mapper).eq(TaskType::getCode, code).last("limit 1").one();
     }
 
     @Override

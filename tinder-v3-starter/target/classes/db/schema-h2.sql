@@ -17,7 +17,7 @@ CREATE TABLE t_user
 
 CREATE TABLE t_organization
 (
-    id BIGINT,
+    id VARCHAR(10),
     name VARCHAR(30),
     parent_id BIGINT,
     PRIMARY KEY (id)

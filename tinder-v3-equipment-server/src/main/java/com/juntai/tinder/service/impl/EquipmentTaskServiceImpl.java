@@ -140,7 +140,7 @@ public class EquipmentTaskServiceImpl implements EquipmentTaskService {
 
     @Override
     public EquipmentTask getByEquipmentId(String equipmentId) {
-        EquipmentTask equipmentTask = new LambdaQueryChainWrapper<>(mapper).eq(EquipmentTask::getEquipmentId, equipmentId).one();
+        EquipmentTask equipmentTask = new LambdaQueryChainWrapper<>(mapper).eq(EquipmentTask::getEquipmentId, equipmentId).last("limit 1").one();
         return buildEquipmentTask(equipmentTask);
     }
 

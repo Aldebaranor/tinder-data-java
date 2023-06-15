@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) {
-        User u = ChainWrappers.lambdaQueryChain(User.class).eq(User::getName, username).one();
+        User u = ChainWrappers.lambdaQueryChain(User.class).eq(User::getName, username).last("limit 1").one();
         return u == null ? null : new DefaultUserDetails(u.getId(), username, u.getPassword());
     }
 

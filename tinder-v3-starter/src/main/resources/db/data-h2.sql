@@ -8,7 +8,7 @@ INSERT INTO t_user (id, name, username, password, age, email, type, org_id, crea
 (5, 'Billie', 'Billie', '123456', 20, 'test5@baomidou.com', 1, 3, '2023-04-05 00:00:00');
 
 INSERT INTO t_organization (id, name, parent_id) VALUES
-(1, '研发部门', 0),
-(2, '软件开发部门', 1),
-(3, '软件测试部门', 1),
-(4, '算法开发部门', 1);
+('001', '研发部门', 0),
+('002', '软件开发部门', 1),
+('003', '软件测试部门', 1),
+('004', '算法开发部门', 1);

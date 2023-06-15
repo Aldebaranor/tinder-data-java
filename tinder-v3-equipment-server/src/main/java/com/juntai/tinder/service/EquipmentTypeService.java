@@ -5,6 +5,8 @@ import com.juntai.soulboot.data.Query;
 import com.juntai.tinder.condition.EquipmentTypeCondition;
 import com.juntai.tinder.entity.EquipmentType;
 import com.juntai.tinder.facade.EquipmentTypeFacade;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 
@@ -42,6 +44,7 @@ public interface EquipmentTypeService extends EquipmentTypeFacade {
      * @param entity
      * @return
      */
+    @CacheEvict(cacheNames = "tinder:cache:equipment-type:name", key = "'id:' + #p0.id")
     int update(EquipmentType entity);
 
     /**
@@ -58,7 +61,7 @@ public interface EquipmentTypeService extends EquipmentTypeFacade {
      * @param id 主键
      * @return 成功与否
      */
-
+    @CacheEvict(cacheNames = "tinder:cache:equipment-type:name", key = "'id:' + #p0")
     int deleteById(String id);
 
     /**
@@ -67,6 +70,7 @@ public interface EquipmentTypeService extends EquipmentTypeFacade {
      * @param ids
      * @return
      */
+    @CacheEvict(cacheNames = "tinder:cache:equipment-type:name", key = "'id:' + #p0")
     int deleteByIds(List<String> ids);
 
     /**

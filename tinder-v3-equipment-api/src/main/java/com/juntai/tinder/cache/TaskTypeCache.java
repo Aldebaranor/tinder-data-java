@@ -31,7 +31,7 @@ public class TaskTypeCache {
 
     public TaskType getCacheData(String id) {
         TaskTypeFacade taskTypeFacade = ApplicationContextProvider.getBean(TaskTypeFacade.class);
-        return cache.get(id, key -> Optional.ofNullable(taskTypeFacade.getById(key)).orElse(new TaskType()));
+        return cache.get(id, key -> Optional.ofNullable(taskTypeFacade.getById(key)).orElse(null));
     }
 
     public void setCacheData(String id, TaskType taskType) {

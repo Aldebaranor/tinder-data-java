@@ -13,6 +13,7 @@ com/juntai/tinder/service/ScenarioEventService.class
 com/juntai/tinder/protobuf/proto/TinderProto$ScenarioEvent$1.class
 com/juntai/tinder/protobuf/proto/TinderProto$NextStepSync.class
 com/juntai/tinder/service/ResourcesService.class
+com/juntai/tinder/controller/SituationController.class
 com/juntai/tinder/protobuf/proto/TinderProto$ScenarioEventOrBuilder.class
 com/juntai/tinder/protobuf/proto/TinderProto$NextStepOrBuilder.class
 com/juntai/tinder/protobuf/proto/TinderProto$SimForceResignedOrBuilder.class
