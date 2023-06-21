@@ -162,7 +162,7 @@ public class ForcesServiceImpl implements ForcesService {
         if (model == null) {
             throw new SoulBootException(TinderErrorCode.TINDER_FORCES_ERROR, "模型数据为空");
         }
-        List<Forces> query = new LambdaQueryChainWrapper<>(mapper).eq(Forces::getEquipmentId, experimentId).list();
+        List<Forces> query = new LambdaQueryChainWrapper<>(mapper).eq(Forces::getExperimentId, experimentId).list();
 
         String name = equipment.getName();
         int suffixNum = 1;
@@ -318,7 +318,7 @@ public class ForcesServiceImpl implements ForcesService {
 
     @Override
     public List<Forces> seekByExperiment(String experimentId) {
-        List<Forces> query = new LambdaQueryChainWrapper<>(mapper).eq(Forces::getEquipmentId, experimentId).list();
+        List<Forces> query = new LambdaQueryChainWrapper<>(mapper).eq(Forces::getExperimentId, experimentId).list();
         query.forEach(q -> {
             q = seek(q);
         });
@@ -327,7 +327,7 @@ public class ForcesServiceImpl implements ForcesService {
 
     @Override
     public List<String> queryByExperiment(String experimentId, String team) {
-        LambdaQueryChainWrapper<Forces> wrapper = new LambdaQueryChainWrapper<>(mapper).eq(Forces::getEquipmentId, experimentId);
+        LambdaQueryChainWrapper<Forces> wrapper = new LambdaQueryChainWrapper<>(mapper).eq(Forces::getExperimentId, experimentId);
         if (!StringUtils.isBlank(team)) {
             wrapper.eq(Forces::getTeam, team);
         }
