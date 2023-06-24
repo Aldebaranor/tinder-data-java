@@ -48,17 +48,7 @@
             <artifactId>hibernate-validator</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.juntai</groupId>
-            <artifactId>tinder-v3-equipment-server</artifactId>
-            <version>${project.version}</version>
-        </dependency>
 
-        <dependency>
-            <groupId>com.juntai</groupId>
-            <artifactId>tinder-v3-scenario-server</artifactId>
-            <version>${project.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>com.juntai</groupId>

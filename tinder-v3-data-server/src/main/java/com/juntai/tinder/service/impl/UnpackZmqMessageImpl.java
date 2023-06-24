@@ -1,46 +1,48 @@
-//package com.juntai.tinder.service.impl;
-//
-//import com.google.protobuf.InvalidProtocolBufferException;
-//import com.juntai.tinder.protobuf.proto.TinderProto;
-//import com.juntai.tinder.scenario.SituationTemEvent;
-//import com.juntai.tinder.zeromq.service.SubscriptionListener;
-//import lombok.RequiredArgsConstructor;
-//import lombok.extern.slf4j.Slf4j;
-//import org.apache.commons.lang3.StringUtils;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Component;
-//
-//import javax.annotation.Priority;
-//import java.text.SimpleDateFormat;
-//import java.util.ArrayList;
-//import java.util.Date;
-//import java.util.List;
-//import java.util.TimeZone;
-//
-///**
-// * @Description:
-// * @Author: nemo
-// * @Date: 2022/5/23
-// */
-//@Slf4j
-//@Priority(10)
-//@RequiredArgsConstructor
-//@Component(value = "tinder-zmq")
-//public class UnpackZmqMessageImpl implements SubscriptionListener {
-//
-//    private static final String KEY_EVENT = "4097";
-//    private static final String KEY_TIME = "4098";
-//
-//    private static final String KEY_MESSAGE = "4099";
+package com.juntai.tinder.service.impl;
+import com.juntai.tinder.service.SaveMessage;
+import com.juntai.tinder.zeromq.service.SubscriptionListener;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.Priority;
+
+/**
+ * @Author: Song
+ * @Date 2023/6/21 16:18
+ */
+@Slf4j
+@Priority(10)
+@RequiredArgsConstructor
+@Component(value = "tinder-zmq")
+public class UnpackZmqMessageImpl implements SubscriptionListener {
+
+    @Autowired
+    private SaveMessage saveMessage;
+
+    private static final String KEY_EVENT = "4097";
+    private static final String KEY_TIME = "4098";
+    private static final String KEY_MESSAGE = "4099";
+
+    private static final String MESSAGE_TASK_NEXT_STEP_SYNC = "519";
+    private static final String MESSAGE_FUSION_DETECT = "1542";
+
 //    @Autowired
 //    private ScenarioEventService scenarioEventService;
 //    @Autowired
 //    private SituationRedisManagement situationRedisManagement;
-//
-//
-//    @Override
-//    public void onReceiveDouble(String s1, byte[] b2) throws InterruptedException {
-//
+
+
+    @Override
+    public void onReceiveDouble(String s1, byte[] b2) throws InterruptedException {
+        //TODO:接收protobuf反序列化
+
+        /**
+         * SaveAsCache(SimID,zmq msg);
+         */
+        saveMessage.SaveAsCache("",null);
+
 //        String[] s = s1.split("_");
 //        String order = s[0];
 //        String topic = s[1];
@@ -57,17 +59,17 @@
 //                situationTemEvent.setType(event.getType());
 //                situationTemEvent.setEffectId(event.getEffectId());
 //                situationTemEvent.setConsumptionTimes(0);
-//                scenarioEventService.scenarioEvent(situationTemEvent);
+////                scenarioEventService.scenarioEvent(situationTemEvent);
 //            }
 //            if (StringUtils.equals(topic, KEY_TIME)) {
 //
 //                //判断订单是否订阅
-//                if (scenarioEventService.orderStatus(order)) {
-//                    TinderProto.ScenarioTime time;
-//                    time = TinderProto.ScenarioTime.parseFrom(b2);
-//                    String message = time.getSimId() + "@" + time.getTime() + "@" + time.getRatio();
-//                    situationRedisManagement.sendTimeEvent(time.getSimId(), message);
-//                }
+////                if (scenarioEventService.orderStatus(order)) {
+////                    TinderProto.ScenarioTime time;
+////                    time = TinderProto.ScenarioTime.parseFrom(b2);
+////                    String message = time.getSimId() + "@" + time.getTime() + "@" + time.getRatio();
+////                    situationRedisManagement.sendTimeEvent(time.getSimId(), message);
+////                }
 //            }
 //            if (StringUtils.equals(topic, KEY_MESSAGE)) {
 //                TinderProto.ScenarioLog log;
@@ -83,11 +85,11 @@
 //                List<String> list = new ArrayList<>();
 //                String format = String.format("%s#%s#%s#%s", order, team, formatterDay.format(new Date(time)), msg);
 //                list.add(format);
-//                situationRedisManagement.addInfoData(order, list, true);
+////                situationRedisManagement.addInfoData(order, list, true);
 //
 //                if (msg.startsWith("@Time@")) {
 //                    msg = msg.replace("@Time@", "");
-//                    situationRedisManagement.sendRealTimeEvent(order, msg);
+////                    situationRedisManagement.sendRealTimeEvent(order, msg);
 //                }
 //
 //            }
@@ -96,8 +98,7 @@
 //        } catch (InvalidProtocolBufferException e) {
 //            e.printStackTrace();
 //        }
-//
-//    }
-//
-//
-//}
+
+    }
+
+}
