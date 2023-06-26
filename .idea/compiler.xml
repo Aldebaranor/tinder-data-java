@@ -7,19 +7,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="tinder-v3-starter" />
-        <module name="tinder-v3-common" />
+        <module name="tinder-data-starter" />
+        <module name="tinder-data-situation-api" />
         <module name="tinder-v3-data-api" />
-        <module name="tinder-v3-situation-server" />
-        <module name="tinder-v3-situation-api" />
+        <module name="tinder-data-common" />
+        <module name="tinder-data-situation-server" />
         <module name="tinder-v3-data-server" />
-        <module name="tinder-v3-message" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="tinder-scenario-server" target="1.8" />
+      <module name="tinder-v3-data-api" target="1.8" />
+      <module name="tinder-v3-data-server" target="1.8" />
       <module name="tinder-v3-equipment-api" target="1.8" />
       <module name="tinder-v3-equipment-server" target="1.8" />
+      <module name="tinder-v3-message" target="1.8" />
       <module name="tinder-v3-scenario-api" target="1.8" />
       <module name="tinder-v3-scenario-server" target="1.8" />
     </bytecodeTargetLevel>

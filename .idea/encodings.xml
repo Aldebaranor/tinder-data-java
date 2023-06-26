@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/tinder-v3-common/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tinder-v3-data-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tinder-v3-data-server/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tinder-v3-message/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tinder-v3-situation-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tinder-v3-situation-server/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tinder-v3-starter/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tinder-v3-starter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tinder-data-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tinder-data-situation-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tinder-data-situation-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tinder-data-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tinder-data-starter/src/main/resources" charset="UTF-8" />
   </component>
 </project>

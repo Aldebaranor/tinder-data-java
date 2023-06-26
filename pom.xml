@@ -5,16 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.juntai</groupId>
-    <artifactId>tinder-v3</artifactId>
+    <artifactId>tinder-data</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>tinder-v3-starter</module>
-        <module>tinder-v3-message</module>
-        <module>tinder-v3-situation-server</module>
-        <module>tinder-v3-common</module>
-        <module>tinder-v3-situation-api</module>
+        <module>tinder-data-starter</module>
+        <module>tinder-data-situation-server</module>
+        <module>tinder-data-common</module>
+        <module>tinder-data-situation-api</module>
 
     </modules>
 
